@@ -1,0 +1,22 @@
+{
+  "name": "columns-2016",
+  "authors": "Ben Erickson and Jane Higgins",
+  "description": "Columns Magazine 2016 Refresh",
+  "dependencies": {
+    "isotope": "latest",        
+    "flickity": "^2.0.4"
+  },
+  "overrides": {
+    "isotope": {
+      "dependencies": "null",
+      "main": "dist/isotope.pkgd.js"
+    },
+    "flickity": {
+      "dependencies": "null",
+      "main": "dist/flickity.pkgd.js"
+    }    
+  },  
+  "devDependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
