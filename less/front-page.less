@@ -9,28 +9,44 @@
 	width: 33%;
   height: 200px;
   margin-right: 10px;
-  // background: #8C8;
-  /* border-radius: 5px; */
   counter-increment: gallery-cell;
   border-right: 2px dotted;
+  padding: 10px 15px;
+
+  img{
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 50px;
+
+  }
+
+  .category a {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: @janegray;
+    font-weight: 600;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+
 
 /* Medium devices (desktops, 992px and up) */
   @media (max-width: @screen-sm-max) { 
   width: 100%;
  }
 
-
-  	&:before {
-  display: block;
-  text-align: center;
-  content: counter(gallery-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: @black;
-  	}
 	}
 
-}
+} //.home-high
 
 
 //The Hub

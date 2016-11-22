@@ -651,23 +651,35 @@ ul.uwaa-social li a:focus.email {
   width: 33%;
   height: 200px;
   margin-right: 10px;
-  /* border-radius: 5px; */
   counter-increment: gallery-cell;
   border-right: 2px dotted;
+  padding: 10px 15px;
   /* Medium devices (desktops, 992px and up) */
+}
+.home-high .carousel-cell img {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+.home-high .carousel-cell .category a {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #3d3d3d;
+  font-weight: 600;
+}
+.home-high .carousel-cell h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
 }
 @media (max-width: 991px) {
   .home-high .carousel-cell {
     width: 100%;
   }
-}
-.home-high .carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(gallery-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: #000000;
 }
 #hub {
   height: 350px;

@@ -9,7 +9,7 @@ class Feature
         
     }  
 
-function register_feature_post_type() {
+	public function register_feature_post_type() {
 
 	$labels = array(
 		'name'                  => _x( 'Features', 'Post Type General Name', 'text_domain' ),
@@ -43,7 +43,7 @@ function register_feature_post_type() {
 		'description'           => __( 'Feature-Length Articles', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-		'taxonomies'            => array( 'category', 'post_tag', '' ),
+		'taxonomies'            => array( 'category', 'post_tag', 'content_location' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,

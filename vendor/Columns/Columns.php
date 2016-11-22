@@ -27,6 +27,10 @@ class Columns
 
         new \Columns\CustomPostTypes\Feature;
 
+        //Taxonomies
+        
+        new \Columns\CustomTaxonomies\Placement;
+
 
         new Utilities;
 

@@ -2,6 +2,16 @@
 
 class Utilities{
 
+	public static $allowedHTML = array(
+    	'a' => array(
+    	    'href' => array(),
+    	    'title' => array()
+    	),
+    	'br' => array(),
+    	'em' => array(),
+    	'strong' => array()
+    	);
+
 	function __construct() {
 
 		add_action( 'admin_menu', array($this, 'renamePostsToShortContent') );
@@ -34,5 +44,6 @@ class Utilities{
 			$labels->search_items = 'Search Short Content';
 			$labels->not_found = 'No Short Content found';
 			$labels->not_found_in_trash = 'No Short Content found in Trash';
-	}
+	}	
+
 }
