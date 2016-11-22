@@ -3,6 +3,14 @@ jQuery(document).ready(function($) {
 	
 	$('.home-high').flickity({
 	cellSelector: '.carousel-cell',
-	cellAlign: 'left'
+	cellAlign: 'left',
+    pageDots: false
 	});	
+
+    $('.home-low .feature-row').flickity({
+    cellSelector: '.carousel-cell',
+    cellAlign: 'center',
+    pageDots: false,
+    contain: true    
+    }); 
 });

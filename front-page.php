@@ -16,7 +16,7 @@ wp_enqueue_script('homepage');
 
 <div class="feature-row home-high">
 	<!-- Loop here for featured articles -->
-	<?php get_template_part("partials/feature_row") ?>    
+	<?php get_template_part("partials/home_high") ?>
 
 </div>
 
@@ -28,6 +28,8 @@ wp_enqueue_script('homepage');
 </div>
 
 <div class="row feature-row home-low">
+
+    <?php get_template_part("partials/home_low") ?>
 	
 </div>
 

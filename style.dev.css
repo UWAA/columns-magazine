@@ -77,7 +77,11 @@
 .modal-footer:before,
 .modal-footer:after,
 #uwaa-footer:before,
-#uwaa-footer:after {
+#uwaa-footer:after,
+.home-high:before,
+.home-high:after,
+.home-low:before,
+.home-low:after {
   content: " ";
   display: table;
 }
@@ -95,7 +99,9 @@
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-#uwaa-footer:after {
+#uwaa-footer:after,
+.home-high:after,
+.home-low:after {
   clear: both;
 }
 .dl-horizontal dd:before,
@@ -127,7 +133,11 @@
 .modal-footer:before,
 .modal-footer:after,
 #uwaa-footer:before,
-#uwaa-footer:after {
+#uwaa-footer:after,
+.home-high:before,
+.home-high:after,
+.home-low:before,
+.home-low:after {
   content: " ";
   display: table;
 }
@@ -145,7 +155,9 @@
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-#uwaa-footer:after {
+#uwaa-footer:after,
+.home-high:after,
+.home-low:after {
   clear: both;
 }
 .uw-columns-body {
@@ -600,26 +612,177 @@ ul.uwaa-social li a:focus.email {
 }
 .home-high {
   height: 200px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
-.carousel-cell {
-  width: 50%;
+.home-high:before,
+.home-high:after {
+  content: " ";
+  display: table;
+}
+.home-high:after {
+  clear: both;
+}
+.home-high:before,
+.home-high:after {
+  content: " ";
+  display: table;
+}
+.home-high:after {
+  clear: both;
+}
+.home-high:before,
+.home-high:after {
+  content: " ";
+  display: table;
+}
+.home-high:after {
+  clear: both;
+}
+.home-high:before,
+.home-high:after {
+  content: " ";
+  display: table;
+}
+.home-high:after {
+  clear: both;
+}
+.home-high .carousel-cell {
+  width: 33%;
   height: 200px;
   margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   counter-increment: gallery-cell;
+  border-right: 2px dotted;
+  /* Medium devices (desktops, 992px and up) */
 }
-.carousel-cell:before {
+@media (max-width: 991px) {
+  .home-high .carousel-cell {
+    width: 100%;
+  }
+}
+.home-high .carousel-cell:before {
   display: block;
   text-align: center;
   content: counter(gallery-cell);
   line-height: 200px;
   font-size: 80px;
-  color: white;
+  color: #000000;
 }
 #hub {
-  height: 50px;
+  height: 350px;
   background-color: #000000;
+}
+#hub:before {
+  display: block;
+  text-align: center;
+  content: 'The Hub';
+  line-height: 200px;
+  font-size: 80px;
+  color: #ffffff;
+}
+.home-low {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.home-low:before,
+.home-low:after {
+  content: " ";
+  display: table;
+}
+.home-low:after {
+  clear: both;
+}
+.home-low:before,
+.home-low:after {
+  content: " ";
+  display: table;
+}
+.home-low:after {
+  clear: both;
+}
+.home-low:before,
+.home-low:after {
+  content: " ";
+  display: table;
+}
+.home-low:after {
+  clear: both;
+}
+.home-low:before,
+.home-low:after {
+  content: " ";
+  display: table;
+}
+.home-low:after {
+  clear: both;
+}
+.home-low .current-issue {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #4b2e83;
+  height: 300px;
+}
+@media (min-width: 768px) {
+  .home-low .current-issue {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .home-low .current-issue {
+    float: left;
+    width: 25%;
+  }
+}
+.home-low .current-issue:before {
+  display: block;
+  text-align: center;
+  content: 'Current Issue';
+  line-height: 300px;
+  font-size: 80px;
+  color: #ffffff;
+}
+.home-low .feature-row {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .home-low .feature-row {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 768px) {
+  .home-low .feature-row {
+    float: left;
+    width: 75%;
+  }
+}
+.home-low .feature-row .carousel-cell {
+  width: 35%;
+  height: 300px;
+  margin-right: 10px;
+  /* border-radius: 5px; */
+  counter-increment: gallery-cell;
+  border-right: 2px dotted;
+}
+@media (max-width: 991px) {
+  .home-low .feature-row .carousel-cell {
+    width: 100%;
+  }
+}
+.home-low .feature-row .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 300px;
+  font-size: 80px;
+  color: #000000;
 }
 .home-feature-slider {
   height: 500px;

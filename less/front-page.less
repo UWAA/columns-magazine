@@ -2,28 +2,103 @@
 
 .home-high {	
 	height: 200px;
-}
+  .make-row();
+
 
 .carousel-cell {
-		width: 50%;
+	width: 33%;
   height: 200px;
   margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
+  // background: #8C8;
+  /* border-radius: 5px; */
   counter-increment: gallery-cell;
+  border-right: 2px dotted;
+
+/* Medium devices (desktops, 992px and up) */
+  @media (max-width: @screen-sm-max) { 
+  width: 100%;
+ }
+
 
   	&:before {
-  		display: block;
+  display: block;
   text-align: center;
   content: counter(gallery-cell);
   line-height: 200px;
   font-size: 80px;
-  color: white;
+  color: @black;
   	}
 	}
 
+}
+
+
+//The Hub
 
 #hub {
-	height: 50px;
+	height: 350px;
 	background-color: @black;
+
+  &:before {
+  display: block;
+  text-align: center;
+  content: 'The Hub';
+  line-height: 200px;
+  font-size: 80px;
+  color: @white;
+}
+}
+
+
+.home-low {  
+  .make-row();
+
+  .current-issue {
+    .make-sm-column(3);
+    background-color: @purple;
+    height: 300px;
+
+    &:before {
+      display: block;
+      text-align: center;
+      content: 'Current Issue';
+      line-height: 300px;
+      font-size: 80px;
+      color: @white;
+    }    
+  }
+
+  .feature-row{
+    .make-sm-column(9);
+
+    .carousel-cell {
+      width: 35%;
+      height: 300px;
+      margin-right: 10px;
+      // background: #8C8;
+      /* border-radius: 5px; */
+      counter-increment: gallery-cell;
+      border-right: 2px dotted;
+
+
+    @media (max-width: @screen-sm-max) { 
+    width: 100%;
+    }
+
+
+    &:before {
+      display: block;
+      text-align: center;
+      content: counter(gallery-cell);
+      line-height: 300px;
+      font-size: 80px;
+      color: @black;
+    }
+  }
+
+}
+
+
+
+
 }
