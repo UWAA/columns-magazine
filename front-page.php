@@ -2,7 +2,9 @@
 
 
 get_header("columns");
+wp_enqueue_script('flickity');
 wp_enqueue_script('unslider');
+wp_enqueue_script('homepage');
 
 
 ?>
@@ -12,13 +14,17 @@ wp_enqueue_script('unslider');
 	<?php get_template_part("partials/feature_carousel") ?>    
 
 
-<div class="row feature-row">
+<div class="feature-row home-high">
 	<!-- Loop here for featured articles -->
+	<?php get_template_part("partials/feature_row") ?>    
+
 </div>
 
 <div class="row hub-row" id="hub">
+
+
 	
-	<!-- Flickity here, plus output of all the stuff needed to run it -->
+	<!-- Masonry here, plus output of all the stuff needed to run it -->
 </div>
 
 <div class="row feature-row home-low">

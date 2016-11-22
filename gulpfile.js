@@ -29,7 +29,7 @@ var mainFiles = mainBowerFiles();
 
 // Catches errors.  Will play a system tone and display your mistake.
 function catchErrors(error){
-console.log("\007");
+console.log("007");
 console.log(error);
 }
 
@@ -141,6 +141,11 @@ gulp.task('library', function() {
 
     gulp.src('./bower_components/unslider/src/css/unslider/*')    
        .pipe(gulp.dest('./less/unslider/unslider'));
+
+    //Flickity
+
+    gulp.src('./bower_components/flickity/dist/flickity.css')
+      .pipe(gulp.dest('./less/flickity.less'));
 
 
 });
