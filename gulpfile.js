@@ -16,9 +16,10 @@ var banner = ['/*',
   ' Theme Name: <%= pkg.name %>',
   ' Theme Uri: <%= pkg.authorUri %>',
   ' Description: <%= pkg.description %>',
-  ' Author: <%= pkg.authors %>',
+  ' Author: <%= pkg.author %>',
   ' Template: <%= pkg.template %>',
   ' Version: <%= pkg.version %>',
+  ' License: <%= pkg.license %>',
   ' */',
   ''].join('\n');
 

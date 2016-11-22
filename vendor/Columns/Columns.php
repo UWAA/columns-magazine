@@ -20,6 +20,15 @@ class Columns
     private function init() {
 
         new Styles;
+        new Scripts;
+
+
+        //Custom Post Types
+
+        new \Columns\CustomPostTypes\Feature;
+
+
+        new Utilities;
 
     }
 }

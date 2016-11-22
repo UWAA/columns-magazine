@@ -30,7 +30,7 @@
     <!--<![endif]-->
 
 
-    <?php get_template_part("partials/navigation") ?>    
+    <?php get_template_part("partials/columns_header") ?>    
 
 
 

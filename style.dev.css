@@ -2,9 +2,10 @@
  Theme Name: columns
  Theme Uri: 
  Description: Columns Magazine Child Theme
- Author: 
- Template: 
+ Author: Ben Erickson
+ Template: uw-2014
  Version: 0.1.0
+ License: MIT
  */
 .thumbnail > img,
 .thumbnail a > img,
@@ -74,7 +75,9 @@
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+#uwaa-footer:before,
+#uwaa-footer:after {
   content: " ";
   display: table;
 }
@@ -91,7 +94,8 @@
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after {
+.modal-footer:after,
+#uwaa-footer:after {
   clear: both;
 }
 .dl-horizontal dd:before,
@@ -121,7 +125,9 @@
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+#uwaa-footer:before,
+#uwaa-footer:after {
   content: " ";
   display: table;
 }
@@ -138,7 +144,8 @@
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after {
+.modal-footer:after,
+#uwaa-footer:after {
   clear: both;
 }
 .uw-columns-body {
@@ -200,4 +207,394 @@
 }
 .site-search input:-webkit-input-placeholder {
   color: transparent;
+}
+.columns-navbar {
+  height: 100px;
+}
+.columns-navbar .masthead {
+  position: relative;
+}
+.columns-navbar .masthead .logo-clip {
+  display: block;
+}
+.columns-navbar .masthead .logo-clip:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #c7c7c7;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: skew(-15deg);
+  -ms-transform: skew(-15deg);
+  transform: skew(-15deg);
+  z-index: -1;
+}
+.columns-navbar .masthead .logo-clip .subbrand {
+  display: block;
+}
+ul.uwaa-social {
+  padding-left: 0;
+  margin-bottom: 14.5px;
+  margin-top: 0;
+}
+ul.uwaa-social li {
+  list-style: none;
+  display: inline-block;
+}
+ul.uwaa-social li a {
+  transition: none;
+  color: #fff;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: inline;
+  background: url(assets/uwaa-sprite.svg) no-repeat 0 -185px transparent;
+  padding: 8px 21px;
+}
+ul.uwaa-social li a.facebook {
+  background-position: 0px -185px;
+}
+ul.uwaa-social li a.twitter {
+  background-position: -46px -185px;
+}
+ul.uwaa-social li a.tumblr {
+  background-position: -366px -185px;
+}
+ul.uwaa-social li a.youtube {
+  background-position: -138px -185px;
+}
+ul.uwaa-social li a.linkedin {
+  background-position: -184px -185px;
+}
+ul.uwaa-social li a.pinterest {
+  background-position: -92px -185px;
+}
+ul.uwaa-social li a.vine {
+  background-position: -230px -185px;
+}
+ul.uwaa-social li a.google {
+  background-position: -275px -185px;
+}
+ul.uwaa-social li a.instagram {
+  background-position: -322px -185px;
+}
+ul.uwaa-social li a.email {
+  background-position: -410px -185px;
+}
+ul.uwaa-social li a:hover,
+ul.uwaa-social li a:focus {
+  transition: none;
+  border-bottom: 0;
+}
+ul.uwaa-social li a:hover.facebook,
+ul.uwaa-social li a:focus.facebook {
+  background-position: 0px -225px;
+}
+ul.uwaa-social li a:hover.twitter,
+ul.uwaa-social li a:focus.twitter {
+  background-position: -46px -225px;
+}
+ul.uwaa-social li a:hover.tumblr,
+ul.uwaa-social li a:focus.tumblr {
+  background-position: -366px -225px;
+}
+ul.uwaa-social li a:hover.youtube,
+ul.uwaa-social li a:focus.youtube {
+  background-position: -138px -225px;
+}
+ul.uwaa-social li a:hover.linkedin,
+ul.uwaa-social li a:focus.linkedin {
+  background-position: -184px -225px;
+}
+ul.uwaa-social li a:hover.pinterest,
+ul.uwaa-social li a:focus.pinterest {
+  background-position: -92px -225px;
+}
+ul.uwaa-social li a:hover.vine,
+ul.uwaa-social li a:focus.vine {
+  background-position: -230px -225px;
+}
+ul.uwaa-social li a:hover.google,
+ul.uwaa-social li a:focus.google {
+  background-position: -275px -225px;
+}
+ul.uwaa-social li a:hover.instagram,
+ul.uwaa-social li a:focus.instagram {
+  background-position: -322px -225px;
+}
+ul.uwaa-social li a:hover.email,
+ul.uwaa-social li a:focus.email {
+  background-position: -410px -225px;
+}
+#uwaa-footer {
+  margin-left: -15px;
+  margin-right: -15px;
+  background: #777777;
+  border-top: 7px solid #d1d1d1;
+  color: #ffffff;
+  padding: 0;
+  font-size: .90em;
+}
+#uwaa-footer:before,
+#uwaa-footer:after {
+  content: " ";
+  display: table;
+}
+#uwaa-footer:after {
+  clear: both;
+}
+#uwaa-footer:before,
+#uwaa-footer:after {
+  content: " ";
+  display: table;
+}
+#uwaa-footer:after {
+  clear: both;
+}
+#uwaa-footer:before,
+#uwaa-footer:after {
+  content: " ";
+  display: table;
+}
+#uwaa-footer:after {
+  clear: both;
+}
+#uwaa-footer:before,
+#uwaa-footer:after {
+  content: " ";
+  display: table;
+}
+#uwaa-footer:after {
+  clear: both;
+}
+#uwaa-footer .social-icons {
+  padding-top: 1em;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #uwaa-footer .social-icons {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  #uwaa-footer .social-icons {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  #uwaa-footer .social-icons {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) {
+  #uwaa-footer .social-icons {
+    float: left;
+    width: 25%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #uwaa-footer .social-icons {
+    padding-top: 1.8em;
+  }
+}
+#uwaa-footer .social-icons li {
+  position: relative;
+  z-index: 0;
+}
+#uwaa-footer .social-icons li:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: #ffffff;
+  left: 1px;
+  bottom: -5px;
+  height: 24px;
+  width: 24px;
+}
+#uwaa-footer .contact-links {
+  height: 4.706em;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 1.3em;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  #uwaa-footer .contact-links {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  #uwaa-footer .contact-links {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  #uwaa-footer .contact-links {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  #uwaa-footer .contact-links {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  #uwaa-footer .contact-links {
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #uwaa-footer .contact-links {
+    line-height: 1.5;
+    padding-top: 1.1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  #uwaa-footer .contact-links {
+    line-height: 1.7;
+    font-size: .85em;
+  }
+}
+#uwaa-footer .contact-links div {
+  display: inline-block;
+}
+#uwaa-footer .contact-links a {
+  padding-left: 7px;
+  text-transform: none;
+  color: #ffffff;
+  text-decoration: underline;
+  transition: 0.25s;
+}
+#uwaa-footer .contact-links a:hover,
+#uwaa-footer .contact-links a:active {
+  color: #b7a57a;
+}
+#uwaa-footer .contact-links span,
+#uwaa-footer .contact-links ul {
+  display: inline;
+  margin-right: 7px;
+}
+#uwaa-footer .contact-links span a,
+#uwaa-footer .contact-links ul a {
+  text-transform: uppercase;
+}
+#uwaa-footer .uwaa-logo {
+  height: 4.706em;
+  padding: 10px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 0;
+}
+@media (min-width: 768px) {
+  #uwaa-footer .uwaa-logo {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  #uwaa-footer .uwaa-logo {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  #uwaa-footer .uwaa-logo {
+    margin-left: 16.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  #uwaa-footer .uwaa-logo {
+    margin-left: 16.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  #uwaa-footer .uwaa-logo {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) {
+  #uwaa-footer .uwaa-logo {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) {
+  #uwaa-footer .uwaa-logo {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 992px) {
+  #uwaa-footer .uwaa-logo {
+    margin-left: 0%;
+  }
+}
+@media screen and (max-width: 991px) {
+  #uwaa-footer .uwaa-logo {
+    height: 5.7em;
+    padding-top: 1.8em;
+  }
+}
+@media screen and (max-width: 767px) {
+  #uwaa-footer .uwaa-logo {
+    height: 5.3em;
+    margin-top: -23px;
+    margin-bottom: 9px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #uwaa-footer .uwaa-logo {
+    margin-top: 10px;
+    height: 5em;
+  }
+}
+#uwaa-footer .uwaa-logo svg {
+  width: 55%;
+  height: 100%;
+}
+#uwaa-footer .uwaa-logo svg g path {
+  fill: #ffffff;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #uwaa-footer .social-icons {
+    padding-top: 1.8em;
+  }
+  #uwaa-footer .uwaa-logo {
+    padding-top: 1em;
+  }
+  #uwaa-footer .uwaa-logo svg {
+    width: 96%;
+  }
+  #uwaa-footer .contact-links {
+    padding-top: .9em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #uwaa-footer .contact-links ul,
+  #uwaa-footer .contact-links li,
+  #uwaa-footer .contact-links a {
+    padding: 0;
+    margin-right: 3px;
+  }
+  #uwaa-footer .contact-links li:nth-child(2) {
+    margin-left: 12px;
+  }
 }
