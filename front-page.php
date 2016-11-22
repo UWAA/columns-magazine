@@ -2,11 +2,14 @@
 
 
 get_header("columns");
+wp_enqueue_script('unslider');
+
 
 ?>
 <div class="container-fluid">
 	
 	<!-- Get partial for Main Slideshow, should have row -->
+	<?php get_template_part("partials/feature_carousel") ?>    
 
 
 <div class="row feature-row">

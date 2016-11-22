@@ -131,6 +131,18 @@ gulp.task('watch', function () {
 gulp.task('library', function() {
     gulp.src(mainBowerFiles(/* options */), { base: 'bower_components' })
     .pipe(gulp.dest('./js/libraries'));
+
+    //Unslider Components
+    gulp.src('./bower_components/unslider/dist/js/unslider-min.js')
+      .pipe(gulp.dest('./js/libraries/unslider/'));
+
+    gulp.src('./bower_components/unslider/src/css/*')    
+       .pipe(gulp.dest('./less/unslider'));
+
+    gulp.src('./bower_components/unslider/src/css/unslider/*')    
+       .pipe(gulp.dest('./less/unslider/unslider'));
+
+
 });
  
  

@@ -5,7 +5,7 @@
   "dependencies": {
     "isotope": "latest",        
     "flickity": "^2.0.4",
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0"    
   },
   "overrides": {
     "isotope": {
@@ -15,11 +15,7 @@
     "flickity": {
       "dependencies": "null",
       "main": "dist/flickity.pkgd.js"
-    },
-    "bootstrap" : {
-      "dependencies": "null",
-      "main": "js/collapse.js"
-    }
+    }   
   },  
   "devDependencies": {
     "bootstrap": "~3.2.0"

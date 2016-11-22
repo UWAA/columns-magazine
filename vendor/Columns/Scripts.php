@@ -49,8 +49,7 @@ class Scripts
         'version' => '2.0.1',
         'in_footer' => true,
         'admin'   => false
-      ),
-      // @TODO  Local fallback if CDN is no-go.
+      ),      
       'flickity'   => array (
         'id'      => 'flickity',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/flickity/dist/flickity.pkgd.js',
@@ -59,11 +58,19 @@ class Scripts
         'in_footer' => true,
         'admin'   => false
       ),
+      'unslider'   => array (
+        'id'      => 'unslider',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/unslider/unslider-min.js',
+        'deps'    => array(),
+        'version' => '2.0.1',
+        'in_footer' => true,
+        'admin'   => false
+      ),
 
     ));
 
     add_action( 'wp_enqueue_scripts', array( $this, 'columns_register_default_scripts' ) );
-    // add_action( 'wp_enqueue_scripts', array( $this, 'columns_register_support_scripts' ) );
+    add_action( 'wp_enqueue_scripts', array( $this, 'columns_register_support_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'columns_enqueue_default_scripts' ) );
     add_action( 'admin_enqueue_scripts', array( $this, 'columns_enqueue_admin_scripts' ) );
 
