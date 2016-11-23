@@ -1,4 +1,4 @@
-// front-page.less
+  // front-page.less
 
 .home-feature-carousel {
   height: 670px;  
@@ -8,6 +8,18 @@
     height: 100%;
     background-color: @purple;
 
+    .background-image {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      width: auto;      
+    }
+    
+    a {
+      color: inherit;
+
+    }
 
     .title-area {      
       color: @white;          
@@ -16,21 +28,64 @@
       position: absolute;
       text-align: left;
       padding-left: 15%;
+      padding-right: 15px;
+      
+
+
+
 
       h2{
         font-size: 60px;
         font-family: 'Merriweather', serif;
         line-height: 1;
-        text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+        padding-right: 5%;
+        
       }
 
       p {
         color: @white;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .tag-list {        
+        list-style:none;
+        text-transform: uppercase;
+        text-shadow: none;
+        text-align: right;
+
+        a {
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+        }
+
+        li{                    
+          display:inline-block;  
+          cursor:pointer;
+
+           &:after {
+            content: '  |   ';
+            color: @darkgold;
+          }
+        
+
+        &:last-child {
+          &:after {
+            content: '';
+          }
+
+        }
+
+        }
+        
       }
 
 
     }
-
 
   }
 
@@ -55,6 +110,7 @@
 
 .home-high {	
 	height: 200px;
+  margin: 20px 0;
   .make-row();
 
 
@@ -67,11 +123,11 @@
   padding: 10px 15px;
 
   img{
-    width: 150px;
-    height: 150px;
+    width: 104px;
+    height: 104px;
     float: left;
     margin-right: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 96px;
 
   }
 
@@ -87,34 +143,40 @@
 
 
  .category {
-
-    line-height: .5;
-    margin-bottom: 10px;
+  line-height: 0;
+  margin-bottom: 3px;
 
 
   a {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: @lightgray;
     font-weight: 600;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: @lightgray;
+    text-transform: uppercase;    
+    
 
     }
 
   }
 
   h3 {
-    margin: 0;
+    font-weight: 900;
     font-size: 20px;
     line-height: 1.2;
+    color: @janegray;
+    margin: 0 0 2px 0;
   }
 
   p {
-    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: @janegray;    
+    margin-bottom: 7px;
 
-    &.published-date {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    &.published-date {    
     font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
