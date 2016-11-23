@@ -20,7 +20,7 @@ class Columns
     private function init() {
 
         new Styles;
-        new Scripts;
+        new Scripts;        
 
 
         //Custom Post Types

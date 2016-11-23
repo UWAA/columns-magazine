@@ -3,7 +3,6 @@
 
 get_header("columns");
 wp_enqueue_script('flickity');
-wp_enqueue_script('unslider');
 wp_enqueue_script('homepage');
 
 
