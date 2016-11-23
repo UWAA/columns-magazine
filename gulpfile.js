@@ -29,7 +29,6 @@ var mainFiles = mainBowerFiles();
 
 // Catches errors.  Will play a system tone and display your mistake.
 function catchErrors(error){
-console.log("007");
 console.log(error);
 }
 
@@ -125,6 +124,10 @@ gulp.task('less', function () {
 gulp.task('watch', function () {
     gulp.watch('less/**/*.less', ['less']);
     gulp.watch(['js/_*.js', 'js/admin/_*.js', 'js/support/*.js', '!js/support/*.min.js'], ['scripts']);
+});
+
+gulp.task('error', function () {
+  catchErrors('Test');
 });
 
 

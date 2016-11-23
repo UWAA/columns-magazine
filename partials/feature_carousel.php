@@ -2,13 +2,29 @@
 ?>
 
 <div class="row">
-	<div class="home-feature-slider">
+	<div class="home-feature-carousel">
 	
-		<ul>
-			<li>My slide</li>
-			<li>Another slide</li>
-			<li>My last slide</li>
-		</ul>
+		
+			<div class="feature-cell">
+                <div class="title-area">
+                    <h2>Title for Slide</h2>
+                    <p>Subtitle</p>
+                    <p>Tags</p>
+                </div>                
+            </div>
+			<div class="feature-cell">                
+                <div class="title-area">
+                    <h2>Title for Slide</h2>
+                    <p>Subtitle</p>
+                </div>
+            </div>
+			<div class="feature-cell">                
+                <div class="title-area">
+                    <h2>Title for Slide</h2>
+                    <p>Subtitle</p>
+                </div>
+            </div>
+		
 	
 </div>
 </div>

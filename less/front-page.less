@@ -1,5 +1,58 @@
 // front-page.less
 
+.home-feature-carousel {
+  height: 670px;  
+
+  .feature-cell {
+    width: 100%;
+    height: 100%;
+    background-color: @purple;
+
+
+    .title-area {      
+      color: @white;          
+      width: 60%;
+      bottom: 15%;
+      position: absolute;
+      text-align: left;
+      padding-left: 15%;
+
+      h2{
+        font-size: 60px;
+        font-family: 'Merriweather', serif;
+        line-height: 1;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        color: @white;
+      }
+
+
+    }
+
+
+  }
+
+  .flickity-page-dots {
+    bottom: 25px;
+
+    .dot {
+      background-color: @white;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
 .home-high {	
 	height: 200px;
   .make-row();
@@ -22,22 +75,6 @@
 
   }
 
-  .category a {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: @janegray;
-    font-weight: 600;
-  }
-
-  h3 {
-    margin: 0;
-    font-size: 20px;
-    line-height: 1.2;
-  }
-
-
 
 /* Medium devices (desktops, 992px and up) */
   @media (max-width: @screen-sm-max) { 
@@ -47,6 +84,46 @@
 	}
 
 } //.home-high
+
+
+ .category {
+
+    line-height: .5;
+    margin-bottom: 10px;
+
+
+  a {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: @lightgray;
+    font-weight: 600;
+
+    }
+
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  p {
+    margin-bottom: 5px;
+
+    &.published-date {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: @lightgray;
+    font-weight: 600;
+
+    }
+  }
+
 
 
 //The Hub
@@ -68,6 +145,7 @@
 
 .home-low {  
   .make-row();
+  padding: 15px 0 15px;
 
   .current-issue {
     .make-sm-column(3);
@@ -88,27 +166,16 @@
     .make-sm-column(9);
 
     .carousel-cell {
+      padding: 20px;
       width: 35%;
       height: 300px;
       margin-right: 10px;
-      // background: #8C8;
-      /* border-radius: 5px; */
       counter-increment: gallery-cell;
       border-right: 2px dotted;
 
 
     @media (max-width: @screen-sm-max) { 
     width: 100%;
-    }
-
-
-    &:before {
-      display: block;
-      text-align: center;
-      content: counter(gallery-cell);
-      line-height: 300px;
-      font-size: 80px;
-      color: @black;
     }
   }
 
