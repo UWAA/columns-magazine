@@ -7,7 +7,6 @@ get_header("columns");
 
 ?>
 <div class="container-fluid">
-
 <?php
 
 
@@ -16,7 +15,26 @@ while ( have_posts() ) : the_post();
 // 
 ?>
 
-<h1><?php the_title();  ?> </h1>
+<div class="row">
+    <div class="headline-image">
+    
+    </div>
+</div>
+
+<div class="row">
+    <div class="breadcrumbs">
+        <!-- Fluid container, 10 cols -->
+    </div> 
+    <div class="content-tags">
+        <!-- Fluid containter, 2 cols -->
+    </div>
+</div>
+
+<div class="row">
+    
+    <div class="container columns-feature-container">
+
+    <h1><?php the_title();  ?> </h1>
 
 <p class="byline"><?php the_field("columns_author"); ?></p>
 
@@ -29,12 +47,12 @@ if( have_rows('feature_content') ):
 
         if( get_row_layout() == 'copy_block' ):
 
-        	the_sub_field('copy');
+            the_sub_field('copy');
 
         elseif( get_row_layout() == 'block_quote' ): 
 
-        	the_sub_field('quote_text');
-        	the_sub_field('quote_quotee');
+            the_sub_field('quote_text');
+            the_sub_field('quote_quotee');
 
         endif;
 
@@ -50,6 +68,11 @@ endwhile;
 
 ?>
 
+        
+    </div>
+</div>
+
+
 
 
 
@@ -57,10 +80,6 @@ endwhile;
 </div>
 
 <?php
-
-
-
-
 
 
 get_footer(); 

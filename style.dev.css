@@ -1089,3 +1089,12 @@ p.published-date {
 .flickity-page-dots .dot.is-selected {
   opacity: 1;
 }
+.headline-image {
+  height: 670px;
+  background-color: #3d3d3d;
+}
+.headline-image:after {
+  height: 100%;
+  content: 'Feature';
+  text-align: center;
+}
