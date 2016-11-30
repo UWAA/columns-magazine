@@ -33,7 +33,7 @@ while ( have_posts() ) : the_post();
     
     <div class="container columns-feature-container">
 
-    <h1 class="title"><?php the_title();  ?> </h1>
+    <h1 class="feature-title"><?php the_title();  ?> </h1>
 
 <p class="byline">
 <?php 
@@ -64,19 +64,18 @@ if( have_rows('feature_content') ):
     while ( have_rows('feature_content') ) : the_row();
 
         if( get_row_layout() == 'copy_block' ):
-
-        ?>
-
-            <p class="columns-copy">
-            <?php the_sub_field('copy', false); ?>
-            </p>
-
-        <?php
+            
+             the_sub_field('copy', true);
 
         elseif( get_row_layout() == 'block_quote' ): 
+        ?>
 
-            the_sub_field('quote_text');
-            the_sub_field('quote_quotee');
+            <div class="blockquote">
+                <p class="quote-text"><span class="leftquote">&ldquo;</span><?php the_sub_field('quote_text'); ?><span class="rightquote">&rdquo;</span></p>
+                <p class="cutline"><?php the_sub_field('quote_quotee'); ?></p>
+            </div>
+
+        <?php
 
         endif;
 

@@ -1101,16 +1101,16 @@ p.published-date {
   content: 'Feature';
   text-align: center;
 }
-.title {
+.feature-title {
   font-weight: 900;
-  font-size: 60px;
+  font-size: 50px;
   line-height: 1.2;
   color: #3d3d3d;
   margin-bottom: 14px;
   /* Medium devices (desktops, 992px and up) */
 }
 @media (min-width: 1200px) {
-  .title {
+  .feature-title {
     margin-left: -120px;
   }
 }
@@ -1131,11 +1131,55 @@ p {
   color: #3d3d3d;
   margin-bottom: 40px;
 }
-.columns-feature p:first-child:first-letter {
+.columns-feature > p:first-child:first-letter {
   float: left;
   color: #4b2e83;
   font-size: 100px;
   line-height: 84px;
   padding-right: 8px;
   padding-left: 3px;
+}
+.wp-caption.alignright {
+  margin: 10px -120px 20px 15px;
+}
+.wp-caption.alignleft {
+  margin: 10px 15px 20px -120px;
+}
+.wp-caption-text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #7d7d7d;
+}
+.blockquote p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.blockquote p.quote-text {
+  color: #4b2e83;
+  font-size: 36px;
+  margin-left: -120px;
+}
+.blockquote p span {
+  color: #4b2e83;
+  font-size: 100px;
+  line-height: 84px;
+}
+.blockquote p span.leftquote {
+  float: left;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+.blockquote p span.rightquote {
+  float: right;
+  padding-right: 3px;
+  padding-left: 8px;
+}
+.blockquote p.cutline {
+  color: #7d7d7d;
+  text-align: right;
+  text-transform: uppercase;
 }
