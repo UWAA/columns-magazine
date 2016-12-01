@@ -4,6 +4,7 @@
 get_header("columns");
 wp_enqueue_script('flickity');
 wp_enqueue_script('homepage');
+wp_enqueue_script('isotope');
 
 
 ?>
@@ -24,6 +25,7 @@ wp_enqueue_script('homepage');
 
 	
 	<!-- Masonry here, plus output of all the stuff needed to run it -->
+    <?php get_template_part("partials/home_hub") ?>
 </div>
 
 <div class="row feature-row home-low">

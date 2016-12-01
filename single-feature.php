@@ -22,7 +22,7 @@ while ( have_posts() ) : the_post();
 
 <div class="row">
     <div class="breadcrumbs">
-        <!-- Fluid container, 10 cols -->
+        <?php uw_breadcrumbs() ?>
     </div> 
     <div class="content-tags">
         <!-- Fluid containter, 2 cols -->
@@ -77,6 +77,14 @@ if( have_rows('feature_content') ):
 
         <?php
 
+        elseif( get_row_layout() == 'columns_featured_writer_byline' ): ?>
+
+
+            <p class="final-byline">
+            <?php the_sub_field('columns_final_byline'); ?>
+            </p>
+
+        <?php
         endif;
 
     endwhile;

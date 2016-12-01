@@ -18,4 +18,21 @@ jQuery(document).ready(function($) {
     pageDots: false,
     contain: true    
     }); 
+
+
+    
+
+// init Isotope
+var $grid = $('#hub').isotope({
+  itemSelector: '.hub-item',
+  layoutMode: 'masonry',
+  masonry: {
+    columnWidth: 198,
+    gutter: 3
+ }
+});
+
+
+
+
 });

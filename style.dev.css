@@ -178,6 +178,9 @@
     width: 33.33333333%;
   }
 }
+.uw-breadcrumbs {
+  margin: 0;
+}
 body {
   font-size: 17px;
   line-height: 1.7;
@@ -239,26 +242,7 @@ p {
 .columns-navbar .masthead {
   position: relative;
 }
-.columns-navbar .masthead .logo-clip {
-  display: block;
-}
-.columns-navbar .masthead .logo-clip:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background-color: #c7c7c7;
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-  -webkit-transform: skew(-15deg);
-  -ms-transform: skew(-15deg);
-  transform: skew(-15deg);
-  z-index: -1;
-}
-.columns-navbar .masthead .logo-clip .subbrand {
+.columns-navbar .masthead .subbrand {
   display: block;
 }
 ul.uwaa-social {
@@ -783,17 +767,58 @@ p.published-date {
   color: #7d7d7d;
   font-weight: 600;
 }
+/* ---- hub ---- */
 #hub {
-  height: 350px;
-  background-color: #000000;
+  border: 1px solid #333;
+  width: auto;
 }
-#hub:before {
-  display: block;
-  text-align: center;
-  content: 'The Hub';
-  line-height: 200px;
-  font-size: 80px;
-  color: #ffffff;
+/* ---- .element-item ---- */
+.hub-item {
+  position: relative;
+  float: left;
+  width: 198px;
+  height: 178px;
+  margin-bottom: 3px;
+  padding: 10px;
+  background: red;
+  color: white;
+  font-size: 50px;
+}
+.hub-item--width2 {
+  width: 396px;
+}
+.hub-item--height2 {
+  height: 358px;
+}
+.hub-item:nth-child(10n+0) {
+  background: #ff0000;
+}
+.hub-item:nth-child(10n+1) {
+  background: #ff9900;
+}
+.hub-item:nth-child(10n+2) {
+  background: #ccff00;
+}
+.hub-item:nth-child(10n+3) {
+  background: #33ff00;
+}
+.hub-item:nth-child(10n+4) {
+  background: #00ff66;
+}
+.hub-item:nth-child(10n+5) {
+  background: #00ffff;
+}
+.hub-item:nth-child(10n+6) {
+  background: #0066ff;
+}
+.hub-item:nth-child(10n+7) {
+  background: #3300ff;
+}
+.hub-item:nth-child(10n+8) {
+  background: #cc00ff;
+}
+.hub-item:nth-child(10n+9) {
+  background: #ff0099;
 }
 .home-low {
   margin-left: -15px;
@@ -1138,6 +1163,12 @@ p {
   line-height: 84px;
   padding-right: 8px;
   padding-left: 3px;
+}
+.final-byline {
+  font-style: italic;
+  font-style: 16px;
+  line-height: 1.7;
+  color: #7d7d7d;
 }
 .wp-caption.alignright {
   margin: 10px -120px 20px 15px;
