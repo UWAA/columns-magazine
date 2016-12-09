@@ -25,10 +25,12 @@ jQuery(document).ready(function($) {
 // init Isotope
 var $grid = $('#hub').isotope({
   itemSelector: '.hub-item',
-  layoutMode: 'masonry',
-  masonry: {
+  layoutMode: 'packery',
+  // resize: false,
+  packery: {
     columnWidth: 198,
-    gutter: 3
+    gutter: 3,
+    horizontal: true
  }
 });
 

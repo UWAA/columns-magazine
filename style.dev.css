@@ -746,12 +746,22 @@ ul.uwaa-social li a:focus.email {
   color: #7d7d7d;
   text-transform: uppercase;
 }
+.category a:hover {
+  text-decoration: underline;
+}
 h3 {
   font-weight: 900;
   font-size: 20px;
   line-height: 1.2;
   color: #3d3d3d;
   margin: 0 0 2px 0;
+}
+h3 a {
+  color: inherit;
+}
+h3 a:hover {
+  text-decoration: underline;
+  color: inherit;
 }
 p {
   font-weight: 400;
@@ -769,8 +779,8 @@ p.published-date {
 }
 /* ---- hub ---- */
 #hub {
-  border: 1px solid #333;
   width: auto;
+  height: 362px;
 }
 /* ---- .element-item ---- */
 .hub-item {
@@ -778,17 +788,16 @@ p.published-date {
   float: left;
   width: 198px;
   height: 178px;
-  margin-bottom: 3px;
   padding: 10px;
   background: red;
   color: white;
   font-size: 50px;
 }
 .hub-item--width2 {
-  width: 396px;
+  width: 399px;
 }
 .hub-item--height2 {
-  height: 358px;
+  height: 359px;
 }
 .hub-item:nth-child(10n+0) {
   background: #ff0000;
@@ -1164,7 +1173,8 @@ p {
   padding-right: 8px;
   padding-left: 3px;
 }
-.final-byline {
+.final-byline,
+.teaser-intro {
   font-style: italic;
   font-style: 16px;
   line-height: 1.7;

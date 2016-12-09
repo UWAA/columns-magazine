@@ -44,7 +44,7 @@ class Scripts
     $this->SUPPORT_SCRIPTS = array_merge( array(
     'isotope'   => array (
         'id'      => 'isotope',
-        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/isotope/dist/isotope.pkgd.js',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/isotope/dist/isotope.pkgd.min.js',
         'deps'    => array('jquery'),
         'version' => '2.0.1',
         'in_footer' => true,
@@ -52,20 +52,20 @@ class Scripts
       ),      
       'flickity'   => array (
         'id'      => 'flickity',
-        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/flickity/dist/flickity.pkgd.js',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/flickity/dist/flickity.pkgd.min.js',
         'deps'    => array(),
         'version' => '2.0.5',
         'in_footer' => true,
         'admin'   => false
       ),
-      'unslider'   => array (
-        'id'      => 'unslider',
-        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/unslider/unslider-min.js',
-        'deps'    => array(),
-        'version' => '2.0.1',
+      'isotope-packery'   => array (
+        'id'      => 'isotope-packery',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/isotope-packery/packery-mode.pkgd.min.js',
+        'deps'    => array('isotope'),
+        'version' => '2.0.0',
         'in_footer' => true,
         'admin'   => false
-      ),
+      ),      
       'homepage'   => array (
         'id'      => 'homepage',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/support/homePageInit.js',

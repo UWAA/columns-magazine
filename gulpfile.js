@@ -147,8 +147,8 @@ gulp.task('library', function() {
 
     //Flickity
 
-    gulp.src('./bower_components/flickity/dist/flickity.css')
-      .pipe(gulp.dest('./less/flickity.less'));
+    // gulp.src('./bower_components/flickity/dist/flickity.css')
+      // .pipe(gulp.dest('./less/flickity.less'));
 
 
 });
