@@ -788,46 +788,16 @@ p.published-date {
   float: left;
   width: 198px;
   height: 178px;
-  padding: 10px;
-  background: red;
-  color: white;
   font-size: 50px;
+}
+.hub-item:hover {
+  opacity: .7;
 }
 .hub-item--width2 {
   width: 399px;
 }
 .hub-item--height2 {
   height: 359px;
-}
-.hub-item:nth-child(10n+0) {
-  background: #ff0000;
-}
-.hub-item:nth-child(10n+1) {
-  background: #ff9900;
-}
-.hub-item:nth-child(10n+2) {
-  background: #ccff00;
-}
-.hub-item:nth-child(10n+3) {
-  background: #33ff00;
-}
-.hub-item:nth-child(10n+4) {
-  background: #00ff66;
-}
-.hub-item:nth-child(10n+5) {
-  background: #00ffff;
-}
-.hub-item:nth-child(10n+6) {
-  background: #0066ff;
-}
-.hub-item:nth-child(10n+7) {
-  background: #3300ff;
-}
-.hub-item:nth-child(10n+8) {
-  background: #cc00ff;
-}
-.hub-item:nth-child(10n+9) {
-  background: #ff0099;
 }
 .home-low {
   margin-left: -15px;
