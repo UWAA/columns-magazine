@@ -5,11 +5,28 @@
   <div class="navbar-header">
 
   
-  <a class="navbar-brand masthead" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <img src="http://fpoimg.com/200x100?text=UWAA%20Logo" alt="Alumni Assn. Logo">      
-    <div class="sub-brand">The University of Washington Alumni Magazine</div>
+  <a class="navbar-brand " href="http://www.uw.edu/alumni/">
+   
   </a>
+  
+  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+   
+  </a>
+  <div class="masthead">
+    <div class="row flex-row">
+    <div class="subtitle">
+      <p>The Univeristy of Washington<br> Alumni Magazine</p>
+    </div>
+        <div class="columns-logo">
+      <img src="<?php echo get_stylesheet_directory_uri();  ?>/assets/logos/Columns_Logo.svg" alt="Columns Online Logo" />    
+    </div>
   </div>
+
+ 
+
+  </div>
+
+  <div class="navigation"></div>
 
 </div>
 

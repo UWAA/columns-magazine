@@ -76,6 +76,8 @@
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
+.columns-navbar:before,
+.columns-navbar:after,
 #uwaa-footer:before,
 #uwaa-footer:after,
 .home-high:before,
@@ -101,6 +103,7 @@
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
+.columns-navbar:after,
 #uwaa-footer:after,
 .home-high:after,
 .home-low:after,
@@ -135,6 +138,8 @@
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
+.columns-navbar:before,
+.columns-navbar:after,
 #uwaa-footer:before,
 #uwaa-footer:after,
 .home-high:before,
@@ -160,6 +165,7 @@
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
+.columns-navbar:after,
 #uwaa-footer:after,
 .home-high:after,
 .home-low:after,
@@ -251,13 +257,167 @@ p {
   color: transparent;
 }
 .columns-navbar {
-  height: 100px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.columns-navbar:before,
+.columns-navbar:after {
+  content: " ";
+  display: table;
+}
+.columns-navbar:after {
+  clear: both;
+}
+.columns-navbar:before,
+.columns-navbar:after {
+  content: " ";
+  display: table;
+}
+.columns-navbar:after {
+  clear: both;
+}
+.columns-navbar:before,
+.columns-navbar:after {
+  content: " ";
+  display: table;
+}
+.columns-navbar:after {
+  clear: both;
+}
+.columns-navbar:before,
+.columns-navbar:after {
+  content: " ";
+  display: table;
+}
+.columns-navbar:after {
+  clear: both;
+}
+.columns-navbar .navbar-brand {
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: none !important;
+  position: relative;
+  background: url(assets/logos/UWAA_Horizontal_Logo.svg);
+  display: block;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: 165px 80px;
+  margin-left: 15px;
+}
+@media (min-width: 992px) {
+  .columns-navbar .navbar-brand {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .columns-navbar .navbar-brand {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .columns-navbar .navbar-brand {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .columns-navbar .navbar-brand {
+    display: block !important;
+  }
+}
+.columns-navbar .flex-row {
+  display: flex;
+  align-items: middle;
+  padding-top: 10px;
+}
+@media (max-width: 991px) {
+  .columns-navbar .flex-row {
+    display: block;
+  }
 }
 .columns-navbar .masthead {
   position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.columns-navbar .masthead .subbrand {
-  display: block;
+@media (min-width: 992px) {
+  .columns-navbar .masthead {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .columns-navbar .masthead {
+    float: left;
+    width: 50%;
+  }
+}
+.columns-navbar .masthead .subtitle {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: right;
+  align-self: center;
+}
+@media (min-width: 992px) {
+  .columns-navbar .masthead .subtitle {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .columns-navbar .masthead .subtitle {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+.columns-navbar .masthead .subtitle P {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+}
+.columns-navbar .masthead .columns-logo {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  align-self: flex-end;
+}
+@media (min-width: 992px) {
+  .columns-navbar .masthead .columns-logo {
+    float: left;
+    width: 58.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .columns-navbar .masthead .columns-logo {
+    float: left;
+    width: 58.33333333%;
+  }
+}
+.columns-navbar .navigation {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .columns-navbar .navigation {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .columns-navbar .navigation {
+    float: left;
+    width: 33.33333333%;
+  }
 }
 ul.uwaa-social {
   padding-left: 0;

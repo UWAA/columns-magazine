@@ -1,16 +1,69 @@
 // Header.less
 
-.columns-navbar {
-	height: 100px;
+.columns-navbar {	
+	.make-row();
+
 	
 
-	.masthead {
-		position: relative;		
+	.navbar-brand {
+		.make-md-column(2);		
+		.visible-lg-block;
+		.visible-md-block;
+		// .visible-sm-block;
+		position: relative;
+    	background: url(assets/logos/UWAA_Horizontal_Logo.svg);
+    	display: block;
+    	height: 80px;
+    	background-repeat: no-repeat;
+    	background-size: 165px 80px;
+    	margin-left: 15px;
 
-		.subbrand {
-			display: block;
+		}
+
+		.flex-row{
+			display: flex;
+			align-items: middle;
+			padding-top:10px;
+
+			@media (max-width: @screen-sm-max) { 
+    		display: block;
+    		}
+
+
+		}
+		.masthead {			
+			.make-md-column(6);
+
+
+
+			.subtitle {				
+				.make-md-column(5);				
+				text-align: right;
+				align-self:center;
+
+				P {
+					margin:0;					
+					font-family: 'Open Sans', sans-serif;
+					text-transform: uppercase;
+					font-weight: 600;
+					font-size: 12px;				
+				}
+				
+			}
+
+
+			.columns-logo{
+				.make-md-column(7);				
+				align-self:flex-end;
+				
+			}
+
+
 			
 		}
+
+		.navigation {
+			.make-md-column(4);
 		}
 
 	}
