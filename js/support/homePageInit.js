@@ -19,12 +19,13 @@ jQuery(document).ready(function($) {
     contain: true    
   });
 
-  // $('.modal-content').flickity({
-  //   cellSelector: '.modal-cell',
-  //   cellAlign: 'left',        
-  //   pageDots: false,
-  //   draggable: false
-  // });
+  var $hubFlickity = $('.gallery').flickity({
+    cellSelector: '.hub_modal_gallery_item',
+    cellAlign: 'left',        
+    pageDots: false,
+    draggable: false,
+    adaptiveHeight: true
+  });
 
 // init Isotope
 var $grid = $('#hub').isotope({
@@ -40,10 +41,21 @@ var $grid = $('#hub').isotope({
 
 
 
+
+// flickity UI, maybe pull this out...
+// 
  $('#HUB_Modal').on( 'shown.bs.modal', function( event ) {
-  $('.gallery').flickity('resize');
- console.log('eh?');
+  $('.gallery').flickity('resize'); 
 });
+
+var $hubItemGroup = $('#hub');
+var $hubItems = $hubItemGroup.find('.hub-item');
+
+$hubItemGroup.on( 'click', '.hub-item', function() {
+  var index = $(this).index();
+  $hubFlickity.flickity( 'select', index );
+});
+
 
 
 

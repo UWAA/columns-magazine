@@ -67,7 +67,7 @@ if ( $query->have_posts() ) {
       <div class="modal-container modal fade" id="HUB_Modal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-body">              
               <div class="gallery" data-flickity='{ "cellAlign": "left", "contain": true, "cellSelector" : ".hub_modal_gallery_item" }'>
 
 
@@ -80,10 +80,11 @@ if ( $query->have_posts() ) {
                   <div class="hub_modal_gallery_item" >
                     <img src="<?php echo $modalImage['url'];  ?>" alt="<?php echo $modalImage['alt']; ?>">
 
-
-                    <p class="category"><?php the_terms(get_the_ID(), 'category' )  ?> <span class="published-date"><?php echo wp_kses(get_the_date(), Utilities::$allowedHTML); ?></span></p>
-                    <h3 class="title"><a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?></a> </h3>
-                    <p class="excerpt"><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 60, '...'); ?></p>      
+                    <div class="hub_modal_copy">
+                      <p class="category"><?php the_terms(get_the_ID(), 'category', '', ' | ' );   ?> <span class="published-date"><?php echo wp_kses(get_the_date(  ), Utilities::$allowedHTML); ?></span></p>
+                      <h3 class="title"><a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?></a> </h3>
+                      <p class="excerpt"><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 60, '...'); ?></p>      
+                    </div>
 
 
                   </div>

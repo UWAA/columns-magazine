@@ -35,7 +35,7 @@ if ( $query->have_posts() ) {
 
     if (get_field("columns_feature_image")) {
 
-        $feature = get_field("columns_feature_image");
+        $feature = (get_field("columns_alternate_feature_image") ? get_field("columns_alternate_feature_image") : get_field("columns_feature_image") );
         $textStyles = array();
         $inlineTextStyles = false;
 

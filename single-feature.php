@@ -11,13 +11,13 @@ use \Columns\Utilities as Utilities;
 
 while ( have_posts() ) : the_post(); 
 // check if the flexible content field has rows of data
-// 
+
+$feature = get_field("columns_feature_image");
+
 ?>
 
 <div class="row">
-    <div class="headline-image">
-    
-    </div>
+     <div class="headline-image" style="background-image: url('<?php echo esc_attr($feature['url']); ?>')"></div>
 </div>
 
 <div class="row">
