@@ -49,30 +49,59 @@ if ( $query->have_posts() ) {
 
 
 
-
+        if ($storyImage){  
         ?>
 
+        <div class="hub-item <?php echo $hubShape; ?> ">          
+          
+            <img src="<?php echo $storyImage['sizes'][$hubCropSize];  ?>" alt="<?php echo $storyImage['alt']; ?>" data-toggle="modal" data-target="#HUB_Modal">
 
-        <div class="hub-item <?php echo $hubShape; ?> ">
-          <?php 
-          if ($storyImage){  ?>
-
-            <img src="<?php echo $storyImage['sizes'][$hubCropSize];  ?>" alt="<?php echo $storyImage['alt']; ?>">
-
-
-          <?php         
-
+            </div>
+      <?php 
         }
 
+      } //endwhile ?>
 
-          ?>
+      <!-- modal -->
 
+      <div class="modal-container modal fade" id="HUB_Modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="gallery" data-flickity='{ "cellAlign": "left", "contain": true, "cellSelector" : ".hub_modal_gallery_item" }'>
+
+
+                <?php 
+                wp_reset_postdata();
+                while ( $query->have_posts() ) {
+                  $query->the_post();
+                  $modalImage = get_field("columns_hub_image");
+                  ?>
+                  <div class="hub_modal_gallery_item" >
+                    <img src="<?php echo $modalImage['url'];  ?>" alt="<?php echo $modalImage['alt']; ?>">
+
+
+                    <p class="category"><?php the_terms(get_the_ID(), 'category' )  ?> <span class="published-date"><?php echo wp_kses(get_the_date(), Utilities::$allowedHTML); ?></span></p>
+                    <h3 class="title"><a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?></a> </h3>
+                    <p class="excerpt"><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 60, '...'); ?></p>      
+
+
+                  </div>
+
+                  <?php 
+
+
+
+                } 
+                ?>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
         
 
-<?php
-
-    }
+<?php    
     
     /* Restore original Post Data */
     wp_reset_postdata();
