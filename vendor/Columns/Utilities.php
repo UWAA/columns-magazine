@@ -16,10 +16,9 @@ class Utilities{
 
 		add_action( 'admin_menu', array($this, 'renamePostsToShortContent') );
 		add_action( 'init', array($this, 'updatePostLabelsForShortContent') );
+        add_action('admin_menu', array($this, 'addIssueControlOptionsPage'));
 
 	}	
-
-
 
     
 	public function renamePostsToShortContent() {
@@ -44,6 +43,20 @@ class Utilities{
 			$labels->search_items = 'Search Short Content';
 			$labels->not_found = 'No Short Content found';
 			$labels->not_found_in_trash = 'No Short Content found in Trash';
-	}	
+	}
+
+    public function addIssueControlOptionsPage() {
+        if( function_exists('acf_add_options_page') ) {
+    
+            acf_add_options_page(array(
+                'page_title'    => 'Issue Settings',
+                'menu_title'    => 'Issue Settings',
+                'menu_slug'     => 'issue-general-settings',
+                'capability'    => 'edit_posts',
+                'redirect'      => false
+            ));    
+        
+        }
+    }	
 
 }

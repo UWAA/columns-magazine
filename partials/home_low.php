@@ -1,6 +1,42 @@
 <div class="row">
 
 <div class="current-issue">
+<?php
+
+// check if the repeater field has rows of data
+if( have_rows('columns_print_issues', 'options') ):
+
+  // loop through the rows of data
+    while ( have_rows('columns_print_issues', 'options') ) : the_row();
+
+    if(get_sub_field('is_current_issue') == true) {
+        // display a sub field value
+        $coverImage = get_sub_field('columns_issue_cover_image');
+        $issuuURL = get_sub_field('columns_issuu_url');
+        $issuePDF = get_sub_field('columns_issue_pdf');
+
+    ?>
+    <p>current issue</p>
+    <a href="<?php echo $issuuURL; ?>">
+    <div class="center-block">
+    <img src="<?php echo $coverImage['url'];  ?>" alt="<?php echo $coverImage['alt']; ?>">
+    </a>
+    </div>
+    <a class="pdf-link" href="<?php echo $issuePDF['url']; ?>">view pdf</a>
+
+
+  <?php
+    }     
+
+    endwhile;
+
+else :
+
+    // no rows found
+
+endif;
+
+?>
 
 </div>
     
