@@ -79,6 +79,18 @@ if( have_rows('feature_content') ):
 
         <?php
 
+        elseif( get_row_layout() == 'columns-split-feature' ): 
+        ?>
+
+        <div class="container-fluid">
+            <div class="split-left"></div>
+            <div class="split-right"></div>
+        </div>
+
+           
+
+        <?php
+
         elseif( get_row_layout() == 'columns_featured_writer_byline' ): ?>
 
 
