@@ -86,8 +86,7 @@ if ( $query->have_posts() ) {
 
                                 </h2>
                                 <!-- New ternary here to pull in a editorial headline  -->
-                                <p <?php echo ($inlineTextStyles ? $inlineTextStyles : ''); ?> ><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 15, '...'); ?></p>                                
-                                <?php echo get_the_term_list(get_the_ID(), 'post_tag', '<ul class="tag-list"><li>', '</li><li>', '</li></ul>' );    ?>
+                                <p <?php echo ($inlineTextStyles ? $inlineTextStyles : ''); ?> ><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 15, '...'); ?></p>
                     </a>
                     </div>
                 </div>
