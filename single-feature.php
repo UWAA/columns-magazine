@@ -91,9 +91,14 @@ if( have_rows('feature_content') ):
             <div class="columns-feature-content">
             <div class="row">
             <div class="blockquote">
+            <?php if(get_sub_field('isQuote') == 1): ?>
                 <p class="quote-text"><span class="leftquote">&ldquo;</span><?php the_sub_field('quote_text'); ?><span class="rightquote">&rdquo;</span></p>
                 <p class="cutline"><?php the_sub_field('quote_quotee'); ?></p>
             </div>
+        <?php else: ?>
+            <p class="quote-text"><?php the_sub_field('quote_text'); ?></p>
+
+        <?php endif; ?>
              </div>
         </div>
 
