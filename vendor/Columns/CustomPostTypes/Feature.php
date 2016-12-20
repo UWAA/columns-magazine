@@ -39,7 +39,7 @@ class Feature
 		'filter_items_list'     => __( 'Filter features list', 'text_domain' ),
 	);
 	$args = array(
-		'label'                 => __( 'Feature', 'text_domain' ),
+		'label'                 => __( 'Features', 'text_domain' ),
 		'description'           => __( 'Feature-Length Articles', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),

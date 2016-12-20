@@ -11,7 +11,8 @@ class Columns
     {
         
         $this->wp = $wp;
-        $this->init();        
+        $this->init();
+        // $this->Breadcrumbs = new Breadcrumbs();
     }
 
 
@@ -34,6 +35,7 @@ class Columns
 
 
         new Utilities;
+
 
     }
 }
