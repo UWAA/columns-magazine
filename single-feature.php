@@ -186,8 +186,11 @@ if( have_rows('feature_content') ):
                         elseif(get_row_layout() == 'split_image_content'):
                             $rightSplitImage = get_field('split_image');
         ?>
-            <p>I'm an image.</p>
-                <img src="<?php echo $rightSplitImage['url'];  ?>" alt="<?php echo $rightSplitImage['alt']; ?>">
+            
+                
+                <div class="split-img-container" style="background-image: url('<?php echo esc_attr($rightSplitImage['url']);  ?>')">
+                    <?php // echo $leftSplitImage['alt'];  Need a11y alt tagging scheme ?>  
+                </div>
 
         <?php
                 elseif(get_row_layout() == 'quote_content') :
