@@ -1,7 +1,12 @@
 // 50/50 Split column Layout
 
 .split-left, .split-right {    
-    .make-sm-column(6);    
+    .make-sm-column(6);
+    min-height: 300px;
+
+    &:nth-child(even) {
+        background-color: @lightgray;
+    }
 
 
     p {
@@ -11,7 +16,26 @@
     text-align: left;
     padding: 15px 15px 10px 30px;
     margin: 0 auto;
+    min-height: 300px;
 }
+
+    .split-img-container {        
+        max-height: 300px;
+        overflow: hidden;
+    }
+
+    img {        
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        
+
+        // overflow on top and bottom is invisible
+
+        //responsive this gets smaller
+    }
+
 
 }
 

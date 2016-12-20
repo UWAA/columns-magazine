@@ -134,8 +134,9 @@ if( have_rows('feature_content') ):
 
                       
         ?>
-            
-                <img src="<?php echo $leftSplitImage['url'];  ?>" alt="<?php echo $leftSplitImage['alt']; ?>">
+                <div class="split-img-container">
+                    <img src="<?php echo $leftSplitImage['url'];  ?>" alt="<?php echo $leftSplitImage['alt']; ?>">
+                </div>
 
         <?php
                         endif;
