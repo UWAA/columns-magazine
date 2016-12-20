@@ -3,10 +3,9 @@
 .split-left, .split-right {    
     .make-sm-column(6);
     min-height: 300px;
-
-    &:nth-child(even) {
-        background-color: @lightgray;
-    }
+    margin-bottom: 15px; 
+    padding-right: 0;
+    padding-left: 0;   
 
 
     p {
@@ -16,31 +15,34 @@
     text-align: left;
     padding: 15px 15px 10px 30px;
     margin: 0 auto;
-    min-height: 300px;
+    
 }
 
-    .split-img-container {        
-        max-height: 300px;
-        overflow: hidden;
+    .split-copy-container {
+        min-height: 300px;    
     }
 
-    img {        
-        width: auto;
-        height: auto;
-        min-width: 100%;
-        min-height: 100%;
+    .split-img-container {                
+        background-size: auto 100%;
+        min-height: 300px;
+        background-repeat: no-repeat;
+        background-origin: border-box;
+        background-position: center center;
+    }
+    
         
 
         // overflow on top and bottom is invisible
 
         //responsive this gets smaller
-    }
+    
 
 
 }
 
 .split-feature-row{
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 15px;    
+
 }
 

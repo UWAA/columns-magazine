@@ -23,7 +23,8 @@ jQuery(document).ready(function($) {
     cellSelector: '.hub_modal_gallery_item',
     cellAlign: 'left',        
     pageDots: false,
-    draggable: false,    
+    draggable: false,
+    adaptiveHeight: true
   });
 
 // init Isotope

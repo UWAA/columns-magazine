@@ -1032,13 +1032,13 @@ p {
 @media (min-width: 768px) {
   .home-low .current-issue {
     float: left;
-    width: 25%;
+    width: 20%;
   }
 }
 @media (min-width: 768px) {
   .home-low .current-issue {
     float: left;
-    width: 25%;
+    width: 20%;
   }
 }
 .home-low .current-issue p {
@@ -1081,8 +1081,8 @@ p {
 }
 .home-low .feature-row .carousel-cell {
   padding: 20px;
-  width: 35%;
-  height: auto;
+  width: 28.8%;
+  height: 300px;
   margin-right: 10px;
   counter-increment: gallery-cell;
   border-right: 2px dotted;
@@ -1332,6 +1332,9 @@ p {
   padding-left: 15px;
   padding-right: 15px;
   min-height: 300px;
+  margin-bottom: 15px;
+  padding-right: 0;
+  padding-left: 0;
 }
 @media (min-width: 768px) {
   .split-left,
@@ -1346,10 +1349,6 @@ p {
     float: left;
     width: 50%;
   }
-}
-.split-left:nth-child(even),
-.split-right:nth-child(even) {
-  background-color: #7d7d7d;
 }
 .split-left p,
 .split-right p {
@@ -1359,19 +1358,18 @@ p {
   text-align: left;
   padding: 15px 15px 10px 30px;
   margin: 0 auto;
+}
+.split-left .split-copy-container,
+.split-right .split-copy-container {
   min-height: 300px;
 }
 .split-left .split-img-container,
 .split-right .split-img-container {
-  max-height: 300px;
-  overflow: hidden;
-}
-.split-left img,
-.split-right img {
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
+  background-size: auto 100%;
+  min-height: 300px;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-position: center center;
 }
 .split-feature-row {
   margin-top: 15px;

@@ -108,7 +108,7 @@ if( have_rows('feature_content') ):
         ?>
         
         
-        <div class="row split-feature-row">
+        <div class="row split-feature-row no-gutter">
 
         <?php 
                 if (have_rows('left_column')):
@@ -122,33 +122,44 @@ if( have_rows('feature_content') ):
         <?php            
 
                 if(get_row_layout() == 'split_copy_content') :
-
-
-                    the_sub_field('copy', 'true');
-               
-                
-                elseif(get_row_layout() == 'split_image_content') :
-                    
+        ?>
+                    <div class="split-copy-container" style="background-color:<?php echo esc_attr(get_sub_field('background_color')); ?>">
+                        <p style="color:<?php echo esc_attr(get_sub_field('text_color')); ?>">
+                            <?php the_sub_field('copy', FALSE); ?>
+                        </p>
+                    </div>
+        <?php        
+                elseif(get_row_layout() == 'split_image_content') :                    
                          
-                            $leftSplitImage = get_sub_field('split_image');
+                    $leftSplitImage = get_sub_field('split_image');                      
+        ?>            
 
-                      
-        ?>
-                <div class="split-img-container">
-                    <img src="<?php echo $leftSplitImage['url'];  ?>" alt="<?php echo $leftSplitImage['alt']; ?>">
+                <div class="split-img-container" style="background-image: url('<?php echo esc_attr($leftSplitImage['url']);  ?>')">
+                    <?php // echo $leftSplitImage['alt'];  Need a11y alt tagging scheme ?>  
                 </div>
 
         <?php
-                        endif;
+                elseif(get_row_layout() == 'quote_content') :
         ?>
 
-                </div>
+                    <div class="split-copy-container" style="background-color:<?php echo esc_attr(get_sub_field('background_color')); ?>">
+                        <p class="quote-text" style="color:<?php echo esc_attr(get_sub_field('text_color')); ?>"><span class="leftquote">&ldquo;</span><?php the_sub_field('quote', FALSE); ?><span class="rightquote">&rdquo;</span>
+                        </p>
+                        <p class="cutline"><?php the_sub_field('quotee', FALSE); ?></p>
+                    </div>
+
+                
 
 
         <?php
-                    endwhile;  //Left Column
 
                 endif;
+
+                echo "</div>";  //sketchy
+                    
+            endwhile;  //Left Column
+
+        endif;
 
         ?>
 
@@ -164,7 +175,11 @@ if( have_rows('feature_content') ):
 
                         ?>                            
                         
-                          <?php  the_sub_field('copy', 'true'); ?>
+                         <div class="split-copy-container" style="background-color:<?php echo esc_attr(get_sub_field('background_color')); ?>">
+                            <p style="color:<?php echo esc_attr(get_sub_field('text_color')); ?>">
+                                <?php the_sub_field('copy', FALSE); ?>
+                            </p>
+                        </div>
                         
 
                         <?php 
@@ -175,14 +190,25 @@ if( have_rows('feature_content') ):
                 <img src="<?php echo $rightSplitImage['url'];  ?>" alt="<?php echo $rightSplitImage['alt']; ?>">
 
         <?php
-                        endif;
+                elseif(get_row_layout() == 'quote_content') :
         ?>
 
-                </div>
+                    <div class="split-copy-container" style="background-color:<?php echo esc_attr(get_sub_field('background_color')); ?>">
+                        <p class="quote-text" style="color:<?php echo esc_attr(get_sub_field('text_color')); ?>"><span class="leftquote">&ldquo;</span><?php the_sub_field('quote', FALSE); ?><span class="rightquote">&rdquo;</span>
+                        </p>
+                        <p class="cutline"><?php the_sub_field('quotee', FALSE); ?></p>
+                    </div>
+
+                
 
 
         <?php
-                    endwhile;  //Right Column
+
+                endif;
+
+                echo "</div>";  //sketchy
+                    
+            endwhile;  //Left Column
 
                 endif;
 

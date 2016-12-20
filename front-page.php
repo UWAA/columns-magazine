@@ -22,8 +22,6 @@ wp_enqueue_script('isotope-packery');
 </div>
 
 <div class="row hub-row" id="hub">
-
-
 	
 	<!-- Masonry here, plus output of all the stuff needed to run it -->
     <?php get_template_part("partials/home_hub") ?>
