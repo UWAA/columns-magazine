@@ -184,7 +184,7 @@ if( have_rows('feature_content') ):
 
                         <?php 
                         elseif(get_row_layout() == 'split_image_content'):
-                            $rightSplitImage = get_field('split_image');
+                            $rightSplitImage = get_sub_field('split_image');
         ?>
             
                 
