@@ -94,12 +94,13 @@ if( have_rows('feature_content') ):
             <?php if(get_sub_field('isQuote') == 1): ?>
                 <p class="quote-text"><span class="leftquote">&ldquo;</span><?php the_sub_field('quote_text'); ?><span class="rightquote">&rdquo;</span></p>
                 <p class="cutline"><?php the_sub_field('quote_quotee'); ?></p>
-            </div>
+            
         <?php else: ?>
             <p class="quote-text"><?php the_sub_field('quote_text'); ?></p>
 
         <?php endif; ?>
              </div>
+        </div>
         </div>
 
         <?php
@@ -108,7 +109,7 @@ if( have_rows('feature_content') ):
         ?>
         
         
-        <div class="row split-feature-row no-gutter">
+        <div class="row split-feature-row">
 
         <?php 
                 if (have_rows('left_column')):
