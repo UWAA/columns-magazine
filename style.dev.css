@@ -987,6 +987,7 @@ p.excerpt {
 #hub {
   width: auto;
   height: 362px;
+  box-shadow: -1px 2px 2px #d9d9d9, 0px -2px 2px #d9d9d9;
 }
 /* ---- .element-item ---- */
 .hub-item {
@@ -995,7 +996,6 @@ p.excerpt {
   width: 198px;
   height: 178px;
   font-size: 50px;
-  box-shadow: -1px 2px 2px #767676, 0px -2px 2px #767676;
 }
 .hub-item:hover {
   opacity: .7;
