@@ -66,9 +66,9 @@ $args = array (
 
 
           <div class="feature-cell">            
+                <a href="<?php echo get_permalink() ?>">                                           
             <div class="background-image" style="background-image: url('<?php echo esc_attr($feature['url']); ?>')">
               <div class="title-area" <?php echo $overlay ?> >
-                <a href="<?php echo get_permalink() ?>">                                           
                   <h2 <?php echo ($inlineTextStyles ? $inlineTextStyles : ''); ?> >
                     
                     <?php 
@@ -88,9 +88,9 @@ $args = array (
                   </h2>
                   <!-- New ternary here to pull in a editorial headline  -->
                   <p <?php echo ($inlineTextStyles ? $inlineTextStyles : ''); ?> ><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 15, '...'); ?></p>
-                </a>
               </div>
             </div>
+                </a>
           </div>
 
           

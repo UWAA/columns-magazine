@@ -15,10 +15,10 @@ if( have_rows('columns_print_issues', 'options') ):
 
     ?>
     <p>current issue</p>
-    <a href="<?php echo $issuuURL; ?>">
+    <!-- <a href="<?php // echo $issuuURL; ?>"> -->
     <div class="center-block">
     <img src="<?php echo $coverImage['url'];  ?>" alt="<?php echo $coverImage['alt']; ?>">
-    </a>
+    <!-- </a> -->
     </div>
     <a class="pdf-link" href="<?php echo $issuePDF['url']; ?>">view pdf</a>
 
