@@ -29,3 +29,28 @@ p {
     color: @janegray;
     margin: 0 0 2px 0;
 }
+
+a.more {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: @link;
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    line-height: 1.2;
+
+
+    &:after {
+    background: url(assets/uwaa-sprite.svg) -228px -493px no-repeat;    
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 5px;
+    width: 14px;
+    height: 21px;
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    position: absolute;
+    bottom: 0;    
+    }
+
+}

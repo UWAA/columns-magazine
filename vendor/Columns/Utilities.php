@@ -18,7 +18,8 @@ class Utilities{
 		add_action( 'init', array($this, 'updatePostLabelsForShortContent') );
         add_action('admin_menu', array($this, 'addIssueControlOptionsPage'));
         add_filter( 'pre_get_posts', array($this, 'namespace_add_custom_types' ));
-
+        add_filter( 'excerpt_length', array($this, 'customizeColumnsExcerptLength'), 999);
+        add_filter( 'excerpt_more', array($this, 'wpdocs_excerpt_more' ),999);
 	}	
 
     
@@ -61,13 +62,20 @@ class Utilities{
     }	
 
     public function namespace_add_custom_types( $query ) {
-  if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
-    $query->set( 'post_type', array(
-     'post', 'nav_menu_item', 'feature'
-        ));
-      return $query;
+        if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters']   )   ) {      
+          $query  ->set( 'post_type', array(        
+           'post', 'nav_menu_item', 'feature'   
+              ));
+            return $query;
+        }
     }
-}
 
+    public function customizeColumnsExcerptLength( $length ) {
+        return 25;
+    }
+
+    public function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
 
 }
