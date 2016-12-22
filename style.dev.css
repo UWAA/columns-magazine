@@ -471,13 +471,13 @@ a.more:after {
 .blockquote p span {
   color: #4b2e83;
   font-size: 100px;
-  line-height: 84px;
 }
 .blockquote p span.leftquote {
   float: left;
   padding-right: 8px;
   padding-left: 3px;
   font-weight: 600;
+  margin-top: -26px;
 }
 .blockquote p span.rightquote {
   font-size: 36px;
@@ -486,6 +486,9 @@ a.more:after {
 }
 .blockquote p.cutline {
   color: #767676;
+  font-weight: 600;
+  margin-top: -10px;
+  font-size: 14px;
   text-align: right;
   text-transform: uppercase;
 }
@@ -599,6 +602,11 @@ a.more:after {
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+  .columns-navbar .navbar-brand {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
   .columns-navbar .navbar-brand {
     display: block !important;
   }
@@ -1098,11 +1106,34 @@ ul.uwaa-social li a:focus.email {
   padding-left: 15%;
   padding-right: 15px;
 }
+@media (max-width: 991px) {
+  .home-feature-carousel .feature-cell .title-area {
+    width: 70%;
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .home-feature-carousel .feature-cell .title-area {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+}
 .home-feature-carousel .feature-cell .title-area h2 {
   font-size: 60px;
   font-family: 'Merriweather', serif;
   line-height: 1;
   padding-right: 5%;
+}
+@media (max-width: 991px) {
+  .home-feature-carousel .feature-cell .title-area h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .home-feature-carousel .feature-cell .title-area h2 {
+    font-size: 36px;
+  }
 }
 .home-feature-carousel .feature-cell .title-area p {
   color: #ffffff;
@@ -1110,25 +1141,15 @@ ul.uwaa-social li a:focus.email {
   font-size: 17px;
   line-height: 1.7;
 }
-.home-feature-carousel .feature-cell .title-area .tag-list {
-  list-style: none;
-  text-transform: uppercase;
-  text-shadow: none;
-  text-align: right;
+@media (max-width: 991px) {
+  .home-feature-carousel .feature-cell .title-area p {
+    line-height: 1.5;
+  }
 }
-.home-feature-carousel .feature-cell .title-area .tag-list a:hover {
-  text-decoration: underline;
-}
-.home-feature-carousel .feature-cell .title-area .tag-list li {
-  display: inline-block;
-  cursor: pointer;
-}
-.home-feature-carousel .feature-cell .title-area .tag-list li:after {
-  content: '  |   ';
-  color: #85754d;
-}
-.home-feature-carousel .feature-cell .title-area .tag-list li:last-child:after {
-  content: '';
+@media (max-width: 767px) {
+  .home-feature-carousel .feature-cell .title-area p {
+    font-size: 14px;
+  }
 }
 .home-feature-carousel .flickity-page-dots {
   bottom: 25px;
@@ -1199,6 +1220,11 @@ ul.uwaa-social li a:focus.email {
 .copy-block {
   padding-right: 10px;
 }
+@media (max-width: 991px) {
+  .copy-block {
+    padding-right: 25px;
+  }
+}
 .home .category {
   line-height: 0;
   margin-bottom: 8px;
@@ -1248,6 +1274,11 @@ p.excerpt {
   height: 359px;
   box-shadow: -1px 2px 2px #d9d9d9, 0px -2px 2px #d9d9d9;
   margin: 30px 0;
+}
+@media (max-width: 991px) {
+  #hub {
+    margin: 0;
+  }
 }
 /* ---- .element-item ---- */
 .hub-item {
@@ -1346,6 +1377,14 @@ p.excerpt {
     width: 20.83333333%;
   }
 }
+@media (max-width: 992px) {
+  .home-low .current-issue {
+    padding-right: 15px;
+  }
+}
+.home-low .current-issue div {
+  margin-bottom: 5px;
+}
 .home-low .current-issue p {
   margin: 20px 0 15px -30px;
   text-transform: uppercase;
@@ -1358,29 +1397,14 @@ p.excerpt {
 }
 .home-low .current-issue a.pdf-link {
   margin: 15px 0 10px -74px;
-  text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 1.2;
-  letter-spacing: 1px;
-  color: #767676;
+  font-size: 14px;
 }
 .home-low .feature-row {
-  margin-bottom: 30px;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-}
-.home-low .feature-row .flickity-prev-next-button {
-  background: none;
-}
-.home-low .feature-row .flickity-prev-next-button.previous {
-  left: -3px;
-}
-.home-low .feature-row .flickity-prev-next-button.next {
-  right: 30px;
 }
 @media (min-width: 768px) {
   .home-low .feature-row {
@@ -1759,4 +1783,21 @@ p.excerpt {
 }
 #uwaa-footer {
   margin-top: 50px;
+}
+@media (max-width: 992px) {
+  #uwaa-footer {
+    margin-top: 30px;
+  }
+}
+.flickity-prev-next-button {
+  background: none;
+}
+.flickity-prev-next-button:hover {
+  background: none;
+}
+.flickity-prev-next-button.previous {
+  left: -3px;
+}
+.flickity-prev-next-button.next {
+  right: 30px;
 }

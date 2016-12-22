@@ -44,4 +44,25 @@
 
 #uwaa-footer {
     margin-top: 50px;
+
+     @media (max-width: @screen-md-min) { 
+     margin-top: 30px;
+    }
 }
+
+.flickity-prev-next-button {
+    background: none;
+
+    &:hover {
+        background: none;
+    }
+
+    &.previous{
+    left: -3px;
+    }
+
+  &.next {
+    right: 30px;
+  }
+
+  }
