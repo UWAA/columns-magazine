@@ -20,6 +20,8 @@ class Utilities{
         add_filter( 'pre_get_posts', array($this, 'namespace_add_custom_types' ));
         add_filter( 'excerpt_length', array($this, 'customizeColumnsExcerptLength'), 999);
         add_filter( 'excerpt_more', array($this, 'wpdocs_excerpt_more' ),999);
+        // add_filter('excerpt_more', '__return_false', 999 );
+        // add_filter('the_excerpt', array($this, 'excerpt_more_override'), 999);
 	}	
 
     
@@ -71,11 +73,16 @@ class Utilities{
     }
 
     public function customizeColumnsExcerptLength( $length ) {
-        return 27;
+        return 25;
     }
 
     public function wpdocs_excerpt_more( $more ) {
     return '...';
-}
+    }
+
+   public function excerpt_more_override($excerpt)
+  {
+    return $excerpt . '<div><a class="more" href="' . get_permalink() . '">more</a></div>';
+  }
 
 }

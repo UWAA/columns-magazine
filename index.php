@@ -2,9 +2,8 @@
 get_header("columns");
 use \Columns\Utilities as Utilities;
 
-?><div class="archive-header">
-<h1><?php echo Columns ?></h1>
-    
+?>
+<div class="single-header">    
 </div>
 
 <div class="container-fluid">
