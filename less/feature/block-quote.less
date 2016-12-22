@@ -3,12 +3,20 @@
    font-weight: 400;
    line-height: 1.4;
 
+   @media (max-width: @screen-xs-max) { 
+     line-height: 1.15;
+    }
+
 
    &.quote-text {
     color: @purple;
     font-size: 36px;
     margin-left: -120px;
     margin-right: -120px;
+
+    @media (max-width: @screen-sm-max) { 
+     margin: 0 0 15px 0;
+    }
    }
 
 span {
@@ -22,6 +30,10 @@ span {
     padding-left: 3px;
     font-weight: 600;
     margin-top: -26px;
+
+    @media (max-width: @screen-sm-max) { 
+     margin-left: -10px;
+    }
    }
 
    &.rightquote {
@@ -41,5 +53,9 @@ span {
     font-size: 14px;
     text-align: right;
     text-transform: uppercase;
+
+    @media (max-width: @screen-sm-max) { 
+     margin-top: 0;
+    }
    }
 }

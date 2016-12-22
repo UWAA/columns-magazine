@@ -1,6 +1,10 @@
 .columns-feature-content {
     .container();
     max-width: @columns-max-container-width;
+
+    @media (max-width: @screen-sm-max) { 
+      padding: 0 45px;
+    }
 }
 
 
@@ -42,12 +46,16 @@
     font-size: 17px;
     line-height: 1.55;
     color: @janegray;
-    margin-bottom: 20.5px;   
+    margin-bottom: 20.5px;
+
+     @media (max-width: @screen-sm-max) { 
+     font-size: 16px;
+    }
 
     &.byline {
     font-weight: 600;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: @lightgray;

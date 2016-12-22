@@ -321,6 +321,11 @@ a.more:after {
     margin-left: 0;
   }
 }
+@media (max-width: 991px) {
+  .columns-feature-content {
+    padding: 0 45px;
+  }
+}
 .headline-image {
   height: 670px;
   background-position: center 0;
@@ -360,10 +365,15 @@ a.more:after {
   color: #3d3d3d;
   margin-bottom: 20.5px;
 }
+@media (max-width: 991px) {
+  .single p {
+    font-size: 16px;
+  }
+}
 .single p.byline {
   font-weight: 600;
   font-size: 12px;
-  line-height: 1.2;
+  line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #767676;
@@ -418,6 +428,12 @@ a.more:after {
     width: 50%;
   }
 }
+@media (max-width: 991px) {
+  .split-left,
+  .split-right {
+    margin-bottom: 0;
+  }
+}
 .split-left p,
 .split-right p {
   font-family: 'Open Sans', sans-serif;
@@ -433,11 +449,11 @@ a.more:after {
 }
 .split-left .split-img-container,
 .split-right .split-img-container {
-  background-size: auto 100%;
+  background-size: auto auto;
   min-height: 300px;
   background-repeat: no-repeat;
   background-origin: border-box;
-  background-position: center center;
+  background-position: center right;
 }
 .split-feature-row {
   margin-top: 15px;
@@ -462,11 +478,21 @@ a.more:after {
   font-weight: 400;
   line-height: 1.4;
 }
+@media (max-width: 767px) {
+  .blockquote p {
+    line-height: 1.15;
+  }
+}
 .blockquote p.quote-text {
   color: #4b2e83;
   font-size: 36px;
   margin-left: -120px;
   margin-right: -120px;
+}
+@media (max-width: 991px) {
+  .blockquote p.quote-text {
+    margin: 0 0 15px 0;
+  }
 }
 .blockquote p span {
   color: #4b2e83;
@@ -478,6 +504,11 @@ a.more:after {
   padding-left: 3px;
   font-weight: 600;
   margin-top: -26px;
+}
+@media (max-width: 991px) {
+  .blockquote p span.leftquote {
+    margin-left: -10px;
+  }
 }
 .blockquote p span.rightquote {
   font-size: 36px;
@@ -491,6 +522,11 @@ a.more:after {
   font-size: 14px;
   text-align: right;
   text-transform: uppercase;
+}
+@media (max-width: 991px) {
+  .blockquote p.cutline {
+    margin-top: 0;
+  }
 }
 /* Demo 2 */
 .site-search input {
@@ -1386,6 +1422,7 @@ p.excerpt {
 @media (max-width: 992px) {
   .home-low .current-issue {
     padding-right: 15px;
+    border-right: none;
   }
 }
 .home-low .current-issue div {
@@ -1432,8 +1469,9 @@ p.excerpt {
   counter-increment: gallery-cell;
   border-right: 2px dotted;
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .home-low .feature-row .carousel-cell {
+    min-width: 320px;
     width: 100%;
   }
 }

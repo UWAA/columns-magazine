@@ -19,7 +19,9 @@ jQuery(document).ready(function($) {
     cellSelector: '.carousel-cell',
     cellAlign: 'left',
     pageDots: false,
-    contain: true    
+    contain: true,
+    resize: true,
+    dragThreshold: 10
   });
 
   var $hubFlickity = $('.gallery').flickity({
@@ -27,7 +29,7 @@ jQuery(document).ready(function($) {
     cellAlign: 'left',        
     pageDots: false,
     draggable: false,
-    adaptiveHeight: false,
+    adaptiveHeight: false
   });  
 
 // init Isotope
