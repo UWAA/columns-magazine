@@ -81,7 +81,7 @@ if ( $query->have_posts() ) {
                     <img src="<?php echo $modalImage['url'];  ?>" alt="<?php echo $modalImage['alt']; ?>">
 
                     <div class="hub_modal_copy">
-                      <p class="category"><?php the_terms(get_the_ID(), 'category', '', ' | ' );   ?> <span class="published-date"><?php echo wp_kses(get_the_date(  ), Utilities::$allowedHTML); ?></span></p>
+                      <p class="category"><?php the_terms(get_the_ID(), 'category', '', ' | ', ' | ' );   ?> <span class="published-date"><?php echo wp_kses(get_the_date(  ), Utilities::$allowedHTML); ?></span></p>
                       <h3 class="title"><a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?></a> </h3>
                       <p class="excerpt"><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 60, '...'); ?></p>      
                     </div>

@@ -5,9 +5,9 @@
   <div class="navbar-header">
 
   
-  <a class="navbar-brand " href="#">
+  <div class="navbar-brand ">
    
-  </a>
+  </div>
   
   <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
    

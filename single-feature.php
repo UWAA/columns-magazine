@@ -231,6 +231,7 @@ if( have_rows('feature_content') ):
 
             <div class="columns-feature-content">
              <div class="row">
+             <hr>
             <p class="final-byline">
             <?php the_sub_field('columns_final_byline'); ?>
             </p>

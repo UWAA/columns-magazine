@@ -9,31 +9,40 @@
     background-position: center 0;
     background-repeat: no-repeat;
     background-size: cover;    
-    width: auto;   
+    width: auto;
+
+     @media (max-width: @screen-sm-max) { 
+      height: 500px;
+    }
+
+    @media (max-width: @screen-xs-max) { 
+      height: 300px;
+    }
 }
 
 .feature-title {
     font-weight: 900;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 1.2;
     color: @janegray;
     margin-bottom: 14px;
 
     /* Medium devices (desktops, 992px and up) */
   @media (min-width: @screen-lg-min) { 
-  margin-left: -120px;  
+  margin-left: -120px;
+  margin-right:-80px;
  }
 
 }
 
 .byline {
-    font-weight: 600px;
+    font-weight: 600;
     font-size: 12px;
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: @lightgray;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 
@@ -43,7 +52,7 @@ p {
     font-size: 18px;
     line-height: 1.5;
     color: @janegray;
-    margin-bottom: 40px;   
+    margin-bottom: 24px;   
 }
 
 .columns-feature>p:first-child{    
@@ -59,11 +68,18 @@ p {
     }
 }
 
-.final-byline, .teaser-intro {
+.teaser-intro {
     font-style: italic;
-    font-style: 16px;
-    line-height: 1.7;
+    font-size: 19px;
+    line-height: 1.2;
+    margin-bottom: 14px;
     color: @lightgray;
+}
+
+.final-byline {
+    .teaser-intro();
+    font-size: 16px;
+    margin-bottom: 50px;
 }
 
 @import "split.less";

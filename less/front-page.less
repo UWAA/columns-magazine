@@ -1,20 +1,37 @@
   // front-page.less
 
 .home-feature-carousel {
-  height: 670px;  
+  
+
+
 
   .feature-cell {
     width: 100%;
     height: 100%;
     background-color: @purple;
+    height: 670px;  
+
+    @media (max-width: @screen-sm-max) { 
+      height: 500px;
+    }
+
+    @media (max-width: @screen-xs-max) { 
+      height: 300px;
+    }
 
     .background-image {
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
       height: 100%;
-      width: auto;      
+      width: auto;
+
+       @media (max-width: @screen-sm-max) { 
+       background-position: left center;
+      }
     }
+
+   
     
     a {
       color: inherit;
@@ -211,8 +228,16 @@
 
 
   .current-issue {
-    .make-sm-column(2.4);
+    .make-sm-column(2.5);
     text-align: center;
+    border-right: 2px dotted;
+    padding-left: 20px;
+    padding-right:0;
+
+     @media (max-width: @screen-xs-max) { 
+      // padding-left:15px;
+      // padding-right:15px;
+    }
     
 
     p {
@@ -244,12 +269,29 @@
   }
 
   .feature-row{
-    .make-sm-column(9);
+    margin-bottom: 30px;
+
+  .flickity-prev-next-button {
+    background: none;
+
+    &.previous{
+    left: -3px;
+    }
+
+  &.next {
+    right: 30px;
+  }
+
+  }
+
+
+
+    .make-sm-column(9.5);
 
     .carousel-cell {
       padding: 20px;
-      width: 28.8%;
-      height: 300px;
+      width: 22.8%;
+      height: 270px;
       margin-right: 10px;
       counter-increment: gallery-cell;
       border-right: 2px dotted;

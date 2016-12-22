@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
     cellAlign: 'left',        
     pageDots: false,
     draggable: false,
-    adaptiveHeight: true
+    adaptiveHeight: false
   });
 
 // init Isotope
