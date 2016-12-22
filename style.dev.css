@@ -1244,6 +1244,10 @@ p.excerpt {
 #hub {
   width: auto;
   height: 359px;
+  white-space: nowrap;
+}
+.hub-flickity-container {
+  height: 359px;
 }
 /* ---- .element-item ---- */
 .hub-item {

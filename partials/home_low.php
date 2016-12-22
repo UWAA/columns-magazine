@@ -1,5 +1,3 @@
-<div class="row">
-
 <div class="current-issue">
 <?php
 
@@ -103,7 +101,7 @@ if ( $query->have_posts() ) {
 <?php
 
     }
-    echo '</div>';
+    
     /* Restore original Post Data */
     wp_reset_postdata();
 } else {

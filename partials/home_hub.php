@@ -17,6 +17,7 @@ use \Columns\Utilities as Utilities;
 // The Query
 $query = new WP_Query( $args ); ?>
 
+<div class="hub-flickity-container">
 
 <?php
 
@@ -61,7 +62,7 @@ if ( $query->have_posts() ) {
         }
 
       } //endwhile ?>
-
+</div>
       <!-- modal -->
 
       <div class="modal-container modal fade" id="HUB_Modal">

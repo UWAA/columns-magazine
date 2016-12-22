@@ -1,6 +1,6 @@
-<nav class="columns-navbar navbar">
-
 <div class="container-fluid">
+
+<nav class="columns-navbar navbar">
 
   <div class="navbar-header">
 
@@ -22,11 +22,12 @@
     </div>
   </div>
 
-  </a>
+  
 
  
 
   </div>
+  </a>
 
   <div class="navigation"></div>
 
@@ -34,5 +35,7 @@
 
 
 </nav>
+
+</div>
 
 

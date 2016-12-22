@@ -2,14 +2,17 @@ jQuery(document).ready(function($) {
 
     $('.home-feature-carousel').flickity({
     cellSelector: '.feature-cell',
-    cellAlign: 'center'    
+    cellAlign: 'center',
+    dragThreshold: 10
     }); 
 
 	
 	$('.home-high').flickity({
 	 cellSelector: '.carousel-cell',
 	 cellAlign: 'left',
-   pageDots: false
+   pageDots: false,
+   contain: true,
+   dragThreshold: 10, 
 	});	
 
   $('.home-low .feature-row').flickity({
@@ -24,8 +27,8 @@ jQuery(document).ready(function($) {
     cellAlign: 'left',        
     pageDots: false,
     draggable: false,
-    adaptiveHeight: false
-  });
+    adaptiveHeight: false,    
+  });  
 
 // init Isotope
 var $grid = $('#hub').isotope({
@@ -38,6 +41,8 @@ var $grid = $('#hub').isotope({
     horizontal: true
  }
 });
+
+
 
 
 
@@ -57,7 +62,11 @@ $hubItemGroup.on( 'click', '.hub-item', function() {
 });
 
 
-
-
-
 });
+
+
+
+
+
+
+

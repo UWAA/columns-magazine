@@ -69,7 +69,7 @@ class Scripts
       'homepage'   => array (
         'id'      => 'homepage',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/support/homePageInit.js',
-        'deps'    => array(),
+        'deps'    => array('underscore'),
         'version' => '1.0.0',
         'in_footer' => true,
         'admin'   => false

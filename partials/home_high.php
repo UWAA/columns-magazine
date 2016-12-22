@@ -18,7 +18,7 @@ use \Columns\Utilities as Utilities;
 $query = new WP_Query( $args ); ?>
 
 
- <div class="row">
+ 
  <div class="feature-row">
 
 
@@ -65,8 +65,7 @@ if ( $query->have_posts() ) {
 
 <?php
 
-    }
-    echo '</div>';
+    }    
     /* Restore original Post Data */
     wp_reset_postdata();
 } else {
@@ -78,4 +77,3 @@ if ( $query->have_posts() ) {
 
 </div> <!-- end feature row -->
 
-</div> <!-- end row -->
