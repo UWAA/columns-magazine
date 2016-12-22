@@ -71,7 +71,7 @@ class Utilities{
     }
 
     public function customizeColumnsExcerptLength( $length ) {
-        return 25;
+        return 27;
     }
 
     public function wpdocs_excerpt_more( $more ) {
