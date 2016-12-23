@@ -21,12 +21,12 @@ $feature = get_field("columns_feature_image");
 </div>
 
 <div class="row">
-    <div class="breadcrumbs">
-        <?php // $Columns->Breadcrumbs(); ?>
-    </div> 
-    <div class="content-tags">
-        <!-- Fluid containter, 2 cols -->
-    </div>
+        <div class="breadcrumbs">
+            <?php uw_breadcrumbs() ?>
+        </div> 
+        <div class="content-tags">
+            <!-- Fluid containter, 2 cols -->
+        </div>
 </div>
 
 

@@ -7,7 +7,6 @@ wp_enqueue_script('homepage');
 wp_enqueue_script('isotope');
 wp_enqueue_script('isotope-packery');
 
-
 ?>
 <div class="container-fluid">
 	

@@ -93,7 +93,7 @@ $args = array (
                         
 
                         ?> </a> </h3>
-                        <p class="excerpt"><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 60, '...'); ?></p>      
+                        <?php the_excerpt(); ?>      
                       </div>
 
 
