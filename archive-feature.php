@@ -28,7 +28,7 @@ use \Columns\Utilities as Utilities;
 
 
 while ( have_posts() ) : the_post(); 
-echo "hi";
+
 get_template_part( 'partials/archive_content' );
 
 endwhile;

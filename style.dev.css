@@ -1109,6 +1109,7 @@ ul.uwaa-social li a:focus.email {
   height: 100%;
   background-color: #4b2e83;
   height: 670px;
+  position: relative;
 }
 @media (max-width: 991px) {
   .home-feature-carousel .feature-cell {
@@ -1313,7 +1314,7 @@ p.excerpt {
   margin-bottom: 15px;
 }
 .scroller {
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 /* ---- hub ---- */
 #hub {
