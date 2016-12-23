@@ -262,14 +262,14 @@ endwhile;
 
 ?>
 
-<?php  if (get_field("columns_final_signoff") != '') {     ?>
+<?php  if (get_field("columns_tagline") != '') {     ?>
             <div class="columns-feature-content">
                 <div class="row">
                    <hr>
                    <p class="final-byline">           
 
 
-                    <?php echo get_field('columns_final_signoff'); ?>
+                    <?php echo get_field('columns_tagline'); ?>
 
                     </p>
                 </div>

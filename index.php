@@ -27,36 +27,46 @@ use \Columns\Utilities as Utilities;
             ?>
 
             <h1><?php the_title() ?></h1>
-
-            <p class="teaser-intro"><?php echo wp_kses(get_field("columns_feature_introduction"), Utilities::$allowedHTML); ?></p>
+         
 
             <p class="byline">
-                <?php 
-                if (get_field("columns_author") != '') {
-                    echo "by " . wp_kses(get_field("columns_author"), Utilities::$allowedHTML);
-                }
+<?php
 
-                if (get_field("columns_photographer") != '') {
-                    echo " | photos by " . wp_kses(get_field("columns_photographer"), Utilities::$allowedHTML);
-                }
+    if(get_field("columns_custom_byline") != '') {
+        
+        echo wp_kses(get_field("columns_custom_byline"), Utilities::$allowedHTML);   
+    }
 
-                echo " | " . wp_kses(get_the_date(), Utilities::$allowedHTML);
+    else {
+        if (get_field("columns_author") != '') {
+            echo "by " . wp_kses(get_field("columns_author"), Utilities::$allowedHTML   );
+        }
+
+    if (get_field("columns_photographer") != '') {
+        echo " | photos by " . wp_kses(get_field("columns_photographer"), Utilities::$allowedHTML);
+    }
+} //no custom byline
+
+    echo " | " . wp_kses(get_the_date(), Utilities::$allowedHTML);
 
 
-                ?>
-            </p>
+?>
+    
+
+
+</p>
 
 
                 <?php the_content(); ?>
 
 
-                <?php  if (get_field("columns_final_signoff") != '') {     ?>
+            <?php  if (get_field("columns_tagline") != '') {     ?>
                 <div class="row">
                    <hr>
                    <p class="final-byline">           
 
 
-                    <?php echo get_field('columns_final_signoff'); ?>
+                    <?php echo get_field('columns_tagline'); ?>
 
                 </p>
             </div>
