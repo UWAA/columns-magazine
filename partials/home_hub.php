@@ -17,6 +17,8 @@ $args = array (
 // The Query
   $query = new WP_Query( $args ); ?>
 
+<div class="scroller">
+<div class="row hub-row" id="hub">
 
   <?php
 
@@ -62,6 +64,8 @@ $args = array (
 
       } //endwhile ?>
 
+</div>
+</div>  <!-- end scroller -->
       <!-- modal -->
 
       <div class="modal-container modal fade" id="HUB_Modal">

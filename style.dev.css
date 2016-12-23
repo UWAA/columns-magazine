@@ -1312,6 +1312,9 @@ p.excerpt {
   line-height: 1.4;
   margin-bottom: 15px;
 }
+.scroller {
+  overflow-x: scroll;
+}
 /* ---- hub ---- */
 #hub {
   width: auto;
