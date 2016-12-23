@@ -79,7 +79,18 @@ if ( $query->have_posts() ) {
 
         <div class="copy-block">
             <div class="category"><?php the_terms(get_the_ID(), 'category' )  ?></div>
-            <h3 class="title"><a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?></a> </h3>
+            <h3 class="title"><a href="<?php echo get_the_permalink(); ?>"> 
+            <?php 
+
+            if(get_field("columns_custom_title") != '') {
+              echo wp_kses(get_field('columns_custom_title'), Utilities::$allowedHTML);
+            }
+            else {
+              the_title();   
+            }
+            
+
+            ?> </a> </h3>
             <p class="excerpt">
             <?php
 

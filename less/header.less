@@ -6,18 +6,23 @@
 	
 
 	.navbar-brand {
-		.make-md-column(2);		
-		.visible-lg-block;
-		.visible-md-block;
-		.visible-sm-block;
-		position: relative;
+		.make-md-column(2);
+        display: block;
+        visibility: visible;				
+		float: left;
     	background: url(assets/logos/UWAA_Horizontal_Logo.svg);
-    	display: block;
+        z-index: 1;    	
     	height: 80px;
+        width: 130px;
     	background-size: 115px 80px;
     	margin-left: 15px;
     	background-repeat: no-repeat;
     	background-position-y: 6px;
+
+        @media (max-width: 730px) { 
+            display: none;
+            visibility: hidden;
+            }
 
 		}
 
@@ -25,7 +30,7 @@
 		.masthead {			
 			.make-md-column(6);
 			position: relative;
-			min-height: 91px;            
+			min-height: 91px;
 
 			@media (max-width: 548px) { 
     				min-height: 70px;

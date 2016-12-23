@@ -2,34 +2,33 @@
 use \Columns\Utilities as Utilities;
 
 // WP_Query arguments
- $args = array (
-      'post_type' => array('post', 'feature'),      
-      'posts_per_page' => -1,
-      'tax_query' => array(        
-        array(
-          'taxonomy' => 'content_location',
-          'field'    => 'slug',
-          'terms'    => 'home_hub',          
-          )
+$args = array (
+  'post_type' => array('post', 'feature'),      
+  'posts_per_page' => -1,
+  'tax_query' => array(        
+    array(
+      'taxonomy' => 'content_location',
+      'field'    => 'slug',
+      'terms'    => 'home_hub',          
+      )
       ) //End tax query 
-      );
+  );
 
 // The Query
-$query = new WP_Query( $args ); ?>
+  $query = new WP_Query( $args ); ?>
 
-<div class="hub-flickity-container">
 
-<?php
+  <?php
 
 
 
 // The Loop
-if ( $query->have_posts() ) {
+  if ( $query->have_posts() ) {
    
     while ( $query->have_posts() ) {
-        $query->the_post();
-        
-        $storyImage = get_field("columns_hub_image");
+      $query->the_post();
+      
+      $storyImage = get_field("columns_hub_image");
         $hubCropSize = get_field("columns_hub_size_selector");  //size selected from dropdown controlled by editor                        
         
         if ($hubCropSize === 'hub-vertical-rectangle') {
@@ -51,18 +50,18 @@ if ( $query->have_posts() ) {
 
 
         if ($storyImage){  
-        ?>
+          ?>
 
-        <div class="hub-item <?php echo $hubShape; ?> ">          
-          
+          <div class="hub-item <?php echo $hubShape; ?> ">          
+            
             <img src="<?php echo $storyImage['sizes'][$hubCropSize];  ?>" alt="<?php echo $storyImage['alt']; ?>" data-toggle="modal" data-target="#HUB_Modal">
 
-            </div>
-      <?php 
+          </div>
+          <?php 
         }
 
       } //endwhile ?>
-</div>
+
       <!-- modal -->
 
       <div class="modal-container modal fade" id="HUB_Modal">
@@ -83,31 +82,41 @@ if ( $query->have_posts() ) {
 
                     <div class="hub_modal_copy">
                       <p class="category"><?php the_terms(get_the_ID(), 'category', '', ' | ', ' | ' );   ?> <span class="published-date"><?php echo wp_kses(get_the_date(  ), Utilities::$allowedHTML); ?></span></p>
-                      <h3 class="title"><a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?></a> </h3>
-                      <p class="excerpt"><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 60, '...'); ?></p>      
+                      <h3 class="title"><a href="<?php echo get_the_permalink(); ?>"> <?php 
+
+                        if(get_field("columns_custom_title") != '') {
+                          echo wp_kses(get_field('columns_custom_title'), Utilities::$allowedHTML);
+                        }
+                        else {
+                          the_title();   
+                        }
+                        
+
+                        ?> </a> </h3>
+                        <p class="excerpt"><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 60, '...'); ?></p>      
+                      </div>
+
+
                     </div>
 
-
-                  </div>
-
-                  <?php 
+                    <?php 
 
 
 
-                } 
-                ?>
+                  } 
+                  ?>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
         
 
-<?php    
-    
-    /* Restore original Post Data */
-    wp_reset_postdata();
-} else {
-    
-}
-?>
+        <?php    
+        
+        /* Restore original Post Data */
+        wp_reset_postdata();
+      } else {
+        
+      }
+      ?>

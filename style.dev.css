@@ -84,6 +84,8 @@
 #uwaa-footer:after,
 .home-high:before,
 .home-high:after,
+#hub:before,
+#hub:after,
 .home-low:before,
 .home-low:after,
 .modal-footer:before,
@@ -111,6 +113,7 @@
 .columns-navbar:after,
 #uwaa-footer:after,
 .home-high:after,
+#hub:after,
 .home-low:after,
 .modal-footer:after,
 .archive-story-container:after {
@@ -152,6 +155,8 @@
 #uwaa-footer:after,
 .home-high:before,
 .home-high:after,
+#hub:before,
+#hub:after,
 .home-low:before,
 .home-low:after,
 .modal-footer:before,
@@ -179,6 +184,7 @@
 .columns-navbar:after,
 #uwaa-footer:after,
 .home-high:after,
+#hub:after,
 .home-low:after,
 .modal-footer:after,
 .archive-story-container:after {
@@ -453,7 +459,12 @@ a.more:after {
   min-height: 300px;
   background-repeat: no-repeat;
   background-origin: border-box;
+}
+.split-left .split-img-container {
   background-position: center right;
+}
+.split-right .split-img-container {
+  background-position: center left;
 }
 .split-feature-row {
   margin-top: 15px;
@@ -607,14 +618,17 @@ a.more:after {
   clear: both;
 }
 .columns-navbar .navbar-brand {
+  position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  display: none !important;
-  position: relative;
-  background: url(assets/logos/UWAA_Horizontal_Logo.svg);
   display: block;
+  visibility: visible;
+  float: left;
+  background: url(assets/logos/UWAA_Horizontal_Logo.svg);
+  z-index: 1;
   height: 80px;
+  width: 130px;
   background-size: 115px 80px;
   margin-left: 15px;
   background-repeat: no-repeat;
@@ -632,19 +646,10 @@ a.more:after {
     width: 16.66666667%;
   }
 }
-@media (min-width: 1200px) {
+@media (max-width: 730px) {
   .columns-navbar .navbar-brand {
-    display: block !important;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .columns-navbar .navbar-brand {
-    display: block !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .columns-navbar .navbar-brand {
-    display: block !important;
+    display: none;
+    visibility: hidden;
   }
 }
 .columns-navbar .masthead {
@@ -1316,6 +1321,40 @@ p.excerpt {
   height: 359px;
   box-shadow: -1px 2px 2px #d9d9d9, 0px -2px 2px #d9d9d9;
   margin: 30px 0;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+#hub:before,
+#hub:after {
+  content: " ";
+  display: table;
+}
+#hub:after {
+  clear: both;
+}
+#hub:before,
+#hub:after {
+  content: " ";
+  display: table;
+}
+#hub:after {
+  clear: both;
+}
+#hub:before,
+#hub:after {
+  content: " ";
+  display: table;
+}
+#hub:after {
+  clear: both;
+}
+#hub:before,
+#hub:after {
+  content: " ";
+  display: table;
+}
+#hub:after {
+  clear: both;
 }
 @media (max-width: 991px) {
   #hub {

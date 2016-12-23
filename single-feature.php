@@ -40,14 +40,22 @@ $feature = get_field("columns_feature_image");
     <p class="teaser-intro"><?php echo wp_kses(get_field("columns_feature_introduction"), Utilities::$allowedHTML); ?></p>
 
 <p class="byline">
-<?php 
-    if (get_field("columns_author") != '') {
-        echo "by " . wp_kses(get_field("columns_author"), Utilities::$allowedHTML);
+<?php
+
+    if(get_field("columns_custom_byline") != '') {
+        
+        echo wp_kses(get_field("columns_custom_byline"), Utilities::$allowedHTML);   
     }
+
+    else {
+        if (get_field("columns_author") != '') {
+            echo "by " . wp_kses(get_field("columns_author"), Utilities::$allowedHTML   );
+        }
 
     if (get_field("columns_photographer") != '') {
         echo " | photos by " . wp_kses(get_field("columns_photographer"), Utilities::$allowedHTML);
     }
+} //no custom byline
 
     echo " | " . wp_kses(get_the_date(), Utilities::$allowedHTML);
 
@@ -253,6 +261,20 @@ endif;
 endwhile;
 
 ?>
+
+<?php  if (get_field("columns_final_signoff") != '') {     ?>
+            <div class="columns-feature-content">
+                <div class="row">
+                   <hr>
+                   <p class="final-byline">           
+
+
+                    <?php echo get_field('columns_final_signoff'); ?>
+
+                    </p>
+                </div>
+            </div>
+            <?php } ?>
 
         
     <!-- </div> -->
