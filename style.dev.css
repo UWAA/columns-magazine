@@ -1862,6 +1862,12 @@ p.excerpt {
   font-size: 60px;
   margin-top: 0;
 }
+.single-post .columns-feature-content img.alignleft {
+  margin: 0 20px 5px 0;
+}
+.single-post .columns-feature-content img.alignright {
+  margin: 0 0 5px 20px;
+}
 .single-header {
   border-top: solid lightgray 1px;
 }
