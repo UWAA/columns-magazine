@@ -87,7 +87,7 @@ $args = array (
 
                   </h2>
                   <!-- New ternary here to pull in a editorial headline  -->
-                  <p <?php echo ($inlineTextStyles ? $inlineTextStyles : ''); ?> ><?php echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 15, '...'); ?></p>
+                  <?php the_excerpt(); ?>
               </div>
             </div>
                 </a>
