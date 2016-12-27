@@ -2,17 +2,17 @@
         <div id="uwaa-footer" class="uw-footer">
             <nav role="navigation" aria-label="uwaa social networking" class="social-icons">
                 <ul class="uwaa-social">
-                    <li><a href="https://www.facebook.com/UWalum" class="facebook"><span class="offscreen">UW Alumni Facebook</span></a></li>
-                    <li><a href="https://www.twitter.com/UWalum" class="twitter"><span class="offscreen">UW Alumni Twitter</span></a></li>                    
+                    <li><a href="https://www.facebook.com/ColumnsMagazine/" class="facebook"><span class="offscreen">Columns Magazine Facebook</span></a></li>
+                    <li><a href="https://twitter.com/@ColumnsMag" class="twitter"><span class="offscreen">@ColumnsMag</span></a></li>                    
                 </ul>
             </nav>
             <nav role="navigation" aria-label="about uwaa and join" class="contact-links">            
             <div>
                 <ul class="footer-links">
-                    <li><a href="<?php echo home_url('/#'); ?>">Contact Columns</a></li>                    
-                    <li><a href="<?php echo home_url('/#'); ?>">About</a></li>
-                    <li><a href="<?php echo home_url('/#'); ?>">Subscribe</a></li>
-                    <li><a href="<?php echo home_url('/#'); ?>">Update your info</a></li>
+                    <li><a href="<?php echo home_url('/contact-columns'); ?>">Contact Columns</a></li>                    
+                    <li><a href="<?php echo home_url('/about'); ?>">About</a></li>
+                    <li><a href="<?php echo home_url('/manage-your-subscription'); ?>">Subscribe</a></li>
+                    <li><a href="<?php echo home_url('/update-your-information'); ?>">Update your info</a></li>
                 </ul>                   
             </div>
             </nav>
