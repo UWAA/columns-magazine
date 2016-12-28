@@ -87,7 +87,9 @@ $args = array (
 
                   </h2>
                   <!-- New ternary here to pull in a editorial headline  -->
-                  <?php the_excerpt(); ?>
+                  <p>
+                    <?php echo get_the_excerpt(); ?>
+                  </p>
               </div>
             </div>
                 </a>
