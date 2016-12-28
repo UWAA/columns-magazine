@@ -478,7 +478,7 @@ a.more:after {
 .wp-caption.alignleft {
   margin: 10px 15px 20px -120px;
 }
-.wp-caption-text {
+p.wp-caption-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 12px;
@@ -1900,7 +1900,4 @@ p.excerpt {
   .flickity-prev-next-button.next {
     right: 3px;
   }
-}
-.wp-caption-text {
-  text-transform: none;
 }
