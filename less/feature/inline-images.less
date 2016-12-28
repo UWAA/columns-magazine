@@ -4,13 +4,30 @@
 
     &.alignright {
         margin: 10px -120px 20px 15px;
+
+        @media only screen and (max-width: @screen-xs-max) {
+            margin: 20px 20px 20px 0;
+            text-align: center;
+
+        }
     }
 
     &.alignleft {
         margin: 10px 15px 20px -120px;
+
+        @media only screen and (max-width: @screen-xs-max) {
+            margin: 20px 20px 20px 0;
+            text-align: center;
+
+        }
     }
 
     &.aligncenter {
+
+        @media only screen and (max-width: @screen-xs-max) {
+            width: 100% !IMPORTANT;
+            text-align: center;
+        }
 
     }
 }

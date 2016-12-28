@@ -491,8 +491,26 @@ a.more:hover {
 .wp-caption.alignright {
   margin: 10px -120px 20px 15px;
 }
+@media only screen and (max-width: 767px) {
+  .wp-caption.alignright {
+    margin: 20px 20px 20px 0;
+    text-align: center;
+  }
+}
 .wp-caption.alignleft {
   margin: 10px 15px 20px -120px;
+}
+@media only screen and (max-width: 767px) {
+  .wp-caption.alignleft {
+    margin: 20px 20px 20px 0;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .wp-caption.aligncenter {
+    width: 100% !IMPORTANT;
+    text-align: center;
+  }
 }
 p.wp-caption-text {
   font-family: 'Open Sans', sans-serif;
