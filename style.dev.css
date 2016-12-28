@@ -258,6 +258,11 @@ a.more:after {
 .uw-breadcrumbs {
   margin: 0;
 }
+@media (max-width: 767px) {
+  .uw-breadcrumbs {
+    padding: 20px 20px 0 30px;
+  }
+}
 .columns-feature-content {
   margin-right: auto;
   margin-left: auto;
