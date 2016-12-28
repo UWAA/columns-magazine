@@ -61,7 +61,7 @@ use \Columns\Utilities as Utilities;
 
 
             <?php  if (get_field("columns_tagline") != '') {     ?>
-                <div class="row">
+               
                    <hr>
                    <p class="final-byline">           
 
@@ -69,7 +69,7 @@ use \Columns\Utilities as Utilities;
                     <?php echo get_field('columns_tagline'); ?>
 
                 </p>
-            </div>
+        
             <?php } ?>
 
 

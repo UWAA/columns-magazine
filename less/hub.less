@@ -1,6 +1,7 @@
 
 .scroller{
   overflow-x: auto;
+  .make-row(@grid-gutter-width);
 }
 
 
@@ -11,7 +12,7 @@
   height: 359px;  
   box-shadow: -1px 2px 2px @gray, 0px -2px 2px @gray;
   margin: 30px 0;
-  .make-row(@grid-gutter-width);
+  
 
   @media (max-width: @screen-sm-max) { 
     margin: 0;
@@ -47,6 +48,17 @@
   @media (max-width: @screen-sm-max) { 
       max-width: 500px;
     }
+
+
+    .flickity-prev-next-button {
+    top:55%;
+
+    &.next {
+      right: -3px;
+    }
+
+
+  }
 
 }
 

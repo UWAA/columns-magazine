@@ -23,7 +23,7 @@ p {
 }
 
 .title {
-    font-weight: 900;
+    font-weight: 800;
     font-size: 20px;
     line-height: 1.2;
     color: @janegray;
@@ -50,4 +50,22 @@ a.more {
     transform: rotate(90deg);        
     }
 
+    &:hover {
+        opacity: .6;
+
+    }
+
+}
+
+.page p {
+    font-family: 'Merriweather', serif; 
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    color: @janegray;
+    margin-bottom: 20.5px;
+
+     @media (max-width: @screen-sm-max) { 
+     font-size: 16px;
+    }
 }

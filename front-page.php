@@ -31,11 +31,13 @@ wp_enqueue_script('isotope-packery');
 
 </div>
 
+
 <div class="row feature-row home-low">
 
     <?php get_template_part("partials/home_low") ?>
 	
 </div>
+
 
 
 
