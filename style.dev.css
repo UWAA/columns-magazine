@@ -263,9 +263,6 @@ a.more:after {
     padding: 20px 20px 0 30px;
   }
 }
-.wp-caption-text {
-  text-transform: none;
-}
 .columns-feature-content {
   margin-right: auto;
   margin-left: auto;
@@ -1903,4 +1900,7 @@ p.excerpt {
   .flickity-prev-next-button.next {
     right: 3px;
   }
+}
+.wp-caption-text {
+  text-transform: none;
 }
