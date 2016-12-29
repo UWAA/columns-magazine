@@ -478,12 +478,6 @@ a.more:hover {
   background-repeat: no-repeat;
   background-origin: border-box;
 }
-.split-left .split-img-container {
-  background-position: center right;
-}
-.split-right .split-img-container {
-  background-position: center left;
-}
 .split-feature-row {
   margin-top: 15px;
   margin-bottom: 15px;
