@@ -20,11 +20,20 @@ class OpenGraph
         if(get_field("columns_feature_image")) {             
             $feature = get_field("columns_feature_image");
             $img_src = $feature['url'];
+            $img_dimensions = "
+                <meta property=\"og:image:width\"      content=\" ". $feature['width'] ." \">
+                <meta property=\"og:image:height\"     content=\" ". $feature['height'] ." \">
+            ";
         } elseif (get_field("content_thumbnail")) {
             $thumbnail = get_field("content_thumbnail");
             $img_src = $thumbnail['url'];
+            $img_dimensions = "
+                <meta property=\"og:image:width\"      content=\" ". $thumbnail['width'] ." \">
+                <meta property=\"og:image:height\"     content=\" ". $thumbnail['height'] ." \">
+            ";
         } else {
             $img_src = get_stylesheet_directory_uri() . '/assets/opengraph_fallback.jpg';
+            $img_dimensions = "";
         }
         if($excerpt = $post->post_excerpt) {
             $excerpt = strip_tags($post->post_excerpt);
@@ -47,6 +56,7 @@ class OpenGraph
     <meta name="twitter:image" content="<?php echo $img_src; ?>">
  
 <?php
+    echo $img_dimensions;
     } else {
         return;
     }
