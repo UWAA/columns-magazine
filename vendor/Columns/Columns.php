@@ -23,6 +23,7 @@ class Columns
         new Styles;
         new Scripts;
         new Images;        
+        new OpenGraph;
 
 
         //Custom Post Types
