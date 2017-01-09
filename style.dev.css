@@ -365,6 +365,7 @@ a.more:hover {
 @media (max-width: 767px) {
   .headline-image {
     height: 300px;
+    background-position: left center;
   }
 }
 .feature-title {
