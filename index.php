@@ -51,7 +51,8 @@ use \Columns\Utilities as Utilities;
 
 
 ?>
-    
+
+<hr>   
 
 
 </p>

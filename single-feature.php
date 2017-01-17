@@ -61,10 +61,10 @@ $feature = get_field("columns_feature_image");
 
 
 ?>
-    
-
 
 </p>
+
+<hr>
 
     </div>
     </div>
