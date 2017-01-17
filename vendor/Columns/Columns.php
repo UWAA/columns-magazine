@@ -24,6 +24,7 @@ class Columns
         new Scripts;
         new Images;        
         new OpenGraph;
+        new Favicon;
 
 
         //Custom Post Types
