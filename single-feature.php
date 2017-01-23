@@ -100,10 +100,9 @@ if( have_rows('feature_content') ):
             
             <div class="columns-feature-content">
 
-            <div class="row">
-                <p>
-                <?php the_sub_field('copy', false); ?>
-                </p>
+            <div class="row">                
+                <?php the_sub_field('copy', TRUE); ?>
+                
             </div>
         </div>
 
