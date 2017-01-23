@@ -81,14 +81,34 @@ if( have_rows('feature_content') ):
     while ( have_rows('feature_content') ) : the_row(); 
 
         if( get_row_layout() == 'copy_block' ): ?>
-
+            <?php if(get_sub_field('isDropCap') == 1): ?>
             <div class="columns-feature-content">
-        <div class="row">
 
-                <?php the_sub_field('copy', true); ?>
+            <div class="row">
+                <p class="drop-cap">
+                <?php 
+                $firstLetter = substr(get_sub_field('copy', false), 0,1);
+                $restOfParagraph = substr(get_sub_field('copy', false), 1);
+                ?>
+                <span style="color:<?php the_sub_field("drop_cap_color_selection"); ?>"><?php echo $firstLetter; ?></span><?php echo $restOfParagraph; ?>
+                </p>
         
             </div>
+
+            </div>
+            <?php else: ?>
+            
+            <div class="columns-feature-content">
+
+            <div class="row">
+                <p>
+                <?php the_sub_field('copy', false); ?>
+                </p>
+            </div>
         </div>
+
+            <?php endif; ?>
+        
 
         
         <?php

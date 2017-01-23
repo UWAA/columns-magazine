@@ -45,8 +45,7 @@
     font-family: 'Merriweather', serif; 
     font-weight: 400;
     font-size: 17px;
-    line-height: 1.55;
-    color: @janegray;
+    line-height: 1.55;    
     margin-bottom: 20.5px;
 
      @media (max-width: @screen-sm-max) { 
@@ -65,17 +64,21 @@
 }
 
 
-.columns-feature>p:first-child{    
+.drop-cap {    
+    
+    span { 
+        float: left;        
+        font-size: 100px;
+        line-height: 84px;    
+        padding-right: 8px;
+        padding-left: 3px;   
+    }
+}
+
+.columns-feature {    
         
 
-    &:first-letter { 
-    float: left;
-    color: @purple;
-    font-size: 100px;
-    line-height: 84px;    
-    padding-right: 8px;
-    padding-left: 3px;   
-    }
+    
 }
 
 .teaser-intro {
