@@ -18,6 +18,7 @@ class Utilities{
 		add_action( 'init', array($this, 'updatePostLabelsForShortContent') );
         add_action('admin_menu', array($this, 'addIssueControlOptionsPage'));
         add_filter( 'pre_get_posts', array($this, 'namespace_add_custom_types' ));
+        add_action( 'admin_init', array($this, 'addOrderToPosts' ));
         // add_filter( 'excerpt_length', array($this, 'customizeColumnsExcerptLength'), 999);
         // add_filter( 'excerpt_more', array($this, 'wpdocs_excerpt_more' ),999);
         // add_filter('excerpt_more', '__return_false', 999 );
@@ -81,9 +82,12 @@ class Utilities{
     return '...';
     }
 
-   public function excerpt_more_override($excerpt)
-  {
-    return $excerpt . '<div><a class="more" href="' . get_permalink() . '">more</a></div>';
-  }
+    public function excerpt_more_override($excerpt) {
+        return $excerpt . '<div><a class="more" href="' . get_permalink() . '">more</a></div>';
+    }
+
+    public function addOrderToPosts() {
+        add_post_type_support( 'post', 'page-attributes' );    
+    }
 
 }

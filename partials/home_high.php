@@ -5,6 +5,7 @@ use \Columns\Utilities as Utilities;
  $args = array (
       'post_type' => array('post', 'feature'),      
       'posts_per_page' => -1,
+      'orderby' => 'menu_order',
       'tax_query' => array(        
         array(
           'taxonomy' => 'content_location',

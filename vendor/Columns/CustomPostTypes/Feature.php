@@ -42,7 +42,7 @@ class Feature
 		'label'                 => __( 'Features', 'text_domain' ),
 		'description'           => __( 'Feature-Length Articles', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		'supports'              => array( 'title', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'page-attributes' ),
 		'taxonomies'            => array( 'category', 'post_tag', 'content_location' ),
 		'hierarchical'          => false,
 		'public'                => true,
