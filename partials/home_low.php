@@ -19,7 +19,7 @@ if( have_rows('columns_print_issues', 'options') ):
     <img src="<?php echo $coverImage['url'];  ?>" alt="<?php echo $coverImage['alt']; ?>">
     <!-- </a> -->
     </div>
-    <a class="pdf-link" href="<?php echo $issuePDF['url']; ?>">View .PDF</a>
+    <a class="pdf-link" href="<?php echo $issuePDF['url']; ?>">View PDF</a>
 
 
   <?php
