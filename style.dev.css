@@ -368,6 +368,19 @@ a.more:hover {
     background-position: left center;
   }
 }
+@media (max-width: 480px) {
+  .headline-image {
+    height: 250px;
+    background-position: center center;
+    background-size: contain;
+  }
+}
+@media (min-width: 1800px) {
+  .headline-image {
+    background-position: center center;
+    height: 800px;
+  }
+}
 .feature-title {
   font-weight: 800;
   font-size: 40px;
@@ -1140,7 +1153,7 @@ ul.uwaa-social li a:focus.email {
 .home-feature-carousel .feature-cell {
   width: 100%;
   height: 100%;
-  background-color: #4b2e83;
+  background-color: #767676;
   height: 670px;
   position: relative;
 }
@@ -1154,6 +1167,11 @@ ul.uwaa-social li a:focus.email {
     height: 300px;
   }
 }
+@media (min-width: 1800px) {
+  .home-feature-carousel .feature-cell {
+    height: 800px;
+  }
+}
 .home-feature-carousel .feature-cell .background-image {
   background-position: center 0;
   background-repeat: no-repeat;
@@ -1161,9 +1179,10 @@ ul.uwaa-social li a:focus.email {
   height: 100%;
   width: auto;
 }
-@media (max-width: 991px) {
+@media (max-width: 480px) {
   .home-feature-carousel .feature-cell .background-image {
-    background-position: left center;
+    background-position: center center;
+    background-size: contain;
   }
 }
 .home-feature-carousel .feature-cell a {

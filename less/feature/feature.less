@@ -22,7 +22,18 @@
     @media (max-width: @screen-xs-max) { 
       height: 300px;
       background-position: left center;
-    }
+    }    
+
+    @media (max-width: @screen-xs-min) { 
+       height: 250px;
+       background-position: center center;
+       background-size: contain;
+      }
+
+      @media (min-width: 1800px) { 
+       background-position: center center;       
+       height: 800px;
+      }
 }
 
 .feature-title {

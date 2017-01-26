@@ -8,7 +8,7 @@
   .feature-cell {
     width: 100%;
     height: 100%;
-    background-color: @purple;
+    background-color: @lightgray;
     height: 670px;
     position: relative;
 
@@ -20,6 +20,11 @@
       height: 300px;
     }
 
+    @media (min-width: 1800px) { 
+      height: 800px;      
+       
+    }
+
     .background-image {
       background-position: center 0;
       background-repeat: no-repeat;
@@ -27,9 +32,11 @@
       height: 100%;
       width: auto;
 
-       @media (max-width: @screen-sm-max) { 
-       background-position: left center;
+       @media (max-width: @screen-xs-min) { 
+       background-position: center center;
+       background-size: contain;
       }
+      
     }
 
    
