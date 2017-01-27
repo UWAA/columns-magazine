@@ -276,7 +276,8 @@ a.more:hover {
 }
 @media (max-width: 767px) {
   .uw-breadcrumbs {
-    padding: 20px 20px 0 30px;
+    display: none;
+    visibility: hidden;
   }
 }
 .columns-feature-content {
@@ -395,7 +396,7 @@ a.more:hover {
     margin-right: -80px;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .feature-title {
     font-size: 20px;
     margin: 16px 0 10px;
@@ -428,7 +429,7 @@ a.more:hover {
   margin-bottom: 14px;
   color: #767676;
 }
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .single p.teaser-intro {
     font-size: 13px;
     margin-bottom: 10px;
@@ -1171,7 +1172,6 @@ ul.uwaa-social li a:focus.email {
 .home-feature-carousel .feature-cell {
   width: 100%;
   height: 100%;
-  background-color: #767676;
   height: 670px;
   position: relative;
 }
@@ -1181,6 +1181,11 @@ ul.uwaa-social li a:focus.email {
   }
 }
 @media (max-width: 767px) {
+  .home-feature-carousel .feature-cell {
+    height: 300px;
+  }
+}
+@media (max-width: 480px) {
   .home-feature-carousel .feature-cell {
     height: 300px;
   }
