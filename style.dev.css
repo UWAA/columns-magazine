@@ -485,7 +485,7 @@ a.more:hover {
   font-weight: 600;
   font-size: 36px;
   text-align: left;
-  padding: 15px 15px 10px 30px;
+  padding: 15px 15px 10px 70px;
   margin: 0 auto;
 }
 .split-left .split-copy-container,
@@ -498,6 +498,12 @@ a.more:hover {
   min-height: 300px;
   background-repeat: no-repeat;
   background-origin: border-box;
+}
+.split-left .split-img-container {
+  background-position: center left;
+}
+.split-right .split-img-container {
+  background-position: center right;
 }
 .split-feature-row {
   margin-top: 15px;
@@ -549,11 +555,13 @@ p.wp-caption-text {
 }
 .blockquote p.quote-text {
   color: #4b2e83;
-  font-size: 36px;
+  font-size: 34px;
   margin-left: -120px;
   margin-right: -120px;
+  font-family: "Merriweather", serif;
+  font-weight: 800;
 }
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .blockquote p.quote-text {
     margin: 0 0 15px 0;
   }
@@ -1951,13 +1959,37 @@ p.excerpt {
   font-size: 60px;
   margin-top: 0;
 }
-.single-post .columns-feature-content img.alignleft,
-.single-feature .columns-feature-content img.alignleft {
-  margin: 0 20px 5px 0;
-}
 .single-post .columns-feature-content img.alignright,
 .single-feature .columns-feature-content img.alignright {
-  margin: 0 0 5px 20px;
+  margin: 10px -120px 20px 15px;
+}
+@media only screen and (max-width: 1200px) {
+  .single-post .columns-feature-content img.alignright,
+  .single-feature .columns-feature-content img.alignright {
+    margin: 20px 20px 20px 0;
+    text-align: center;
+  }
+}
+.single-post .columns-feature-content img.alignleft,
+.single-feature .columns-feature-content img.alignleft {
+  margin: 10px 15px 20px -120px;
+}
+@media only screen and (max-width: 1200px) {
+  .single-post .columns-feature-content img.alignleft,
+  .single-feature .columns-feature-content img.alignleft {
+    margin: 20px 20px 20px 0;
+    text-align: center;
+  }
+}
+.single-post .columns-feature-content img.aligncenter,
+.single-feature .columns-feature-content img.aligncenter {
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1200px) {
+  .single-post .columns-feature-content img.aligncenter,
+  .single-feature .columns-feature-content img.aligncenter {
+    width: 100% !IMPORTANT;
+  }
 }
 .single-header {
   border-top: solid lightgray 1px;

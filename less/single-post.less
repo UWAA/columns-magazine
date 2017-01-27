@@ -4,13 +4,36 @@
 
     .columns-feature-content{
         img{
-            &.alignleft{
-                margin: 0 20px 5px 0;
-            }
+            &.alignright {
+        margin: 10px -120px 20px 15px;
 
-            &.alignright{
-                margin: 0 0 5px 20px; 
-            }
+        @media only screen and (max-width: @screen-lg-min) {
+            margin: 20px 20px 20px 0;
+            text-align: center;
+
+        }
+    }
+
+    &.alignleft {
+        margin: 10px 15px 20px -120px;
+
+        @media only screen and (max-width: @screen-lg-min) {
+            margin: 20px 20px 20px 0;
+            text-align: center;
+
+        }
+    }
+
+    &.aligncenter {
+
+        @media only screen and (max-width: @screen-lg-min) {
+            width: 100% !IMPORTANT;            
+        }
+
+        margin: 0 auto;
+
+    }
+
         }
     }
 }
