@@ -12,7 +12,7 @@ class Columns
         
         $this->wp = $wp;
         $this->init();
-        // $this->Breadcrumbs = new Breadcrumbs();
+        $this->Breadcrumbs = new Breadcrumbs();        
     }
 
 

@@ -22,7 +22,7 @@ $feature = get_field("columns_feature_image");
 
 <div class="row">
         <div class="breadcrumbs">
-            <?php uw_breadcrumbs() ?>
+            <?php $Columns->Breadcrumbs->UWAABreadcrumbs(); ?>
         </div> 
         <div class="content-tags">
             <!-- Fluid containter, 2 cols -->

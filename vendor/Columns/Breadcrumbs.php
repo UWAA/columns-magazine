@@ -29,20 +29,18 @@ class Breadcrumbs {
 
     if (is_archive() )
     {
-      $archiveType = post_type_archive_title('', false);
-      if ($archiveType === "Benefits") {
-        $html .=  '<li><a href="'  . home_url('/') .'membership" title="Membership">Membership</a></li><li>';
-      }     
-      $html.= '<li class="current"><span>' . post_type_archive_title('', false) . '</span></li>';
+      $category = get_category( get_query_var( 'cat' ) );        
+        $html .=  '<li class="current"><span>'. get_cat_name($category->term_id ) . '</span>';
     }
    
       if ( is_single() )
       {
         if ( has_category() )
         {
-          $category = array_shift( get_the_category( $post->ID  ) ) ;
-          $html .= '<li><a href="'  . home_url('/') .'stories" title="Stories">Stories</a></li>';
-          // $html .=  '<li><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
+          $categories= get_the_category( get_the_ID() );
+          $cat = array_shift($categories);
+
+        $html .=  '<li class="current"><a href="'  . get_category_link( $cat->term_id ) .'" title="'. get_cat_name( $cat->term_id ).'">'. get_cat_name($cat->term_id ) . '</a>';        
         }
         if ( $this->UWAAIsCustomPostType() )
         {
@@ -52,18 +50,9 @@ class Breadcrumbs {
 
           
           switch ($postName) {
-            case 'chapters':
-                $html .=  '<li><a href="'  . home_url('/') .'communities" title="Communities">Communities</a></li>';
-                break;
-            case 'tours':
-                $html .=  '<li><a href="'  . home_url('/') .'travel" title="Travel">Travel</a></li><li><a href="'  . home_url('/') .'upcoming-tours" title="Upcoming Tours">Upcoming Tours</a></li>';
-                break;
-            case 'benefits':
-                $html .=  '<li><a href="'  . home_url('/') .'membership" title="Membership">Membership</a></li><li><a href="'  . home_url('/') .'membership/benefits" title="Benefits">Benefits</a></li>';
-                break;
-            case 'events':
-              $html .=  '<li><a href="'  . home_url('/') .'events" title="Events">Events</a></li>';
-              break;
+            case 'feature':
+                $html .=  '<li class="current"><a href="'  . home_url('/') .'feature" title="Features">Features</a></li>';
+                break;           
             
             default:
                 
@@ -74,7 +63,7 @@ class Breadcrumbs {
             $html .=  '<li><a href="'  . site_url('/' . $posttype->rewrite['slug'] . '/') .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
           }
         }
-        $html .=  '<li class="current"><span>'. get_the_title( $post->ID ) . '</span>';
+        // $html .=  '<li class="current"><span>'. get_the_title( $post->ID ) . '</span>';
       }
     
 
