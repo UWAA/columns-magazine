@@ -80,7 +80,7 @@ class Scripts
     add_action( 'wp_enqueue_scripts', array( $this, 'columns_register_default_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'columns_register_support_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'columns_enqueue_default_scripts' ) );
-    add_action( 'admin_enqueue_scripts', array( $this, 'columns_enqueue_admin_scripts' ) );
+    // add_action( 'admin_enqueue_scripts', array( $this, 'columns_enqueue_admin_scripts' ) );
 
   }
 
