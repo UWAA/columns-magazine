@@ -14,10 +14,55 @@ while ( have_posts() ) : the_post();
 
 $feature = get_field("columns_feature_image");
 
+if (get_field('superhero_custom_crop_widescreen')) {
+              ?>
+              <style type="text/css">
+                @media (min-width: 1800px) {
+                  .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                      background-position: <?php echo get_field('superhero_custom_crop_widescreen') ?> !IMPORTANT; 
+                      }
+                }
+                
+
+              </style>
+
+              <?php
+            }
+
+            if (get_field('superhero_custom_crop_mediumscreen')) {              
+              ?>
+              <style type="text/css">
+                @media only screen and (min-width: 480px) and (max-width: 1800px) {
+                  .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                      background-position: <?php echo get_field('superhero_custom_crop_mediumscreen') ?> !IMPORTANT; 
+                      }
+                }
+                
+
+              </style>
+
+              <?php
+            }
+
+            if (get_field('columns_containcover') == 1) {
+
+              ?>
+              <style type="text/css">                
+                  .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                      background-size: contain !IMPORTANT; 
+                
+                }
+                
+
+              </style>
+
+              <?php
+            }
+
 ?>
 
 <div class="row">
-     <div class="headline-image" style="background-image: url('<?php echo esc_attr($feature['url']); ?>')"></div>
+     <div class="headline-image <?php echo get_post_field( 'post_name', get_post() ); ?>" style="background-image: url('<?php echo esc_attr($feature['url']); ?>')"></div>
 </div>
 
 <div class="row">

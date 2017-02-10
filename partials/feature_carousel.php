@@ -1,6 +1,4 @@
 
-
-
 <?php
 use \Columns\Utilities as Utilities;
 
@@ -57,6 +55,52 @@ $args = array (
 
             
             $overlay = (get_field("columns_superhero_title_background_overlay") ? ' style="background-color: rgba(0, 0, 0, 0.35)" ' : '' );
+
+
+            if (get_field('superhero_custom_crop_widescreen')) {
+              ?>
+              <style type="text/css">
+                @media (min-width: 1800px) {
+                  .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                      background-position: <?php echo get_field('superhero_custom_crop_widescreen') ?> !IMPORTANT; 
+                      }
+                }
+                
+
+              </style>
+
+              <?php
+            }
+
+            if (get_field('superhero_custom_crop_mediumscreen')) {              
+              ?>
+              <style type="text/css">
+                @media only screen and (min-width: 480px) and (max-width: 1800px) {
+                  .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                      background-position: <?php echo get_field('superhero_custom_crop_mediumscreen') ?> !IMPORTANT; 
+                      }
+                }
+                
+
+              </style>
+
+              <?php
+            }
+
+            if (get_field('columns_containcover') == 1) {
+
+              ?>
+              <style type="text/css">                
+                  .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                      background-size: contain !IMPORTANT; 
+                
+                }
+                
+
+              </style>
+
+              <?php
+            }
             
             
 
@@ -67,7 +111,7 @@ $args = array (
 
           <div class="feature-cell">            
                 <a href="<?php echo get_permalink() ?>">                                           
-            <div class="background-image" style="background-image: url('<?php echo esc_attr($feature['url']); ?>')">
+            <div class="background-image <?php echo get_post_field( 'post_name', get_post() ); ?>" style="background-image: url('<?php echo esc_attr($feature['url']); ?>')">
               <div class="title-area" <?php echo $overlay ?> >
                   <h2 <?php echo ($inlineTextStyles ? $inlineTextStyles : ''); ?> >
                     
