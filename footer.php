@@ -16,9 +16,13 @@
                 </ul>                   
             </div>
             </nav>
+            
             <div class="uwaa-logo">
+            <a href="http://www.uw.edu/alumni">
                 <?php get_template_part('assets/uwaa', 'logo.svg');?>
+            </a>
             </div>
+            
         </div>
     </div>
     <div class="uw-footer">

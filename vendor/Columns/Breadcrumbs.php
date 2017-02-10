@@ -59,9 +59,7 @@ class Breadcrumbs {
                 break;
           }
           
-          if (empty($posttype->rewrite['slug'])){
-            $html .=  '<li><a href="'  . site_url('/' . $posttype->rewrite['slug'] . '/') .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
-          }
+         
         }
         // $html .=  '<li class="current"><span>'. get_the_title( $post->ID ) . '</span>';
       }

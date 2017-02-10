@@ -84,7 +84,7 @@ if (get_field('superhero_custom_crop_widescreen')) {
 
     <p class="teaser-intro"><?php echo wp_kses(get_field("columns_feature_introduction"), Utilities::$allowedHTML); ?></p>
 
-<p class="byline">
+    <p class="byline">
 <?php
 
     if(get_field("columns_custom_byline") != '') {

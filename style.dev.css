@@ -246,7 +246,7 @@ a.more:hover {
   font-size: 17px;
   line-height: 1.55;
   color: #3d3d3d;
-  margin-bottom: 20.5px;
+  margin-bottom: 14px;
 }
 @media (max-width: 991px) {
   .page p {
@@ -1073,6 +1073,7 @@ ul.uwaa-social li a:focus.email {
   padding-left: 15px;
   padding-right: 15px;
   z-index: 0;
+  fill: #ffffff;
 }
 @media (min-width: 768px) {
   #uwaa-footer .uwaa-logo {
@@ -1117,6 +1118,10 @@ ul.uwaa-social li a:focus.email {
   #uwaa-footer .uwaa-logo {
     margin-left: 0%;
   }
+}
+#uwaa-footer .uwaa-logo:hover {
+  cursor: pointer;
+  fill: #b7a57a;
 }
 @media screen and (max-width: 991px) {
   #uwaa-footer .uwaa-logo {
@@ -1142,7 +1147,7 @@ ul.uwaa-social li a:focus.email {
   height: 100%;
 }
 #uwaa-footer .uwaa-logo svg g path {
-  fill: #ffffff;
+  fill: inherit;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #uwaa-footer .social-icons {

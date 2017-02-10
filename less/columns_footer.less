@@ -102,6 +102,13 @@
 		.make-md-column(3);
 		.make-md-column-offset(0);
 		z-index: 0;
+		fill: @white;
+
+		&:hover {
+        cursor: pointer;
+        fill: @lightgold;
+
+      }
 		
 
 
@@ -130,7 +137,10 @@
             height: 100%;
 
             g path {
-                fill: @white;
+                fill: inherit;
+
+                &:hover {                	
+                }
             }
             
         }
