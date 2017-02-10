@@ -27,6 +27,8 @@ use \Columns\Utilities as Utilities;
             ?>
 
             <h1><?php the_title() ?></h1>
+
+            <p class="teaser-intro"><?php echo wp_kses(get_field("columns_feature_introduction"), Utilities::$allowedHTML); ?></p>
          
 
             <p class="byline">
