@@ -431,7 +431,7 @@ a.more:hover {
 }
 @media (max-width: 768px) {
   .single p.teaser-intro {
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 10px;
   }
 }
