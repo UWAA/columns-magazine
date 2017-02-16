@@ -19,7 +19,7 @@ if (get_field('superhero_custom_crop_widescreen')) {
               <style type="text/css">
                 @media (min-width: 1800px) {
                   .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
-                      background-position: <?php echo get_field('superhero_custom_crop_widescreen') ?> !IMPORTANT; 
+                      background-position: <?php echo get_field('superhero_custom_crop_widescreen') ?> !IMPORTANT;
                       }
                 }
                 
@@ -49,7 +49,8 @@ if (get_field('superhero_custom_crop_widescreen')) {
               ?>
               <style type="text/css">                
                   .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
-                      background-size: contain !IMPORTANT; 
+                      background-size: contain !IMPORTANT;
+                      background-position: center center !IMPORTANT;
                 
                 }
                 

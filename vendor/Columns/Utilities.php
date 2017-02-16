@@ -19,6 +19,7 @@ class Utilities{
         add_action('admin_menu', array($this, 'addIssueControlOptionsPage'));
         add_filter( 'pre_get_posts', array($this, 'namespace_add_custom_types' ));
         add_action( 'admin_init', array($this, 'addOrderToPosts' ));      
+        add_filter( 'wp_insert_post_data', array($this, 'myplugin_update_slug' ) , 99, 2 );
 	}	
 
     
@@ -84,5 +85,16 @@ class Utilities{
     public function addOrderToPosts() {
         add_post_type_support( 'post', 'page-attributes' );    
     }
+
+    public function myplugin_update_slug( $data, $postarr ) {                    
+        if($postType  = 'feature') {
+            echo "on Feature";
+        $data['post_name'] = sanitize_title( $data['post_title'] );
+        return $data;
+    } else {
+        return $data;
+    }
+}
+
 
 }
