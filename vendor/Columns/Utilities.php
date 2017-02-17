@@ -87,8 +87,7 @@ class Utilities{
     }
 
     public function myplugin_update_slug( $data, $postarr ) {                    
-        if($postType  = 'feature') {
-            echo "on Feature";
+        if($postType  = 'feature') {            
         $data['post_name'] = sanitize_title( $data['post_title'] );
         return $data;
     } else {
