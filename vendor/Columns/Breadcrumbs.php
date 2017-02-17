@@ -35,12 +35,12 @@ class Breadcrumbs {
    
       if ( is_single() )
       {
-        if ( has_category() )
+        if ( has_category() AND $this->UWAAIsCustomPostType() != TRUE )
         {
           $categories= get_the_category( get_the_ID() );
           $cat = array_shift($categories);
 
-        $html .=  '<li class="current"><a href="'  . get_category_link( $cat->term_id ) .'" title="'. get_cat_name( $cat->term_id ).'">'. get_cat_name($cat->term_id ) . '</a>';        
+        $html .=  '<li class="current"><a href="'  . get_category_link( $cat->term_id ) .'" title="'. get_cat_name( $cat->term_id ).'">'. get_cat_name($cat->term_id ) . '</a>';               
         }
         if ( $this->UWAAIsCustomPostType() )
         {
@@ -52,6 +52,7 @@ class Breadcrumbs {
           switch ($postName) {
             case 'feature':
                 $html .=  '<li class="current"><a href="'  . home_url('/') .'feature" title="Features">Features</a></li>';
+                
                 break;           
             
             default:
