@@ -86,12 +86,10 @@ class Utilities{
         add_post_type_support( 'post', 'page-attributes' );    
     }
 
-    public function myplugin_update_slug( $data, $postarr ) {                    
+    public function myplugin_update_slug( $data, $postarr ) {
         if($postType  = 'feature') {            
         $data['post_name'] = sanitize_title( $data['post_title'] );
-        return $data;
-    } else {
-        return $data;
+        return $data;    
     }
 }
 
