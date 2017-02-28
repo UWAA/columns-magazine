@@ -82,8 +82,6 @@
 .columns-navbar:after,
 #uwaa-footer:before,
 #uwaa-footer:after,
-.home-high:before,
-.home-high:after,
 .scroller:before,
 .scroller:after,
 .home-low:before,
@@ -112,7 +110,6 @@
 .columns-feature-content:after,
 .columns-navbar:after,
 #uwaa-footer:after,
-.home-high:after,
 .scroller:after,
 .home-low:after,
 .modal-footer:after,
@@ -153,8 +150,6 @@
 .columns-navbar:after,
 #uwaa-footer:before,
 #uwaa-footer:after,
-.home-high:before,
-.home-high:after,
 .scroller:before,
 .scroller:after,
 .home-low:before,
@@ -183,7 +178,6 @@
 .columns-feature-content:after,
 .columns-navbar:after,
 #uwaa-footer:after,
-.home-high:after,
 .scroller:after,
 .home-low:after,
 .modal-footer:after,
@@ -204,7 +198,21 @@ p {
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 10px;
 }
-.published-date {
+.page p {
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #3d3d3d;
+  margin-bottom: 14px;
+}
+@media (max-width: 991px) {
+  .page p {
+    font-size: 16px;
+  }
+}
+.published-date,
+.archive-story-container .date {
   font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -239,19 +247,6 @@ a.more:after {
 }
 a.more:hover {
   opacity: .6;
-}
-.page p {
-  font-family: 'Merriweather', serif;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.55;
-  color: #3d3d3d;
-  margin-bottom: 14px;
-}
-@media (max-width: 991px) {
-  .page p {
-    font-size: 16px;
-  }
 }
 .uw-columns-body {
   position: relative;
@@ -1284,42 +1279,10 @@ ul.uwaa-social li a:focus.email {
   width: 20px;
   height: 20px;
 }
-.home-high {
+.home-high,
+.home-people,
+.home-solutions {
   margin: 20px 0;
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.home-high:before,
-.home-high:after {
-  content: " ";
-  display: table;
-}
-.home-high:after {
-  clear: both;
-}
-.home-high:before,
-.home-high:after {
-  content: " ";
-  display: table;
-}
-.home-high:after {
-  clear: both;
-}
-.home-high:before,
-.home-high:after {
-  content: " ";
-  display: table;
-}
-.home-high:after {
-  clear: both;
-}
-.home-high:before,
-.home-high:after {
-  content: " ";
-  display: table;
-}
-.home-high:after {
-  clear: both;
 }
 .home-high .flickity-prev-next-button {
   top: 55%;
@@ -1331,7 +1294,6 @@ ul.uwaa-social li a:focus.email {
   counter-increment: gallery-cell;
   border-right: 2px dotted;
   padding: 10px 15px;
-  /* Medium devices (desktops, 992px and up) */
 }
 .home-high .carousel-cell img {
   width: 104px;
@@ -1626,6 +1588,67 @@ p.excerpt {
     min-width: 320px;
     width: 100%;
   }
+}
+.home-people,
+.home-solutions {
+  margin-top: 30px;
+}
+.home-people .carousel-cell,
+.home-solutions .carousel-cell {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 270px;
+  border-right: 2px dotted;
+}
+@media (min-width: 768px) {
+  .home-people .carousel-cell,
+  .home-solutions .carousel-cell {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .home-people .carousel-cell,
+  .home-solutions .carousel-cell {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (max-width: 768px) {
+  .home-people .carousel-cell,
+  .home-solutions .carousel-cell {
+    border-right: none;
+  }
+}
+.home-people .carousel-cell img,
+.home-solutions .carousel-cell img {
+  width: 104px;
+  height: 104px;
+  float: left;
+  margin-right: 14px;
+  margin-bottom: 146px;
+}
+.home-section-divider {
+  border-bottom: 1px solid #999999;
+  height: 21px;
+  margin: 15px 0 15px 0;
+}
+.home-section-divider h2 {
+  display: inline;
+  background-color: #FFFFFF;
+  margin-left: 30px;
+  padding-left: 15px;
+  margin-right: 0;
+  padding-right: 15px;
+}
+.home-section-divider h2 span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #767676;
+  vertical-align: middle;
 }
 .flickity-enabled {
   position: relative;
@@ -1932,12 +1955,6 @@ p.excerpt {
   margin-bottom: 14.5px;
 }
 .archive-story-container .date {
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #767676;
-  font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
   margin: 15px 0 10px;
 }
 .archive-story-container .archive-story-title {
@@ -2038,4 +2055,7 @@ p.excerpt {
   hr {
     margin-top: 13px;
   }
+}
+.wp-caption-text {
+  margin-top: -15px;
 }

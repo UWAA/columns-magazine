@@ -7,7 +7,8 @@ if (numberOfFeatures > 1 ) {
     $('.home-feature-carousel').flickity({
     cellSelector: '.feature-cell',
     cellAlign: 'center',
-    dragThreshold: 10
+    dragThreshold: 10,
+    wrapAround: true
     }); 
   }
 

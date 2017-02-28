@@ -13,24 +13,37 @@ wp_enqueue_script('isotope-packery');
 	<!-- Get partial for Main Slideshow, should have row -->
 	<?php get_template_part("partials/feature_carousel") ?>    
 
-
-<div class="feature-row home-high">
+</div>
+<div class="feature-row home-high row">
 	<!-- Loop here for featured articles -->
 	<?php get_template_part("partials/home_high") ?>
 
 </div>
 
 
-
+<div class="home-section-divider">
+	<h2>
+		Hub
+		<!-- <span>What's happening at the U</span> -->
+	</h2>
 	
+</div>
+
+<div class="container-fluid">
 	<!-- Masonry here, plus output of all the stuff needed to run it -->
 
     	<?php get_template_part("partials/home_hub") ?>
     
 
 
-</div>
+</div> <!-- /container-fluid -->
 
+<div class="home-section-divider">
+	<h2>Issue 
+	<!-- <span>@TODO Get Current Issue</span> -->
+	</h2>
+	
+</div>
 
 <div class="row feature-row home-low">
 
@@ -38,12 +51,28 @@ wp_enqueue_script('isotope-packery');
 	
 </div>
 
+<div class="home-section-divider">
+	<h2>People</h2>
+</div>
 
-
-
-
+<div class="feature-row home-people row">
+	<!-- Loop here for featured people articles -->
+	<?php get_template_part("partials/home_people") ?>
 
 </div>
+
+
+<div class="home-section-divider">
+	<h2>Solutions</h2>
+</div>
+
+<div class="feature-row home-solutions row">
+	<!-- Loop here for featured solutions articles -->
+	<?php get_template_part("partials/home_solutions") ?>
+
+</div>
+
+
 
 <?php
 

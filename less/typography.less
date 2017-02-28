@@ -13,6 +13,19 @@ p {
     margin-bottom: 10px;
 }
 
+.page p {
+    font-family: 'Merriweather', serif; 
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    color: @janegray;
+    margin-bottom: 14px;
+
+     @media (max-width: @screen-sm-max) { 
+     font-size: 16px;
+    }
+}
+
 .published-date {    
     font-size: 13px;
     letter-spacing: 1px;
@@ -57,15 +70,4 @@ a.more {
 
 }
 
-.page p {
-    font-family: 'Merriweather', serif; 
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.55;
-    color: @janegray;
-    margin-bottom: 14px;
 
-     @media (max-width: @screen-sm-max) { 
-     font-size: 16px;
-    }
-}
