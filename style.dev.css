@@ -194,11 +194,7 @@ h3,
 h4 {
   font-family: 'Merriweather', serif;
 }
-p {
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom: 10px;
-}
-.page p {
+.page-template-columns-default p {
   font-family: 'Merriweather', serif;
   font-weight: 400;
   font-size: 17px;
@@ -207,9 +203,13 @@ p {
   margin-bottom: 14px;
 }
 @media (max-width: 991px) {
-  .page p {
+  .page-template-columns-default p {
     font-size: 16px;
   }
+}
+p {
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 10px;
 }
 .published-date,
 .archive-story-container .date {
@@ -1292,7 +1292,7 @@ ul.uwaa-social li a:focus.email {
   height: 250px;
   margin-right: 10px;
   counter-increment: gallery-cell;
-  border-right: 2px dotted;
+  border-right: 2px dotted #999999;
   padding: 10px 15px;
 }
 .home-high .carousel-cell img {
@@ -1302,7 +1302,7 @@ ul.uwaa-social li a:focus.email {
   margin-right: 14px;
   margin-bottom: 146px;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .home-high .carousel-cell {
     width: 50%;
   }
@@ -1517,7 +1517,7 @@ p.excerpt {
   padding-left: 15px;
   padding-right: 15px;
   text-align: center;
-  border-right: 2px dotted;
+  border-right: 2px dotted #999999;
   padding-left: 20px;
   padding-right: 0;
 }
@@ -1581,7 +1581,7 @@ p.excerpt {
   height: 270px;
   margin-right: 20px;
   counter-increment: gallery-cell;
-  border-right: 2px dotted;
+  border-right: 2px dotted #999999;
 }
 @media (max-width: 992px) {
   .home-low .feature-row .carousel-cell {
@@ -1599,8 +1599,7 @@ p.excerpt {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  height: 270px;
-  border-right: 2px dotted;
+  height: 135px;
 }
 @media (min-width: 768px) {
   .home-people .carousel-cell,
@@ -1614,12 +1613,6 @@ p.excerpt {
   .home-solutions .carousel-cell {
     float: left;
     width: 33.33333333%;
-  }
-}
-@media (max-width: 768px) {
-  .home-people .carousel-cell,
-  .home-solutions .carousel-cell {
-    border-right: none;
   }
 }
 .home-people .carousel-cell img,
@@ -1629,6 +1622,18 @@ p.excerpt {
   float: left;
   margin-right: 14px;
   margin-bottom: 146px;
+}
+@media (max-width: 768px) {
+  .home-people .carousel-cell,
+  .home-solutions .carousel-cell {
+    border-right: none;
+  }
+}
+@media (max-width: 1199px) {
+  .home-people .carousel-cell img,
+  .home-solutions .carousel-cell img {
+    display: none;
+  }
 }
 .home-section-divider {
   border-bottom: 1px solid #999999;
