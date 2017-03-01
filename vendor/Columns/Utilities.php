@@ -19,7 +19,7 @@ class Utilities{
         add_action('admin_menu', array($this, 'addIssueControlOptionsPage'));
         add_filter( 'pre_get_posts', array($this, 'namespace_add_custom_types' ));
         add_action( 'admin_init', array($this, 'addOrderToPosts' ));      
-        add_filter( 'wp_insert_post_data', array($this, 'myplugin_update_slug' ) , 99, 2 );
+        // add_filter( 'wp_insert_post_data', array($this, 'myplugin_update_slug' ) , 99, 2 );
 	}	
 
     
