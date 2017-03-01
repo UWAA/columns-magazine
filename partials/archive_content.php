@@ -14,7 +14,7 @@
         // "style" => "margin-bottom:5px;margin-right:14px;float:left",
         "class" => "archive-thumbnail"
         );
-    echo wp_get_attachment_image($contentPlacementThumbnailImageID, '' , '', $atts);
+    echo wp_get_attachment_image($contentPlacementThumbnailImageID, 'thumbnail' , '', $atts);
  endif;
 
 
