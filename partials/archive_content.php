@@ -7,12 +7,34 @@
 
 
 <?php  
- if ( has_post_thumbnail() ) :
-    the_post_thumbnail( 'thumbnail' , 'style=margin-bottom:5px;margin-right:14px;float:left');
+ if ( get_field('content_thumbnail', $post->ID) ) :
+    
+    $contentPlacementThumbnailImageID = get_field('content_thumbnail', $post->ID);  //returns a image id
+    $atts = array(
+        // "style" => "margin-bottom:5px;margin-right:14px;float:left",
+        "class" => "archive-thumbnail"
+        );
+    echo wp_get_attachment_image($contentPlacementThumbnailImageID, '' , '', $atts);
  endif;
- // @TODO Pull this into CSS
- // @TODO Pull in the Content Thumbnail from our better system, not the featured post
+
+
+
+
+// if(get_field("content_thumbnail")) :
+            // $thumbnail = get_field("content_thumbnail");
+
+
+// endif;
 ?>
+            
+
+
+
+
+
+ <!-- @TODO Pull this into CSS -->
+ <!-- @TODO Pull in the Content Thumbnail from our better system, not the featured post -->
+
 <h2 class="archive-story-title">
   <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?></a>
 </h2>

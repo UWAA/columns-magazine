@@ -1997,6 +1997,11 @@ p.excerpt {
   font-size: 60px;
   margin-top: 0;
 }
+.archive-thumbnail {
+  margin-bottom: 5px;
+  margin-right: 14px;
+  float: left;
+}
 .single-post .columns-feature-content img.alignright,
 .single-feature .columns-feature-content img.alignright {
   margin: 10px -120px 20px 15px;
