@@ -1600,6 +1600,7 @@ p.excerpt {
   padding-left: 15px;
   padding-right: 15px;
   height: 135px;
+  border-right: 2px dotted #999999;
 }
 @media (min-width: 768px) {
   .home-people .carousel-cell,
@@ -2060,7 +2061,4 @@ p.excerpt {
   hr {
     margin-top: 13px;
   }
-}
-.wp-caption-text {
-  margin-top: -15px;
 }

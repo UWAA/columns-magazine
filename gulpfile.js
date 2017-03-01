@@ -1,14 +1,16 @@
-var gulp = require('gulp'),
-less = require('gulp-less'),
-rename = require("gulp-rename"),
-watch = require('gulp-watch'),
-uglify = require('gulp-uglifyjs'),
-header = require('gulp-header'),
-concat = require('gulp-concat'),
-foreach = require('gulp-foreach'),
-minifyCss = require('gulp-minify-css'),
-mainBowerFiles = require('main-bower-files');
+var gulp = require('gulp');
+var less = require('gulp-less');
+var rename = require("gulp-rename");
+var watch = require('gulp-watch');
+var uglify = require('gulp-uglifyjs');
+var header = require('gulp-header');
+var concat = require('gulp-concat');
+var foreach = require('gulp-foreach');
+var minifyCss = require('gulp-minify-css');
+var mainBowerFiles = require('main-bower-files');
 var sourcemaps = require('gulp-sourcemaps');
+
+
 
 
 var pkg = require('./package.json');
@@ -101,8 +103,8 @@ gulp.task('less', function () {
      gulp.src('./less/style.less')     
     .pipe(less())
     .pipe(minifyCss())
-    .pipe(header(banner, { pkg : pkg } ))
-    .on('error', catchErrors)     
+    .pipe(header(banner, { pkg : pkg } ))    
+    .on('error', catchErrors)    
     .pipe(gulp.dest('./'));
 
     gulp.src('./less/style.less')    
