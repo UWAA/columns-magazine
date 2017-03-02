@@ -27,10 +27,15 @@ class Breadcrumbs {
     $html .= '<li' . (is_front_page() ? ' class="current"' : '') . '><a href="' . home_url('/') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
 
-    if (is_archive() )
+    if (is_archive() AND !is_post_type_archive( 'feature' ) )
     {
       $category = get_category( get_query_var( 'cat' ) );        
         $html .=  '<li class="current"><span>'. get_cat_name($category->term_id ) . '</span>';
+    }
+
+    if ( is_post_type_archive( 'feature' ) )
+    {
+      $html .=  '<li class="current"><span>Features</span>';
     }
    
       if ( is_single() )
