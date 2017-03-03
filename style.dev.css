@@ -2058,6 +2058,12 @@ p.excerpt {
     text-align: center;
   }
 }
+.single-post .columns-feature-content .alignnone p.wp-caption-text,
+.single-feature .columns-feature-content .alignnone p.wp-caption-text {
+  margin-top: 5px;
+  text-align: right;
+  margin-right: 8px;
+}
 .single-header {
   border-top: solid lightgray 1px;
 }
