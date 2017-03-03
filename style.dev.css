@@ -2009,7 +2009,7 @@ p.excerpt {
 @media only screen and (max-width: 1200px) {
   .single-post .columns-feature-content img.alignright,
   .single-feature .columns-feature-content img.alignright {
-    margin: 20px 20px 20px 0;
+    margin: auto !IMPORTANT;
     text-align: center;
   }
 }
@@ -2020,7 +2020,7 @@ p.excerpt {
 @media only screen and (max-width: 1200px) {
   .single-post .columns-feature-content img.alignleft,
   .single-feature .columns-feature-content img.alignleft {
-    margin: 20px 20px 20px 0;
+    margin: auto !IMPORTANT;
     text-align: center;
   }
 }
@@ -2032,6 +2032,30 @@ p.excerpt {
   .single-post .columns-feature-content img.aligncenter,
   .single-feature .columns-feature-content img.aligncenter {
     width: 100% !IMPORTANT;
+  }
+}
+.single-post .columns-feature-content .alignright p.wp-caption-text,
+.single-feature .columns-feature-content .alignright p.wp-caption-text {
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+@media only screen and (max-width: 1200px) {
+  .single-post .columns-feature-content .alignright p.wp-caption-text,
+  .single-feature .columns-feature-content .alignright p.wp-caption-text {
+    text-align: center;
+    margin-right: 0;
+  }
+}
+.single-post .columns-feature-content .alignleft p.wp-caption-text,
+.single-feature .columns-feature-content .alignleft p.wp-caption-text {
+  text-align: left;
+  margin-top: 5px;
+}
+@media only screen and (max-width: 1200px) {
+  .single-post .columns-feature-content .alignleft p.wp-caption-text,
+  .single-feature .columns-feature-content .alignleft p.wp-caption-text {
+    text-align: center;
   }
 }
 .single-header {
