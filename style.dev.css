@@ -2004,7 +2004,7 @@ p.excerpt {
 }
 .single-post .columns-feature-content img.alignright,
 .single-feature .columns-feature-content img.alignright {
-  margin: 10px -120px 20px 15px;
+  margin: 10px -120px 10px 15px;
 }
 @media only screen and (max-width: 1200px) {
   .single-post .columns-feature-content img.alignright,
@@ -2015,7 +2015,7 @@ p.excerpt {
 }
 .single-post .columns-feature-content img.alignleft,
 .single-feature .columns-feature-content img.alignleft {
-  margin: 10px 15px 20px -120px;
+  margin: 10px 15px 10px -120px;
 }
 @media only screen and (max-width: 1200px) {
   .single-post .columns-feature-content img.alignleft,
