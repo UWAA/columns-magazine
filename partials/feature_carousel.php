@@ -77,7 +77,7 @@ $args = array (
               <style type="text/css">
                 @media only screen and (min-width: 480px) and (max-width: 1800px) {
                   .<?php echo get_post_field( 'post_name', get_post() ); ?>  {
-                      background-position: <?php echo get_field('superhero_custom_crop_mediumscreen') ?> !IMPORTANT; 
+                      background-position: <?php echo get_field('superhero_custom_crop_mediumscreen') ?> !IMPORTANT;
                       }
                 }
                 
