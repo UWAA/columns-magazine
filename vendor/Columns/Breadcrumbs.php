@@ -27,6 +27,11 @@ class Breadcrumbs {
     $html .= '<li' . (is_front_page() ? ' class="current"' : '') . '><a href="' . home_url('/') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
 
+    if (is_search()) {
+    
+      $html .=  '<li class="current"><span>Search</span>';
+     }
+
     if (is_archive() AND !is_post_type_archive( 'feature' ) )
     {
       $category = get_category( get_query_var( 'cat' ) );        

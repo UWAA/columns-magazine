@@ -1,0 +1,7 @@
+<svg>
+    <g id="icon-search">
+    <path id="glass" d="M119.78,50.59a6.07,6.07,0,1,0,6.08-6.07,6.07,6.07,0,0,0-6.08,6.07h0Zm-1.76,0a7.83,7.83,0,1,1,7.83,7.83h0A7.84,7.84,0,0,1,118,50.59h0" />    
+    <rect id="handle" x="113.94" y="57.46" width="7.86" height="1.97" transform="translate(-6.83 100.38) rotate(-44.96)"/>
+    <circle id="outer-circle" cx="124.87" cy="51.86" r="20.78" style="fill:none"/>
+    <rect x="103" y="30" width="43.73" height="43.73" style="fill:none"/>
+</g>

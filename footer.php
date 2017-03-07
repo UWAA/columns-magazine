@@ -69,6 +69,9 @@
     </div><!-- #uw-container-inner -->
     </div><!-- #uw-container -->
 
-<?php wp_footer(); ?>
+<?php 
+wp_footer(); 
+?>
+
 </body>
 </html>
