@@ -38,6 +38,7 @@ endwhile;
 ?>
 
 </div>
+</div>
 
 <div class="container-fluid">
         
