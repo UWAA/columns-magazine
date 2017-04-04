@@ -39,7 +39,7 @@ wp_enqueue_script('isotope-packery');
 </div> <!-- /container-fluid -->
 
 <div class="home-section-divider">
-	<h2>Issue 
+	<h2>In Print
 	<!-- <span>@TODO Get Current Issue</span> -->
 	</h2>
 	
