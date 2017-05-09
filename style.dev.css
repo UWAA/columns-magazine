@@ -1368,7 +1368,7 @@ ul.uwaa-social li a:focus.email {
 }
 .home-high .carousel-cell {
   width: 33%;
-  height: 200px;
+  height: 220px;
   margin-right: 10px;
   counter-increment: gallery-cell;
   border-right: 2px dotted #999999;
