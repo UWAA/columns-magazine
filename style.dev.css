@@ -1493,6 +1493,11 @@ p.excerpt {
     margin: 0;
   }
 }
+@media (max-width: 768px) {
+  #hub {
+    margin-bottom: 30px;
+  }
+}
 /* ---- .element-item ---- */
 .hub-item {
   position: relative;
