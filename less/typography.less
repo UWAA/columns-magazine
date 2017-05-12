@@ -5,7 +5,27 @@ body {
 }
 
 h1, h2, h3, h4, {
-   font-family: 'Merriweather', serif; 
+   font-family: 'Merriweather', serif;
+
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1.2;
+    color: @janegray;
+    margin-bottom: 18px;
+
+    /* Medium devices (desktops, 992px and up) */
+  @media (min-width: @screen-lg-min) { 
+  margin-left: -85px;
+  margin-right:-80px;
+ }
+
+ @media (max-width: @screen-sm-min) { 
+     font-size: 30px;
+     margin: 16px 0 15px;
+    }
 }
 
 .page-template-columns-default p {
@@ -25,6 +45,8 @@ p {
     
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 10px;
+
+    
 }
 
 .published-date {    
