@@ -223,7 +223,7 @@ h1 {
 @media (max-width: 480px) {
   h1 {
     font-size: 21px;
-    margin: 0 0 12px;
+    margin: 12px 0 12px;
   }
 }
 .page-template-columns-default p {
