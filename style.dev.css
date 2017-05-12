@@ -220,6 +220,12 @@ h1 {
     margin: 16px 0 15px;
   }
 }
+@media (max-width: 480px) {
+  h1 {
+    font-size: 21px;
+    margin: 0 0 12px;
+  }
+}
 .page-template-columns-default p {
   font-family: 'Merriweather', serif;
   font-weight: 400;
@@ -422,6 +428,12 @@ a.more:hover {
   .feature-title {
     font-size: 30px;
     margin: 16px 0 15px;
+  }
+}
+@media (max-width: 480px) {
+  .feature-title {
+    font-size: 21px;
+    margin: 12px 0 12px;
   }
 }
 .single p {
