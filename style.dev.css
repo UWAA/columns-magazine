@@ -226,6 +226,9 @@ h1 {
     margin: 24px 0;
   }
 }
+.archive-header h1 {
+  color: #ffffff;
+}
 .page-template-columns-default p {
   font-family: 'Merriweather', serif;
   font-weight: 400;
