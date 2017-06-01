@@ -2224,6 +2224,7 @@ p.excerpt {
   .single-feature .columns-feature-content img.alignright {
     margin: auto !IMPORTANT ;
     text-align: center;
+    padding: 0 10px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2242,6 +2243,7 @@ p.excerpt {
   .single-feature .columns-feature-content img.alignleft {
     margin: auto !IMPORTANT;
     text-align: center;
+    padding: 0 10px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2258,6 +2260,7 @@ p.excerpt {
   .single-post .columns-feature-content img.aligncenter,
   .single-feature .columns-feature-content img.aligncenter {
     width: 100% !IMPORTANT;
+    padding: 0 10px;
   }
 }
 .single-post .columns-feature-content .alignright p.wp-caption-text,
