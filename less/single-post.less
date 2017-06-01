@@ -4,40 +4,53 @@
 
     .columns-feature-content{
         img{
-            &.alignright {
-        margin: 10px -120px 20px 15px;
-
-        @media only screen and (max-width: @screen-lg-min) {
-            // margin: 20px 20px 20px 0;
-            margin: auto !IMPORTANT;
-            text-align: center;
-
-        }
-    }
-
-    &.alignleft {
-        margin: 10px 15px 20px -120px;
-
-        @media only screen and (max-width: @screen-lg-min) {
-            // margin: 20px 20px 20px 0;
-            margin: auto !IMPORTANT;
-            text-align: center;
-
-        }
-    }
-
-    &.aligncenter {
+            padding: 15px;
+            max-width: 375px;
 
 
-        @media only screen and (max-width: @screen-lg-min) {
-            width: 100% !IMPORTANT;
-        }
+                 &.alignright {
+                     margin: 10px -120px 20px 15px;
+                     
+                    
+        
+                     @media only screen and (max-width: @screen-lg-min) {                         
+                         margin: auto !IMPORTANT ;
+                         text-align: center;                         
+        
+                     }
 
-        margin: 0 auto;
+                     @media only screen and (max-width: @screen-xs-max) {
+                             max-width: none;
+                    }
+                 }
+        
+                 &.alignleft {
+                     margin: 10px 15px 20px -120px;
+        
+                     @media only screen and (max-width: @screen-lg-min) {                         
+                         margin: auto !IMPORTANT;
+                         text-align: center;
+                        
+        
+                     }
 
-    }
+                     @media only screen and (max-width: @screen-xs-max) {
+                         max-width: none;
+                    }
+                 }
+        
+                 &.aligncenter {
+        
+        
+                     @media only screen and (max-width: @screen-lg-min) {
+                         width: 100% !IMPORTANT;
+                     }
+        
+                     margin: 0 auto;
+        
+         }
 
-        }
+        }  // end img
 
         .alignright {
             p.wp-caption-text {
