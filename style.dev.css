@@ -80,6 +80,8 @@
 .columns-feature-content:after,
 .columns-navbar:before,
 .columns-navbar:after,
+.social-share-container:before,
+.social-share-container:after,
 #uwaa-footer:before,
 #uwaa-footer:after,
 .scroller:before,
@@ -111,6 +113,7 @@
 .modal-footer:after,
 .columns-feature-content:after,
 .columns-navbar:after,
+.social-share-container:after,
 #uwaa-footer:after,
 .scroller:after,
 .home-low:after,
@@ -151,6 +154,8 @@
 .columns-feature-content:after,
 .columns-navbar:before,
 .columns-navbar:after,
+.social-share-container:before,
+.social-share-container:after,
 #uwaa-footer:before,
 #uwaa-footer:after,
 .scroller:before,
@@ -182,6 +187,7 @@
 .modal-footer:after,
 .columns-feature-content:after,
 .columns-navbar:after,
+.social-share-container:after,
 #uwaa-footer:after,
 .scroller:after,
 .home-low:after,
@@ -1061,6 +1067,117 @@ ul.uwaa-social li a:focus.instagram {
 ul.uwaa-social li a:hover.email,
 ul.uwaa-social li a:focus.email {
   background-position: -410px -225px;
+}
+.social-share-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.social-share-container:before,
+.social-share-container:after {
+  content: " ";
+  display: table;
+}
+.social-share-container:after {
+  clear: both;
+}
+.social-share-container:before,
+.social-share-container:after {
+  content: " ";
+  display: table;
+}
+.social-share-container:after {
+  clear: both;
+}
+.social-share-container:before,
+.social-share-container:after {
+  content: " ";
+  display: table;
+}
+.social-share-container:after {
+  clear: both;
+}
+.social-share-container:before,
+.social-share-container:after {
+  content: " ";
+  display: table;
+}
+.social-share-container:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .social-share-container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .social-share-container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .social-share-container {
+    width: 1170px;
+  }
+}
+.social-share-container > .navbar-header,
+.social-share-container > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .social-share-container > .navbar-header,
+  .social-share-container > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+ul.social-share li {
+  list-style: none;
+  display: inline-block;
+}
+ul.social-share li a {
+  transition: none;
+  color: #fff;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: inline;
+  background: url(assets/Columns_Sprite_4_NoColor.svg) no-repeat 0 0 transparent;
+  padding: 22px 36px;
+}
+ul.social-share li a.facebook {
+  background-position: -13px -156px;
+}
+ul.social-share li a.twitter {
+  background-position: -104px -156px;
+}
+ul.social-share li a.linkedin {
+  background-position: -195px -156px;
+}
+ul.social-share li a.email {
+  background-position: -284px -156px;
+}
+ul.social-share li a:hover,
+ul.social-share li a:focus {
+  transition: none;
+  border-bottom: 0;
+}
+ul.social-share li a:hover.facebook,
+ul.social-share li a:focus.facebook {
+  background-position: -13px -226px;
+}
+ul.social-share li a:hover.twitter,
+ul.social-share li a:focus.twitter {
+  background-position: -104px -225px;
+}
+ul.social-share li a:hover.linkedin,
+ul.social-share li a:focus.linkedin {
+  background-position: -195px -225px;
+}
+ul.social-share li a:hover.email,
+ul.social-share li a:focus.email {
+  background-position: -284px -225px;
 }
 #uwaa-footer {
   margin-left: -15px;

@@ -116,7 +116,7 @@ if (get_field('superhero_custom_crop_widescreen')) {
     </div>
 
 
-
+<?php get_template_part( 'partials/social_share' ); ?>
 
 <?php
 if( have_rows('feature_content') ):

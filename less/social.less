@@ -44,3 +44,38 @@ ul.uwaa-social {
             }
         }
     }
+
+.social-share-container {
+    .container();
+}
+
+ul.social-share {
+
+    li {
+            list-style: none;
+            display: inline-block;
+            a {                
+                transition: none;
+                color: #fff;
+                text-indent: -9999px;
+                overflow: hidden;
+                display: inline;
+                background: url(assets/Columns_Sprite_4_NoColor.svg) no-repeat 0 0 transparent;                
+                padding: 22px 36px;
+                &.facebook   { background-position: -13px -156px;  }
+                &.twitter    { background-position: -104px -156px    }
+                &.linkedin   { background-position: -195px -156px   }                
+                &.email      { background-position: -284px -156px   }
+                &:hover,
+                &:focus {
+                    transition: none;
+                    border-bottom: 0;
+                    &.facebook   { background-position: -13px -226px; }
+                    &.twitter    { background-position: -104px -225px    }
+                    &.linkedin   { background-position: -195px -225px   }                    
+                    &.email      { background-position: -284px -225px   }
+                }
+            }
+        }
+
+}
