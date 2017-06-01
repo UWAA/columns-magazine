@@ -1,17 +1,5 @@
 jQuery(document).ready(function($) {
 
-var numberOfFeatures = $('.home-feature-carousel').children().length;
-console.log(numberOfFeatures);
-
-if (numberOfFeatures > 1 ) {
-    $('.home-feature-carousel').flickity({
-    cellSelector: '.feature-cell',
-    cellAlign: 'center',
-    dragThreshold: 10,
-    wrapAround: true
-    }); 
-  }
-
 	
 	$('.home-high').flickity({
 	 cellSelector: '.carousel-cell',

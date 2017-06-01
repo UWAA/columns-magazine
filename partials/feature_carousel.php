@@ -5,7 +5,7 @@ use \Columns\Utilities as Utilities;
 // WP_Query arguments
 $args = array (
   'post_type' => array('feature'),      
-  'posts_per_page' => 5,
+  'posts_per_page' => 1,
   'tax_query' => array(        
     array(
       'taxonomy' => 'content_location',
