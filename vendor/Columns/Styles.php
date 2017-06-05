@@ -16,6 +16,13 @@ class Styles {
               'deps'    => array(),
               'version' => '',
               'admin'   => true
+            ), 
+              'columns_style' => array(
+              'id'      => 'columnsStylesheet',
+              'url'     => get_stylesheet_directory_uri() . '/style.css',
+              'deps'    => array($parent_style),
+              'version' => wp_get_theme()->get('Version'),
+              'admin'   => true
             )
 
         );

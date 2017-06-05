@@ -9,6 +9,7 @@ var foreach = require('gulp-foreach');
 var minifyCss = require('gulp-minify-css');
 var mainBowerFiles = require('main-bower-files');
 var sourcemaps = require('gulp-sourcemaps');
+var cachebust = require('gulp-cache-bust');
 
 
 
@@ -100,10 +101,14 @@ gulp.src(['./js/admin/_*.js'])
 
 
 gulp.task('less', function () {
-     gulp.src('./less/style.less')     
+     gulp.src('./less/style.less')
+     .pipe(cachebust({
+        type: 'timestamp'
+        }))
     .pipe(less())
     .pipe(minifyCss())
-    .pipe(header(banner, { pkg : pkg } ))    
+    .pipe(header(banner, { pkg : pkg } ))
+
     .on('error', catchErrors)    
     .pipe(gulp.dest('./'));
 

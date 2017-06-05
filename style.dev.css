@@ -2336,14 +2336,11 @@ p.excerpt {
   margin-right: 14px;
   float: left;
 }
-.single-post .columns-feature-content img,
-.single-feature .columns-feature-content img {
-  max-width: 375px;
-}
 .single-post .columns-feature-content img.alignright,
 .single-feature .columns-feature-content img.alignright {
   margin: 10px -120px 20px 15px;
   padding: 15px 0 15px 15px;
+  max-width: 375px;
 }
 @media only screen and (max-width: 1200px) {
   .single-post .columns-feature-content img.alignright,
@@ -2363,6 +2360,7 @@ p.excerpt {
 .single-feature .columns-feature-content img.alignleft {
   margin: 10px 15px 20px -120px;
   padding: 15px 15px 15px 0;
+  max-width: 375px;
 }
 @media only screen and (max-width: 1200px) {
   .single-post .columns-feature-content img.alignleft,
