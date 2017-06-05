@@ -228,8 +228,18 @@ h1 {
 }
 @media (max-width: 480px) {
   h1 {
-    font-size: 21px;
+    font-size: 22px;
     margin: 24px 0;
+  }
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  h2 {
+    font-size: 18px;
   }
 }
 .archive-header h1 {
@@ -464,6 +474,7 @@ a.more:hover {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #767676;
+  margin-bottom: 8.5px;
 }
 .single p.teaser-intro {
   font-style: italic;
@@ -2335,6 +2346,10 @@ p.excerpt {
   margin-bottom: 5px;
   margin-right: 14px;
   float: left;
+}
+.single-post .columns-feature-content img,
+.single-feature .columns-feature-content img {
+  max-width: 750px;
 }
 .single-post .columns-feature-content img.alignright,
 .single-feature .columns-feature-content img.alignright {

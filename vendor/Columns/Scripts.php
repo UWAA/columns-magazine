@@ -74,6 +74,14 @@ class Scripts
         'in_footer' => true,
         'admin'   => false
       ),
+      'homepage'   => array (
+        'id'      => 'socialShare',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/support/socialShare.js',
+        'deps'    => array(),
+        'version' => '1.0.0',
+        'in_footer' => true,
+        'admin'   => false
+      ),
 
     ));
 
