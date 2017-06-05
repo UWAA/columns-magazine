@@ -80,7 +80,7 @@ class Scripts
     add_action( 'wp_enqueue_scripts', array( $this, 'columns_register_default_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'columns_register_support_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'columns_enqueue_default_scripts' ) );
-    // add_action( 'admin_enqueue_scripts', array( $this, 'columns_enqueue_admin_scripts' ) );
+    add_action( 'wp_enqueue_scripts', array( $this, 'localizeColumnsSiteScripts' ) );
 
   }
 
@@ -169,6 +169,15 @@ class Scripts
   public function min_script()
   {
     return !is_user_logged_in() ? '.min' : '';
+  }
+
+  public function localizeColumnsSiteScripts() {
+    wp_localize_script('columns.site', 'socialParameters', 
+      array( 
+        'siteUrl' => get_permalink()
+
+        )
+    );
   }
 
 }

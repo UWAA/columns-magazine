@@ -110,9 +110,11 @@ if (get_field('superhero_custom_crop_widescreen')) {
 
 </p>
 
-<hr>
+
 
     </div>
+
+    <hr>
     </div>
 
 
