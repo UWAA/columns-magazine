@@ -22,7 +22,7 @@ class Scripts
         'id'      => 'columns.site',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/columns.site' . $this->dev_script() . '.js',
         'deps'    => array(),
-        'version' => '1.0.3',
+        'version' => '2.0.3',
         'in_footer' => true,
         'admin'   => false
       ),
