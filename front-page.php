@@ -2,8 +2,8 @@
 
 
 get_header("columns");
-wp_enqueue_script('flickity');
 wp_enqueue_script('homepage');
+wp_enqueue_script('flickity');
 wp_enqueue_script('isotope');
 wp_enqueue_script('isotope-packery');
 
