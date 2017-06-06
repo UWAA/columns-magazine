@@ -1175,7 +1175,7 @@ ul.social-share li a.twitter {
 ul.social-share li a.linkedin {
   background-position: -146px -113px;
 }
-ul.social-share li a.email {
+ul.social-share li a.comments {
   background-position: -213px -113px;
 }
 ul.social-share li a:hover,
@@ -1195,8 +1195,8 @@ ul.social-share li a:hover.linkedin,
 ul.social-share li a:focus.linkedin {
   background-position: -146px -165px;
 }
-ul.social-share li a:hover.email,
-ul.social-share li a:focus.email {
+ul.social-share li a:hover.comments,
+ul.social-share li a:focus.comments {
   background-position: -213px -165px;
 }
 #uwaa-footer {

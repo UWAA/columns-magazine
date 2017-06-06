@@ -59,6 +59,8 @@ use \Columns\Utilities as Utilities;
 
 </p>
 
+<?php get_template_part( 'partials/social_share' ); ?>
+
 
                 <?php the_content(); ?>
 

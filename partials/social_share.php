@@ -9,9 +9,9 @@ $compiledTwitterIntentURL = $twitterIntentBaseURL . $twitterIntentExcerpt . $twi
 
 
 // Email Link
-$emailSubject = '&subject=Columns Magazine -- ' . get_the_title();
-$bodyCopy = "I thought you would like this article on Columns Magazine:  " . get_the_permalink() ;
-$emailBody = '?body=' . $bodyCopy;
+// $emailSubject = '&subject=Columns Magazine -- ' . get_the_title();
+// $bodyCopy = "I thought you would like this article on Columns Magazine:  " . get_the_permalink() ;
+// $emailBody = '?body=' . $bodyCopy;
 
 $compiledMailLink = "mailto:" . $emailBody . $emailSubject;
 
@@ -32,7 +32,7 @@ $compiledLinkedInLink = $linkedInShareBaseURL . $linkedInURL . $linkedInTitle . 
                     <li><a href="#" id="shareBtn" class="facebook"><span class="offscreen">Columns Magazine Facebook</span></a></li>
                     <li><a href="<?php echo $compiledTwitterIntentURL ?>" target="_blank" class="twitter"><span class="offscreen">@ColumnsMag</span></a></li>
                     <li><a href="<?php echo $compiledLinkedInLink ?>" target="_blank" class="linkedin"><span class="offscreen">@ColumnsMag</span></a></li>
-                    <li><a href="<?php echo $compiledMailLink ?>" class="email"><span class="offscreen">@ColumnsMag</span></a></li>                    
+                    <li><a href="#comments" class="comments"><span class="offscreen">Jump To Comments</span></a></li>                    
     </ul>
     </div>
     <hr>
