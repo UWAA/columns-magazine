@@ -1,5 +1,6 @@
 <?php 
 get_header("columns");
+wp_enqueue_script('socialShare');
 use \Columns\Utilities as Utilities;
 
 ?>
