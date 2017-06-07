@@ -26,14 +26,18 @@ $compiledLinkedInLink = $linkedInShareBaseURL . $linkedInURL . $linkedInTitle . 
 
 ;
  ?>
-<div class="social-share-container">
-    <div class="row">
+
+<div class="social-share-container">  
+<div class="row">
+    <hr>  
     <ul class="social-share">
                     <li><a href="#" id="shareBtn" class="facebook"><span class="offscreen">Columns Magazine Facebook</span></a></li>
                     <li><a href="<?php echo $compiledTwitterIntentURL ?>" target="_blank" class="twitter"><span class="offscreen">@ColumnsMag</span></a></li>
                     <li><a href="<?php echo $compiledLinkedInLink ?>" target="_blank" class="linkedin"><span class="offscreen">@ColumnsMag</span></a></li>
                     <li><a href="#comments" class="comments"><span class="offscreen">Jump To Comments</span></a></li>                    
     </ul>
-    </div>
-    <hr>
+
+<hr>
+    </div>    
+
 </div>

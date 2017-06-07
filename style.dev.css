@@ -1149,8 +1149,12 @@ ul.uwaa-social li a:focus.email {
   margin-top: 5px;
 }
 ul.social-share {
-  padding-left: 0;
-  padding: 0 30px;
+  padding: 0 15px;
+}
+@media (min-width: 992px) {
+  ul.social-share {
+    padding: 0;
+  }
 }
 ul.social-share li {
   list-style: none;

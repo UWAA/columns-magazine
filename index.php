@@ -18,8 +18,9 @@ use \Columns\Utilities as Utilities;
         </div>
     </div>
 
+    <div class="row">
     <div class="columns-feature-content">
-        <div class="row">
+        
             <?php
 
 
@@ -55,7 +56,7 @@ use \Columns\Utilities as Utilities;
 
 ?>
 
-<hr>   
+
 
 
 </p>

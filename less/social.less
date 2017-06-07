@@ -55,8 +55,11 @@ ul.uwaa-social {
 }
 
 ul.social-share {
-    padding-left: 0;
-    padding: 0 30px;
+    padding: 0 15px;
+
+    @media (min-width: @screen-md-min) { 
+     padding: 0;
+    }
 
     li {
             list-style: none;
