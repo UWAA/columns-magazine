@@ -17,9 +17,11 @@ use \Columns\Utilities as Utilities;
             <!-- Fluid containter, 2 cols -->
         </div>
     </div>
+</div>
 
-    <div class="row">
+    
     <div class="columns-feature-content">
+    <div class="row">
         
             <?php
 
@@ -60,9 +62,13 @@ use \Columns\Utilities as Utilities;
 
 
 </p>
+</div>
+</div>
 
 <?php get_template_part( 'partials/social_share' ); ?>
 
+<div class="columns-feature-content">
+<div class="row">
 
                 <?php the_content(); ?>
 
