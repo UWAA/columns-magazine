@@ -2351,9 +2351,11 @@ p.excerpt {
   margin-right: 14px;
   float: left;
 }
-.single-post .columns-feature-content img,
-.single-feature .columns-feature-content img {
-  max-width: 750px;
+@media only screen and (min-width: 1200px) {
+  .single-post .columns-feature-content img,
+  .single-feature .columns-feature-content img {
+    max-width: 750px;
+  }
 }
 .single-post .columns-feature-content img.alignright,
 .single-feature .columns-feature-content img.alignright {
