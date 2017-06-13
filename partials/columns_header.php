@@ -2,15 +2,27 @@
 
   <nav class="columns-navbar navbar">
 
-    <div class="navbar-header">
-
-
-      <div class="navbar-brand ">
-
-      </div>
-
+    <div class="masthead-search-header">
 
       <div class="masthead">
+
+       
+
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">        
+        <div class="masthead-logo">
+          <div class="columns-logo">
+            <img src="<?php echo get_stylesheet_directory_uri();  ?>/assets/artboard2-02.svg" alt="Columns Online Logo" />    
+          </div>
+          <div class="subtitle">
+            <p>The University of Washington<br> Alumni Magazine</p>
+          </div>
+          </div>
+        </a>
+      
+
+    </div>
+
+    <div class="uwaa-branding-search">      
 
       <div class="search">
         <div class="columns-form search-form search-widescreen">
@@ -32,35 +44,41 @@
         </div>
       </div> 
 
-      
-       <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <div class="masthead-logo">
-          <div class="subtitle">
-            <p>The University of Washington<br> Alumni Magazine</p>
-          </div>
-          <div class="columns-logo">
-            <img src="<?php echo get_stylesheet_directory_uri();  ?>/assets/artboard2-02.svg" alt="Columns Online Logo" />    
-          </div>
-        </div>
-      </a>
-
-       
-
+      <div class="uwaa-logo"></div>
     </div>
+    
+ <div class="search search-mobile">
+    <div class="columns-form search-form">
+      <form role="search" method="get" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <input id="Search" name="s" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_search_query() ); ?>" maxlength="255">
+        <input id="searchSite" name="search" class="inlineSubmit" type="submit" value="Search" class="columns-search-input-submit">
+      </form>
+    </div>        
+  </div> 
 
 
 
+  </div>  <!-- end masthead-search header -->
 
-  </div>
 
-  <div class="search search-mobile">
-        <div class="columns-form search-form">
-          <form role="search" method="get" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <input id="Search" name="s" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_search_query() ); ?>" maxlength="255">
-            <input id="searchSite" name="search" class="inlineSubmit" type="submit" value="Search" class="columns-search-input-submit">
-          </form>
-        </div>        
-      </div> 
+<div class="columns-navigation-row">
+
+<?php wp_nav_menu(array(
+    'menu' => 'Header Navigation',
+    'menu_class' => 'columns-main-nav-ul',
+    'menu_id' => 'columns-main-navigation',
+    'continer_id' => 'columns-navigation-container',
+    'item_spacing' => 'discard'
+    )
+);
+?>
+
+</div>
+
+
+ 
+
+  <!-- here for header menu -->
 
 
 </nav>

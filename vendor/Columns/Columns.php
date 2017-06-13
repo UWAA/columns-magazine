@@ -35,6 +35,11 @@ class Columns
         
         new \Columns\CustomTaxonomies\Placement;
 
+        //Menus
+        
+        new \Columns\Menus\Navigation;
+        
+
 
         new Utilities;
 
