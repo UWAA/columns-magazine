@@ -19,9 +19,9 @@ class Styles {
             ), 
               'columns_style' => array(
               'id'      => 'columnsStylesheet',
-              'url'     => get_stylesheet_directory_uri() . '/style.css',
+              'url'     => get_stylesheet_directory_uri() . '/style' . $this->dev_stylesheet() . '.css',
               'deps'    => array($parent_style),
-              'version' => wp_get_theme()->get('Version'),
+              'version' => '4.0',
               'admin'   => true
             )
 
@@ -45,6 +45,11 @@ class Styles {
             );
         }
     }
+
+    function dev_stylesheet()
+  {
+    return is_user_logged_in() ? '.dev' : '';
+  }
 
 
 }

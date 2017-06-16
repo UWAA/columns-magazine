@@ -67,14 +67,7 @@ if (get_field('superhero_custom_crop_widescreen')) {
      <div class="headline-image <?php echo get_post_field( 'post_name', get_post() ); ?>" style="background-image: url('<?php echo esc_attr($feature['url']); ?>')"></div>
 </div>
 
-<div class="row">
-        <div class="breadcrumbs">
-            <?php $Columns->Breadcrumbs->UWAABreadcrumbs(); ?>
-        </div> 
-        <div class="content-tags">
-            <!-- Fluid containter, 2 cols -->
-        </div>
-</div>
+
 
 
 <div class="columns-feature-content">

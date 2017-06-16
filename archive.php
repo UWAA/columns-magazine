@@ -12,14 +12,7 @@ use \Columns\Utilities as Utilities;
 
 <div class="container-fluid">
 
-    <div class="row">
-        <div class="breadcrumbs">
-            <?php $Columns->Breadcrumbs->UWAABreadcrumbs(); ?>
-        </div> 
-        <div class="content-tags">
-            <!-- Fluid containter, 2 cols -->
-        </div>
-    </div>
+  
 
     <div class="archive-posts">
         <?php

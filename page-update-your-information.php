@@ -8,14 +8,7 @@ use \Columns\Utilities as Utilities;
 
 <div class="container-fluid">
 
-    <div class="row">
-        <div class="breadcrumbs">
-            <?php uw_breadcrumbs() ?>
-        </div> 
-        <div class="content-tags">
-            <!-- Fluid containter, 2 cols -->
-        </div>
-    </div>
+   
 
     <div class="columns-feature-content">
         <div class="row">
