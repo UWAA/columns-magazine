@@ -272,6 +272,11 @@
 
 .menu-columns-navigation-container {
     .container();
+
+    @media (max-width: @screen-xs-max) {                                        
+            width: 100%;
+         
+        }
     
 
 
@@ -290,6 +295,7 @@
 
         @media (max-width: @screen-xs-max) {                                        
             width: 100%;
+            display: block;
         }
 
         li {
@@ -306,6 +312,7 @@
             @media (max-width: @screen-xs-max) {                                        
                 width: 100%;
                 height: 44px;
+                display: block;
             }
 
             &:hover, &:active {
