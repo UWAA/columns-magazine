@@ -14,15 +14,13 @@ class Styles {
               'id'      => 'google-font-merriweather',
               'url'     => 'https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900,900i',
               'deps'    => array(),
-              'version' => '',
-              'admin'   => true
+              'version' => '',              
             ), 
               'columns_style' => array(
               'id'      => 'columnsStylesheet',
               'url'     => get_stylesheet_directory_uri() . '/style' . $this->dev_stylesheet() . '.css',
-              'deps'    => array($parent_style),
-              'version' => '4.0',
-              'admin'   => true
+              'deps'    => 'uw-2014',
+              'version' => wp_get_theme()->get('Version'),              
             )
 
         );
@@ -32,8 +30,7 @@ class Styles {
     }
 
     function enqueueColumnsFonts() {
-
-
+        
         foreach ($this->STYLES as $style) {
             $style = (object) $style;
 
