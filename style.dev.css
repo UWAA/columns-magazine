@@ -956,7 +956,7 @@ p.wp-caption-text {
   }
 }
 .columns-navbar .uwaa-branding-search .search {
-  margin: 33px 0 0;
+  margin-top: 33px;
   float: right;
   height: 43px;
   width: 43px;
@@ -964,7 +964,7 @@ p.wp-caption-text {
 }
 @media (max-width: 767px) {
   .columns-navbar .uwaa-branding-search .search {
-    margin-top: -75px;
+    margin-top: -66px;
     margin-bottom: 28px;
   }
 }
@@ -1217,6 +1217,8 @@ p.wp-caption-text {
 }
 #icon-search {
   cursor: pointer;
+  height: 43px;
+  width: 43px;
 }
 #icon-search .outer-circle {
   stroke: #3d3d3d;
