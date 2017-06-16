@@ -1002,6 +1002,7 @@ p.wp-caption-text {
   z-index: 2;
   display: none;
   position: relative;
+  margin-bottom: 5px;
 }
 .columns-navigation-row {
   margin-left: -15px;

@@ -1,12 +1,20 @@
 jQuery(document).ready(function($) {
 
-  $('#icon-search').click(function(event) {
+  var $iconSearch = $('#icon-search');
+  var $nav = $('.menu-columns-navigation-container');
+  var $searchField = $('.search-mobile');
+
+  $iconSearch.click(function(event) {
     var $width = $( window ).width();
       if ($width < 479) {
-        $('.search-mobile').toggle();
+        if ($nav.hasClass('show')) {
+          $nav.toggleClass('show');          
+        }
+        $searchField.toggleClass('show');
+        
       } else {
-        $('.search-widescreen')
-          .toggle();
+        $('.search-widescreen').toggleClass('show');
+          $nav.toggleClass('show');
       }    
     $(this).toggleClass('is-active');
   });
@@ -14,7 +22,10 @@ jQuery(document).ready(function($) {
   $('#navbar-button').click(function(event) {
     var $width = $( window ).width();
       if ($width < 768) {
-        $('.menu-columns-navigation-container').toggleClass('show');
+        if ($searchField.hasClass('show')) {
+          $searchField.toggleClass('show');          
+        }
+        $nav.toggleClass('show');
       }  
     $(this).toggleClass('is-active');
   });
