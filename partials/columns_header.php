@@ -77,7 +77,7 @@
           'menu' => 'Header Navigation',
           'menu_class' => 'columns-main-nav-ul',
           'menu_id' => 'columns-main-navigation',
-          'continer_id' => 'columns-navigation-container',
+          'container_id' => 'columns-navigation-container',
           'item_spacing' => 'discard'
           )
         );
