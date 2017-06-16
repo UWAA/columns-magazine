@@ -932,11 +932,11 @@ p.wp-caption-text {
   visibility: visible;
   background: url(assets/logos/UWAA_Horizontal_Logo.svg);
   z-index: 1;
-  height: 70px;
-  width: 105px;
-  background-size: 100px 70px;
   background-repeat: no-repeat;
-  background-position-y: 6px;
+  height: 76px;
+  width: 122px;
+  background-size: 113px 70px;
+  background-position-y: 11px;
   background-position-x: 6px;
   margin-right: 20px;
   margin-top: 10px;
@@ -947,6 +947,8 @@ p.wp-caption-text {
     height: 29px;
     margin-top: 35px;
     background-size: 83px 23px;
+    background-position-y: 6px;
+    background-position-x: 6px;
   }
 }
 @media (max-width: 767px) {

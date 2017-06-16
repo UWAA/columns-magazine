@@ -46,7 +46,9 @@
           
         </div>
 
-        <div class="uwaa-logo"></div>
+        <a href="https://www.uw.edu/alumni">
+          <div class="uwaa-logo"></div>
+        </a>
 
 
           </div> 
