@@ -46,12 +46,10 @@
 
                         &:before {
                             content: "\f522";
-                        }
+                        }                       
                         
-                        
-                    }
-                    
-                }
+                    }                    
+                }               
 
                 &.mejs-pause {
                     button { 
@@ -61,7 +59,28 @@
                         }
                     }
                     
-                }            
+                }
+
+                 &.mejs-mute {
+                    button{
+                        padding-left: 7px;
+                        padding-top: 1px;
+
+                        &:before {
+                            content: "\f520";
+                        }                       
+                        
+                    }                    
+                }
+
+                &.mejs-unmute {
+                    button{
+                        &:before {
+                            content: "\f521";
+                        }                       
+                        
+                    }                    
+                }
                 
 
             }

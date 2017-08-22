@@ -2881,6 +2881,16 @@ p.excerpt {
 .columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-pause button:before {
   content: "\f523";
 }
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-mute button {
+  padding-left: 7px;
+  padding-top: 1px;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-mute button:before {
+  content: "\f520";
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-unmute button:before {
+  content: "\f521";
+}
 .columns-mejs-container.mejs-container.mejs-audio .mejs-time-current {
   background: #4b2e83;
 }
