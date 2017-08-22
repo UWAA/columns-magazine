@@ -1,0 +1,82 @@
+﻿//mejsplayer.js
+
+.columns-mejs-container {
+    &.mejs-container {
+
+        //Audio Players
+
+        &.mejs-audio {
+            margin-bottom: 20.5px;
+
+            .mejs-controls {
+                bottom: 15px;
+
+                }
+            
+
+            .mejs-button {
+                 width:55px;
+                 height:55px;
+                 margin-right: 10px;
+                 margin-top: -21px;
+                 
+                
+                button {                    
+                    display: inline-block;                    
+                    font-size: 55px;
+                    line-height: 1;
+                    color: @purple;
+                    font-family: dashicons;
+                    text-decoration: inherit;
+                    font-weight: normal;
+                    font-style: normal;
+                    vertical-align: top;
+                    text-align: center;                                        
+                    border-radius: 100px;                    
+                    width:55px;
+                    height:55px;
+                    background-size: 410px;
+                    background: @white;
+                   }
+                
+
+                &.mejs-play {
+                    button{
+                        padding-left: 3px;
+
+                        &:before {
+                            content: "\f522";
+                        }
+                        
+                        
+                    }
+                    
+                }
+
+                &.mejs-pause {
+                    button { 
+                        padding-left: 0;
+                        &:before {
+                            content: "\f523";
+                        }
+                    }
+                    
+                }            
+                
+
+            }
+
+            .mejs-time-current {
+                background: @purple;
+            }
+            
+        }
+        
+
+    }
+    
+
+    
+}
+
+

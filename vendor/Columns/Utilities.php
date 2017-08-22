@@ -17,12 +17,13 @@ class Utilities{
 		add_action( 'admin_menu', array($this, 'renamePostsToShortContent') );
 		add_action( 'init', array($this, 'updatePostLabelsForShortContent') );
         add_action('admin_menu', array($this, 'addIssueControlOptionsPage'));
+        add_action( 'wp_print_footer_scripts', array($this,'example_mejs_add_container_class' ));
         add_filter( 'pre_get_posts', array($this, 'namespace_add_custom_types' ));
         add_action( 'admin_init', array($this, 'addOrderToPosts' ));
         add_filter( 'posts_search', array($this, 'advanced_custom_search'), 500, 2 );
-	}	
+	}
 
-    
+
 	public function renamePostsToShortContent() {
 		global $menu;
 		global $submenu;
@@ -49,22 +50,22 @@ class Utilities{
 
     public function addIssueControlOptionsPage() {
         if( function_exists('acf_add_options_page') ) {
-    
+
             acf_add_options_page(array(
                 'page_title'    => 'Issue Settings',
                 'menu_title'    => 'Issue Settings',
                 'menu_slug'     => 'issue-general-settings',
                 'capability'    => 'edit_posts',
                 'redirect'      => false
-            ));    
-        
+            ));
+
         }
-    }	
+    }
 
     public function namespace_add_custom_types( $query ) {
-        if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters']   )   ) {      
-          $query  ->set( 'post_type', array(        
-           'post', 'nav_menu_item', 'feature'   
+        if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters']   )   ) {
+          $query  ->set( 'post_type', array(
+           'post', 'nav_menu_item', 'feature'
               ));
             return $query;
         }
@@ -83,13 +84,13 @@ class Utilities{
     }
 
     public function addOrderToPosts() {
-        add_post_type_support( 'post', 'page-attributes' );    
+        add_post_type_support( 'post', 'page-attributes' );
     }
 
     public function myplugin_update_slug( $data, $postarr ) {
-        if($postType  = 'feature') {            
+        if($postType  = 'feature') {
         $data['post_name'] = sanitize_title( $data['post_title'] );
-        return $data;    
+        return $data;
     }
 }
 
@@ -111,25 +112,25 @@ class Utilities{
      */
     public function advanced_custom_search( $where, &$wp_query ) {
         global $wpdb;
-     
+
         if ( empty( $where ))
             return $where;
-     
+
         // get search expression
         $terms = $wp_query->query_vars[ 's' ];
-        
+
         // explode search expression to get search terms
         $exploded = explode( ' ', $terms );
         if( $exploded === FALSE || count( $exploded ) == 0 )
             $exploded = array( 0 => $terms );
-             
+
         // reset search in order to rebuilt it as we whish
         $where = '';
-        
+
         // get searcheable_acf, a list of advanced custom fields you want to search content in
         $list_searcheable_acf = $this->list_searcheable_acf();
         foreach( $exploded as $tag ) :
-            $where .= " 
+            $where .= "
               AND (
                 (wp_posts.post_title LIKE '%$tag%')
                 OR (wp_posts.post_content LIKE '%$tag%')
@@ -159,7 +160,7 @@ class Utilities{
                     ON wp_term_relationships.term_taxonomy_id = wp_term_taxonomy.term_taxonomy_id
                   WHERE (
                     taxonomy = 'post_tag'
-                        OR taxonomy = 'category'                
+                        OR taxonomy = 'category'
                         OR taxonomy = 'myCustomTax'
                     )
                     AND object_id = wp_posts.ID
@@ -169,6 +170,33 @@ class Utilities{
         endforeach;
         return $where;
     }
+
+
+/**
+ * Add an HTML class to MediaElement.js container elements to aid styling.
+ *
+ * Extends the core _wpmejsSettings object to add a new feature via the
+ * MediaElement.js plugin API.
+ */
+public function example_mejs_add_container_class() {
+	if ( ! wp_script_is( 'mediaelement', 'done' ) ) {
+		return;
+	}
+?>
+<script>
+	(function() {
+		var settings = window._wpmejsSettings || {};
+		settings.features = settings.features || mejs.MepDefaults.features;
+		settings.features.push('exampleclass');
+		settings.defaultAudioHeight = "65";
+
+		MediaElementPlayer.prototype.buildexampleclass = function( player ) {
+			player.container.addClass( 'columns-mejs-container' );
+		};
+	})();
+</script>
+<?php
+}
 
 
 }

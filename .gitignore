@@ -2,3 +2,7 @@ node_modules/
 bower_components/
 vendor/*
 !vendor/Columns
+.vs/
+*.phpproj
+*.user
+*.sln

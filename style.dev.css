@@ -2840,6 +2840,50 @@ p.excerpt {
 .columns-form select option:disabled {
   color: red;
 }
+.columns-mejs-container.mejs-container.mejs-audio {
+  margin-bottom: 20.5px;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-controls {
+  bottom: 15px;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button {
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
+  margin-top: -21px;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button button {
+  display: inline-block;
+  font-size: 55px;
+  line-height: 1;
+  color: #4b2e83;
+  font-family: dashicons;
+  text-decoration: inherit;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: top;
+  text-align: center;
+  border-radius: 100px;
+  width: 55px;
+  height: 55px;
+  background-size: 410px;
+  background: #ffffff;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-play button {
+  padding-left: 3px;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-play button:before {
+  content: "\f522";
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-pause button {
+  padding-left: 0;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-pause button:before {
+  content: "\f523";
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-time-current {
+  background: #4b2e83;
+}
 .single-header {
   border-top: solid lightgray 1px;
 }
