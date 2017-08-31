@@ -2842,9 +2842,14 @@ p.excerpt {
 }
 .columns-mejs-container.mejs-container.mejs-audio {
   margin-bottom: 20.5px;
+  background-color: #e2e2e2;
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-controls {
   bottom: 15px;
+  background-color: #e2e2e2;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-controls .mejs-time {
+  color: #3d3d3d;
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-button {
   width: 55px;
@@ -2873,6 +2878,7 @@ p.excerpt {
   padding-left: 3px;
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-play button:before {
+  color: #b49ccd;
   content: "\f522";
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-pause button {
@@ -2880,19 +2886,27 @@ p.excerpt {
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-pause button:before {
   content: "\f523";
+  color: #b49ccd;
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-mute button {
-  padding-left: 7px;
+  padding-left: 11px;
   padding-top: 1px;
+  font-size: 45px;
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-mute button:before {
   content: "\f520";
+  color: #b49ccd;
+}
+.columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-unmute button {
+  font-size: 45px;
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-button.mejs-unmute button:before {
   content: "\f521";
+  color: #b49ccd;
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-time-current {
   background: #4b2e83;
+  /*version problem*/
 }
 .single-header {
   border-top: solid lightgray 1px;

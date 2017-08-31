@@ -7,11 +7,19 @@
 
         &.mejs-audio {
             margin-bottom: 20.5px;
+            background-color: #e2e2e2;
 
             .mejs-controls {
                 bottom: 15px;
+                background-color: #e2e2e2;
 
+                .mejs-time {
+                    color: @janegray;
                 }
+
+
+
+             }
             
 
             .mejs-button {
@@ -45,6 +53,7 @@
                         padding-left: 3px;
 
                         &:before {
+                            color: #b49ccd;
                             content: "\f522";
                         }                       
                         
@@ -56,6 +65,7 @@
                         padding-left: 0;
                         &:before {
                             content: "\f523";
+                            color: #b49ccd;
                         }
                     }
                     
@@ -63,11 +73,13 @@
 
                  &.mejs-mute {
                     button{
-                        padding-left: 7px;
+                        padding-left: 11px;
                         padding-top: 1px;
+                        font-size: 45px;
 
                         &:before {
                             content: "\f520";
+                            color: #b49ccd;
                         }                       
                         
                     }                    
@@ -75,8 +87,10 @@
 
                 &.mejs-unmute {
                     button{
+                        font-size: 45px;
                         &:before {
                             content: "\f521";
+                            color: #b49ccd;
                         }                       
                         
                     }                    
