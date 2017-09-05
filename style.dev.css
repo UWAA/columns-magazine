@@ -4,7 +4,7 @@
  Description: Columns Magazine Child Theme
  Author: Ben Erickson
  Template: uw-2014
- Version: 1.5.0
+ Version: 1.6.0
  License: MIT
  */
 .thumbnail > img,
@@ -2905,7 +2905,7 @@ p.excerpt {
   color: #b49ccd;
 }
 .columns-mejs-container.mejs-container.mejs-audio .mejs-time-current {
-  background: #4b2e83;
+  background: #b49ccd;
   /*version problem*/
 }
 .single-header {
