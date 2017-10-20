@@ -59,7 +59,7 @@ class OpenGraph
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@columnsmag">
     <meta name="twitter:title" content="<?php echo the_title(); ?>">
-    <meta name="twitter:description" content="<?php echo $excerpt; ?>">
+    <meta name="twitter:description" content="<?php echo "Columns Magazine | Stories from the University of Washington" ?>">
     <meta name="twitter:image" content="<?php echo $img_src; ?>">
  
 <?php
