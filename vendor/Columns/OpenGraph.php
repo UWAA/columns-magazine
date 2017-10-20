@@ -17,7 +17,11 @@ class OpenGraph
     global $post;
  
     if(is_single()) {
-        if(get_field("columns_feature_image")) {             
+
+        if (get_field("columns_opengraph_image")) {
+            $img_src = get_field("columns_opengraph_image");
+
+        } elseif (get_field("columns_feature_image")) {             
             $feature = get_field("columns_feature_image");
             $img_src = $feature['url'];
             $img_dimensions = "
@@ -48,7 +52,10 @@ class OpenGraph
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
     <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+
+    <!-- FB: 500 x 262 -->
     <meta property="og:image" content="<?php echo $img_src; ?>"/>
+    <!-- excerpt/standfirst/title -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@columnsmag">
     <meta name="twitter:title" content="<?php echo the_title(); ?>">
