@@ -67,7 +67,17 @@ if ( $query->have_posts() ) {
             the_excerpt();
             ?>              
             
-            <p class="published-date"><?php echo wp_kses(get_the_date(), Utilities::$allowedHTML); ?></p>
+
+            <?php
+                if(get_field("columns_print_issue")) {
+
+                      $issue = get_field_object("columns_print_issue");
+                      $value = $issue['value'];
+                      $label = $issue['choices'][ $value ];
+
+                  }
+            ?>
+            <p class="published-date"><?php echo $label; ?></p>
         </div>
 
         </div>
