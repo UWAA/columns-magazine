@@ -6,7 +6,9 @@ jQuery(document).ready(function($) {
 	 cellAlign: 'left',
    pageDots: false,
    contain: true,
+   prevNextButtons: false,
    dragThreshold: 10, 
+
 	});	
 
   $('.home-low .feature-row').flickity({
