@@ -1866,24 +1866,37 @@ ul.social-share li a:focus.comments {
 .home-people,
 .home-solutions {
   margin: 20px 0;
+  padding: 0 15px;
+}
+@media (max-width: 480px) {
+  .home-high,
+  .home-people,
+  .home-solutions {
+    margin: 0 0 20px;
+  }
 }
 .home-high .flickity-prev-next-button {
   top: 55%;
 }
 .home-high .carousel-cell {
   width: 33%;
-  height: 250px;
+  height: 200px;
   margin-right: 10px;
   counter-increment: gallery-cell;
   border-right: 2px dotted #999999;
   padding: 10px 15px;
+}
+@media (max-width: 480px) {
+  .home-high .carousel-cell {
+    height: 250px;
+  }
 }
 .home-high .carousel-cell img {
   width: 104px;
   height: 104px;
   float: left;
   margin-right: 14px;
-  margin-bottom: 146px;
+  margin-bottom: 250px;
 }
 @media (max-width: 900px) {
   .home-high .carousel-cell {
