@@ -339,6 +339,9 @@ a.more:hover {
     visibility: hidden;
   }
 }
+div.columns-feature div.video-container iframe {
+  margin: 0;
+}
 .columns-feature-content {
   margin-right: auto;
   margin-left: auto;
