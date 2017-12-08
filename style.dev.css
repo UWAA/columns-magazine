@@ -90,8 +90,6 @@
 #uwaa-footer:after,
 .scroller:before,
 .scroller:after,
-.home-low:before,
-.home-low:after,
 .modal-footer:before,
 .modal-footer:after,
 .archive-story-container:before,
@@ -122,7 +120,6 @@
 .social-share-container:after,
 #uwaa-footer:after,
 .scroller:after,
-.home-low:after,
 .modal-footer:after,
 .archive-story-container:after,
 .search-story-container:after {
@@ -170,8 +167,6 @@
 #uwaa-footer:after,
 .scroller:before,
 .scroller:after,
-.home-low:before,
-.home-low:after,
 .modal-footer:before,
 .modal-footer:after,
 .archive-story-container:before,
@@ -202,7 +197,6 @@
 .social-share-container:after,
 #uwaa-footer:after,
 .scroller:after,
-.home-low:after,
 .modal-footer:after,
 .archive-story-container:after,
 .search-story-container:after {
@@ -1864,14 +1858,16 @@ ul.social-share li a:focus.comments {
 }
 .home-high,
 .home-people,
-.home-solutions {
+.home-solutions,
+.feature-row {
   margin: 20px 0;
   padding: 0 15px;
 }
 @media (max-width: 480px) {
   .home-high,
   .home-people,
-  .home-solutions {
+  .home-solutions,
+  .feature-row {
     margin: 0 0 20px;
   }
 }
@@ -1891,12 +1887,13 @@ ul.social-share li a:focus.comments {
     height: 250px;
   }
 }
-.home-high .carousel-cell img {
+.home-high .carousel-cell .img-container {
   width: 104px;
   height: 104px;
   float: left;
   margin-right: 14px;
   margin-bottom: 250px;
+  overflow: hidden;
 }
 @media (max-width: 900px) {
   .home-high .carousel-cell {
@@ -2076,131 +2073,16 @@ p.excerpt {
   font-size: 9px;
   line-height: 1;
 }
-.home-low {
-  margin-left: -15px;
-  margin-right: -15px;
-  padding: 15px 0 15px;
-}
-.home-low:before,
-.home-low:after {
-  content: " ";
-  display: table;
-}
-.home-low:after {
-  clear: both;
-}
-.home-low:before,
-.home-low:after {
-  content: " ";
-  display: table;
-}
-.home-low:after {
-  clear: both;
-}
-.home-low:before,
-.home-low:after {
-  content: " ";
-  display: table;
-}
-.home-low:after {
-  clear: both;
-}
-.home-low:before,
-.home-low:after {
-  content: " ";
-  display: table;
-}
-.home-low:after {
-  clear: both;
-}
-.home-low .flickity-prev-next-button {
-  top: 55%;
-}
-.home-low .current-issue {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
-  border-right: 2px dotted #999999;
-  padding-left: 20px;
-  padding-right: 0;
-}
-@media (min-width: 768px) {
-  .home-low .current-issue {
-    float: left;
-    width: 20.83333333%;
-  }
-}
-@media (min-width: 768px) {
-  .home-low .current-issue {
-    float: left;
-    width: 20.83333333%;
-  }
-}
-@media (max-width: 992px) {
-  .home-low .current-issue {
-    padding-right: 15px;
-    border-right: none;
-  }
-}
-.home-low .current-issue div {
-  margin-bottom: 5px;
-}
-.home-low .current-issue p {
-  margin: 20px 0 15px -30px;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 1.2;
-  letter-spacing: 1px;
-  color: #767676;
-}
-.home-low .current-issue a.pdf-link {
-  margin: 15px 0 10px -74px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-}
-.home-low .feature-row {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .home-low .feature-row {
-    float: left;
-    width: 79.16666667%;
-  }
-}
-@media (min-width: 768px) {
-  .home-low .feature-row {
-    float: left;
-    width: 79.16666667%;
-  }
-}
-.home-low .feature-row .carousel-cell {
-  padding: 20px;
-  width: 25%;
-  height: 250px;
-  margin-right: 20px;
-  counter-increment: gallery-cell;
-  border-right: 2px dotted #999999;
-}
-@media (max-width: 992px) {
-  .home-low .feature-row .carousel-cell {
-    min-width: 320px;
-    width: 100%;
-    height: 180px;
-  }
-}
 .home-people,
-.home-solutions {
+.home-solutions,
+.feature-row {
   margin-top: 30px;
+  max-height: 270px;
+  overflow: hidden;
 }
 .home-people .carousel-cell,
-.home-solutions .carousel-cell {
+.home-solutions .carousel-cell,
+.feature-row .carousel-cell {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2210,36 +2092,85 @@ p.excerpt {
 }
 @media (min-width: 768px) {
   .home-people .carousel-cell,
-  .home-solutions .carousel-cell {
+  .home-solutions .carousel-cell,
+  .feature-row .carousel-cell {
     float: left;
     width: 33.33333333%;
   }
 }
 @media (min-width: 768px) {
   .home-people .carousel-cell,
-  .home-solutions .carousel-cell {
+  .home-solutions .carousel-cell,
+  .feature-row .carousel-cell {
     float: left;
     width: 33.33333333%;
   }
 }
-.home-people .carousel-cell img,
-.home-solutions .carousel-cell img {
+.home-people .carousel-cell .img-container,
+.home-solutions .carousel-cell .img-container,
+.feature-row .carousel-cell .img-container {
   width: 104px;
   height: 104px;
   float: left;
   margin-right: 14px;
-  margin-bottom: 146px;
+  margin-bottom: 250px;
+  overflow: hidden;
+}
+.home-people .carousel-cell .img-container img,
+.home-solutions .carousel-cell .img-container img,
+.feature-row .carousel-cell .img-container img {
+  height: 141px;
+  width: 183px;
+}
+.home-people .carousel-cell img,
+.home-solutions .carousel-cell img,
+.feature-row .carousel-cell img {
+  width: 104px;
+  height: 104px;
+  float: left;
+  margin-right: 14px;
+  margin-bottom: 250px;
 }
 @media (max-width: 768px) {
   .home-people .carousel-cell,
-  .home-solutions .carousel-cell {
+  .home-solutions .carousel-cell,
+  .feature-row .carousel-cell {
     border-right: none;
   }
 }
-@media (max-width: 1199px) {
-  .home-people .carousel-cell img,
-  .home-solutions .carousel-cell img {
-    display: none;
+@media (max-width: 900px) {
+  .home-people .carousel-cell,
+  .home-solutions .carousel-cell,
+  .feature-row .carousel-cell {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 270px;
+  }
+}
+@media (max-width: 900px) and (min-width: 768px) {
+  .home-people .carousel-cell,
+  .home-solutions .carousel-cell,
+  .feature-row .carousel-cell {
+    float: left;
+    width: 50%;
+  }
+}
+@media (max-width: 900px) and (min-width: 768px) {
+  .home-people .carousel-cell,
+  .home-solutions .carousel-cell,
+  .feature-row .carousel-cell {
+    float: left;
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .home-people .carousel-cell,
+  .home-solutions .carousel-cell,
+  .feature-row .carousel-cell {
+    width: 100%;
+    height: 220px;
   }
 }
 .home-section-divider {

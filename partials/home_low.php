@@ -1,30 +1,3 @@
-<div class="current-issue">
-<?php
-// check if the repeater field has rows of data
-if( have_rows('columns_print_issues', 'options') ):
-  // loop through the rows of data
-    while ( have_rows('columns_print_issues', 'options') ) : the_row();
-    if(get_sub_field('is_current_issue') == true) {
-        // display a sub field value
-        $coverImage = get_sub_field('columns_issue_cover_image');
-        $issuuURL = get_sub_field('columns_issuu_url');
-        $issuePDF = get_sub_field('columns_issue_pdf');
-    ?>
-    <p>current issue</p>
-    <!-- <a href="<?php // echo $issuuURL; ?>"> -->
-    <div class="center-block">
-        <img src="<?php echo $coverImage['url'];  ?>" alt="<?php echo $coverImage['alt']; ?>">
-        <!-- </a> -->
-    </div>
-    <a class="pdf-link" href="<?php echo $issuePDF['url']; ?>">View PDF</a><?php
-    }
-    endwhile;
-else :
-    // no rows found
-endif;
-?>
-
-</div>
 
 <?php
 use \Columns\Utilities as Utilities;
@@ -42,11 +15,59 @@ use \Columns\Utilities as Utilities;
       ) //End tax query
       );
 // The Query
-$query = new WP_Query( $args ); ?>
+ $query = new WP_Query( $args ); ?>
 
 
 
 <div class="feature-row">
+
+    <div class="current-issue carousel-cell">
+        <?php
+        // check if the repeater field has rows of data
+        if( have_rows('columns_print_issues', 'options') ):
+            // loop through the rows of data
+            while ( have_rows('columns_print_issues', 'options') ) :
+                the_row();
+                if(get_sub_field('is_current_issue') == true) {
+                    // display a sub field value
+                    $coverImage = get_sub_field('columns_issue_cover_image');
+                    $issuuURL = get_sub_field('columns_issuu_url');
+                    $issuePDF = get_sub_field('columns_issue_pdf');
+                    $issueDate = get_sub_field('columns_print_issue_publication_date', false, false);
+                    $issueDateObject = new DateTime($date);
+
+        ?>
+
+        <div class="copy-block">
+
+            <div class="img-container">
+                <img src="<?php echo $coverImage['url'];  ?>" alt="<?php echo $coverImage['alt']; ?>" />
+            </div>
+            
+
+            <div class="category">
+                <a href="<?php echo $issuePDF['url']; ?>">Current Issue</a>
+            </div>
+            <h3 class="title">
+                <a href="<?php echo $issuePDF['url']; ?>"><?php echo $issueDateObject->format("F o"); ?></a>
+            </h3>            
+            <p>
+                View PDF of the current print magazine
+                <a class="more" href="<?php echo $issuePDF['url']; ?>"></a>
+            </p>
+        </div>
+        
+        
+            <!-- </a> -->        
+        <?php
+                }
+            endwhile;
+        else :
+            // no rows found
+endif;
+        ?>
+
+    </div>
 
 
 <?php
@@ -75,9 +96,7 @@ if ( $query->have_posts() ) {
             ?>
                 </a>
             </h3>
-            <p class="excerpt"><?php
-            // echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 15, '...');
-            //
+            <p class="excerpt"><?php            
             the_excerpt();
             ?><?php
         if(get_field("columns_print_issue")) {
