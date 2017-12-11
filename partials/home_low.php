@@ -40,9 +40,9 @@ use \Columns\Utilities as Utilities;
 
         <div class="copy-block">
 
-            <div class="img-container">
-                <img src="<?php echo $coverImage['url'];  ?>" alt="<?php echo $coverImage['alt']; ?>" />
-            </div>
+            
+            <img class="cover-image" src="<?php echo $coverImage['url'];  ?>" alt="<?php echo $coverImage['alt']; ?>" />
+            
             
 
             <div class="category">
