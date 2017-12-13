@@ -311,6 +311,23 @@
     }
 }
 
+
+.media-row {    
+    max-height: initial;
+
+    .carousel-cell {
+        height: auto;
+
+        .embed-container {
+            &:extend(.single .embed-container);
+
+            iframe, object, embed {
+                &:extend(.single .embed-container iframe);
+            }
+        }
+    }
+}
+
 .home-section-divider {
     border-bottom: 1px solid #999999;
     height: 21px;

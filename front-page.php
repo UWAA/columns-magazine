@@ -37,8 +37,7 @@ wp_enqueue_script('isotope-packery');
 </div> <!-- /container-fluid -->
 
 <div class="home-section-divider">
-	<h2>In Print
-	<!-- <span>@TODO Get Current Issue</span> -->
+	<h2>In Print	
 	</h2>
 	
 </div>
@@ -67,6 +66,16 @@ wp_enqueue_script('isotope-packery');
 <div class="feature-row home-solutions row">
 	<!-- Loop here for featured solutions articles -->
 	<?php get_template_part("partials/home_solutions") ?>
+
+</div>
+
+<div class="home-section-divider">
+    <h2>Media</h2>
+</div>
+
+<div class="feature-row media-row row">
+    <!-- Loop here for featured solutions articles -->
+    <?php get_template_part("partials/home_media") ?>
 
 </div>
 

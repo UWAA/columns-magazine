@@ -43,7 +43,7 @@ class Placement {
         'show_tagcloud'              => false,
         'rewrite'                    => false,
     );
-    register_taxonomy( 'content_location', array( 'post', ' page', ' feature' ), $args );
+    register_taxonomy( 'content_location', array( 'post', ' page', ' feature', 'media' ), $args );
 
 }
 

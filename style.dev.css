@@ -2169,6 +2169,12 @@ p.excerpt {
     visibility: visible !important;
   }
 }
+.media-row {
+  max-height: initial;
+}
+.media-row .carousel-cell {
+  height: auto;
+}
 .home-section-divider {
   border-bottom: 1px solid #999999;
   height: 21px;
@@ -2850,6 +2856,28 @@ p.excerpt {
 .columns-mejs-container.mejs-container.mejs-audio .mejs-time-current {
   background: #b49ccd;
   /*version problem*/
+}
+.single .embed-container,
+.media-row .carousel-cell .embed-container {
+  margin: 10px 0 10px;
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+.single .embed-container iframe,
+.single .embed-container object,
+.single .embed-container embed,
+.media-row .carousel-cell .embed-container iframe,
+.media-row .carousel-cell .embed-container object,
+.media-row .carousel-cell .embed-container embed {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .single-header {
   border-top: solid lightgray 1px;
