@@ -54,7 +54,7 @@ if ( $query->have_posts() ) {
     <div class="copy-block">
 
         <h3 class="title">
-            <a href="<?php echo get_the_permalink(); ?>">
+            <!--<a href="<?php // echo get_the_permalink(); ?>">-->
                 <?php
 
         if(get_field("columns_custom_title") != '') {
@@ -66,13 +66,13 @@ if ( $query->have_posts() ) {
 
 
                 ?>
-            </a>
+            <!--</a>-->
         </h3>
 
         <?php
 
-        //echo wp_trim_words(wp_kses(get_the_excerpt(), Utilities::$allowedHTML), 15, '...');
-        the_excerpt();
+        echo wp_strip_all_tags(wp_kses(get_the_excerpt(), Utilities::$allowedHTML));
+        //the_excerpt();
         ?>
         <?php
         if(get_field("columns_print_issue")) {
@@ -83,9 +83,7 @@ if ( $query->have_posts() ) {
 
         }
         ?>
-        <p class="published-date">
-            <?php echo $label; ?>
-        </p>
+        
     </div>
 
 </div>
