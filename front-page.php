@@ -69,15 +69,15 @@ wp_enqueue_script('isotope-packery');
 
 </div>
 
-<div class="home-section-divider">
+<!--<div class="home-section-divider">
     <h2>Media</h2>
-</div>
+</div>-->
 
-<div class="feature-row media-row row">
+<!--<div class="feature-row media-row row">
     <!-- Loop here for featured solutions articles -->
-    <?php get_template_part("partials/home_media") ?>
+    <?php // get_template_part("partials/home_media") ?>
 
-</div>
+<!--</div>-->
 
 
 
