@@ -2175,6 +2175,9 @@ p.excerpt {
 .media-row .carousel-cell {
   height: auto;
 }
+.media-row .carousel-cell .embed-container {
+  margin-top: 0;
+}
 .home-section-divider {
   border-bottom: 1px solid #999999;
   height: 21px;
@@ -2859,7 +2862,6 @@ p.excerpt {
 }
 .single .embed-container,
 .media-row .carousel-cell .embed-container {
-  margin: 10px 0 10px;
   position: relative;
   padding-bottom: 56.25%;
   overflow: hidden;

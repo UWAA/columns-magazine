@@ -96,7 +96,7 @@ if ( $query->have_posts() ) {
             ?>
                 </a>
             </h3>
-            <p class="excerpt"><?php            
+            <?php            
             the_excerpt();
             ?><?php
         if(get_field("columns_print_issue")) {
