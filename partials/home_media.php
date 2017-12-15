@@ -71,7 +71,8 @@ if ( $query->have_posts() ) {
 
         <?php
 
-        echo wp_strip_all_tags(wp_kses(get_the_excerpt(), Utilities::$allowedHTML));
+        
+        echo "<p>". wp_strip_all_tags(wp_kses(get_the_excerpt(), Utilities::$allowedHTML)) . "</p>";
         //the_excerpt();
         ?>
         <?php
