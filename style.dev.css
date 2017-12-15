@@ -2177,6 +2177,7 @@ p.excerpt {
 }
 .media-row .carousel-cell .embed-container {
   margin-top: 0;
+  margin-bottom: 10px;
 }
 .home-section-divider {
   border-bottom: 1px solid #999999;
