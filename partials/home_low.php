@@ -34,7 +34,7 @@ use \Columns\Utilities as Utilities;
                     $issuuURL = get_sub_field('columns_issuu_url');
                     $issuePDF = get_sub_field('columns_issue_pdf');
                     $issueDate = get_sub_field('columns_print_issue_publication_date', false, false);
-                    $issueDateObject = new DateTime($date);
+                    $issueDateObject = new DateTime($issueDate);
 
         ?>
 
