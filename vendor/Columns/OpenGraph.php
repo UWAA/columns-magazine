@@ -48,7 +48,7 @@ class OpenGraph
     ?>
  
     <meta property="og:title" content="<?php echo the_title(); ?>"/>
-    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+    <meta property="og:description" content="<?php echo "Columns Magazine | Stories from the University of Washington" ?>" />
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
     <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
