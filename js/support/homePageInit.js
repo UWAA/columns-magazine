@@ -1,15 +1,7 @@
 jQuery(document).ready(function($) {
 
-	
-	$('.home-high').flickity({
-	 cellSelector: '.carousel-cell',
-	 cellAlign: 'left',
-   pageDots: false,
-   contain: true,
-   prevNextButtons: false,
-   dragThreshold: 10, 
 
-	});	
+
 
   $('.home-low .feature-row').flickity({
     cellSelector: '.carousel-cell',
