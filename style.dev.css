@@ -1906,6 +1906,7 @@ ul.social-share li a:focus.comments {
   .home-high .carousel-cell {
     width: 100%;
     padding-bottom: 20px;
+    border-right: none;
   }
 }
 .copy-block {
@@ -2167,6 +2168,7 @@ p.excerpt {
     padding-left: 15px;
     padding-right: 15px;
     min-height: 150px;
+    border-right: none;
   }
   .home-people .carousel-cell:last-of-type,
   .home-solutions .carousel-cell:last-of-type,
