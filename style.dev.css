@@ -4,7 +4,7 @@
  Description: Columns Magazine Child Theme
  Author: Ben Erickson
  Template: uw-2014
- Version: 1.7.1
+ Version: 1.8.0
  License: MIT
  */
 .thumbnail > img,
@@ -1884,11 +1884,6 @@ ul.social-share li a:focus.comments {
 .home-high .carousel-cell:last-child {
   border-right: none;
 }
-@media (max-width: 480px) {
-  .home-high .carousel-cell {
-    height: 250px;
-  }
-}
 .home-high .carousel-cell .img-container {
   width: 104px;
   height: 104px;
@@ -2169,6 +2164,7 @@ p.excerpt {
     padding-right: 15px;
     min-height: 150px;
     border-right: none;
+    padding-bottom: 20px;
   }
   .home-people .carousel-cell:last-of-type,
   .home-solutions .carousel-cell:last-of-type,
