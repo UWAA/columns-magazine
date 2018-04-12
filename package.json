@@ -20,5 +20,8 @@
     "main-bower-files": "^2.0.0"
   },
   "author": "Ben Erickson",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "npm": "^5.8.0"
+  }
 }
