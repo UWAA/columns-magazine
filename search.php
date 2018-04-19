@@ -16,22 +16,29 @@ use \Columns\SearchWalker;
 
 <div class="container-fluid search-container drawer drawer--left">
 
-<div id="search-drawer" role="banner">
-    <button type="button" class="drawer-toggle drawer-hamburger">
-      <span class="sr-only">toggle navigation</span>
-      <span class="drawer-hamburger-icon"></span>
-    </button>
-    <div class="drawer-nav" role="navigation">
-      <?php 
-       wp_list_categories(array(
-         'title_li' => 'Category',
-         'class' => 'drawer-menu',
-         'walker' => new SearchWalker
-         )
-        );
-      ?>
-    </div>
+
+
+  <div id="search-drawer" role="banner">
+      <button type="button" class="drawer-toggle drawer-hamburger">
+        <span class="sr-only">toggle navigation</span>
+        <span class="drawer-hamburger-icon"></span>
+      </button>
+      <div class="drawer-nav" role="navigation">
+      <ul class="drawer-menu">
+        <?php 
+         wp_list_categories(array(
+           'title_li' => '',
+           'class' => 'drawer-menu',
+           'walker' => new SearchWalker
+           )
+          );
+        ?>
+        </ul>
+      </div>
   </div>
+  
+
+  
 
 
 
@@ -56,7 +63,7 @@ endwhile;
 
 <div class="container-fluid">
         
-</div> 
+</div>
 
 
 <?php
