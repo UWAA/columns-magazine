@@ -2,6 +2,9 @@
 get_header("columns");
 wp_enqueue_script('drawerInit');
 use \Columns\Utilities as Utilities;
+use \Columns\SearchWalker;
+
+
 
 ?>
 
@@ -18,13 +21,16 @@ use \Columns\Utilities as Utilities;
       <span class="sr-only">toggle navigation</span>
       <span class="drawer-hamburger-icon"></span>
     </button>
-    <nav class="drawer-nav" role="navigation">
-      <ul class="drawer-menu">
-        <li><a class="drawer-brand" href="#">Brand</a></li>
-        <li><a class="drawer-menu-item" href="#">Nav1</a></li>
-        <li><a class="drawer-menu-item" href="#">Nav2</a></li>
-      </ul>
-    </nav>
+    <div class="drawer-nav" role="navigation">
+      <?php 
+       wp_list_categories(array(
+         'title_li' => 'Category',
+         'class' => 'drawer-menu',
+         'walker' => new SearchWalker
+         )
+        );
+      ?>
+    </div>
   </div>
 
 
