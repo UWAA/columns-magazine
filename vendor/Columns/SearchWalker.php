@@ -91,7 +91,7 @@ class SearchWalker extends \Walker_Category {
  
         $link = '<a href="#" ';        
 
-        $link .= ' data-value="'. urlencode($cat_name) .'" ';
+        $link .= ' data-cat_id="'. urlencode($category->term_id) .'" ';
         
         $link .= 'class="';
         if ($args['has_children']) {

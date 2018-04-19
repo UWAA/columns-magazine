@@ -28,7 +28,8 @@ $('#FilterSearch').click(function (e) {
     var filterValue = '';
 
     $('.filter-item').filter('.active').each(function () {
-        filterValue += $(this).data('value')
+        filterValue += $(this).data('cat_id');
+        filterValue += ",";
     });
 
     console.log(filterValue);
