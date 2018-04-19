@@ -82,6 +82,14 @@ class Scripts
         'in_footer' => true,
         'admin'   => false
       ),
+      'dropdown'   => array (
+        'id'      => 'dropdown',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/bootstrap/js/dropdown.js',
+        'deps'    => array(),
+        'version' => '',
+        'in_footer' => true,
+        'admin'   => false
+      ),
       'iscroll'   => array (
         'id'      => 'iscroll',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/iscroll/iscroll.js',
@@ -93,7 +101,7 @@ class Scripts
       'drawerMenu'   => array (
         'id'      => 'drawerMenu',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/jquery-drawer/drawer.min.js',
-        'deps'    => array('iscroll'),
+        'deps'    => array('iscroll', 'jquery', 'dropdown'),
         'version' => '1.0.0',
         'in_footer' => true,
         'admin'   => false
@@ -101,7 +109,7 @@ class Scripts
       'drawerInit'   => array (
         'id'      => 'drawerInit',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/support/searchDrawerInit.js',
-        'deps'    => array('iscroll', 'drawerMenu'),
+        'deps'    => array('drawerMenu'),
         'version' => '1.0.0',
         'in_footer' => true,
         'admin'   => false

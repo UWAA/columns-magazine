@@ -89,7 +89,20 @@ class SearchWalker extends \Walker_Category {
             return;
         }
  
-        $link = '<a href="' . esc_url( get_term_link( $category ) ) . '" ';
+        $link = '<a href="#" ';        
+        
+        if ($args['has_children']) {
+            $link .= 'class="drawer-menu-item" ';
+        } elseif (!$args['has_children'] && $depth === 0) {
+            $link .= 'class="drawer-menu-item" ';
+        }
+        else {
+            $link .= 'class="drawer-dropdown-menu-item" ';
+        }
+
+        if ($args['has_children']) {
+            // $link .= 'data-toggle="dropdown" role="button" ';
+        }
         if ( $args['use_desc_for_title'] && ! empty( $category->description ) ) {
             /**
              * Filters the category description for display.
@@ -103,8 +116,11 @@ class SearchWalker extends \Walker_Category {
         }
  
         $link .= '>';
-        $link .= $cat_name . '</a>';
-        // $link .= var_dump($category->category_parent) . '</a>';
+        $link .= $cat_name;
+        if ($args['has_children']) {
+            $link .= "</a><a class=\"drawer-dropdown dropdown-toggle\" data-toggle=\"dropdown\" role=\"button href=\"#\"><span class=\"drawer-caret dropdown-toggle\"></span>";    
+        }
+        $link .= '</a>';        
  
         if ( ! empty( $args['feed_image'] ) || ! empty( $args['feed'] ) ) {
             $link .= ' ';
@@ -113,7 +129,7 @@ class SearchWalker extends \Walker_Category {
                 $link .= '(';
             }
  
-            $link .= '<a href="' . esc_url( get_term_feed_link( $category->term_id, $category->taxonomy, $args['feed_type'] ) ) . '"';
+            $link .= '<a href="#"';
  
             if ( empty( $args['feed'] ) ) {
                 $alt = ' alt="' . sprintf(__( 'Feed for all posts filed under %s' ), $cat_name ) . '"';
@@ -147,7 +163,7 @@ class SearchWalker extends \Walker_Category {
                 'cat-item-' . $category->term_id,
             );
 
-            if ($category->category_parent === 0) {
+            if ($args['has_children']) {
                 $css_classes[] = 'drawer-dropdown';
             }
 
@@ -219,11 +235,6 @@ class SearchWalker extends \Walker_Category {
     public function end_el( &$output, $page, $depth = 0, $args = array() ) {
         if ( 'list' != $args['style'] )
             return;
-
-        if ($args['has_children']) {
-            $output .= "<span class=\"drawer-caret\"></span></li>\n";    
-        }
- 
         $output .= "</li>\n";
     }
 

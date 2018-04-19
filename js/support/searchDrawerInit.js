@@ -5,7 +5,7 @@ $('.drawer').drawer({
         overlay: 'drawer-overlay',
         open: 'drawer-open',
         close: 'drawer-close',
-        dropdown: 'drawer-dropdown'
+        dropdown: 'dropdown-toggle'
     },
     iscroll: {
         // Configuring the iScroll
@@ -14,4 +14,10 @@ $('.drawer').drawer({
         preventDefault: false
     },
     showOverlay: true
+});
+
+
+$('.drawer-dropdown-menu-item').click(function (e) {
+    e.stopPropagation();
+    $(this).toggleClass('active');
 });
