@@ -17,7 +17,19 @@ $('.drawer').drawer({
 });
 
 
-$('.drawer-dropdown-menu-item').click(function (e) {
+$('.filter-item').click(function (e) {
     e.stopPropagation();
-    $(this).toggleClass('active');
+    $(this).toggleClass('active')        
+});
+
+//Find any of the drawer menus with an "active status"
+$('#FilterSearch').click(function (e) {
+
+    var filterValue = '';
+
+    $('.filter-item').filter('.active').each(function () {
+        filterValue += $(this).data('value')
+    });
+
+    console.log(filterValue);
 });

@@ -2894,6 +2894,15 @@ p.excerpt {
   background-color: aqua;
   position: relative;
 }
+.drawer-menu li .active {
+  background-color: #4b2e83;
+}
+.drawer-menu-item {
+  display: inline;
+}
+.dropdown-toggle {
+  display: inline;
+}
 .single-header {
   border-top: solid lightgray 1px;
 }

@@ -90,19 +90,21 @@ class SearchWalker extends \Walker_Category {
         }
  
         $link = '<a href="#" ';        
+
+        $link .= ' data-value="'. urlencode($cat_name) .'" ';
         
+        $link .= 'class="';
         if ($args['has_children']) {
-            $link .= 'class="drawer-menu-item" ';
+            $link .= ' drawer-menu-item';
         } elseif (!$args['has_children'] && $depth === 0) {
-            $link .= 'class="drawer-menu-item" ';
+            $link .= ' drawer-menu-item';
         }
         else {
-            $link .= 'class="drawer-dropdown-menu-item" ';
+            $link .= ' drawer-dropdown-menu-item';
         }
 
-        if ($args['has_children']) {
-            // $link .= 'data-toggle="dropdown" role="button" ';
-        }
+        $link .= ' filter-item"';
+       
         if ( $args['use_desc_for_title'] && ! empty( $category->description ) ) {
             /**
              * Filters the category description for display.

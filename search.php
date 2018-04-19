@@ -38,7 +38,7 @@ use \Columns\SearchWalker;
         </ul>
 
         <!-- Apply Filter Button -->
-        <button type="button" class="search-apply-filter-button">Apply Filters</button>
+        <button id="FilterSearch" name="search" class="inlineSubmit" value="" class="columns-search-input-submit">apply filters</button>        
       </div>
   </div>
   
