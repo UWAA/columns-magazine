@@ -38,7 +38,13 @@ use \Columns\SearchWalker;
         </ul>
 
         <!-- Apply Filter Button -->
-        <button id="FilterSearch" name="search" class="inlineSubmit" value="" class="columns-search-input-submit">apply filters</button>        
+        
+        <button id="FilterSearch" name="search" class="inlineSubmit" type="submit" value="SearchSideBar" class="columns-search-input-submit">apply filters</button>
+        
+        <!-- <form role="search" method="get" id="search-form-mobile" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                  
+                  <input id="searchSite" name="search" class="inlineSubmit" type="submit" value="Search" class="columns-search-input-submit">
+        
       </div>
   </div>
   
