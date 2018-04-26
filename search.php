@@ -3,14 +3,11 @@ get_header("columns");
 wp_enqueue_script('drawerInit');
 use \Columns\Utilities as Utilities;
 use \Columns\SearchWalker;
-
-
-
 ?>
 
 
 <div class="archive-header">
-<h1>Search</h1>
+  <h1>Search</h1>
     <!-- Add new search bar here.  Remove from header. -->
 </div>
 
@@ -25,33 +22,20 @@ use \Columns\SearchWalker;
       </button>
       <div class="drawer-nav" role="navigation">
       <!-- Category Menu -->
-      <ul class="drawer-menu">
-        <?php 
-         wp_list_categories(array(
-           'title_li' => '',
-           'class' => 'drawer-menu',
-           'walker' => new SearchWalker,
-           'exclude' => array('11', '1')  //Issue here with test vs prod
-           )
-          );
-        ?>
+        <ul class="drawer-menu">
+          <?php 
+          wp_list_categories(array(
+            'title_li' => '',
+            'class' => 'drawer-menu',
+            'walker' => new SearchWalker,
+            'exclude' => array('11', '1')  //Issue here with test vs prod
+            )
+            );
+          ?>
         </ul>
-
-        <!-- Apply Filter Button -->
-        
-        <button id="FilterSearch" name="search" class="inlineSubmit" type="submit" value="SearchSideBar" class="columns-search-input-submit">apply filters</button>
-        
-        <!-- <form role="search" method="get" id="search-form-mobile" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                  
-                  <input id="searchSite" name="search" class="inlineSubmit" type="submit" value="Search" class="columns-search-input-submit">
-        
+          <button id="FilterSearch" name="search" class="inlineSubmit" type="submit" value="SearchSideBar" class="columns-search-input-submit">apply filters</button>
       </div>
   </div>
-  
-
-  
-
-
 
 <div class="archive-posts">
 <?php

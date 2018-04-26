@@ -10,7 +10,7 @@
  
  if ( get_field('content_thumbnail', $post->ID) ) :
     
-    $contentPlacementThumbnailImageID = get_field('content_thumbnail', $post->ID)['ID'];  //returns a image id    
+    $contentPlacementThumbnailImageID = get_field('content_thumbnail', $post->ID);  //returns a image id    
     $atts = array(        
         "class" => "search-thumbnail"
         );

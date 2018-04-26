@@ -132,11 +132,11 @@ class Utilities{
         foreach( $exploded as $tag ) :
             $where .= "
               AND (
-                (wp_posts.post_title LIKE '%$tag%')
-                OR (wp_posts.post_content LIKE '%$tag%')
+                ($wpdb->posts.post_title LIKE '%$tag%')
+                OR ($wpdb->posts.post_content LIKE '%$tag%')
                 OR EXISTS (
                   SELECT * FROM wp_postmeta
-                      WHERE post_id = wp_posts.ID
+                      WHERE post_id = $wpdb->posts.ID
                         AND (";
             foreach ($list_searcheable_acf as $searcheable_acf) :
               if ($searcheable_acf == $list_searcheable_acf[0]):
@@ -149,22 +149,22 @@ class Utilities{
                 )
                 OR EXISTS (
                   SELECT * FROM wp_comments
-                  WHERE comment_post_ID = wp_posts.ID
+                  WHERE comment_post_ID = $wpdb->posts.ID
                     AND comment_content LIKE '%$tag%'
                 )
                 OR EXISTS (
-                  SELECT * FROM wp_terms
-                  INNER JOIN wp_term_taxonomy
-                    ON wp_term_taxonomy.term_id = wp_terms.term_id
-                  INNER JOIN wp_term_relationships
-                    ON wp_term_relationships.term_taxonomy_id = wp_term_taxonomy.term_taxonomy_id
+                  SELECT * FROM $wpdb->terms
+                  INNER JOIN $wpdb->term_taxonomy
+                    ON $wpdb->term_taxonomy.term_id = $wpdb->terms.term_id
+                  INNER JOIN $wpdb->term_relationships
+                    ON $wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id
                   WHERE (
                     taxonomy = 'post_tag'
                         OR taxonomy = 'category'
                         OR taxonomy = 'myCustomTax'
                     )
-                    AND object_id = wp_posts.ID
-                    AND wp_terms.name LIKE '%$tag%'
+                    AND object_id = $wpdb->posts.ID
+                    AND $wpdb->terms.name LIKE '%$tag%'
                 )
             )";
         endforeach;
