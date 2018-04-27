@@ -46,7 +46,11 @@ function parseURL(url) {
 }
 
 var URL = parseURL(location);
+//debug
+console.log(URL);
 var searchQuery = URL.params.s;
+var catQuery = URL.params.cat;
+
 
 if (searchQuery) {
     var searchQueryFilter = "?s=" + searchQuery;
@@ -60,16 +64,32 @@ $('.filter-item').click(function (e) {
 });
 
 
+// readURI for active cats and set those to active in menu
+
+if (catQuery) {
+    
+    var activeCategoriesFromURL = catQuery.split(",");
+
+    activeCategoriesFromURL.forEach(function (element) {
+        $(".search-container").find("[data-cat_id=" + element + "]").toggleClass('active');
+    });
+}
+
 //Find any of the drawer menus with an "active status"
 $('#FilterSearch').click(function (e) {
+    
+    var filterValues = [];
 
-    var filterValue = '&cat=';
-
-    $('.filter-item').filter('.active').each(function () {
-        filterValue += $(this).data('cat_id');
-        filterValue += ",";
+    $('.drawer-menu .filter-item').filter('.active').each(function () {
+        filterValues.push($(this).data('cat_id'));        
     });
 
-        
-    location.replace(location.origin + searchQueryFilter + filterValue)
+    if (filterValues.length > 0) {
+        var filterValue = '&cat=';
+        filterValue += filterValues.join(',');
+    } else {
+        filterValue = '';
+    }
+
+     location.replace(location.origin + searchQueryFilter + filterValue)
 });
