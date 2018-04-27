@@ -55,6 +55,8 @@ if (searchQuery) {
 $('.filter-item').click(function (e) {
     e.stopPropagation();
     $(this).toggleClass('active')
+    //toggle parent UL to be active too
+    $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
 });
 
 

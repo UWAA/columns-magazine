@@ -1,9 +1,12 @@
 .archive-posts {
-    
+    .make-row();
+    max-width: 1000px;
+    // max-width: @columns-max-container-width;
 }
 
 .search-story-container {
-    &:extend(.archive-story-container);
+    .make-md-column(6);    
+    
 
     p {
         margin-bottom: 14.5px;

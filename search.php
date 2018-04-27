@@ -37,6 +37,45 @@ use \Columns\SearchWalker;
       </div>
   </div>
 
+</div>
+
+<div class="container">
+<div class="row">
+
+<div class="search-container">
+  <h2>Current Search Filters</h2>
+  <div class="current-filter-wrapper current-filter-wrapper-search">
+    <span>Search Term: </span>
+    <p class="active filter-item">Dummy Search Term</p>
+
+  </div>
+  <div class="current-filter-wrapper current-filter-wrapper-issue">
+    <span>Issue: </span>
+    
+  </div>
+  <div class="current-filter-wrapper current-filter-wrapper-category">
+    <span>Category: </span>
+    <?php 
+          $categoryList = get_categories(array(            
+            'exclude' => array('11', '1')  //Issue here with test vs prod
+            )
+            );
+
+            foreach ($categoryList as $category) {
+              echo '<div class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</div>';
+            }
+
+          ?>
+  </div>
+  <div class="current-filter-wrapper current-filter-wrapper-content_type">
+    <span>Content Type: </span>
+  </div>
+
+</div>
+
+</div>
+
+
 <div class="archive-posts">
 <?php
 
@@ -56,10 +95,7 @@ endwhile;
 </div>
 </div>
 
-<div class="container-fluid">
-        
 </div>
-
 
 <?php
 

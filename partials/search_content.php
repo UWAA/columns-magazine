@@ -1,4 +1,4 @@
-<div class="row">
+
 <div class="search-story-container">
 
 
@@ -26,4 +26,3 @@
 <hr>
 
 </div>
-</div>    
