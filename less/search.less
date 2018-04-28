@@ -1,4 +1,6 @@
-.archive-posts {
+.search {
+
+    .archive-posts {
     .make-row();
     max-width: 1000px;
     // max-width: @columns-max-container-width;
@@ -54,40 +56,51 @@
 
 .search-header {
     &:extend(.archive-header);
+    position: relative;
 
     h1{
+        display: inline-block;
         margin-left: 10%;
         line-height: 150px;
-        font-size: 60px;
-        margin-top: 0;
+        font-size: 60px;                
     }
 
-    @media (max-width: @screen-sm-min) { 
-            
-            height: 130px;
 
-            h1{
-                font-size: 50px;
-                line-height: 137px;            
+            .search-widescreen {
+                display: inline-block;
+                position: relative;
+                float: right;
+                margin: 45px 30px 0;
+                width: 300px;     
+                
+                input {
+                    color: @janegray;
+                }
+                @media (max-width: @screen-xs-max) {                                        
+                    right: 0;                        
+                    bottom: -50px;
 
+                }
             }
-            
-        } 
 
-     @media (max-width: @screen-xs-min) { 
-            
-            height: 90px;
+           
 
-            h1{
-                font-size: 37px;
-                line-height: 96px;            
-
-            }
-            
-        } 
+     
 
 }
 
 .search-thumbnail {
    &:extend(.archive-thumbnail);
 }
+
+
+    .uwaa-branding-search {
+        .search {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+
+}
+

@@ -95,8 +95,8 @@
 .modal-footer:after,
 .archive-story-container:before,
 .archive-story-container:after,
-.archive-posts:before,
-.archive-posts:after {
+.search .archive-posts:before,
+.search .archive-posts:after {
   content: " ";
   display: table;
 }
@@ -123,7 +123,7 @@
 .scroller:after,
 .modal-footer:after,
 .archive-story-container:after,
-.archive-posts:after {
+.search .archive-posts:after {
   clear: both;
 }
 .dl-horizontal dd:before,
@@ -172,8 +172,8 @@
 .modal-footer:after,
 .archive-story-container:before,
 .archive-story-container:after,
-.archive-posts:before,
-.archive-posts:after {
+.search .archive-posts:before,
+.search .archive-posts:after {
   content: " ";
   display: table;
 }
@@ -200,7 +200,7 @@
 .scroller:after,
 .modal-footer:after,
 .archive-story-container:after,
-.archive-posts:after {
+.search .archive-posts:after {
   clear: both;
 }
 body {
@@ -271,7 +271,7 @@ p {
 }
 .published-date,
 .archive-story-container .date,
-.search-story-container .date {
+.search .search-story-container .date {
   font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -2540,7 +2540,7 @@ p.excerpt {
   width: 100%;
 }
 .archive-header,
-.search-header {
+.search .search-header {
   height: 150px;
   color: #ffffff;
   background-color: #555555;
@@ -2553,7 +2553,7 @@ p.excerpt {
 }
 @media (max-width: 768px) {
   .archive-header,
-  .search-header {
+  .search .search-header {
     height: 130px;
   }
   .archive-header h1 {
@@ -2563,7 +2563,7 @@ p.excerpt {
 }
 @media (max-width: 480px) {
   .archive-header,
-  .search-header {
+  .search .search-header {
     height: 90px;
   }
   .archive-header h1 {
@@ -2572,7 +2572,7 @@ p.excerpt {
   }
 }
 .archive-thumbnail,
-.search-thumbnail {
+.search .search-thumbnail {
   margin-bottom: 5px;
   margin-right: 14px;
   float: left;
@@ -2662,68 +2662,68 @@ p.excerpt {
 .single-feature .columns-feature-content .alignnone p.wp-caption-text {
   margin-top: 5px;
 }
-.archive-posts {
+.search .archive-posts {
   margin-left: -15px;
   margin-right: -15px;
   max-width: 1000px;
 }
-.archive-posts:before,
-.archive-posts:after {
+.search .archive-posts:before,
+.search .archive-posts:after {
   content: " ";
   display: table;
 }
-.archive-posts:after {
+.search .archive-posts:after {
   clear: both;
 }
-.archive-posts:before,
-.archive-posts:after {
+.search .archive-posts:before,
+.search .archive-posts:after {
   content: " ";
   display: table;
 }
-.archive-posts:after {
+.search .archive-posts:after {
   clear: both;
 }
-.archive-posts:before,
-.archive-posts:after {
+.search .archive-posts:before,
+.search .archive-posts:after {
   content: " ";
   display: table;
 }
-.archive-posts:after {
+.search .archive-posts:after {
   clear: both;
 }
-.archive-posts:before,
-.archive-posts:after {
+.search .archive-posts:before,
+.search .archive-posts:after {
   content: " ";
   display: table;
 }
-.archive-posts:after {
+.search .archive-posts:after {
   clear: both;
 }
-.search-story-container {
+.search .search-story-container {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .search-story-container {
+  .search .search-story-container {
     float: left;
     width: 50%;
   }
 }
 @media (min-width: 992px) {
-  .search-story-container {
+  .search .search-story-container {
     float: left;
     width: 50%;
   }
 }
-.search-story-container p {
+.search .search-story-container p {
   margin-bottom: 14.5px;
 }
-.search-story-container .date {
+.search .search-story-container .date {
   margin: 15px 0 10px;
 }
-.search-story-container .search-story-title {
+.search .search-story-container .search-story-title {
   font-weight: 800;
   font-size: 22px;
   line-height: 1.2;
@@ -2731,11 +2731,11 @@ p.excerpt {
   margin: 0 0 10px;
 }
 @media (max-width: 480px) {
-  .search-story-container .search-story-title {
+  .search .search-story-container .search-story-title {
     font-size: 17px;
   }
 }
-.search-story-container .search-story-title a {
+.search .search-story-container .search-story-title a {
   color: #5a5a5a;
   font-family: inherit;
   font-size: inherit;
@@ -2743,7 +2743,7 @@ p.excerpt {
   line-height: inherit;
   text-transform: none;
 }
-.search-story-container hr {
+.search .search-story-container hr {
   border: none;
   border-top: 1px dotted #000000;
   color: #ffffff;
@@ -2751,29 +2751,34 @@ p.excerpt {
   height: 1px;
   width: 100%;
 }
-.search-header h1 {
+.search .search-header {
+  position: relative;
+}
+.search .search-header h1 {
+  display: inline-block;
   margin-left: 10%;
   line-height: 150px;
   font-size: 60px;
-  margin-top: 0;
 }
-@media (max-width: 768px) {
-  .search-header {
-    height: 130px;
-  }
-  .search-header h1 {
-    font-size: 50px;
-    line-height: 137px;
+.search .search-header .search-widescreen {
+  display: inline-block;
+  position: relative;
+  float: right;
+  margin: 45px 30px 0;
+  width: 300px;
+}
+.search .search-header .search-widescreen input {
+  color: #3d3d3d;
+}
+@media (max-width: 767px) {
+  .search .search-header .search-widescreen {
+    right: 0;
+    bottom: -50px;
   }
 }
-@media (max-width: 480px) {
-  .search-header {
-    height: 90px;
-  }
-  .search-header h1 {
-    font-size: 37px;
-    line-height: 96px;
-  }
+.search .uwaa-branding-search .search {
+  display: none;
+  visibility: hidden;
 }
 .columns-form label {
   position: absolute;

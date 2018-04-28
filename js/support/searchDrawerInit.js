@@ -48,13 +48,10 @@ function parseURL(url) {
 var URL = parseURL(location);
 //debug
 console.log(URL);
-var searchQuery = URL.params.s;
+// var searchQuery = URL.params.s;  //doing with PHP
 var catQuery = URL.params.cat;
 
 
-if (searchQuery) {
-    var searchQueryFilter = "?s=" + searchQuery;
-}
 
 $('.filter-item').click(function (e) {
     e.stopPropagation();
@@ -91,5 +88,25 @@ $('#FilterSearch').click(function (e) {
         filterValue = '';
     }
 
+
+    var searchQuery = $(".columns-search-input-field").val();
+    console.log(searchQuery);
+
+    if (searchQuery) {
+        var searchQueryFilter = "?s=" + searchQuery;
+    } else {
+        var searchQueryFilter = '';
+    }
+
      location.replace(location.origin + searchQueryFilter + filterValue)
 });
+
+//TODO
+
+$('.search-filter-item,.active').click(function (e) {
+    $(".columns-search-input-field").val("");
+    
+});
+
+//Debounced search term replace in the active filter area.
+

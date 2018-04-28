@@ -6,9 +6,14 @@ use \Columns\SearchWalker;
 ?>
 
 
-<div class="archive-header">
+<div class="archive-header search-header">
   <h1>Search</h1>
-    <!-- Add new search bar here.  Remove from header. -->
+    <div class="columns-form search-form search-widescreen">
+              <form role="search" method="get" id="search-form-widescreen" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <input id="Search" name="s" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_search_query() ); ?>" maxlength="255">
+                <input id="searchSite" name="search" class="inlineSubmit" type="submit" value="Search" class="columns-search-input-submit">
+              </form>
+    </div>
 </div>
 
 <div class="container-fluid search-container drawer drawer--left">
@@ -46,7 +51,14 @@ use \Columns\SearchWalker;
   <h2>Current Search Filters</h2>
   <div class="current-filter-wrapper current-filter-wrapper-search">
     <span>Search Term: </span>
-    <p class="active filter-item">Dummy Search Term</p>
+    <?php
+
+    if (get_search_query() != "") {
+      echo '<span class="active filter-item search-filter-item">' . esc_attr( get_search_query() ) . '</span>';
+    }
+
+    ?>
+    
 
   </div>
   <div class="current-filter-wrapper current-filter-wrapper-issue">
@@ -62,7 +74,7 @@ use \Columns\SearchWalker;
             );
 
             foreach ($categoryList as $category) {
-              echo '<div class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</div>';
+              echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
             }
 
           ?>
