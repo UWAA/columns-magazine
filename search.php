@@ -9,9 +9,9 @@ use \Columns\SearchWalker;
 <div class="archive-header search-header">
   <h1>Search</h1>
     <div class="columns-form search-form search-widescreen">
-              <form role="search" method="get" id="search-form-widescreen" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+              <form role="search" method="get" id="search-form-widescreen">
                 <input id="Search" name="s" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_search_query() ); ?>" maxlength="255">
-                <input id="searchSite" name="search" class="inlineSubmit" type="submit" value="Search" class="columns-search-input-submit">
+                <input id="searchSite" name="search" class="inlineSubmit columns-search-input-submit" type="submit" value="Search" >
               </form>
     </div>
 </div>
@@ -38,7 +38,7 @@ use \Columns\SearchWalker;
             );
           ?>
         </ul>
-          <button id="FilterSearch" name="search" class="inlineSubmit" type="submit" value="SearchSideBar" class="columns-search-input-submit">apply filters</button>
+          <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit" type="submit" value="SearchSideBar">apply filters</button>
       </div>
   </div>
 

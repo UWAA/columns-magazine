@@ -16,40 +16,13 @@ $('.drawer').drawer({
     showOverlay: true
 });
 
-//http://james.padolsey.com/javascript/parsing-urls-with-the-dom/
-function parseURL(url) {
-    var a = document.createElement('a');
-    a.href = url;
-    return {
-        source: url,
-        protocol: a.protocol.replace(':', ''),
-        host: a.hostname,
-        port: a.port,
-        query: a.search,
-        params: (function () {
-            var ret = {},
-                seg = a.search.replace(/^\?/, '').split('&'),
-                len = seg.length, i = 0, s;
-            for (; i < len; i++) {
-                if (!seg[i]) { continue; }
-                s = seg[i].split('=');
-                ret[s[0]] = s[1];
-            }
-            return ret;
-        })(),
-        file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ''])[1],
-        hash: a.hash.replace('#', ''),
-        path: a.pathname.replace(/^([^\/])/, '/$1'),
-        relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
-        segments: a.pathname.replace(/^\//, '').split('/')
-    };
-}
 
-var URL = parseURL(location);
+
+var URL = new Uri(location);
 //debug
 console.log(URL);
 // var searchQuery = URL.params.s;  //doing with PHP
-var catQuery = URL.params.cat;
+var catQuery = URL.getQueryParamValue('cat');
 
 
 
@@ -61,9 +34,7 @@ $('.filter-item').click(function (e) {
 });
 
 
-// readURI for active cats and set those to active in menu
-
-if (catQuery) {
+if (catQuery) {    
     
     var activeCategoriesFromURL = catQuery.split(",");
 
@@ -73,40 +44,80 @@ if (catQuery) {
 }
 
 //Find any of the drawer menus with an "active status"
-$('#FilterSearch').click(function (e) {
+$('.columns-search-input-submit').click(function (e) {
     
     var filterValues = [];
 
     $('.drawer-menu .filter-item').filter('.active').each(function () {
         filterValues.push($(this).data('cat_id'));        
     });
-
-    if (filterValues.length > 0) {
-        var filterValue = '&cat=';
-        filterValue += filterValues.join(',');
-    } else {
-        filterValue = '';
-    }
+    
+    console.log(filterValues);
 
 
     var searchQuery = $(".columns-search-input-field").val();
+    
     console.log(searchQuery);
 
-    if (searchQuery) {
-        var searchQueryFilter = "?s=" + searchQuery;
-    } else {
-        var searchQueryFilter = '';
+   
+
+    newURL = URL.clone()                
+                .deleteQueryParam('cat');
+
+    if (filterValues.length > 0) {        
+            newURL.replaceQueryParam('cat', filterValues.join(","));
     }
 
-     location.replace(location.origin + searchQueryFilter + filterValue)
+    if (searchQuery) {
+        newURL.replaceQueryParam('s', searchQuery)
+    }
+
+     location.replace(newURL)
+
+     
+
+
 });
 
 //TODO
 
-$('.search-filter-item,.active').click(function (e) {
+$('.search-filter-item.active').click(function (e) {
     $(".columns-search-input-field").val("");
     
 });
 
 //Debounced search term replace in the active filter area.
+
+function updateSearchTerms(value) {
+    
+    
+}
+
+$(".columns-search-input-field").on('keyup', _.debounce(function (element) {
+
+    console.log(element.currentTarget.value)
+
+    switch (element.currentTarget.value) {
+        case "":
+            $(".search-filter-item").removeClass("active");
+            break;       
+            
+    
+        default:
+
+            $(".columns-search-input-field").not($(this).each(function () {
+                $(".columns-search-input-field").val(element.currentTarget.value)
+                $(".search-filter-item").html(element.currentTarget.value).addClass("active");
+            }))
+
+            break;
+    }
+
+    
+    
+}, 500));
+
+// var lazyLayout = _.debounce(calculateLayout, 300);
+// $(window).resize(lazyLayout);
+
 

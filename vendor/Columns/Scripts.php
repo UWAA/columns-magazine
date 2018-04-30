@@ -98,6 +98,14 @@ class Scripts
         'in_footer' => true,
         'admin'   => false
       ),
+      'jsURI'   => array (
+        'id'      => 'jsURI',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/jsuri/Uri.js',
+        'deps'    => array(),
+        'version' => '1.0.0',
+        'in_footer' => true,
+        'admin'   => false
+      ),
       'drawerMenu'   => array (
         'id'      => 'drawerMenu',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/jquery-drawer/drawer.min.js',
@@ -109,7 +117,7 @@ class Scripts
       'drawerInit'   => array (
         'id'      => 'drawerInit',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/support/searchDrawerInit.js',
-        'deps'    => array('drawerMenu'),
+        'deps'    => array('jsURI','drawerMenu'),
         'version' => '1.0.0',
         'in_footer' => true,
         'admin'   => false
