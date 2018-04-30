@@ -90,7 +90,11 @@ use \Columns\SearchWalker;
 
 <div class="archive-posts">
 
+
 <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+
+<a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
+<a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
 
 <?php
 
