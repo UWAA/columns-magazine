@@ -89,7 +89,11 @@ use \Columns\SearchWalker;
 
 
 <div class="archive-posts">
+
+<?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+
 <?php
+
 
 if (have_posts() ):
 while ( have_posts() ) : the_post(); 

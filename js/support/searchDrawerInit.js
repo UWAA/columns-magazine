@@ -1,3 +1,5 @@
+
+// Initiate the Drawer Search Menu
 $('.drawer').drawer({
     class: {
         nav: 'drawer-nav',
@@ -16,15 +18,20 @@ $('.drawer').drawer({
     showOverlay: true
 });
 
-
-
+// Scrape out and understand what's happening with the URI, so we can turn-on the filter buttons.
 var URL = new Uri(location);
-//debug
-console.log(URL);
-// var searchQuery = URL.params.s;  //doing with PHP
+
 var catQuery = URL.getQueryParamValue('cat');
 
+if (catQuery) {
+    var activeCategoriesFromURL = catQuery.split(",");
+    activeCategoriesFromURL.forEach(function (element) {
+        $(".search-container").find("[data-cat_id=" + element + "]").toggleClass('active');
+    });
+}
 
+
+// Toggles active state on filters, does not dropdown more menu items.  
 
 $('.filter-item').click(function (e) {
     e.stopPropagation();
@@ -34,35 +41,29 @@ $('.filter-item').click(function (e) {
 });
 
 
-if (catQuery) {    
-    
-    var activeCategoriesFromURL = catQuery.split(",");
 
-    activeCategoriesFromURL.forEach(function (element) {
-        $(".search-container").find("[data-cat_id=" + element + "]").toggleClass('active');
-    });
-}
-
-//Find any of the drawer menus with an "active status"
-$('.columns-search-input-submit').click(function (e) {
+// Search/Filter Submit Button Handler.  
+$('.columns-search-input-submit').click(function (e) {    
     
+    // Determine currently active filters
     var filterValues = [];
 
     $('.drawer-menu .filter-item').filter('.active').each(function () {
         filterValues.push($(this).data('cat_id'));        
     });
-    
-    console.log(filterValues);
 
-
-    var searchQuery = $(".columns-search-input-field").val();
-    
-    console.log(searchQuery);
+    // Gets the value of the search box
+    var searchQuery = $(".columns-search-input-field").val();      
 
    
-
-    newURL = URL.clone()                
+    // Builds a new URL and refreshes the page.
+    var newURL = URL.clone()
+                .setPath('/') // pagination?
                 .deleteQueryParam('cat');
+    
+                // newURL.uriParts.directory = "/";
+                
+                
 
     if (filterValues.length > 0) {        
             newURL.replaceQueryParam('cat', filterValues.join(","));
@@ -72,30 +73,20 @@ $('.columns-search-input-submit').click(function (e) {
         newURL.replaceQueryParam('s', searchQuery)
     }
 
-     location.replace(newURL)
-
-     
-
-
+    
+    location.replace(newURL.toString())
 });
 
-//TODO
+// UI Elements
 
+// Clears out the search bars if the search filter itself is cleared.
 $('.search-filter-item.active').click(function (e) {
     $(".columns-search-input-field").val("");
-    
+    URL.replaceQueryParam('s', "");
 });
 
 //Debounced search term replace in the active filter area.
-
-function updateSearchTerms(value) {
-    
-    
-}
-
 $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
-
-    console.log(element.currentTarget.value)
 
     switch (element.currentTarget.value) {
         case "":
@@ -112,12 +103,8 @@ $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
 
             break;
     }
-
-    
     
 }, 500));
 
-// var lazyLayout = _.debounce(calculateLayout, 300);
-// $(window).resize(lazyLayout);
 
 
