@@ -26,8 +26,69 @@ use \Columns\SearchWalker;
         <span class="drawer-hamburger-icon"></span>
       </button>
       <div class="drawer-nav" role="navigation">
+
       <!-- Category Menu -->
         <ul class="drawer-menu">
+        <li class="drawer-menu-section-title">Search Issue:</li>
+        <li>Entire Site</li>
+        <li>Current Issue</li>
+
+                
+        <li class="cat-item cat-item-3 drawer-dropdown">
+        <a href="#" data-cat_id="3" class=" drawer-menu-item filter-item">Choose Issue</a>
+        <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href=" #"="">
+          <span class="drawer-caret dropdown-toggle"></span>
+        </a>
+
+          <ul class="drawer-dropdown-menu">
+          	
+          
+
+          <?php 
+
+          // check if the repeater field has rows of data
+          if( have_rows('columns_print_issues', 'option') ):
+          
+           	// loop through the rows of data
+              while ( have_rows('columns_print_issues', 'option') ) : the_row();
+          
+                  // display a sub field value                  
+
+                  // get raw date
+                  $date = get_sub_field('columns_print_issue_publication_date', false, false);
+
+
+                  // make date object
+                  $date = new DateTime($date);                  
+
+                  ?>
+
+
+                  <li class="cat-item">
+                    <a href="#"  class="drawer-dropdown-menu-item filter-item">  
+                    <!-- data-cat_id="20" -->
+                  <?php echo $date->format('M Y'); ?>
+                  </li>
+
+
+                  <?php
+                  
+                  
+          
+              endwhile;
+            
+          else :
+          
+              // no rows found
+          
+          endif;
+          
+          ?>
+        </ul>
+        </li>
+      <!-- Category Menu -->
+        <ul class="drawer-menu">
+        <li class="drawer-menu-section-title">Category: </li>
           <?php 
           wp_list_categories(array(
             'title_li' => '',
