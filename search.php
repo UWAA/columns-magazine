@@ -63,18 +63,14 @@ use \Columns\SearchWalker;
 
                   ?>
 
-
                   <li class="cat-item">
                     <a href="#"  class="drawer-dropdown-menu-item filter-item">  
                     <!-- data-cat_id="20" -->
                   <?php echo $date->format('M Y'); ?>
                   </li>
 
-
                   <?php
                   
-                  
-          
               endwhile;
             
           else :
@@ -122,64 +118,103 @@ use \Columns\SearchWalker;
     
 
   </div>
-  <div class="current-filter-wrapper current-filter-wrapper-issue">
-    <span>Issue: </span>
-    
+    <div class="current-filter-wrapper current-filter-wrapper-issue">
+      <span>Issue: </span>
+
+    </div>
+    <div class="current-filter-wrapper current-filter-wrapper-category">
+      <span>Category: </span>
+      <?php 
+            $categoryList = get_categories(array(            
+              'exclude' => array('11', '1')  //Issue here with test vs prod
+              )
+              );
+
+              foreach ($categoryList as $category) {
+                echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
+              }
+
+            ?>
+    </div>
+    <div class="current-filter-wrapper current-filter-wrapper-content_type">
+      <span>Content Type: </span>
+    </div>
   </div>
-  <div class="current-filter-wrapper current-filter-wrapper-category">
-    <span>Category: </span>
-    <?php 
-          $categoryList = get_categories(array(            
-            'exclude' => array('11', '1')  //Issue here with test vs prod
-            )
-            );
 
-            foreach ($categoryList as $category) {
-              echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
-            }
+</div>
 
+
+
+  <div class="archive-posts">
+
+    <a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
+    <a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
+
+    <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+
+      <?php
+
+        if (have_posts() ):
+
+        while ( have_posts() ) : the_post(); 
+
+        // get_template_part( 'partials/search_content' );
+        include(locate_template('partials/search_content.php'));
+
+        endwhile;
+
+        else :
+
+            get_template_part( 'partials/search_empty' );            
+        endif;
+
+      ?>
+
+      <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+
+  </div>
+
+
+
+
+</div> 
+</div>
+
+<div class="container-fluid search-issue-covers">
+
+  <div class="row">
+
+  
+
+  <?php 
+
+          // check if the repeater field has rows of data
+          if( have_rows('columns_print_issues', 'option') ):
+          
+           	// loop through the rows of data
+              while ( have_rows('columns_print_issues', 'option') ) : the_row();
+          
+                  // display a sub field value                  
+
+
+                  $coverImage = get_sub_field('columns_issue_cover_image', false, false);  //returns a image id
+                  // var_dump($coverImage);
+                    $atts = array(
+                          "class" => "full, search-issue-cover"
+                          );
+                  echo wp_get_attachment_image($coverImage, 'full', false, $atts);
+                  
+              endwhile;
+            
+          else :
+          
+              // no rows found
+          
+          endif;
+          
           ?>
+
   </div>
-  <div class="current-filter-wrapper current-filter-wrapper-content_type">
-    <span>Content Type: </span>
-  </div>
-
-</div>
-
-</div>
-
-
-<div class="archive-posts">
-
-<a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
-<a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
-
-<?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
-
-
-
-<?php
-
-
-if (have_posts() ):
-while ( have_posts() ) : the_post(); 
-// get_template_part( 'partials/search_content' );
-include(locate_template('partials/search_content.php'));
-
-endwhile;
-
- else :
-
-    get_template_part( 'partials/search_empty' );            
-endif;
-
-
-
-?>
-
-</div>
-</div>
-
 </div>
 
 <?php
