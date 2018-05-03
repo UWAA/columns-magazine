@@ -73,7 +73,8 @@ if ( $query->have_posts() ) {
 
                       $issue = get_field_object("columns_print_issue");
                       $value = $issue['value'];
-                      $label = $issue['choices'][ $value ];
+                    //   $label = $issue['choices'][ $value ];
+                    $value = $issue['label'];
 
                   }
             ?>

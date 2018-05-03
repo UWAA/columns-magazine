@@ -90,25 +90,29 @@ use \Columns\SearchWalker;
 
 <div class="archive-posts">
 
+<a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
+<a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
 
 <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
 
-<a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
-<a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
+
 
 <?php
 
 
 if (have_posts() ):
 while ( have_posts() ) : the_post(); 
-get_template_part( 'partials/search_content' );
+// get_template_part( 'partials/search_content' );
+include(locate_template('partials/search_content.php'));
 
 endwhile;
 
  else :
 
     get_template_part( 'partials/search_empty' );            
-          endif;
+endif;
+
+
 
 ?>
 
