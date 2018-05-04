@@ -58,7 +58,7 @@ $('.columns-search-input-submit').click(function (e) {
    
     // Builds a new URL and refreshes the page.
     var newURL = URL.clone()
-                .setPath('/') // pagination?
+                .setPath('/search') // pagination?
                 .deleteQueryParam('cat');
     
                 // newURL.uriParts.directory = "/";
@@ -87,6 +87,7 @@ $('.search-filter-item.active').click(function (e) {
 
 //Debounced search term replace in the active filter area.
 $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
+    console.log('updating search');
 
     switch (element.currentTarget.value) {
         case "":

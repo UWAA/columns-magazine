@@ -21,6 +21,7 @@ class Utilities{
         add_filter( 'pre_get_posts', array($this, 'namespace_add_custom_types' ));
         add_action( 'admin_init', array($this, 'addOrderToPosts' ));
         add_filter( 'posts_search', array($this, 'advanced_custom_search'), 500, 2 );
+        add_filter( 'body_class', array($this, 'custom_class') );
 	}
 
 
@@ -196,6 +197,15 @@ public function example_mejs_add_container_class() {
 	})();
 </script>
 <?php
+}
+
+
+
+public function custom_class( $classes ) {
+    if ( is_page_template( 'searchpage.php' ) ) {
+        $classes[] = 'search';
+    }
+    return $classes;
 }
 
 
