@@ -46,38 +46,38 @@ use \Columns\SearchWalker;
 
           <?php 
 
-          // check if the repeater field has rows of data
-          if( have_rows('columns_print_issues', 'option') ):
-          
-           	// loop through the rows of data
-              while ( have_rows('columns_print_issues', 'option') ) : the_row();
-          
-                  // display a sub field value                  
-
-                  // get raw date
-                  $date = get_sub_field('columns_print_issue_publication_date', false, false);
-
-
-                  // make date object
-                  $date = new DateTime($date);                  
-
-                  ?>
-
-                  <li class="cat-item">
-                    <a href="#"  class="drawer-dropdown-menu-item filter-item">  
-                    <!-- data-cat_id="20" -->
-                  <?php echo $date->format('M Y'); ?>
-                  </li>
-
-                  <?php
-                  
-              endwhile;
+            // check if the repeater field has rows of data
+            if( have_rows('columns_print_issues', 'option') ):
             
-          else :
-          
-              // no rows found
-          
-          endif;
+              // loop through the rows of data
+                while ( have_rows('columns_print_issues', 'option') ) : the_row();
+            
+                    // display a sub field value                  
+
+                    // get raw date
+                    $date = get_sub_field('columns_print_issue_publication_date', false, false);
+
+
+                    // make date object
+                    $date = new DateTime($date);                  
+
+                    ?>
+
+                    <li class="cat-item">
+                      <a href="#"  class="drawer-dropdown-menu-item filter-item">  
+                      <!-- data-cat_id="20" -->
+                    <?php echo $date->format('M Y'); ?>
+                    </li>
+
+                    <?php
+                    
+                endwhile;
+              
+              else :
+            
+                // no rows found
+            
+            endif;
           
           ?>
         </ul>
@@ -156,10 +156,38 @@ use \Columns\SearchWalker;
 
         if (have_posts() ):
 
-        while ( have_posts() ) : the_post(); 
+        $issuesInSearch = array();
 
-        // get_template_part( 'partials/search_content' );
-        include(locate_template('partials/search_content.php'));
+         function convertLabelToDate($label) {          
+
+          //need to handle web or viewpoint
+
+          if (is_array($label)) {
+            $label = ucwords($label['label']);            
+          }            
+        
+        $issueDate = DateTime::createFromFormat('F_Y', ucwords($label));
+
+        return $issueDate;
+
+        }
+
+        while ( have_posts() ) : the_post(); 
+        //also extract out the issue date for the post here
+        //this is garbage...
+
+        
+       
+
+
+        // $field = get_field('columns_print_issue', $post->ID);
+        // echo $field;
+
+        $date = convertLabelToDate(get_field('columns_print_issue', $post->ID));        
+
+        $issuesInSearch[] = $date;
+
+        get_template_part( 'partials/search_content' );        
 
         endwhile;
 
@@ -188,14 +216,15 @@ use \Columns\SearchWalker;
 
   <?php 
 
+  var_dump($issuesInSearch);
+
           // check if the repeater field has rows of data
           if( have_rows('columns_print_issues', 'option') ):
           
            	// loop through the rows of data
               while ( have_rows('columns_print_issues', 'option') ) : the_row();
           
-                  // display a sub field value                  
-
+                  // display a sub field value
 
                   $coverImage = get_sub_field('columns_issue_cover_image', false, false);  //returns a image id
                   // var_dump($coverImage);

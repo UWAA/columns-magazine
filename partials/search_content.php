@@ -21,6 +21,7 @@
 
     
     // Hack and to deal with ACF bug
+    // TODO Extract out to utility class 
     $fieldTranslation = array(
         none => 'No Issue',
         web => 'Columns Online',
