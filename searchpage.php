@@ -199,17 +199,32 @@ use \Columns\SearchWalker;
 
         $issuesInSearch = array();
 
-         function convertLabelToDate($label) {          
+         function convertLabelToDate($date) {          
 
           //need to handle web or viewpoint
+        $articleIssueDate = DateTime::createFromFormat('F_Y', ucwords($date));
 
-          if (is_array($label)) {
-            $label = ucwords($label['label']);            
-          }            
-        
-        $issueDate = DateTime::createFromFormat('F_Y', ucwords($label));
+        if (!is_object($articleIssueDate)) {
+            switch ($date) {
+              case 'none':
+                return "No Issue";
+                break;
 
-        return $issueDate;
+              case 'web':
+                return "Columns Online";
+                break;
+
+              case 'viewpoint':
+                return "Viewpoint Magazine";
+                break;
+              
+              default:
+                return;
+                break;
+            }            
+          }
+
+        return date_format($articleIssueDate, 'F_Y');
 
         }
 
@@ -218,9 +233,9 @@ use \Columns\SearchWalker;
         //this is garbage...
 
 
-        
+        $articleDateObject = get_field('columns_print_issue', $post->ID);
 
-        $date = convertLabelToDate(get_field('columns_print_issue', $post->ID));        
+        $date = convertLabelToDate($articleDateObject['value']);        
 
         $issuesInSearch[] = $date;
 
@@ -259,18 +274,33 @@ use \Columns\SearchWalker;
 
           // check if the repeater field has rows of data
           if( have_rows('columns_print_issues', 'option') ):
+
+            
           
            	// loop through the rows of data
               while ( have_rows('columns_print_issues', 'option') ) : the_row();
-          
-                  // display a sub field value
 
-                  $coverImage = get_sub_field('columns_issue_cover_image', false, false);  //returns a image id
-                  // var_dump($coverImage);
+              //filter out rows from the repeater if the columns_print_issue_publication_date is not in $issuesInSearch
+              $issueDate = new DateTime(get_sub_field('columns_print_issue_publication_date', false, false));
+              
+                if(is_object($issueDate)) {                  
+                  
+                  if (in_array(date_format($issueDate, 'F_Y'), $issuesInSearch)) {
+
+                     // display a sub field value
+
+                    $coverImage = get_sub_field('columns_issue_cover_image', false, false);  //returns a image id
+                  
                     $atts = array(
                           "class" => "full, search-issue-cover"
                           );
-                  echo wp_get_attachment_image($coverImage, 'full', false, $atts);
+                    echo wp_get_attachment_image($coverImage, 'full', false, $atts);
+
+                    
+                  }
+                }
+          
+                 
                   
               endwhile;
             
