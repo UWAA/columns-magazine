@@ -5,7 +5,7 @@
 
     <?php 
     
-    // the_date('F j, Y', '<p class="date">', '</p>');  // Old, date of proc_get_status
+    var_dump( get_post_meta( get_the_ID() , 'columns_print_issue' ) ); 
     
     ?> 
 

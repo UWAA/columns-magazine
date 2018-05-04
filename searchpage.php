@@ -9,12 +9,27 @@ Template Name: Search Page
 
       $search_query = wp_parse_str( $query_string, $search_query_string );
 
+      var_dump($search_query_string);
+
+      $search_query_string['post_type'] = 'any';
+
       
       if(array_key_exists('search', $search_query_string)) {
 
         $search_query_string['s'] = $search_query_string['search'];
         $search_query_string['searchValue'] = $search_query_string['search'];
       }  
+
+      if(array_key_exists('issue', $search_query_string)) {
+        // $search_query_string['meta_query'] = array(
+        //     'key'		=> 'columns_print_issue',
+        //     'value'		=> $search_query_string['issue']
+        // );
+        $search_query_string['meta_key'] = 'columns_print_issue';
+        $search_query_string['meta_value'] = $search_query_string['issue'];
+        unset($search_query_string['issue']);
+        
+      }
 
       // $search_query_string available for pre-loop functions      
 
@@ -187,12 +202,10 @@ use \Columns\SearchWalker;
 
         }
 
+      // DEBUG
       var_dump($search_query_string);
 
       $search = new WP_Query( $search_query_string );
-
-        // removing un
-        
         
 
         if ($search->have_posts() ):          
@@ -269,8 +282,7 @@ use \Columns\SearchWalker;
   
 
   <?php 
-
-  var_dump($issuesInSearch);
+  
 
           // check if the repeater field has rows of data
           if( have_rows('columns_print_issues', 'option') ):
@@ -284,6 +296,7 @@ use \Columns\SearchWalker;
               $issueDate = new DateTime(get_sub_field('columns_print_issue_publication_date', false, false));
               
                 if(is_object($issueDate)) {                  
+                  
                   
                   if (in_array(date_format($issueDate, 'F_Y'), $issuesInSearch)) {
 

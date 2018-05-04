@@ -22,6 +22,9 @@ class Utilities{
         add_action( 'admin_init', array($this, 'addOrderToPosts' ));
         add_filter( 'posts_search', array($this, 'advanced_custom_search'), 500, 2 );
         add_filter( 'body_class', array($this, 'custom_class') );
+        add_filter('query_vars', array($this, 'searchVariables') );
+
+        
 	}
 
 
@@ -200,12 +203,20 @@ public function example_mejs_add_container_class() {
 }
 
 
-
+// Related to search, maybe pull out...
 public function custom_class( $classes ) {
     if ( is_page_template( 'searchpage.php' ) ) {
         $classes[] = 'search';
     }
     return $classes;
+}
+
+
+// add issue to search
+function searchVariables( $qvars )
+{
+  $qvars[] = 'issue';
+  return $qvars;
 }
 
 
