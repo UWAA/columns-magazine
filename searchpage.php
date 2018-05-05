@@ -9,9 +9,8 @@ Template Name: Search Page
 
       $search_query = wp_parse_str( $query_string, $search_query_string );
 
-      var_dump($search_query_string);
-
       $search_query_string['post_type'] = 'any';
+      $search_query_string['posts_per_page'] = '50';
 
       
       if(array_key_exists('search', $search_query_string)) {
@@ -21,13 +20,32 @@ Template Name: Search Page
       }  
 
       if(array_key_exists('issue', $search_query_string)) {
-        // $search_query_string['meta_query'] = array(
-        //     'key'		=> 'columns_print_issue',
-        //     'value'		=> $search_query_string['issue']
-        // );
+
         $search_query_string['meta_key'] = 'columns_print_issue';
         $search_query_string['meta_value'] = $search_query_string['issue'];
+
+        $multipleIssueQueryString = preg_split("/,/", $search_query_string['issue']);
+
+        if($multipleIssueQueryString) {
+          unset($search_query_string['meta_key']);
+          unset($search_query_string['meta_value']);
+
+          foreach ($multipleIssueQueryString as $issueQuery) {
+            $search_query_string['meta_query'][] = array(
+              'key' => 'columns_print_issue',
+              'value' => $issueQuery
+             );
+            
+          }          
+
+          $search_query_string['meta_query']['relation'] = 'OR';
+
+        }
+       
+        
         unset($search_query_string['issue']);
+
+        
         
       }
 
@@ -101,9 +119,9 @@ use \Columns\SearchWalker;
                     ?>
 
                     <li class="cat-item">
-                      <a href="#"  class="drawer-dropdown-menu-item filter-item">  
-                      <!-- data-cat_id="20" -->
+                      <a href="#"  class="drawer-dropdown-menu-item filter-item issue-filter" data-issue="<?php echo lcfirst($date->format('F_Y')); ?>">                      
                     <?php echo $date->format('M Y'); ?>
+                  </a>
                     </li>
 
                     <?php
@@ -157,6 +175,24 @@ use \Columns\SearchWalker;
   </div>
     <div class="current-filter-wrapper current-filter-wrapper-issue">
       <span>Issue: </span>
+      <?php       
+      
+      $field = get_field_object('field_5835c2de61539');
+
+      if ($field) {
+        foreach ($field['choices'] as $issue=>$value) {
+          echo '<span class="filter-item" data-issue="'. $issue .'">' . $value . '</span>';
+        }
+
+
+      }
+
+
+            
+
+              
+
+        ?>
 
     </div>
     <div class="current-filter-wrapper current-filter-wrapper-category">
@@ -171,7 +207,7 @@ use \Columns\SearchWalker;
                 echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
               }
 
-            ?>
+        ?>
     </div>
     <div class="current-filter-wrapper current-filter-wrapper-content_type">
       <span>Content Type: </span>
@@ -202,8 +238,6 @@ use \Columns\SearchWalker;
 
         }
 
-      // DEBUG
-      var_dump($search_query_string);
 
       $search = new WP_Query( $search_query_string );
         
@@ -284,6 +318,8 @@ use \Columns\SearchWalker;
   <?php 
   
 
+        if ($search->have_posts() ): 
+
           // check if the repeater field has rows of data
           if( have_rows('columns_print_issues', 'option') ):
 
@@ -322,6 +358,7 @@ use \Columns\SearchWalker;
               // no rows found
           
           endif;
+        endif;
           
           ?>
 

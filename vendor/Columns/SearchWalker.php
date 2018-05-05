@@ -103,7 +103,7 @@ class SearchWalker extends \Walker_Category {
             $link .= ' drawer-dropdown-menu-item';
         }
 
-        $link .= ' filter-item"';
+        $link .= ' filter-item category-filter"';
        
         if ( $args['use_desc_for_title'] && ! empty( $category->description ) ) {
             /**

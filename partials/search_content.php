@@ -2,15 +2,6 @@
 <div class="search-story-container">
 
 
-
-    <?php 
-    
-    var_dump( get_post_meta( get_the_ID() , 'columns_print_issue' ) ); 
-    
-    ?> 
-
-
-
 <?php  
 
 

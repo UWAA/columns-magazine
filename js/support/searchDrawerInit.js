@@ -22,11 +22,19 @@ $('.drawer').drawer({
 var URL = new Uri(location);
 
 var catQuery = URL.getQueryParamValue('cat');
+var issueQuery = URL.getQueryParamValue('issue');
 
 if (catQuery) {
     var activeCategoriesFromURL = catQuery.split(",");
     activeCategoriesFromURL.forEach(function (element) {
         $(".search-container").find("[data-cat_id=" + element + "]").toggleClass('active');
+    });
+}
+
+if (issueQuery) {
+    var activeCategoriesFromURL = issueQuery.split(",");
+    activeCategoriesFromURL.forEach(function (element) {
+        $(".search-container").find("[data-issue=" + element + "]").toggleClass('active');
     });
 }
 
@@ -38,6 +46,7 @@ $('.filter-item').click(function (e) {
     $(this).toggleClass('active')
     //toggle parent UL to be active too
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
+    $(".search-container").find("[data-issue=" + $(this).data('issue') + "]").not($(this)).toggleClass('active');
 });
 
 
@@ -47,9 +56,14 @@ $('.columns-search-input-submit').click(function (e) {
     
     // Determine currently active filters
     var filterValues = [];
+    var issueFilters = [];
 
-    $('.drawer-menu .filter-item').filter('.active').each(function () {
+    $('.drawer-menu .category-filter').filter('.active').each(function () {
         filterValues.push($(this).data('cat_id'));        
+    });
+
+    $('.drawer-menu .issue-filter').filter('.active').each(function () {
+        issueFilters.push($(this).data('issue'));
     });
 
     // Gets the value of the search box
@@ -59,14 +73,18 @@ $('.columns-search-input-submit').click(function (e) {
     // Builds a new URL and refreshes the page.
     var newURL = URL.clone()
                 .setPath('/search') // pagination?
-                .deleteQueryParam('cat');
-    
-                // newURL.uriParts.directory = "/";
+                .deleteQueryParam('cat')
+                .deleteQueryParam('issue');
+                
                 
                 
 
     if (filterValues.length > 0) {        
             newURL.replaceQueryParam('cat', filterValues.join(","));
+    }
+
+    if (issueFilters.length > 0) {
+        newURL.replaceQueryParam('issue', issueFilters.join(","));
     }
 
     if (searchQuery) {
