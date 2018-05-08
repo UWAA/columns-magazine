@@ -2950,17 +2950,59 @@ p.excerpt {
   position: relative;
 }
 .drawer-nav {
-  background-color: aqua;
+  width: 250px;
   position: relative;
 }
-.drawer-menu li .active {
-  background-color: #4b2e83;
+.drawer-menu {
+  width: 100%;
+  background-color: #dddddd;
+}
+.drawer-menu a {
+  padding-left: 10px;
+  color: #222;
+}
+.drawer-menu .drawer-menu-section-title {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color: #4b2e83;
+  font-weight: 800;
+  line-height: 44px;
+  padding-left: 10px;
+}
+.drawer-menu li {
+  border-bottom: 1px solid #ffffff;
+  background-color: #dddddd;
+  line-height: 44px;
+  min-height: 44px;
+}
+.drawer-menu li.active {
+  background-color: #b2b2b2;
+}
+.drawer-menu li .drawer-dropdown-menu .drawer-dropdown-menu-item {
+  padding: 0 0 0 10px;
+  line-height: 44px;
+  height: 44px;
 }
 .drawer-menu-item {
+  background-color: inherit;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
   display: inline;
+  padding: 0;
+  line-height: 44px;
 }
 .dropdown-toggle {
-  display: inline;
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  background-image: url(assets\Columns_Sprite_4_NoColor.svg);
+  background-position: -45px 8px;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  float: right;
+}
+.open .dropdown-toggle {
+  transform: rotateX(180deg);
 }
 .current-filter-wrapper {
   display: inline;

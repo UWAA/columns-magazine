@@ -9,6 +9,7 @@
 	.st2{fill:#FFFFFF;}
 	.st3{fill:#9A9A99;}
 	.st4{fill:#5B5C5E;}
+	.st-menu-arrow{fill:#5B5C5E;}
 </style>
 <g id="Layer_14">
 	<g id="columns-logo">
@@ -108,7 +109,7 @@
 </g>
 <g id="Layer_2_1_">
 	<g id="menu-arrow">
-		<polygon class="st0" points="52.8,6.7 52.1,6 48.4,9.6 44.7,6 44,6.7 48.4,11 48.4,11 48.4,11 		"/>
+		<polygon class="st-menu-arrow" points="52.8,6.7 52.1,6 48.4,9.6 44.7,6 44,6.7 48.4,11 48.4,11 48.4,11 		"/>
 	</g>
 </g>
 <g id="Layer_1">

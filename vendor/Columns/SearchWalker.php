@@ -120,7 +120,7 @@ class SearchWalker extends \Walker_Category {
         $link .= '>';
         $link .= $cat_name;
         if ($args['has_children']) {
-            $link .= "</a><a class=\"drawer-dropdown dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" href=\"#\"><span class=\"drawer-caret dropdown-toggle\"></span>";    
+            $link .= "</a><a class=\"drawer-dropdown dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" href=\"#\" >";    
         }
         $link .= '</a>';        
  

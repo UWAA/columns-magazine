@@ -74,25 +74,25 @@ use \Columns\SearchWalker;
 <div class="container-fluid search-container drawer drawer--left">
 
 
-
-  <div id="search-drawer" role="search">
-      <button type="button" class="drawer-toggle drawer-hamburger">
+<button type="button" class="drawer-toggle drawer-hamburger">
         <span class="sr-only">toggle navigation</span>
         <span class="drawer-hamburger-icon"></span>
       </button>
+
+  <div id="search-drawer" role="search">
+      
       <div class="drawer-nav" role="navigation">
 
       <!-- Category Menu -->
         <ul class="drawer-menu">
         <li class="drawer-menu-section-title">Search Issue:</li>
-        <li>Entire Site</li>
-        <li>Current Issue</li>
+        <li><a href=#>Entire Site</a></li>
+        <li><a href=#>Current Issue</a></li>
 
                 
         <li class="cat-item cat-item-3 drawer-dropdown">
-        <a href="#" data-cat_id="3" class=" drawer-menu-item filter-item">Choose Issue</a>
-        <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href=" #"="">
-          <span class="drawer-caret dropdown-toggle"></span>
+        <a href=#>Choose Issue</a>
+        <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href=" #"="">          
         </a>
 
           <ul class="drawer-dropdown-menu">
@@ -137,6 +137,7 @@ use \Columns\SearchWalker;
           ?>
         </ul>
         </li>
+          </ul>
       <!-- Category Menu -->
         <ul class="drawer-menu">
         <li class="drawer-menu-section-title">Category: </li>

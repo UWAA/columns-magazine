@@ -42,8 +42,8 @@ if (issueQuery) {
 // Toggles active state on filters, does not dropdown more menu items.  
 
 $('.filter-item').click(function (e) {
-    e.stopPropagation();
-    $(this).toggleClass('active')
+    e.stopPropagation();    
+    $(this).parentsUntil('.drawer-menu').toggleClass('active');
     //toggle parent UL to be active too
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
     $(".search-container").find("[data-issue=" + $(this).data('issue') + "]").not($(this)).toggleClass('active');
