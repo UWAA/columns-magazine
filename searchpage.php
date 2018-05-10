@@ -65,7 +65,7 @@ use \Columns\SearchWalker;
   <h1>Search</h1>
     <div class="columns-form search-form search-widescreen">
               <form role="search" method="get" id="search-form-widescreen" action="<?php echo esc_url( home_url( '/search' ) ); ?>">
-                <input id="Search" name="search" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_search_query() ); ?>" maxlength="255">
+                <input id="Search" name="search" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_query_var('search')  ); ?>" maxlength="255">
                 <input id="searchSite" class="inlineSubmit" type="submit" class="columns-search-input-submit">
               </form>
     </div>
@@ -74,157 +74,152 @@ use \Columns\SearchWalker;
 <div class="container-fluid search-container drawer drawer--left">
 
 
-<button type="button" class="drawer-toggle drawer-hamburger">
-        <span class="sr-only">toggle navigation</span>
-        <span class="drawer-hamburger-icon"></span>
-      </button>
+ 
 
-  <div id="search-drawer" role="search">
-      
-      <div class="drawer-nav" role="navigation">
+  <button id="filterToggle" name="drawerToggle" class="drawer-toggle drawer-button">Choose Filters</button>
 
-      <!-- Category Menu -->
-        <ul class="drawer-menu">
-        <li class="drawer-menu-section-title">Search Issue:</li>
-        <li><a href=#>Entire Site</a></li>
-        <li><a href=#>Current Issue</a></li>
+  <div id="search-drawer" role="search">        
+    <div class="drawer-nav" role="navigation">
+        <!-- Category Menu -->
+          <ul class="drawer-menu">
+          <li class="drawer-menu-section-title">Search Issue:</li>
+          <li><a href=#>Entire Site</a></li>
+          <li><a href=#>Current Issue</a></li>
 
+                  
+          <li class="cat-item cat-item-3 drawer-dropdown">
+          <a href=#>Choose Issue</a>
+          <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href=" #"="">          
+          </a>
+
+            <ul class="drawer-dropdown-menu">
+              
+            
+
+            <?php 
+
+              // check if the repeater field has rows of data
+              if( have_rows('columns_print_issues', 'option') ):
+              
+                // loop through the rows of data
+                  while ( have_rows('columns_print_issues', 'option') ) : the_row();
+              
+                      // display a sub field value                  
+
+                      // get raw date
+                      $date = get_sub_field('columns_print_issue_publication_date', false, false);
+
+
+                      // make date object
+                      $date = new DateTime($date);                  
+
+                      ?>
+
+                      <li class="cat-item">
+                        <a href="#"  class="drawer-dropdown-menu-item filter-item issue-filter" data-issue="<?php echo lcfirst($date->format('F_Y')); ?>">                      
+                      <?php echo $date->format('M Y'); ?>
+                    </a>
+                      </li>
+
+                      <?php
+                      
+                  endwhile;
                 
-        <li class="cat-item cat-item-3 drawer-dropdown">
-        <a href=#>Choose Issue</a>
-        <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href=" #"="">          
-        </a>
-
-          <ul class="drawer-dropdown-menu">
-          	
-          
-
-          <?php 
-
-            // check if the repeater field has rows of data
-            if( have_rows('columns_print_issues', 'option') ):
-            
-              // loop through the rows of data
-                while ( have_rows('columns_print_issues', 'option') ) : the_row();
-            
-                    // display a sub field value                  
-
-                    // get raw date
-                    $date = get_sub_field('columns_print_issue_publication_date', false, false);
-
-
-                    // make date object
-                    $date = new DateTime($date);                  
-
-                    ?>
-
-                    <li class="cat-item">
-                      <a href="#"  class="drawer-dropdown-menu-item filter-item issue-filter" data-issue="<?php echo lcfirst($date->format('F_Y')); ?>">                      
-                    <?php echo $date->format('M Y'); ?>
-                  </a>
-                    </li>
-
-                    <?php
-                    
-                endwhile;
+                else :
               
-              else :
+                  // no rows found
+              
+              endif;
             
-                // no rows found
-            
-            endif;
-          
-          ?>
-        </ul>
-        </li>
+            ?>
           </ul>
-      <!-- Category Menu -->
-        <ul class="drawer-menu">
-        <li class="drawer-menu-section-title">Category: </li>
-          <?php 
-          wp_list_categories(array(
-            'title_li' => '',
-            'class' => 'drawer-menu',
-            'walker' => new SearchWalker,
-            'exclude' => array('11', '1')  //Issue here with test vs prod
-            )
-            );
-          ?>
-        </ul>
-          <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit" type="submit" value="SearchSideBar">apply filters</button>
-      </div>
-  </div>
-
-</div>
-
-<div class="container">
-<div class="row">
-
-<div class="search-container">
-  <h2>Current Search Filters</h2>
-  <div class="current-filter-wrapper current-filter-wrapper-search">
-    <span>Search Term: </span>
-    <?php
-
-    if (isset($search_query_string['searchValue'])) {
-      echo '<span class="active filter-item search-filter-item">' . esc_attr( $search_query_string['searchValue'] ) . '</span>';
-    }
-
-    ?>
-    
-
-  </div>
-    <div class="current-filter-wrapper current-filter-wrapper-issue">
-      <span>Issue: </span>
-      <?php       
-      
-      $field = get_field_object('field_5835c2de61539');
-
-      if ($field) {
-        foreach ($field['choices'] as $issue=>$value) {
-          echo '<span class="filter-item" data-issue="'. $issue .'">' . $value . '</span>';
-        }
-
-
-      }
-
-
-            
-
-              
-
-        ?>
-
-    </div>
-    <div class="current-filter-wrapper current-filter-wrapper-category">
-      <span>Category: </span>
-      <?php 
-            $categoryList = get_categories(array(            
+          </li>
+            </ul>
+        <!-- Category Menu -->
+          <ul class="drawer-menu">
+          <li class="drawer-menu-section-title">Category: </li>
+            <?php 
+            wp_list_categories(array(
+              'title_li' => '',
+              'class' => 'drawer-menu',
+              'walker' => new SearchWalker,
               'exclude' => array('11', '1')  //Issue here with test vs prod
               )
               );
-
-              foreach ($categoryList as $category) {
-                echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
-              }
-
-        ?>
-    </div>
-    <div class="current-filter-wrapper current-filter-wrapper-content_type">
-      <span>Content Type: </span>
+            ?>
+          </ul>
+            <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit drawer-button" type="submit" value="SearchSideBar">apply filters</button>
     </div>
   </div>
 
-</div>
+  <div class="search-results">
+    <div class="row">
+
+      <h2>Current Search Filters</h2>
+      <div class="current-filter-wrapper current-filter-wrapper-search">
+        <span>Search Term: </span>
+        <span class="search-filter-item">
+          <?php
+
+        if (isset($search_query_string['searchValue'])) {
+          echo esc_attr( $search_query_string['searchValue'] );
+        }
+
+        ?>
+            
+        </span>
+        
+      </div>
+
+      <div class="current-filter-wrapper current-filter-wrapper-issue">
+        <span>Issue: </span>
+        <?php       
+        
+        $field = get_field_object('field_5835c2de61539');
+
+        if ($field) {
+          foreach ($field['choices'] as $issue=>$value) {
+            echo '<span class="filter-item" data-issue="'. $issue .'">' . $value . '</span>';
+          }
 
 
+        }     
 
-  <div class="archive-posts">
+          ?>
+      </div>
 
-    <a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
-    <a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
+      <div class="current-filter-wrapper current-filter-wrapper-category">
+        <span>Category: </span>
+        <?php 
+              $categoryList = get_categories(array(            
+                'exclude' => array('11', '1')  //Issue here with test vs prod
+                )
+                );
 
-    <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                foreach ($categoryList as $category) {
+                  echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
+                }
+
+          ?>
+      </div>
+
+      <div class="current-filter-wrapper current-filter-wrapper-content_type">
+        <span>Content Type: </span>
+      </div>
+
+    </div>
+  
+    <div class="results-row">
+      
+
+      <div class="result-display-controls">
+        <a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
+      <a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
+
+        <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+
+      </div>
+      
 
 
       <?php
@@ -302,71 +297,65 @@ use \Columns\SearchWalker;
 
       <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
 
-  </div>
-
-
-
-
-</div> 
-</div>
-
-<div class="container-fluid search-issue-covers">
-
-  <div class="row">
-
   
 
-  <?php 
-  
+    </div>
 
-        if ($search->have_posts() ): 
+    <div class="row">
 
-          // check if the repeater field has rows of data
-          if( have_rows('columns_print_issues', 'option') ):
+    <?php 
 
-            
-          
-           	// loop through the rows of data
-              while ( have_rows('columns_print_issues', 'option') ) : the_row();
+          if ($search->have_posts() ): 
 
-              //filter out rows from the repeater if the columns_print_issue_publication_date is not in $issuesInSearch
-              $issueDate = new DateTime(get_sub_field('columns_print_issue_publication_date', false, false));
+            // check if the repeater field has rows of data
+            if( have_rows('columns_print_issues', 'option') ):
+
               
-                if(is_object($issueDate)) {                  
-                  
-                  
-                  if (in_array(date_format($issueDate, 'F_Y'), $issuesInSearch)) {
-
-                     // display a sub field value
-
-                    $coverImage = get_sub_field('columns_issue_cover_image', false, false);  //returns a image id
-                  
-                    $atts = array(
-                          "class" => "full, search-issue-cover"
-                          );
-                    echo wp_get_attachment_image($coverImage, 'full', false, $atts);
-
-                    
-                  }
-                }
-          
-                 
-                  
-              endwhile;
             
-          else :
-          
-              // no rows found
-          
+              // loop through the rows of data
+                while ( have_rows('columns_print_issues', 'option') ) : the_row();
+
+                //filter out rows from the repeater if the columns_print_issue_publication_date is not in $issuesInSearch
+                $issueDate = new DateTime(get_sub_field('columns_print_issue_publication_date', false, false));
+                
+                  if(is_object($issueDate)) {                  
+                    
+                    
+                    if (in_array(date_format($issueDate, 'F_Y'), $issuesInSearch)) {
+
+                      // display a sub field value
+
+                      $coverImage = get_sub_field('columns_issue_cover_image', false, false);  //returns a image id
+                    
+                      $atts = array(
+                            "class" => "full, search-issue-cover"
+                            );
+                      echo wp_get_attachment_image($coverImage, 'full', false, $atts);
+
+                      
+                    }
+                  }
+            
+                  
+                    
+                endwhile;
+              
+            else :
+            
+                // no rows found
+            
+            endif;
           endif;
-        endif;
-          
-          ?>
+            
+    ?>
 
   </div>
+  
+  </div>
+
+  
+
 </div>
 
 <?php
-
-
 get_footer(); 

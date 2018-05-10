@@ -18,6 +18,18 @@ $('.drawer').drawer({
     showOverlay: true
 });
 
+$('#filterToggle').click(function () {
+    $('.search-results').toggleClass('opened');
+});
+
+
+$('.drawer').on('drawer.opened', function () {
+    // $('.search-results').addClass('opened');
+ });
+
+$('.drawer').on('drawer.closed', function () { 
+    // $('.search-results').removeClass('opened');
+});
 // Scrape out and understand what's happening with the URI, so we can turn-on the filter buttons.
 var URL = new Uri(location);
 
@@ -43,8 +55,7 @@ if (issueQuery) {
 
 $('.filter-item').click(function (e) {
     e.stopPropagation();    
-    $(this).parentsUntil('.drawer-menu').toggleClass('active');
-    //toggle parent UL to be active too
+    $(this).toggleClass('active');    
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
     $(".search-container").find("[data-issue=" + $(this).data('issue') + "]").not($(this)).toggleClass('active');
 });
@@ -88,7 +99,7 @@ $('.columns-search-input-submit').click(function (e) {
     }
 
     if (searchQuery) {
-        newURL.replaceQueryParam('s', searchQuery)
+        newURL.replaceQueryParam('search', searchQuery)
     }
 
     
@@ -100,7 +111,7 @@ $('.columns-search-input-submit').click(function (e) {
 // Clears out the search bars if the search filter itself is cleared.
 $('.search-filter-item.active').click(function (e) {
     $(".columns-search-input-field").val("");
-    URL.replaceQueryParam('s', "");
+    URL.replaceQueryParam('search', "");
 });
 
 //Debounced search term replace in the active filter area.
@@ -109,7 +120,7 @@ $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
 
     switch (element.currentTarget.value) {
         case "":
-            $(".search-filter-item").removeClass("active");
+            $(".search-filter-item").html(element.currentTarget.value).removeClass("active");
             break;       
             
     

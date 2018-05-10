@@ -1,13 +1,34 @@
 .search {
 
-    .archive-posts {
-    .make-row();
-    max-width: 1000px;
-    // max-width: @columns-max-container-width;
-}
+    .search-results {
+        .container();
+        -webkit-transition: left .6s cubic-bezier(.19,1,.22,1);
+        transition: left .6s cubic-bezier(.19,1,.22,1);
+        position: relative;
+        left: 0;
+
+
+        &.opened {
+            
+            left: 250px;
+            
+        }
+    }
+
+
+    result-display-controls{
+        .make-md-column(12);
+    }
+
+    .results-row {
+        .make-row();
+    }
+    
+
+
 
 .search-story-container {
-    .make-md-column(6);    
+    .make-md-column(6, 40px);    
     
 
     p {
