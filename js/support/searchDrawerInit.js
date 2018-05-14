@@ -41,7 +41,7 @@ $('.drawer').drawer({
 // }, 300)); 
 
 $('#filterToggle').click(function name(params) {
-    $('.search-results').toggleClass('opened');   
+    $('.search-results').toggleClass('opened');
 });
 
 
@@ -66,77 +66,83 @@ if (issueQuery) {
 }
 
 
-// Toggles active state on filters, does not dropdown more menu items.  
 
-$('.filter-item').click(function (e) {
-    e.stopPropagation();
-    var $isLoneParent = $(this).parent().hasClass('lone-parent');    
-    var $isParentCategory = $(this).hasClass('parent-category');
-    var $isElementActive = $(this).parent().hasClass('active');
+$('.current-filter-wrapper>.filter-item').click(function (e) {
+    console.log($(this).data('cat_id'));
+    var $targetMenuItem = $(".drawer-menu").find("[data-cat_id=" + $(this).data('cat_id') + "]");
+    $targetMenuItem.parent().removeClass('active');    
+    $(this).removeClass('active')
+    ;
+    checkParent($targetMenuItem);
+});
 
-    var $filterParent = $(this).parents('.drawer-dropdown');
-    var $isFilterParentActive = $filterParent.hasClass('active');       
-    
-    var $filterSiblings = $(this).parent().siblings();
+
+function checkParent($targetElement) {
+
+    var $isLoneParent = $targetElement.parent().hasClass('lone-parent');
+    var $isParentCategory = $targetElement.hasClass('parent-category');
+    var $isElementActive = $targetElement.parent().hasClass('active');
+
+
+    var $filterParent = $targetElement.parents('.drawer-dropdown');
+    var $isFilterParentActive = $filterParent.hasClass('active');
+
+    var $filterSiblings = $targetElement.parent().siblings();
     var $areOtherFiltersActive = $filterSiblings.hasClass('active');
 
-    
+
     if ($isParentCategory) {
-        console.log('parent is dropdown');
-        return;        
+        return;
     }
 
-    
-
-    if ( $isLoneParent ) {
+    if ($isLoneParent) {
         console.log('no parent');
-        $(this).parent().toggleClass('active');
+        
     }
-
-    
-    console.log($filterParent); 
-
-    
-    
-    console.log("active state: " + $isElementActive);
 
     //shouldn't happen
-    if(!$isFilterParentActive && !$areOtherFiltersActive && !$isElementActive) {
+    if (!$isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.addClass('active');
-        $(this).parent().addClass('active');        
+        
     }
 
-    if (!$isFilterParentActive && !$areOtherFiltersActive && !$isElementActive) {
+    if (!$isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.addClass('active');
-        $(this).parent().addClass('active');
+        
     }
 
-    if ($isFilterParentActive && $areOtherFiltersActive && $isElementActive) {
-        $(this).parent().removeClass('active');
-    }
-
-    if ($isFilterParentActive && $areOtherFiltersActive && !$isElementActive) {
-        $(this).parent().addClass('active');
-    }
-    
-    if ($isFilterParentActive && !$areOtherFiltersActive && $isElementActive) {
+    if ($isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.removeClass('active');
-        $(this).parent().removeClass('active');
+        
     }
 
-    if ($isFilterParentActive && !$areOtherFiltersActive && $isElementActive) {
+    if ($isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.removeClass('active');
-        $(this).parent().removeClass('active');
+        
     }
 
-    if ($isFilterParentActive && !$areOtherFiltersActive && !$isElementActive) {        
-        $(this).parent().addClass('active');
+    if ($isFilterParentActive && !$areOtherFiltersActive) {
+        $filterParent.removeClass('active');        
     }
 
-    if ($isFilterParentActive && !$areOtherFiltersActive && $isElementActive) {
-        $filterParent.removeClass('active');
-        $(this).parent().removeClass('active');
-    }
+
+    console.log($filterParent);
+
+
+
+    console.log("active state: " + $isElementActive);
+
+}
+
+
+
+// Toggles active state on filters, does not dropdown more menu items.  
+
+$('.drawer-menu .filter-item').click(function (e) {
+    e.stopPropagation();    
+    $(this).parent().toggleClass('active');
+
+    checkParent($(this));
     
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
     $(".search-container").find("[data-issue=" + $(this).data('issue') + "]").not($(this)).toggleClass('active');
@@ -151,12 +157,12 @@ $('.columns-search-input-submit').click(function (e) {
     var filterValues = [];
     var issueFilters = [];
 
-    $('.drawer-menu .category-filter').filter('.active').each(function () {
-        filterValues.push($(this).data('cat_id'));        
+    $('.drawer-menu .cat-item').filter('.active').each(function () {
+        filterValues.push($(this).children('.filter-item').data('cat_id'));        
     });
 
-    $('.drawer-menu .issue-filter').filter('.active').each(function () {
-        issueFilters.push($(this).data('issue'));
+    $('.drawer-menu .issue-filter').parent().filter('.active').not('.parent-category').each(function () {
+        issueFilters.push($(this).children('.category-filter').data('issue'));
     });
 
     // Gets the value of the search box

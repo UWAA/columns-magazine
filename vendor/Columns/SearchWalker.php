@@ -158,10 +158,7 @@ class SearchWalker extends \Walker_Category {
         }
         if ( 'list' == $args['style'] ) {
             $output .= "\t<li";
-            $css_classes = array(
-                'cat-item',
-                'cat-item-' . $category->term_id,
-            );
+            
 
             if ($args['has_children']) {
                 $css_classes[] = 'drawer-dropdown';
@@ -170,6 +167,14 @@ class SearchWalker extends \Walker_Category {
             if ($depth == 0  && $args['has_children'] == 0) {
                 $css_classes[] = 'lone-parent';
             }
+
+
+            if ($args['has_children'] == 0) {
+                $css_classes[] = 'cat-item';
+                $css_classes[] = 'cat-item-' . $category->term_id;            
+            }
+
+            
 
           
           
