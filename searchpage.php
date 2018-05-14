@@ -9,7 +9,7 @@ Template Name: Search Page
 
       $search_query = wp_parse_str( $query_string, $search_query_string );
 
-      $search_query_string['post_type'] = 'any';
+      $search_query_string['post_type'] = array('post', 'feature', 'media');
       $search_query_string['posts_per_page'] = '4';  
 
       // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
