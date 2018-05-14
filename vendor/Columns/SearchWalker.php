@@ -95,9 +95,7 @@ class SearchWalker extends \Walker_Category {
         
         $link .= 'class="';
         if ($args['has_children']) {
-            $link .= ' drawer-menu-item';
-        } elseif (!$args['has_children'] && $depth === 0) {
-            $link .= ' drawer-menu-item';
+            $link .= 'drawer-menu-item parent-category';        
         }
         else {
             $link .= ' drawer-dropdown-menu-item';
@@ -169,7 +167,12 @@ class SearchWalker extends \Walker_Category {
                 $css_classes[] = 'drawer-dropdown';
             }
 
-           
+            if ($depth == 0  && $args['has_children'] == 0) {
+                $css_classes[] = 'lone-parent';
+            }
+
+          
+          
             if ( ! empty( $args['current_category'] ) ) {
                 // 'current_category' can be an array, so we use `get_terms()`.
                 $_current_terms = get_terms( $category->taxonomy, array(

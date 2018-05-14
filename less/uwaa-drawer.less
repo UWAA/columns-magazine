@@ -4,8 +4,45 @@
 
 }
 
+.search-results {
+        .container();
+        -webkit-transition: left .6s cubic-bezier(.19,1,.22,1);
+        transition: left .6s cubic-bezier(.19,1,.22,1);
+        position: relative;
+        left: 0;
+
+        h2 {
+            font-family: 'Merriweather', serif; 
+            font-size: 16px;
+            color: @purple;
+            font-weight: 800;
+        }
+
+
+        &.opened {
+            
+            left: 250px;
+            
+        }
+    }
+
+
 .drawer-toggle {
     position: relative;
+    
+    
+    &:before {
+    width: 44px;
+    height: 44px;  
+    background-image: url(assets\Columns_Sprite_4_NoColor.svg);
+    background-position: -45px 8px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    transform: rotateX(90deg);
+    content: "";
+    }
+
+    
 }
 
 
@@ -35,10 +72,7 @@
     
 
     .drawer-menu-section-title {
-        font-family: 'Merriweather', serif; 
-        font-size: 16px;
-        color: @purple;
-        font-weight: 800;
+        &:extend(.search-results h2);
         line-height: 44px;
         padding-left:10px;
     }
@@ -156,15 +190,7 @@
     background-color: @purple;
     
     
-    &:before {
-    width: 44px;
-    height: 44px;  
-    background-image: url(assets\Columns_Sprite_4_NoColor.svg);
-    background-position: -45px 8px;
-    background-repeat: no-repeat;
-    background-size: auto auto;
-    transform: rotateX(90deg);
-    }
+    
 
 }
 
@@ -176,3 +202,15 @@
     }
     
 }
+.issue-row {
+    height: 183px;
+
+    .carousel-cell {
+       &:extend(.home-solutions .carousel-cell);
+       .make-sm-column(4);
+       text-align: center;
+
+       
+    }
+}
+

@@ -98,7 +98,9 @@
 .search .search-results:before,
 .search .search-results:after,
 .search .results-row:before,
-.search .results-row:after {
+.search .results-row:after,
+.search-results:before,
+.search-results:after {
   content: " ";
   display: table;
 }
@@ -126,7 +128,8 @@
 .modal-footer:after,
 .archive-story-container:after,
 .search .search-results:after,
-.search .results-row:after {
+.search .results-row:after,
+.search-results:after {
   clear: both;
 }
 .dl-horizontal dd:before,
@@ -178,7 +181,9 @@
 .search .search-results:before,
 .search .search-results:after,
 .search .results-row:before,
-.search .results-row:after {
+.search .results-row:after,
+.search-results:before,
+.search-results:after {
   content: " ";
   display: table;
 }
@@ -206,7 +211,8 @@
 .modal-footer:after,
 .archive-story-container:after,
 .search .search-results:after,
-.search .results-row:after {
+.search .results-row:after,
+.search-results:after {
   clear: both;
 }
 body {
@@ -2084,7 +2090,8 @@ p.excerpt {
 }
 .home-people .carousel-cell,
 .home-solutions .carousel-cell,
-.feature-row .carousel-cell {
+.feature-row .carousel-cell,
+.issue-row .carousel-cell {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2095,7 +2102,8 @@ p.excerpt {
 @media (min-width: 992px) {
   .home-people .carousel-cell,
   .home-solutions .carousel-cell,
-  .feature-row .carousel-cell {
+  .feature-row .carousel-cell,
+  .issue-row .carousel-cell {
     float: left;
     width: 33.33333333%;
   }
@@ -2103,7 +2111,8 @@ p.excerpt {
 @media (min-width: 992px) {
   .home-people .carousel-cell,
   .home-solutions .carousel-cell,
-  .feature-row .carousel-cell {
+  .feature-row .carousel-cell,
+  .issue-row .carousel-cell {
     float: left;
     width: 33.33333333%;
   }
@@ -2130,7 +2139,8 @@ p.excerpt {
 @media (max-width: 991px) {
   .home-people .carousel-cell,
   .home-solutions .carousel-cell,
-  .feature-row .carousel-cell {
+  .feature-row .carousel-cell,
+  .issue-row .carousel-cell {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
@@ -2146,7 +2156,8 @@ p.excerpt {
 @media (max-width: 991px) and (min-width: 768px) {
   .home-people .carousel-cell,
   .home-solutions .carousel-cell,
-  .feature-row .carousel-cell {
+  .feature-row .carousel-cell,
+  .issue-row .carousel-cell {
     float: left;
     width: 50%;
   }
@@ -2154,7 +2165,8 @@ p.excerpt {
 @media (max-width: 991px) and (min-width: 768px) {
   .home-people .carousel-cell,
   .home-solutions .carousel-cell,
-  .feature-row .carousel-cell {
+  .feature-row .carousel-cell,
+  .issue-row .carousel-cell {
     float: left;
     width: 50%;
   }
@@ -2162,7 +2174,8 @@ p.excerpt {
 @media (max-width: 767px) {
   .home-people .carousel-cell,
   .home-solutions .carousel-cell,
-  .feature-row .carousel-cell {
+  .feature-row .carousel-cell,
+  .issue-row .carousel-cell {
     position: relative;
     float: left;
     width: 100%;
@@ -2800,13 +2813,13 @@ p.excerpt {
   padding-left: 20px;
   padding-right: 20px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .search .search-story-container {
     float: left;
     width: 50%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .search .search-story-container {
     float: left;
     width: 50%;
@@ -3042,8 +3055,97 @@ p.excerpt {
   position: absolute;
   margin-left: -15px;
 }
+.search-results {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  left: 0;
+}
+.search-results:before,
+.search-results:after {
+  content: " ";
+  display: table;
+}
+.search-results:after {
+  clear: both;
+}
+.search-results:before,
+.search-results:after {
+  content: " ";
+  display: table;
+}
+.search-results:after {
+  clear: both;
+}
+.search-results:before,
+.search-results:after {
+  content: " ";
+  display: table;
+}
+.search-results:after {
+  clear: both;
+}
+.search-results:before,
+.search-results:after {
+  content: " ";
+  display: table;
+}
+.search-results:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .search-results {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .search-results {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .search-results {
+    width: 1170px;
+  }
+}
+.search-results > .navbar-header,
+.search-results > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .search-results > .navbar-header,
+  .search-results > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.search-results h2,
+.drawer-menu .drawer-menu-section-title {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color: #4b2e83;
+  font-weight: 800;
+}
+.search-results.opened {
+  left: 250px;
+}
 .drawer-toggle {
   position: relative;
+}
+.drawer-toggle:before {
+  width: 44px;
+  height: 44px;
+  background-image: url(assets\Columns_Sprite_4_NoColor.svg);
+  background-position: -45px 8px;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  transform: rotateX(90deg);
+  content: "";
 }
 .drawer--left {
   position: relative;
@@ -3062,10 +3164,6 @@ p.excerpt {
   color: #222;
 }
 .drawer-menu .drawer-menu-section-title {
-  font-family: 'Merriweather', serif;
-  font-size: 16px;
-  color: #4b2e83;
-  font-weight: 800;
   line-height: 44px;
   padding-left: 10px;
 }
@@ -3147,20 +3245,33 @@ p.excerpt {
   width: 250px;
   background-color: #4b2e83;
 }
-#filterToggle:before {
-  width: 44px;
-  height: 44px;
-  background-image: url(assets\Columns_Sprite_4_NoColor.svg);
-  background-position: -45px 8px;
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  transform: rotateX(90deg);
-}
 #FilterSearch {
   background-color: #3d3d3d;
 }
 #FilterSearch:active {
   background-color: #4b2e83;
+}
+.issue-row {
+  height: 183px;
+}
+.issue-row .carousel-cell {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .issue-row .carousel-cell {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .issue-row .carousel-cell {
+    float: left;
+    width: 33.33333333%;
+  }
 }
 .single-header {
   border-top: solid lightgray 1px;

@@ -10,7 +10,14 @@ Template Name: Search Page
       $search_query = wp_parse_str( $query_string, $search_query_string );
 
       $search_query_string['post_type'] = 'any';
-      $search_query_string['posts_per_page'] = '50';
+      $search_query_string['posts_per_page'] = '4';  
+
+      // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+      if(array_key_exists('paged', $search_query_string)) {
+        
+        $search_query_string['paged'] = $search_query_string['paged'];
+      }  
 
       
       if(array_key_exists('search', $search_query_string)) {
@@ -76,7 +83,13 @@ use \Columns\SearchWalker;
 
  
 
-  <button id="filterToggle" name="drawerToggle" class="drawer-toggle drawer-button">Choose Filters</button>
+  
+    <button id="filterToggle" name="drawerToggle" class="drawer-toggle drawer-button">
+      <span class="chevron"></span>
+      Choose Filters
+    </button>
+  
+  
 
   <div id="search-drawer" role="search">        
     <div class="drawer-nav" role="navigation">
@@ -89,7 +102,7 @@ use \Columns\SearchWalker;
                   
           <li class="cat-item cat-item-3 drawer-dropdown">
           <a href=#>Choose Issue</a>
-          <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href=" #"="">          
+          <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href="#">          
           </a>
 
             <ul class="drawer-dropdown-menu">
@@ -155,7 +168,7 @@ use \Columns\SearchWalker;
   <div class="search-results">
     <div class="row">
 
-      <h2>Current Search Filters</h2>
+      <h2 class="search-results-title">Current Search Filters</h2>
       <div class="current-filter-wrapper current-filter-wrapper-search">
         <span>Search Term: </span>
         <span class="search-filter-item">
@@ -287,6 +300,7 @@ use \Columns\SearchWalker;
         endwhile;
 
         wp_reset_postdata();
+        wp_reset_query();
 
         else :
 
@@ -301,7 +315,7 @@ use \Columns\SearchWalker;
 
     </div>
 
-    <div class="row">
+    <div class="row issue-row">
 
     <?php 
 
@@ -328,9 +342,12 @@ use \Columns\SearchWalker;
                       $coverImage = get_sub_field('columns_issue_cover_image', false, false);  //returns a image id
                     
                       $atts = array(
-                            "class" => "full, search-issue-cover"
+                            "class" => "full, cover-image"
                             );
-                      echo wp_get_attachment_image($coverImage, 'full', false, $atts);
+                      
+                            echo '<div class="carousel-cell">';
+                            echo wp_get_attachment_image($coverImage, 'full', false, $atts);
+                            echo '</div>';
 
                       
                     }

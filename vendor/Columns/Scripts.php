@@ -117,7 +117,7 @@ class Scripts
       'drawerInit'   => array (
         'id'      => 'drawerInit',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/support/searchDrawerInit.js',
-        'deps'    => array('jsURI','drawerMenu'),
+        'deps'    => array('jsURI','drawerMenu', 'flickity'),
         'version' => '1.0.0',
         'in_footer' => true,
         'admin'   => false

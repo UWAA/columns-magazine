@@ -1,3 +1,19 @@
+jQuery(document).ready(function ($) {
+
+
+
+
+    $('.issue-row').flickity({
+        cellSelector: '.carousel-cell',
+        cellAlign: 'left',
+        pageDots: false,
+        contain: true,
+        setGallerySize: false,        
+        dragThreshold: 10
+    });
+
+    
+    });
 
 // Initiate the Drawer Search Menu
 $('.drawer').drawer({
@@ -18,18 +34,17 @@ $('.drawer').drawer({
     showOverlay: true
 });
 
-$('#filterToggle').click(function () {
-    $('.search-results').toggleClass('opened');
+
+// TODO Need to debounce this so you can't click too many times on the drawer button
+// $('#filterToggle').click(_.debounce(function () {
+//     $('.search-results').toggleClass('opened');
+// }, 300)); 
+
+$('#filterToggle').click(function name(params) {
+    $('.search-results').toggleClass('opened');   
 });
 
 
-$('.drawer').on('drawer.opened', function () {
-    // $('.search-results').addClass('opened');
- });
-
-$('.drawer').on('drawer.closed', function () { 
-    // $('.search-results').removeClass('opened');
-});
 // Scrape out and understand what's happening with the URI, so we can turn-on the filter buttons.
 var URL = new Uri(location);
 
@@ -54,8 +69,75 @@ if (issueQuery) {
 // Toggles active state on filters, does not dropdown more menu items.  
 
 $('.filter-item').click(function (e) {
-    e.stopPropagation();    
-    $(this).toggleClass('active');    
+    e.stopPropagation();
+    var $isLoneParent = $(this).parent().hasClass('lone-parent');    
+    var $isParentCategory = $(this).hasClass('parent-category');
+    var $isElementActive = $(this).parent().hasClass('active');
+
+    var $filterParent = $(this).parents('.drawer-dropdown');
+    var $isFilterParentActive = $filterParent.hasClass('active');       
+    
+    var $filterSiblings = $(this).parent().siblings();
+    var $areOtherFiltersActive = $filterSiblings.hasClass('active');
+
+    
+    if ($isParentCategory) {
+        console.log('parent is dropdown');
+        return;        
+    }
+
+    
+
+    if ( $isLoneParent ) {
+        console.log('no parent');
+        $(this).parent().toggleClass('active');
+    }
+
+    
+    console.log($filterParent); 
+
+    
+    
+    console.log("active state: " + $isElementActive);
+
+    //shouldn't happen
+    if(!$isFilterParentActive && !$areOtherFiltersActive && !$isElementActive) {
+        $filterParent.addClass('active');
+        $(this).parent().addClass('active');        
+    }
+
+    if (!$isFilterParentActive && !$areOtherFiltersActive && !$isElementActive) {
+        $filterParent.addClass('active');
+        $(this).parent().addClass('active');
+    }
+
+    if ($isFilterParentActive && $areOtherFiltersActive && $isElementActive) {
+        $(this).parent().removeClass('active');
+    }
+
+    if ($isFilterParentActive && $areOtherFiltersActive && !$isElementActive) {
+        $(this).parent().addClass('active');
+    }
+    
+    if ($isFilterParentActive && !$areOtherFiltersActive && $isElementActive) {
+        $filterParent.removeClass('active');
+        $(this).parent().removeClass('active');
+    }
+
+    if ($isFilterParentActive && !$areOtherFiltersActive && $isElementActive) {
+        $filterParent.removeClass('active');
+        $(this).parent().removeClass('active');
+    }
+
+    if ($isFilterParentActive && !$areOtherFiltersActive && !$isElementActive) {        
+        $(this).parent().addClass('active');
+    }
+
+    if ($isFilterParentActive && !$areOtherFiltersActive && $isElementActive) {
+        $filterParent.removeClass('active');
+        $(this).parent().removeClass('active');
+    }
+    
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
     $(".search-container").find("[data-issue=" + $(this).data('issue') + "]").not($(this)).toggleClass('active');
 });
