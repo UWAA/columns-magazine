@@ -71,9 +71,9 @@ use \Columns\SearchWalker;
 <div class="archive-header search-header">
   <h1>Search</h1>
     <div class="columns-form search-form search-widescreen">
-              <form role="search" method="get" id="search-form-widescreen" action="<?php echo esc_url( home_url( '/search' ) ); ?>">
+              <form role="search" method="get" id="search-form-widescreen">
                 <input id="Search" name="search" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_query_var('search')  ); ?>" maxlength="255">
-                <input id="searchSite" class="inlineSubmit" type="submit" class="columns-search-input-submit">
+                <input id="searchSite" class="inlineSubmit columns-search-input-submit" type="submit">
               </form>
     </div>
 </div>
@@ -94,13 +94,13 @@ use \Columns\SearchWalker;
   <div id="search-drawer" role="search">        
     <div class="drawer-nav" role="navigation">
         <!-- Category Menu -->
-          <ul class="drawer-menu">
+          <ul class="drawer-menu issue-menu">
           <li class="drawer-menu-section-title">Search Issue:</li>
           <li><a href=#>Entire Site</a></li>
           <li><a href=#>Current Issue</a></li>
 
                   
-          <li class="cat-item cat-item-3 drawer-dropdown">
+          <li class="drawer-dropdown">
           <a href=#>Choose Issue</a>
           <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href="#">          
           </a>
@@ -149,7 +149,7 @@ use \Columns\SearchWalker;
           </li>
             </ul>
         <!-- Category Menu -->
-          <ul class="drawer-menu">
+          <ul class="drawer-menu category-menu">
           <li class="drawer-menu-section-title">Category: </li>
             <?php 
             wp_list_categories(array(

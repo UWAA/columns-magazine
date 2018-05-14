@@ -3055,6 +3055,9 @@ p.excerpt {
   position: absolute;
   margin-left: -15px;
 }
+.search-container {
+  min-height: 671px;
+}
 .search-results {
   margin-right: auto;
   margin-left: auto;

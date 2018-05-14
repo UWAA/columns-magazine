@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
     });
 
     
-    });
+    
 
 // Initiate the Drawer Search Menu
 $('.drawer').drawer({
@@ -46,22 +46,27 @@ $('#filterToggle').click(function name(params) {
 
 
 // Scrape out and understand what's happening with the URI, so we can turn-on the filter buttons.
+//TODO Global scope - clean up.
 var URL = new Uri(location);
 
 var catQuery = URL.getQueryParamValue('cat');
 var issueQuery = URL.getQueryParamValue('issue');
 
-if (catQuery) {
+if (typeof catQuery !== 'undefined') {
     var activeCategoriesFromURL = catQuery.split(",");
     activeCategoriesFromURL.forEach(function (element) {
-        $(".search-container").find("[data-cat_id=" + element + "]").toggleClass('active');
+        $(".search-container").find("[data-cat_id=" + element + "]").addClass('active');
+        $(".category-menu").find("[data-cat_id=" + element + "]").parent().addClass('active');
+        checkParent($(".category-menu").find("[data-cat_id=" + element + "]"))
     });
 }
 
-if (issueQuery) {
+if (typeof issueQuery !== 'undefined') {
     var activeCategoriesFromURL = issueQuery.split(",");
     activeCategoriesFromURL.forEach(function (element) {
         $(".search-container").find("[data-issue=" + element + "]").toggleClass('active');
+        $(".issue-menu").find("[data-issue=" + element + "]").parent().addClass('active');
+        checkParent($(".issue-menu").find("[data-issue=" + element + "]"))
     });
 }
 
@@ -70,9 +75,8 @@ if (issueQuery) {
 $('.current-filter-wrapper>.filter-item').click(function (e) {
     console.log($(this).data('cat_id'));
     var $targetMenuItem = $(".drawer-menu").find("[data-cat_id=" + $(this).data('cat_id') + "]");
-    $targetMenuItem.parent().removeClass('active');    
-    $(this).removeClass('active')
-    ;
+    $targetMenuItem.parent().removeClass('active');
+    $(this).removeClass('active');
     checkParent($targetMenuItem);
 });
 
@@ -81,8 +85,6 @@ function checkParent($targetElement) {
 
     var $isLoneParent = $targetElement.parent().hasClass('lone-parent');
     var $isParentCategory = $targetElement.hasClass('parent-category');
-    var $isElementActive = $targetElement.parent().hasClass('active');
-
 
     var $filterParent = $targetElement.parents('.drawer-dropdown');
     var $isFilterParentActive = $filterParent.hasClass('active');
@@ -97,40 +99,28 @@ function checkParent($targetElement) {
 
     if ($isLoneParent) {
         console.log('no parent');
-        
+
     }
 
-    //shouldn't happen
-    if (!$isFilterParentActive && !$areOtherFiltersActive) {
-        $filterParent.addClass('active');
-        
-    }
 
     if (!$isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.addClass('active');
-        
+
     }
 
     if ($isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.removeClass('active');
-        
+
     }
 
-    if ($isFilterParentActive && !$areOtherFiltersActive) {
-        $filterParent.removeClass('active');
-        
-    }
 
-    if ($isFilterParentActive && !$areOtherFiltersActive) {
-        $filterParent.removeClass('active');        
-    }
 
 
     console.log($filterParent);
 
 
 
-    console.log("active state: " + $isElementActive);
+
 
 }
 
@@ -139,11 +129,11 @@ function checkParent($targetElement) {
 // Toggles active state on filters, does not dropdown more menu items.  
 
 $('.drawer-menu .filter-item').click(function (e) {
-    e.stopPropagation();    
+    e.stopPropagation();
     $(this).parent().toggleClass('active');
 
     checkParent($(this));
-    
+
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
     $(".search-container").find("[data-issue=" + $(this).data('issue') + "]").not($(this)).toggleClass('active');
 });
@@ -151,35 +141,35 @@ $('.drawer-menu .filter-item').click(function (e) {
 
 
 // Search/Filter Submit Button Handler.  
-$('.columns-search-input-submit').click(function (e) {    
-    
+$('.columns-search-input-submit').click(function (e) {
+
     // Determine currently active filters
     var filterValues = [];
     var issueFilters = [];
 
-    $('.drawer-menu .cat-item').filter('.active').each(function () {
-        filterValues.push($(this).children('.filter-item').data('cat_id'));        
+    $('.category-menu .cat-item').filter('.active').each(function () {
+        filterValues.push($(this).children('.filter-item').data('cat_id'));
     });
 
-    $('.drawer-menu .issue-filter').parent().filter('.active').not('.parent-category').each(function () {
-        issueFilters.push($(this).children('.category-filter').data('issue'));
+    $('.issue-menu .issue-filter').parent().filter('.active').not('.parent-category').each(function () {
+        issueFilters.push($(this).children('.issue-filter').data('issue'));
     });
 
     // Gets the value of the search box
-    var searchQuery = $(".columns-search-input-field").val();      
+    var searchQuery = $(".columns-search-input-field").val();
 
-   
+
     // Builds a new URL and refreshes the page.
     var newURL = URL.clone()
-                .setPath('/search') // pagination?
-                .deleteQueryParam('cat')
-                .deleteQueryParam('issue');
-                
-                
-                
+        .setPath('/search') // pagination?
+        .deleteQueryParam('cat')
+        .deleteQueryParam('issue');
 
-    if (filterValues.length > 0) {        
-            newURL.replaceQueryParam('cat', filterValues.join(","));
+
+
+
+    if (filterValues.length > 0) {
+        newURL.replaceQueryParam('cat', filterValues.join(","));
     }
 
     if (issueFilters.length > 0) {
@@ -190,7 +180,7 @@ $('.columns-search-input-submit').click(function (e) {
         newURL.replaceQueryParam('search', searchQuery)
     }
 
-    
+
     location.replace(newURL.toString())
 });
 
@@ -209,9 +199,9 @@ $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
     switch (element.currentTarget.value) {
         case "":
             $(".search-filter-item").html(element.currentTarget.value).removeClass("active");
-            break;       
-            
-    
+            break;
+
+
         default:
 
             $(".columns-search-input-field").not($(this).each(function () {
@@ -221,8 +211,11 @@ $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
 
             break;
     }
-    
+
 }, 500));
+
+});
+
 
 
 
