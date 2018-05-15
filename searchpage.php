@@ -10,7 +10,7 @@ Template Name: Search Page
       $search_query = wp_parse_str( $query_string, $search_query_string );
 
       $search_query_string['post_type'] = array('post', 'feature', 'media');
-      $search_query_string['posts_per_page'] = '4';  
+      $search_query_string['posts_per_page'] = '20';  
 
       // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
@@ -166,7 +166,7 @@ use \Columns\SearchWalker;
   </div>
 
   <div class="search-results">
-    <div class="row">
+    <div class="current-filters-row">
 
       <h2 class="search-results-title">Current Search Filters</h2>
       <div class="current-filter-wrapper current-filter-wrapper-search">
@@ -226,13 +226,17 @@ use \Columns\SearchWalker;
       
 
       <div class="result-display-controls">
-        <a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
-      <a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
+          <a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
+        <a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
 
         <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
 
       </div>
       
+    
+    </div>
+
+    <div class="results-row">
 
 
       <?php
@@ -313,7 +317,7 @@ use \Columns\SearchWalker;
 
   
 
-    </div>
+    </div>    
 
     <div class="row issue-row">
 

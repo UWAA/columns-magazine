@@ -24,8 +24,7 @@ class Styles {
             'dashicons' => array(
               'id'      => 'dashicons',
               'url'     => get_stylesheet_uri(), 
-              'deps'    => 'uw-2014',
-              'version' => wp_get_theme()->get('Version'),
+              'deps'    => '',              
             )
 
         );
