@@ -12,11 +12,12 @@ Template Name: Search Page
       $search_query_string['post_type'] = array('post', 'feature', 'media');
       $search_query_string['posts_per_page'] = '20';  
 
-      // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $paged = (get_query_var('searchpage')) ? get_query_var('searchpage') : 1;
+      // $paged=3;
 
-      if(array_key_exists('paged', $search_query_string)) {
+      if(array_key_exists('searchpage', $search_query_string)) {
         
-        $search_query_string['paged'] = $search_query_string['paged'];
+        $search_query_string['paged'] = $search_query_string['searchpage'];
       }  
 
       
@@ -255,7 +256,29 @@ use \Columns\SearchWalker;
       $search = new WP_Query( $search_query_string );
         
 
-        if ($search->have_posts() ):          
+      if ($search->have_posts() ):
+
+        // previous_posts_link( 'Older Posts' );
+        // next_posts_link( 'Newer Posts', $search->max_num_pages );
+
+        echo paginate_links( array(
+            // 'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+            'base'         => '%_%',
+            'total'        => $search->max_num_pages,
+            'current'      => max( 1, get_query_var( 'searchpage' ) ),
+            'format'       => '?searchpage=%#%',
+            'show_all'     => false,
+            'type'         => 'plain',
+            'end_size'     => 0,
+            'mid_size'     => 1,
+            'prev_next'    => true,
+            'prev_text'    => sprintf( '<i></i> %1$s', __( 'Previous', 'text-domain' ) ),
+            'next_text'    => sprintf( '%1$s <i></i>', __( 'Next', 'text-domain' ) ),
+            'add_args'     => false,
+            'add_fragment' => '',
+        ) );
+
+       
 
         $issuesInSearch = array();
 
@@ -290,7 +313,7 @@ use \Columns\SearchWalker;
 
         while ($search->have_posts() ) : $search->the_post(); 
         //also extract out the issue date for the post here
-        //this is garbage...
+        //this is garbage...         
 
 
         $articleDateObject = get_field('columns_print_issue', $post->ID);
@@ -304,7 +327,19 @@ use \Columns\SearchWalker;
         endwhile;
 
         wp_reset_postdata();
+
+
+        // the_posts_pagination( array( 'mid_size' => 1 ) );
+
+        // the_posts_pagination( array( 
+        //   'mid_size' => 1,
+	      //   'prev_text' => __( 'Back', 'textdomain' ),
+	      //   'next_text' => __( 'Onward', 'textdomain' ),
+        //   ) );
+
         wp_reset_query();
+
+
 
         else :
 
@@ -312,10 +347,6 @@ use \Columns\SearchWalker;
         endif;
 
       ?>
-
-      <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
-
-  
 
     </div>    
 

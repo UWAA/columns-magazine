@@ -216,6 +216,7 @@ public function custom_class( $classes ) {
 function searchVariables( $qvars )
 {
   $qvars[] = 'issue';
+  $qvars[] = 'searchpage';
   return $qvars;
 }
 
