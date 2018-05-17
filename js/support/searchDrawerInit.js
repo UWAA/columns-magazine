@@ -35,7 +35,7 @@ function toggleResultsClass() {
 };
 
     
-        $('#filterToggle').on("click", _.debounce(toggleResultsClass, 500, true));
+        $('#filterToggle').on("click", _.debounce(toggleResultsClass, 700, true));
     
 
 // Scrape out and understand what's happening with the URI, so we can turn-on the filter buttons.
@@ -44,6 +44,7 @@ var URL = new Uri(location);
 
 var catQuery = URL.getQueryParamValue('cat');
 var issueQuery = URL.getQueryParamValue('issue');
+var orderQuery = URL.getQueryParamValue('order');
 
 if (typeof catQuery !== 'undefined') {
     var activeCategoriesFromURL = catQuery.split(",");
@@ -72,6 +73,23 @@ $('.current-filter-wrapper>.filter-item').click(function (e) {
     $(this).removeClass('active');
     checkParent($targetMenuItem);
 });
+
+if(typeof orderQuery !== 'undefined'){
+    switch (orderQuery) {
+        case 'asc':
+            $('.order-oldest span').addClass('current');            
+            break;
+
+        case 'desc':
+            $('.order-newest span').addClass('current');
+        break;
+    
+        default:
+            break;
+    }
+
+}
+
 
 
 function checkParent($targetElement) {
@@ -110,10 +128,6 @@ function checkParent($targetElement) {
 
 
     console.log($filterParent);
-
-
-
-
 
 }
 

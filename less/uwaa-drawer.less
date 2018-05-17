@@ -137,9 +137,15 @@
 }
 
 
-.current-filter-wrapper {
-    // display: none;  Will be hidden by default, and made visible with JS
+.filter-controls-wrapper{
+    .make-sm-column(12);
+    padding-bottom: 15px;
+    
+}
+
+.current-filter-wrapper {    
     display: inline;
+    
 
     &:before {
         content:  "|";
@@ -209,7 +215,16 @@
     
 }
 .issue-row {
-    height: 183px;
+    height: 220px;
+
+    @media (max-width: @screen-sm-min) { 
+     height: 250px;
+    }
+
+    h2{
+        padding-left: 15px;
+    }
+    
 
     .carousel-cell {
        &:extend(.home-solutions .carousel-cell);

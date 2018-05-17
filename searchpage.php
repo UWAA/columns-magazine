@@ -169,58 +169,64 @@ use \Columns\SearchWalker;
   <div class="search-results">
     <div class="current-filters-row">
 
-      <h2 class="search-results-title">Current Search Filters</h2>
-      <div class="current-filter-wrapper current-filter-wrapper-search">
-        <span>Search Term: </span>
-        <span class="search-filter-item">
-          <?php
+      <div class="filter-controls-wrapper">
 
-        if (isset($search_query_string['searchValue'])) {
-          echo esc_attr( $search_query_string['searchValue'] );
-        }
+        <h2 class="search-results-title">Current Search Filters</h2>
+        <div class="current-filter-wrapper current-filter-wrapper-search">
+          <span>Search Term: </span>
+          <span class="search-filter-item">
+            <?php
 
-        ?>
-            
-        </span>
-        
-      </div>
-
-      <div class="current-filter-wrapper current-filter-wrapper-issue">
-        <span>Issue: </span>
-        <?php       
-        
-        $field = get_field_object('field_5835c2de61539');
-
-        if ($field) {
-          foreach ($field['choices'] as $issue=>$value) {
-            echo '<span class="filter-item" data-issue="'. $issue .'">' . $value . '</span>';
+          if (isset($search_query_string['searchValue'])) {
+            echo esc_attr( $search_query_string['searchValue'] );
           }
 
-
-        }     
-
           ?>
+              
+          </span>
+          
+        </div>
+
+        <div class="current-filter-wrapper current-filter-wrapper-issue">
+          <span>Issue: </span>
+          <?php       
+          
+          $field = get_field_object('field_5835c2de61539');
+
+          if ($field) {
+            foreach ($field['choices'] as $issue=>$value) {
+              echo '<span class="filter-item" data-issue="'. $issue .'">' . $value . '</span>';
+            }
+
+
+          }     
+
+            ?>
+        </div>
+
+        <div class="current-filter-wrapper current-filter-wrapper-category">
+          <span>Category: </span>
+          <?php 
+                $categoryList = get_categories(array(            
+                  'exclude' => array('11', '1')  //Issue here with test vs prod
+                  )
+                  );
+
+                  foreach ($categoryList as $category) {
+                    echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
+                  }
+
+            ?>
+        </div>
+
+        <div class="current-filter-wrapper current-filter-wrapper-content_type">
+          <span>Content Type: </span>
+        </div>
+
       </div>
 
-      <div class="current-filter-wrapper current-filter-wrapper-category">
-        <span>Category: </span>
-        <?php 
-              $categoryList = get_categories(array(            
-                'exclude' => array('11', '1')  //Issue here with test vs prod
-                )
-                );
-
-                foreach ($categoryList as $category) {
-                  echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
-                }
-
-          ?>
-      </div>
-
-      <div class="current-filter-wrapper current-filter-wrapper-content_type">
-        <span>Content Type: </span>
-      </div>
-
+      <hr>
+    
     </div>
    
 
@@ -248,8 +254,8 @@ use \Columns\SearchWalker;
         ?>
 
         <div class="result-display-controls">
-        <a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
-        <a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
+        <a class="order-oldest" href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>"><span>Oldest</span></a>
+        <a class="order-newest" href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>"><span>Newest</span></a>
         
         </div>
 
@@ -366,11 +372,19 @@ use \Columns\SearchWalker;
 
     
   
-    <div class="row issue-row">
+    
+
+      
 
     <?php 
 
-          if ($search->have_posts() ): 
+          if ($search->have_posts() ):
+            
+            ?>
+            <div class="row issue-row">
+            <h2 class="search-results-title">Search term found in:</h2>
+
+            <?php
 
             // check if the repeater field has rows of data
             if( have_rows('columns_print_issues', 'option') ):
@@ -413,11 +427,12 @@ use \Columns\SearchWalker;
                 // no rows found
             
             endif;
+            ?> </div> <?php
           endif;
             
     ?>
 
-  </div>
+  
   
   </div>
 
