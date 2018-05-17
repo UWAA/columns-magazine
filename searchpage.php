@@ -85,7 +85,7 @@ use \Columns\SearchWalker;
  
 
   
-    <button id="filterToggle" name="drawerToggle" class="drawer-toggle drawer-button">
+    <button id="filterToggle" name="drawerToggle" class="drawer-button">
       <span class="chevron"></span>
       Choose Filters
     </button>
@@ -222,20 +222,7 @@ use \Columns\SearchWalker;
       </div>
 
     </div>
-  
-    <div class="results-row">
-      
-
-      <div class="result-display-controls">
-          <a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
-        <a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
-
-        <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
-
-      </div>
-      
-    
-    </div>
+   
 
     <div class="results-row">
 
@@ -258,26 +245,39 @@ use \Columns\SearchWalker;
 
       if ($search->have_posts() ):
 
-        // previous_posts_link( 'Older Posts' );
-        // next_posts_link( 'Newer Posts', $search->max_num_pages );
+        ?>
 
-        echo paginate_links( array(
-            // 'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-            'base'         => '%_%',
-            'total'        => $search->max_num_pages,
-            'current'      => max( 1, get_query_var( 'searchpage' ) ),
-            'format'       => '?searchpage=%#%',
-            'show_all'     => false,
-            'type'         => 'plain',
-            'end_size'     => 0,
-            'mid_size'     => 1,
-            'prev_next'    => true,
-            'prev_text'    => sprintf( '<i></i> %1$s', __( 'Previous', 'text-domain' ) ),
-            'next_text'    => sprintf( '%1$s <i></i>', __( 'Next', 'text-domain' ) ),
-            'add_args'     => false,
-            'add_fragment' => '',
-        ) );
+        <div class="result-display-controls">
+        <a href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>">Oldest</a>
+        <a href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>">Newest</a>
+        
+        </div>
 
+            <div class="pagination-controls">
+              <?php 
+                echo paginate_links( array(
+                  // 'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                  'base'         => '%_%',
+                  'total'        => $search->max_num_pages,
+                  'current'      => max( 1, get_query_var( 'searchpage' ) ),
+                  'format'       => '?searchpage=%#%',
+                  'show_all'     => false,
+                  'type'         => 'plain',
+                  'end_size'     => 0,
+                  'mid_size'     => 1,
+                  'prev_next'    => true,
+                  'prev_text'    => sprintf( '<span class="dashicons dashicons-controls-play"></span>%1$s', __( 'Previous', 'text-domain' ) ),
+                  'next_text'    => sprintf( '%1$s <span class="dashicons dashicons-controls-play"></span>', __( 'Next', 'text-domain' ) ),
+                  'add_args'     => false,
+                  'add_fragment' => '',
+                  ) ); 
+              ?>
+            </div>
+      </div>
+      
+      <div class="results-row">
+
+        <?php
        
 
         $issuesInSearch = array();
@@ -327,29 +327,45 @@ use \Columns\SearchWalker;
         endwhile;
 
         wp_reset_postdata();
-
-
-        // the_posts_pagination( array( 'mid_size' => 1 ) );
-
-        // the_posts_pagination( array( 
-        //   'mid_size' => 1,
-	      //   'prev_text' => __( 'Back', 'textdomain' ),
-	      //   'next_text' => __( 'Onward', 'textdomain' ),
-        //   ) );
-
         wp_reset_query();
 
-
+        ?>
+        </div>  <!-- end results row -->
+        <div class="results-row">
+        <div class="pagination-controls pull-right">
+        <?php 
+                echo paginate_links( array(
+                  // 'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                  'base'         => '%_%',
+                  'total'        => $search->max_num_pages,
+                  'current'      => max( 1, get_query_var( 'searchpage' ) ),
+                  'format'       => '?searchpage=%#%',
+                  'show_all'     => false,
+                  'type'         => 'plain',
+                  'end_size'     => 0,
+                  'mid_size'     => 1,
+                  'prev_next'    => true,
+                  'prev_text'    => sprintf( '<span class="dashicons dashicons-controls-play"></span>%1$s', __( 'Previous', 'text-domain' ) ),
+                  'next_text'    => sprintf( '%1$s <span class="dashicons dashicons-controls-play"></span>', __( 'Next', 'text-domain' ) ),
+                  'add_args'     => false,
+                  'add_fragment' => '',
+                  ) ); 
+              ?>
+        </div>
+        </div>
+        <!-- end results row -->
+        
+        <?php
 
         else :
-
-            get_template_part( 'partials/search_empty' );            
+            get_template_part( 'partials/search_empty' );
+            echo "</div>"; // end results row.
         endif;
 
       ?>
 
-    </div>    
-
+    
+  
     <div class="row issue-row">
 
     <?php 

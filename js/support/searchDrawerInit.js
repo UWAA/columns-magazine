@@ -1,8 +1,5 @@
 jQuery(document).ready(function ($) {
 
-
-
-
     $('.issue-row').flickity({
         cellSelector: '.carousel-cell',
         cellAlign: 'left',
@@ -12,14 +9,10 @@ jQuery(document).ready(function ($) {
         dragThreshold: 10
     });
 
-    
-    
-
 // Initiate the Drawer Search Menu
 $('.drawer').drawer({
     class: {
-        nav: 'drawer-nav',
-        toggle: 'drawer-toggle',
+        nav: 'drawer-nav',        
         overlay: 'drawer-overlay',
         open: 'drawer-open',
         close: 'drawer-close',
@@ -35,15 +28,15 @@ $('.drawer').drawer({
 });
 
 
-// TODO Need to debounce this so you can't click too many times on the drawer button
-// $('#filterToggle').click(_.debounce(function () {
-//     $('.search-results').toggleClass('opened');
-// }, 300)); 
 
-$('#filterToggle').click(function name(params) {
+function toggleResultsClass() {    
+    $('.drawer').drawer('toggle');
     $('.search-results').toggleClass('opened');
-});
+};
 
+    
+        $('#filterToggle').on("click", _.debounce(toggleResultsClass, 500, true));
+    
 
 // Scrape out and understand what's happening with the URI, so we can turn-on the filter buttons.
 //TODO Global scope - clean up.
