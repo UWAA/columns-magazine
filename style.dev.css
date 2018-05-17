@@ -3180,6 +3180,7 @@ p.excerpt {
 #search-drawer {
   position: absolute;
   margin-left: -15px;
+  height: 100%;
 }
 .search-container {
   min-height: 671px;
@@ -3283,6 +3284,7 @@ p.excerpt {
   left: -25.25rem;
   width: 250px;
   position: relative;
+  background-color: #dddddd;
 }
 .drawer-menu {
   width: 100%;
@@ -3295,6 +3297,7 @@ p.excerpt {
 .drawer-menu .drawer-menu-section-title {
   line-height: 44px;
   padding-left: 10px;
+  padding-top: 30px;
 }
 .drawer-menu li {
   border-bottom: 1px solid #ffffff;
@@ -3395,6 +3398,7 @@ p.excerpt {
 }
 #FilterSearch {
   background-color: #3d3d3d;
+  margin-top: 30px;
 }
 #FilterSearch:active {
   background-color: #4b2e83;
