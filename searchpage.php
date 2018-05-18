@@ -84,7 +84,7 @@ use \Columns\SearchWalker;
 <div class="archive-header search-header">
   <h1>Search</h1>
     <div class="columns-form search-form search-widescreen">
-              <form role="search" method="get" id="search-form-widescreen">
+              <form role="search" id="search-form-widescreen">
                 <input id="Search" name="search" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_query_var('search')  ); ?>" maxlength="255">
                 <input id="searchSite" class="inlineSubmit columns-search-input-submit" type="submit">
               </form>
@@ -97,10 +97,7 @@ use \Columns\SearchWalker;
  
 
   
-    <button id="filterToggle" name="drawerToggle" class="drawer-button">
-      <!-- <svg class="chevron">
-    <use href="<?php // bloginfo("stylesheet_directory"); ?>/assets/Columns_Sprite_4_NoColor.svg#prev-next-arrow" />
-      </svg> -->
+    <button id="filterToggle" name="drawerToggle" class="drawer-button">      
     </button>
   
   

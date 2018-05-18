@@ -31,8 +31,16 @@ $('.drawer').drawer({
 
 function toggleResultsClass() {    
     $('.drawer').drawer('toggle');
-    $('.search-results').toggleClass('opened');
-    console.log($('#filterToggle').html());
+    $('.search-results').toggleClass('opened');    
+    console.log(hasActiveFilter);
+    
+    $('.drawer').removeClass("filters-active");
+    
+    if (hasActiveFilter) {
+        $('.drawer').addClass("filters-active");
+    }
+    
+
 };
 
 
@@ -47,12 +55,13 @@ var URL = new Uri(location);
 var catQuery = URL.getQueryParamValue('cat');
 var issueQuery = URL.getQueryParamValue('issue');
 var orderQuery = URL.getQueryParamValue('order');
+var hasActiveFilter = false;
 
 if (typeof catQuery !== 'undefined') {
     var activeCategoriesFromURL = catQuery.split(",");
     activeCategoriesFromURL.forEach(function (element) {
         $(".search-container").find("[data-cat_id=" + element + "]").addClass('active');
-        $(".category-menu").find("[data-cat_id=" + element + "]").parent().addClass('active');
+        $(".category-menu").find("[data-cat_id=" + element + "]").parents('.cat-item').addClass('active');        
         checkParent($(".category-menu").find("[data-cat_id=" + element + "]"))
     });
 }
@@ -67,13 +76,15 @@ if (typeof issueQuery !== 'undefined') {
 }
 
 
-
-$('.current-filter-wrapper>.filter-item').click(function (e) {
-    console.log($(this).data('cat_id'));
+// TODO - Filthy...
+$('.current-filter-wrapper>.filter-item').click(function (e) {    
     var $targetMenuItem = $(".drawer-menu").find("[data-cat_id=" + $(this).data('cat_id') + "]");
+    var $targetDateItem = $(".drawer-menu").find("[data-issue=" + $(this).data('issue') + "]");
     $targetMenuItem.parent().removeClass('active');
+    $targetDateItem.parent().removeClass('active');
     $(this).removeClass('active');
     checkParent($targetMenuItem);
+    checkParent($targetDateItem);
 });
 
 if(typeof orderQuery !== 'undefined'){
@@ -105,18 +116,25 @@ function checkParent($targetElement) {
     var $filterSiblings = $targetElement.parent().siblings();
     var $areOtherFiltersActive = $filterSiblings.hasClass('active');
 
+    console.log("blanket false from parentCheck");
+    hasActiveFilter = false;
 
-    if ($isParentCategory) {
+    if ($isParentCategory) {        
         return;
     }
     
     if (!$isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.addClass('active');
+        hasActiveFilter = true;
+        console.log("setting to true- parent no active class");
 
     }
 
     if ($isFilterParentActive && !$areOtherFiltersActive) {
+        console.log("false from no other active filters");
         $filterParent.removeClass('active');
+        $('.drawer').removeClass("filters-active");
+        hasActiveFilter = false;
 
     }
 
@@ -126,14 +144,17 @@ function checkParent($targetElement) {
 
 // Toggles active state on filters, does not dropdown more menu items.  
 
-$('.drawer-menu .filter-item').click(function (e) {
+$('.drawer-menu .filter-item').not('.parent-category').click(function (e) {
     e.stopPropagation();
-    $(this).parent().toggleClass('active');
-
-    checkParent($(this));
+    $(this).parent().toggleClass('active');    
 
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
     $(".search-container").find("[data-issue=" + $(this).data('issue') + "]").not($(this)).toggleClass('active');
+
+    checkParent($(this));
+
+    console.log("setting to true- filter item click");
+    // hasActiveFilter = true;
 });
 
 
@@ -192,7 +213,7 @@ $('.search-filter-item.active').click(function (e) {
 
 //Debounced search term replace in the active filter area.
 $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
-    console.log('updating search');
+    
 
     switch (element.currentTarget.value) {
         case "":

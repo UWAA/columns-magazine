@@ -3224,7 +3224,7 @@ p.excerpt {
   height: 100%;
 }
 .search-container {
-  min-height: 671px;
+  min-height: 990px;
 }
 .search-results {
   margin-right: auto;
@@ -3447,6 +3447,9 @@ p.excerpt {
 }
 .drawer-open #filterToggle:after {
   content: "Hide Filters";
+}
+.filters-active #filterToggle:after {
+  content: "Change Filters";
 }
 #FilterSearch {
   background-color: #3d3d3d;
