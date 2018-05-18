@@ -291,7 +291,8 @@ p {
 .archive-story-container .date,
 .search .search-story-container .date,
 .search .total-results,
-.current-filter-wrapper .filter-lead {
+.current-filter-wrapper .filter-lead,
+.issue-row .carousel-cell .image-wrapper .article-date {
   font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -2993,7 +2994,8 @@ p.excerpt {
 }
 .search .search-story-container .date,
 .search .total-results,
-.current-filter-wrapper .filter-lead {
+.current-filter-wrapper .filter-lead,
+.issue-row .carousel-cell .image-wrapper .article-date {
   margin: 15px 0 10px;
 }
 .search .search-story-container .search-story-title {
@@ -3454,11 +3456,11 @@ p.excerpt {
   background-color: #4b2e83;
 }
 .issue-row {
-  height: 220px;
+  height: 250px;
 }
 @media (max-width: 768px) {
   .issue-row {
-    height: 250px;
+    height: 270px;
   }
 }
 .issue-row h2 {
@@ -3482,6 +3484,14 @@ p.excerpt {
     float: left;
     width: 33.33333333%;
   }
+}
+.issue-row .carousel-cell .image-wrapper {
+  max-width: 141px;
+  margin: 0 auto;
+}
+.issue-row .carousel-cell .image-wrapper .article-date {
+  text-align: left;
+  margin: 0;
 }
 .single-header {
   border-top: solid lightgray 1px;

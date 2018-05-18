@@ -234,10 +234,10 @@
     
 }
 .issue-row {
-    height: 220px;
+    height: 250px;
 
     @media (max-width: @screen-sm-min) { 
-     height: 250px;
+     height: 270px;
     }
 
     h2{
@@ -249,6 +249,19 @@
        &:extend(.home-solutions .carousel-cell);
        .make-sm-column(4);
        text-align: center;
+
+       .image-wrapper {
+           max-width: 141px;
+           margin: 0 auto;
+
+           .article-date {
+                text-align: left;   
+                &:extend(.search .search-story-container .date);
+                margin: 0;
+            }
+       }
+
+       
 
        
     }

@@ -444,11 +444,20 @@ use \Columns\SearchWalker;
                             "class" => "full, cover-image"
                             );
                       
-                            echo '<div class="carousel-cell">';
-                            echo wp_get_attachment_image($coverImage, 'full', false, $atts);
-                            echo '</div>';
+                            ?>
 
-                      
+                            <div class="carousel-cell">
+                              <div class="image-wrapper">
+                                <a href="http://">
+                                <?php echo wp_get_attachment_image($coverImage, 'full', false, $atts); ?>
+                                <div class="article-date">
+                                  <?php echo date_format($issueDate, 'F Y');?>
+                                </div>
+                              </a>
+                            </div>
+                            </div>
+
+                            <?php
                     }
                   }
             
