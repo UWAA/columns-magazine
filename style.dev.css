@@ -290,6 +290,7 @@ p {
 .published-date,
 .archive-story-container .date,
 .search .search-story-container .date,
+.search .total-results,
 .current-filter-wrapper .filter-lead {
   font-size: 13px;
   letter-spacing: 1px;
@@ -2895,6 +2896,35 @@ p.excerpt {
     margin-left: 50%;
   }
 }
+.search .total-results {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: right;
+}
+@media (min-width: 768px) {
+  .search .total-results {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .search .total-results {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .search .total-results {
+    left: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .search .total-results {
+    left: 50%;
+  }
+}
 .search .results-row {
   margin-left: -15px;
   margin-right: -15px;
@@ -2962,6 +2992,7 @@ p.excerpt {
   margin-bottom: 14.5px;
 }
 .search .search-story-container .date,
+.search .total-results,
 .current-filter-wrapper .filter-lead {
   margin: 15px 0 10px;
 }

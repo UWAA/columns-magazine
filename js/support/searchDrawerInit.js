@@ -109,13 +109,7 @@ function checkParent($targetElement) {
     if ($isParentCategory) {
         return;
     }
-
-    if ($isLoneParent) {
-        console.log('no parent');
-
-    }
-
-
+    
     if (!$isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.addClass('active');
 
@@ -125,11 +119,6 @@ function checkParent($targetElement) {
         $filterParent.removeClass('active');
 
     }
-
-
-
-
-    console.log($filterParent);
 
 }
 

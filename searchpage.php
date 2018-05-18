@@ -6,11 +6,12 @@ Template Name: Search Page
 
  // https://codex.wordpress.org/Creating_a_Search_Page
       global $query_string;
+      $resultsPerPage = 20;
 
       $search_query = wp_parse_str( $query_string, $search_query_string );
 
       $search_query_string['post_type'] = array('post', 'feature', 'media');
-      $search_query_string['posts_per_page'] = '20';  
+      $search_query_string['posts_per_page'] = $resultsPerPage;  
 
       $paged = (get_query_var('searchpage')) ? get_query_var('searchpage') : 1;
       // $paged=3;
@@ -57,6 +58,17 @@ Template Name: Search Page
         
       }
 
+
+      if(is_array($search_query_string)) {
+
+          unset($search_query_string['search']);
+          unset($search_query_string['searchValue']);
+          unset($search_query_string['pagename']);
+
+        }
+
+
+      $search = new WP_Query( $search_query_string );
       // $search_query_string available for pre-loop functions      
 
       
@@ -178,11 +190,11 @@ use \Columns\SearchWalker;
           <span class="search-filter-item">
             <?php
 
-          if (isset($search_query_string['searchValue'])) {
-            echo esc_attr( $search_query_string['searchValue'] );
+          if (isset($search_query_string['s'])) {
+            echo esc_attr( $search_query_string['s'] );
           }
 
-          ?>
+     ?>
               
           </span>
           
@@ -227,6 +239,34 @@ use \Columns\SearchWalker;
       </div>
 
       <hr>
+
+      <?php  if ($search->have_posts() ): 
+
+      $offset = "1";
+
+      if(isset($search_query_string['searchpage'])){
+        $offset = ($search_query_string['paged'] - 1) * $resultsPerPage + 1;
+      }
+
+      $finalResultOnPage = $offset + $resultsPerPage;
+
+      if ($finalResultOnPage > $search->found_posts) {
+        $finalResultOnPage = $search->found_posts;
+      }      
+      
+      
+      ?>
+
+      <div class="total-results">
+        
+        
+        
+
+
+        <?php echo $offset; ?>-<?php echo $finalResultOnPage; ?> of <?php echo $search->found_posts; ?> results
+      </div>
+
+      <?php endif; ?>
     
     </div>
    
@@ -238,22 +278,15 @@ use \Columns\SearchWalker;
 
       
       
-      if(is_array($search_query_string)) {
-
-          unset($search_query_string['search']);
-          unset($search_query_string['searchValue']);
-          unset($search_query_string['pagename']);
-
-        }
-
-
-      $search = new WP_Query( $search_query_string );
+      
         
 
       if ($search->have_posts() ):
 
         ?>
-
+        
+        
+        
         <div class="result-display-controls">
         <a class="order-oldest" href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>"><span>Oldest</span></a>
         <a class="order-newest" href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>"><span>Newest</span></a>
