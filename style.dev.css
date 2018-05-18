@@ -289,7 +289,8 @@ p {
 }
 .published-date,
 .archive-story-container .date,
-.search .search-story-container .date {
+.search .search-story-container .date,
+.current-filter-wrapper .filter-lead {
   font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -2800,8 +2801,9 @@ p.excerpt {
   clear: both;
 }
 .search .current-filters-row hr {
-  color: #767676;
+  color: #e1e1e1;
   margin: 15px;
+  border-width: 2px;
 }
 .search .result-display-controls {
   position: relative;
@@ -2846,6 +2848,7 @@ p.excerpt {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  font-size: 13px;
 }
 @media (min-width: 992px) {
   .search .pagination-controls {
@@ -2871,12 +2874,13 @@ p.excerpt {
   font-weight: 800;
 }
 .search .pagination-controls .dashicons {
-  font-size: 17px;
-  line-height: 17px;
-  width: 17px;
-  height: 17px;
+  font-size: 13px;
+  line-height: 13px;
+  width: 13px;
+  height: 13px;
   vertical-align: middle;
   color: #4b2e83;
+  text-decoration: none;
 }
 .search .pagination-controls .prev .dashicons {
   transform: rotateY(180deg);
@@ -2951,10 +2955,14 @@ p.excerpt {
     height: 250px;
   }
 }
+.search .search-story-container.no-results h3 {
+  padding-left: 10px;
+}
 .search .search-story-container p {
   margin-bottom: 14.5px;
 }
-.search .search-story-container .date {
+.search .search-story-container .date,
+.current-filter-wrapper .filter-lead {
   margin: 15px 0 10px;
 }
 .search .search-story-container .search-story-title {
@@ -3395,6 +3403,17 @@ p.excerpt {
   margin-left: -15px;
   width: 250px;
   background-color: #4b2e83;
+}
+#filterToggle .chevron {
+  fill: #ffffff;
+  width: 44px;
+  height: 44px;
+}
+#filterToggle:after {
+  content: "Choose Filters";
+}
+.drawer-open #filterToggle:after {
+  content: "Hide Filters";
 }
 #FilterSearch {
   background-color: #3d3d3d;

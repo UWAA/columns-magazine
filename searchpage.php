@@ -86,8 +86,9 @@ use \Columns\SearchWalker;
 
   
     <button id="filterToggle" name="drawerToggle" class="drawer-button">
-      <span class="chevron"></span>
-      Choose Filters
+      <!-- <svg class="chevron">
+    <use href="<?php // bloginfo("stylesheet_directory"); ?>/assets/Columns_Sprite_4_NoColor.svg#prev-next-arrow" />
+      </svg> -->
     </button>
   
   
@@ -173,7 +174,7 @@ use \Columns\SearchWalker;
 
         <h2 class="search-results-title">Current Search Filters</h2>
         <div class="current-filter-wrapper current-filter-wrapper-search">
-          <span>Search Term: </span>
+          <span class="filter-lead">Search Term: </span>
           <span class="search-filter-item">
             <?php
 
@@ -188,7 +189,7 @@ use \Columns\SearchWalker;
         </div>
 
         <div class="current-filter-wrapper current-filter-wrapper-issue">
-          <span>Issue: </span>
+          <span class="filter-lead">Issue: </span>
           <?php       
           
           $field = get_field_object('field_5835c2de61539');
@@ -205,7 +206,7 @@ use \Columns\SearchWalker;
         </div>
 
         <div class="current-filter-wrapper current-filter-wrapper-category">
-          <span>Category: </span>
+          <span class="filter-lead">Category: </span>
           <?php 
                 $categoryList = get_categories(array(            
                   'exclude' => array('11', '1')  //Issue here with test vs prod
@@ -219,9 +220,9 @@ use \Columns\SearchWalker;
             ?>
         </div>
 
-        <div class="current-filter-wrapper current-filter-wrapper-content_type">
-          <span>Content Type: </span>
-        </div>
+        <!-- <div class="current-filter-wrapper current-filter-wrapper-content_type">
+          <span class="filter-lead">Content Type: </span>
+        </div> -->
 
       </div>
 

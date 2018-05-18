@@ -24,8 +24,9 @@
         .make-row();         
         
         hr {
-            color: @lightgray;
+            color: #e1e1e1;
             margin: 15px;
+            border-width: 2px;            
         }
         padding-bottom: 15px;
     }
@@ -70,6 +71,7 @@
     .pagination-controls{
         text-align: right;
         .make-md-column(6);
+        font-size: 13px;
 
         a {
             text-decoration: none;
@@ -85,12 +87,13 @@
         }
 
         .dashicons {
-            font-size: 17px;
-            line-height: 17px;
-            width: 17px;
-            height: 17px;
+            font-size: 13px;
+            line-height: 13px;
+            width: 13px;
+            height: 13px;
             vertical-align: middle;
             color: @purple;
+            text-decoration: none;
         }
 
         .prev {
@@ -121,6 +124,12 @@
 
     @media (max-width: @screen-sm-min) { 
      height: 250px;
+    }
+
+    &.no-results {
+        h3{
+            padding-left: 10px;
+        }
     }
     
 

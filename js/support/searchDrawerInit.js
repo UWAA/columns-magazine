@@ -32,10 +32,12 @@ $('.drawer').drawer({
 function toggleResultsClass() {    
     $('.drawer').drawer('toggle');
     $('.search-results').toggleClass('opened');
+    console.log($('#filterToggle').html());
 };
 
+
     
-        $('#filterToggle').on("click", _.debounce(toggleResultsClass, 700, true));
+$('#filterToggle').on("click", _.debounce(toggleResultsClass, 700, true));
     
 
 // Scrape out and understand what's happening with the URI, so we can turn-on the filter buttons.

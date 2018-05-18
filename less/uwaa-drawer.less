@@ -148,6 +148,10 @@
 
 .current-filter-wrapper {    
     display: inline;
+
+    .filter-lead {
+        &:extend(.search .search-story-container .date);        
+    }
     
 
     &:before {
@@ -203,10 +207,21 @@
     margin-left: -15px;
     width: 250px;
     background-color: @purple;
-    
-    
-    
 
+    .chevron {
+        fill: @white;
+        width: 44px;
+        height: 44px;
+    }
+    
+    &:after {
+        content: "Choose Filters";
+
+        .drawer-open & {   // THIS IS AMAZING!!!!!!!
+              content: "Hide Filters";
+        }
+    } 
+ 
 }
 
 #FilterSearch {
