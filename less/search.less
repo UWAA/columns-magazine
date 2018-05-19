@@ -210,9 +210,31 @@
                 @media (max-width: @screen-xs-max) {                                        
                     right: 0;                        
                     bottom: -50px;
+                    display: none;
+                    visibility: hidden;                    
 
                 }
+
+            
             }
+
+}
+
+.mobile-search-row {
+    .make-row();
+    display: none;
+    visibility: hidden;
+    padding: 0 10px 10px;
+
+    #searchSiteMobile {
+        right: 10px;
+    }
+    
+    @media (max-width: @screen-xs-max) {                                                            
+        display: block;
+        visibility: visible;                    
+        }
+
 
 }
 

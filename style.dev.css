@@ -101,6 +101,8 @@
 .search .current-filters-row:after,
 .search .results-row:before,
 .search .results-row:after,
+.search .mobile-search-row:before,
+.search .mobile-search-row:after,
 .search-results:before,
 .search-results:after {
   content: " ";
@@ -132,6 +134,7 @@
 .search .search-results:after,
 .search .current-filters-row:after,
 .search .results-row:after,
+.search .mobile-search-row:after,
 .search-results:after {
   clear: both;
 }
@@ -187,6 +190,8 @@
 .search .current-filters-row:after,
 .search .results-row:before,
 .search .results-row:after,
+.search .mobile-search-row:before,
+.search .mobile-search-row:after,
 .search-results:before,
 .search-results:after {
   content: " ";
@@ -218,6 +223,7 @@
 .search .search-results:after,
 .search .current-filters-row:after,
 .search .results-row:after,
+.search .mobile-search-row:after,
 .search-results:after {
   clear: both;
 }
@@ -3049,6 +3055,56 @@ p.excerpt {
   .search .search-header .search-widescreen {
     right: 0;
     bottom: -50px;
+    display: none;
+    visibility: hidden;
+  }
+}
+.search .mobile-search-row {
+  margin-left: -15px;
+  margin-right: -15px;
+  display: none;
+  visibility: hidden;
+  padding: 0 10px 10px;
+}
+.search .mobile-search-row:before,
+.search .mobile-search-row:after {
+  content: " ";
+  display: table;
+}
+.search .mobile-search-row:after {
+  clear: both;
+}
+.search .mobile-search-row:before,
+.search .mobile-search-row:after {
+  content: " ";
+  display: table;
+}
+.search .mobile-search-row:after {
+  clear: both;
+}
+.search .mobile-search-row:before,
+.search .mobile-search-row:after {
+  content: " ";
+  display: table;
+}
+.search .mobile-search-row:after {
+  clear: both;
+}
+.search .mobile-search-row:before,
+.search .mobile-search-row:after {
+  content: " ";
+  display: table;
+}
+.search .mobile-search-row:after {
+  clear: both;
+}
+.search .mobile-search-row #searchSiteMobile {
+  right: 10px;
+}
+@media (max-width: 767px) {
+  .search .mobile-search-row {
+    display: block;
+    visibility: visible;
   }
 }
 .search .uwaa-branding-search .search {
