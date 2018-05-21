@@ -2870,6 +2870,14 @@ p.excerpt {
     width: 50%;
   }
 }
+@media (max-width: 768px) {
+  .search .pagination-controls {
+    text-align: center;
+    word-spacing: 3.5rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+}
 .search .pagination-controls a {
   text-decoration: none;
   color: #3d3d3d;
@@ -3098,6 +3106,12 @@ p.excerpt {
 .search .mobile-search-row:after {
   clear: both;
 }
+@media (max-width: 768px) {
+  .search .mobile-search-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .search .mobile-search-row #searchSiteMobile {
   right: 10px;
 }
@@ -3279,8 +3293,20 @@ p.excerpt {
   margin-left: -15px;
   height: 100%;
 }
+@media (max-width: 768px) {
+  #search-drawer {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 .search-container {
   min-height: 990px;
+}
+@media (max-width: 768px) {
+  .search-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .search-results {
   margin-right: auto;
@@ -3382,6 +3408,12 @@ p.excerpt {
   width: 250px;
   position: relative;
   background-color: #dddddd;
+}
+@media (max-width: 768px) {
+  .drawer--left .drawer-nav {
+    width: 100%;
+    left: -74.25rem;
+  }
 }
 .drawer-menu {
   width: 100%;
@@ -3492,6 +3524,12 @@ p.excerpt {
   margin-left: -15px;
   width: 250px;
   background-color: #4b2e83;
+}
+@media (max-width: 768px) {
+  #filterToggle {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 #filterToggle .chevron {
   fill: #ffffff;

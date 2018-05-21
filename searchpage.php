@@ -84,7 +84,7 @@ use \Columns\SearchWalker;
 <div class="archive-header search-header">
   <h1>Search</h1>
     <div class="columns-form search-form search-widescreen">
-              <form role="search" id="search-form-widescreen">
+              <form role="search" class="columns-search-form" id="search-form-widescreen">
                 <input id="Search" name="search" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_query_var('search')  ); ?>" maxlength="255">
                 <input id="searchSiteWidescreen" class="inlineSubmit columns-search-input-submit" type="submit">
               </form>
@@ -96,9 +96,9 @@ use \Columns\SearchWalker;
   <div class="mobile-search-row">
     <div class="search search-mobile">
               <div class="columns-form search-form" id="search-form-mobile">
-                <form role="search" method="get" id="search-form-mobile">
+                <form role="search" class="columns-search-form" id="search-form-mobile">
                   <input id="Search" name="search" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_query_var('search')  ); ?>" maxlength="255">
-                  <input id="searchSiteMobile" name="search" class="inlineSubmit" type="submit" class="columns-search-input-submit">
+                  <input id="searchSiteMobile" name="search" class="inlineSubmit columns-search-input-submit"" type="submit">
                 </form>
               </div>        
             </div> 

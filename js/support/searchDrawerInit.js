@@ -32,7 +32,7 @@ $('.drawer').drawer({
 function toggleResultsClass() {    
     $('.drawer').drawer('toggle');
     $('.search-results').toggleClass('opened');    
-    console.log(hasActiveFilter);
+    
     
     $('.drawer').removeClass("filters-active");
     
@@ -55,6 +55,7 @@ var URL = new Uri(location);
 var catQuery = URL.getQueryParamValue('cat');
 var issueQuery = URL.getQueryParamValue('issue');
 var orderQuery = URL.getQueryParamValue('order');
+var searchQuery = URL.getQueryParamValue('search');
 var hasActiveFilter = false;
 
 if (typeof catQuery !== 'undefined') {
@@ -73,6 +74,12 @@ if (typeof issueQuery !== 'undefined') {
         $(".issue-menu").find("[data-issue=" + element + "]").parent().addClass('active');
         checkParent($(".issue-menu").find("[data-issue=" + element + "]"))
     });
+}
+
+if (typeof searchQuery !== 'undefined') {
+        
+        
+        
 }
 
 
@@ -116,7 +123,7 @@ function checkParent($targetElement) {
     var $filterSiblings = $targetElement.parent().siblings();
     var $areOtherFiltersActive = $filterSiblings.hasClass('active');
 
-    console.log("blanket false from parentCheck");
+    
     hasActiveFilter = false;
 
     if ($isParentCategory) {        
@@ -126,12 +133,12 @@ function checkParent($targetElement) {
     if (!$isFilterParentActive && !$areOtherFiltersActive) {
         $filterParent.addClass('active');
         hasActiveFilter = true;
-        console.log("setting to true- parent no active class");
+        
 
     }
 
     if ($isFilterParentActive && !$areOtherFiltersActive) {
-        console.log("false from no other active filters");
+        
         $filterParent.removeClass('active');
         $('.drawer').removeClass("filters-active");
         hasActiveFilter = false;
@@ -145,7 +152,7 @@ function checkParent($targetElement) {
 // Toggles active state on filters, does not dropdown more menu items.  
 
 $('.drawer-menu .filter-item').not('.parent-category').click(function (e) {
-    e.stopPropagation();
+    e.stopPropagation();    
     $(this).parent().toggleClass('active');    
 
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
@@ -153,15 +160,13 @@ $('.drawer-menu .filter-item').not('.parent-category').click(function (e) {
 
     checkParent($(this));
 
-    console.log("setting to true- filter item click");
+    
     // hasActiveFilter = true;
 });
 
 
 
-// Search/Filter Submit Button Handler.  
-$('.columns-search-input-submit').click(function (e) {
-
+function sendNewSearch() {
     // Determine currently active filters
     var filterValues = [];
     var issueFilters = [];
@@ -180,11 +185,10 @@ $('.columns-search-input-submit').click(function (e) {
 
     // Builds a new URL and refreshes the page.
     var newURL = URL.clone()
-        .setPath('/search') // pagination?
+        .setPath('/search')
         .deleteQueryParam('cat')
-        .deleteQueryParam('issue');
-
-
+        .deleteQueryParam('issue')
+        .deleteQueryParam('searchpage');
 
 
     if (filterValues.length > 0) {
@@ -196,12 +200,24 @@ $('.columns-search-input-submit').click(function (e) {
     }
 
     if (searchQuery) {
+        newURL.deleteQueryParam('search');
         newURL.replaceQueryParam('search', searchQuery)
     }
 
-
+    
     location.replace(newURL.toString())
+    
+}
+
+// Search/Filter Submit Button Handler.  
+$('.columns-search-input-submit').click(function (e) {
+sendNewSearch($(this));   
 });
+
+    $('.columns-search-form').submit(function (e) {        
+        e.preventDefault();
+        sendNewSearch();
+    })
 
 // UI Elements
 
@@ -226,12 +242,12 @@ $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
             $(".columns-search-input-field").not($(this).each(function () {
                 $(".columns-search-input-field").val(element.currentTarget.value)
                 $(".search-filter-item").html(element.currentTarget.value).addClass("active");
-            }))
+        }))
 
             break;
     }
 
-}, 500));
+}, 50));  // Potentil issue here because sendNewSearch() uses the first box as it's search value.  On mobile, if you submit too fast it will 
 
 });
 
