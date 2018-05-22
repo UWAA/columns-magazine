@@ -114,14 +114,14 @@ class Utilities{
      * see https://vzurczak.wordpress.com/2013/06/15/extend-the-default-wordpress-search/
      * credits to Vincent Zurczak for the base query structure/spliting tags section
      */
-    public function advanced_custom_search( $where, &$wp_query ) {
+    public function advanced_custom_search( $where, $wp_query ) {
         global $wpdb;
 
         if ( empty( $where ))
             return $where;
 
         // get search expression
-        $terms = $wp_query->query_vars[ 'search' ];
+        $terms = $wp_query->query_vars[ 's' ];
 
         // explode search expression to get search terms
         $exploded = explode( ' ', $terms );
@@ -139,7 +139,7 @@ class Utilities{
                 ($wpdb->posts.post_title LIKE '%$tag%')
                 OR ($wpdb->posts.post_content LIKE '%$tag%')
                 OR EXISTS (
-                  SELECT * FROM wp_postmeta
+                  SELECT * FROM $wpdb->postmeta
                       WHERE post_id = $wpdb->posts.ID
                         AND (";
             foreach ($list_searcheable_acf as $searcheable_acf) :
@@ -152,7 +152,7 @@ class Utilities{
                 $where .= ")
                 )
                 OR EXISTS (
-                  SELECT * FROM wp_comments
+                  SELECT * FROM $wpdb->comments
                   WHERE comment_post_ID = $wpdb->posts.ID
                     AND comment_content LIKE '%$tag%'
                 )
