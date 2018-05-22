@@ -121,7 +121,7 @@ class Utilities{
             return $where;
 
         // get search expression
-        $terms = $wp_query->query_vars[ 's' ];
+        $terms = $wp_query->query_vars[ 'search' ];
 
         // explode search expression to get search terms
         $exploded = explode( ' ', $terms );
