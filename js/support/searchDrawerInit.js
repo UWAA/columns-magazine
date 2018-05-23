@@ -185,7 +185,7 @@ function sendNewSearch() {
 
     // Builds a new URL and refreshes the page.
     var newURL = URL.clone()
-        .setPath('/search')
+        // .setPath('/search')
         .deleteQueryParam('cat')
         .deleteQueryParam('issue')
         .deleteQueryParam('searchpage');
