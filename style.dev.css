@@ -206,6 +206,9 @@ body {
   font-size: 17px;
   line-height: 1.7;
 }
+li {
+  font-family: "Merriweather", sans-serif;
+}
 h1,
 h2,
 h3,
