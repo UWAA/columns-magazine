@@ -21,6 +21,10 @@ class Utilities{
         add_filter( 'pre_get_posts', array($this, 'namespace_add_custom_types' ));
         add_action( 'admin_init', array($this, 'addOrderToPosts' ));
         add_filter( 'posts_search', array($this, 'advanced_custom_search'), 500, 2 );
+        add_filter( 'body_class', array($this, 'custom_class') );
+        add_filter('query_vars', array($this, 'searchVariables') );
+
+        
 	}
 
 
@@ -110,7 +114,7 @@ class Utilities{
      * see https://vzurczak.wordpress.com/2013/06/15/extend-the-default-wordpress-search/
      * credits to Vincent Zurczak for the base query structure/spliting tags section
      */
-    public function advanced_custom_search( $where, &$wp_query ) {
+    public function advanced_custom_search( $where, $wp_query ) {
         global $wpdb;
 
         if ( empty( $where ))
@@ -132,11 +136,11 @@ class Utilities{
         foreach( $exploded as $tag ) :
             $where .= "
               AND (
-                (wp_posts.post_title LIKE '%$tag%')
-                OR (wp_posts.post_content LIKE '%$tag%')
+                ($wpdb->posts.post_title LIKE '%$tag%')
+                OR ($wpdb->posts.post_content LIKE '%$tag%')
                 OR EXISTS (
-                  SELECT * FROM wp_postmeta
-                      WHERE post_id = wp_posts.ID
+                  SELECT * FROM $wpdb->postmeta
+                      WHERE post_id = $wpdb->posts.ID
                         AND (";
             foreach ($list_searcheable_acf as $searcheable_acf) :
               if ($searcheable_acf == $list_searcheable_acf[0]):
@@ -148,23 +152,23 @@ class Utilities{
                 $where .= ")
                 )
                 OR EXISTS (
-                  SELECT * FROM wp_comments
-                  WHERE comment_post_ID = wp_posts.ID
+                  SELECT * FROM $wpdb->comments
+                  WHERE comment_post_ID = $wpdb->posts.ID
                     AND comment_content LIKE '%$tag%'
                 )
                 OR EXISTS (
-                  SELECT * FROM wp_terms
-                  INNER JOIN wp_term_taxonomy
-                    ON wp_term_taxonomy.term_id = wp_terms.term_id
-                  INNER JOIN wp_term_relationships
-                    ON wp_term_relationships.term_taxonomy_id = wp_term_taxonomy.term_taxonomy_id
+                  SELECT * FROM $wpdb->terms
+                  INNER JOIN $wpdb->term_taxonomy
+                    ON $wpdb->term_taxonomy.term_id = $wpdb->terms.term_id
+                  INNER JOIN $wpdb->term_relationships
+                    ON $wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id
                   WHERE (
                     taxonomy = 'post_tag'
                         OR taxonomy = 'category'
                         OR taxonomy = 'myCustomTax'
                     )
-                    AND object_id = wp_posts.ID
-                    AND wp_terms.name LIKE '%$tag%'
+                    AND object_id = $wpdb->posts.ID
+                    AND $wpdb->terms.name LIKE '%$tag%'
                 )
             )";
         endforeach;
@@ -196,6 +200,24 @@ public function example_mejs_add_container_class() {
 	})();
 </script>
 <?php
+}
+
+
+// Related to search, maybe pull out...
+public function custom_class( $classes ) {
+    if ( is_page_template( 'searchpage.php' ) ) {
+        $classes[] = 'search';
+    }
+    return $classes;
+}
+
+
+// add issue to search
+function searchVariables( $qvars )
+{
+  $qvars[] = 'issue';
+  $qvars[] = 'searchpage';
+  return $qvars;
 }
 
 
