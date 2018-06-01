@@ -108,7 +108,12 @@ use \Columns\SearchWalker;
  
 
   
-    <button id="filterToggle" name="drawerToggle" class="drawer-button">      
+    <button id="filterToggle" name="drawerToggle" class="drawer-button">
+      <svg class="chevron">
+        <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols3.svg#carrot-large" ?>"
+     x="0" y="0" width="100%" height="100%"/>
+      </svg>
+    
     </button>
   
   
@@ -220,7 +225,14 @@ use \Columns\SearchWalker;
 
           if ($field) {
             foreach ($field['choices'] as $issue=>$value) {
-              echo '<span class="filter-item" data-issue="'. $issue .'">' . $value . '</span>';
+              ?>
+              <span class="filter-item" data-issue="<?php echo $issue ?>">
+                <?php echo $value ?>
+                <svg>
+                  <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols3.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
+                </svg>
+              </span>
+              <?php
             }
 
 
@@ -237,8 +249,16 @@ use \Columns\SearchWalker;
                   )
                   );
 
-                  foreach ($categoryList as $category) {
-                    echo '<span class="filter-item" data-cat_id="'. $category->term_id .'">' . $category->name . '</span>';
+                  foreach ($categoryList as $category) {                    
+
+                    ?>
+              <span class="filter-item" data-cat_id="<?php echo $category->term_id ?>">
+                <?php echo $category->name ?>
+                <svg class="close-no-bg-sprite">
+                  <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols3.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
+                </svg>
+              </span>
+              <?php
                   }
 
             ?>

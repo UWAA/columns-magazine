@@ -3499,12 +3499,9 @@ p.excerpt {
 .current-filter-wrapper .filter-item.active {
   display: inline;
 }
-.current-filter-wrapper .filter-item:after {
-  content: "x";
-  padding: 0 10px;
-}
-.current-filter-wrapper .filter-item:hover {
-  background-color: #85754d;
+.current-filter-wrapper .filter-item .close-no-bg-sprite {
+  width: 20px;
+  height: 20px;
 }
 .current-filter-wrapper-search:before {
   content: none;
@@ -3536,8 +3533,12 @@ p.excerpt {
 }
 #filterToggle .chevron {
   fill: #ffffff;
-  width: 44px;
-  height: 44px;
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+  left: 25px;
+  position: absolute;
+  transform: rotateY(180deg);
 }
 #filterToggle:after {
   content: "Choose Filters";

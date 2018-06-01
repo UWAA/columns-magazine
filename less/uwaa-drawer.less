@@ -175,22 +175,25 @@
     }
     
 
+
+
     .filter-item {
         display: none;
 
         &.active {
             display: inline;
         }
-        
 
-            &:after {
-                content: "x";  //make a glyph or whatever...
-                padding: 0 10px; 
-            }
+        .close-no-bg-sprite {
+            // fill: none;            
+            width: 20px;
+            height: 20px;           
+            
+        }
 
-            &:hover {
-                background-color: @darkgold;
-            }
+            // &:hover {
+            //     background-color: @darkgold;
+            // }
         }
     }
 
@@ -229,9 +232,17 @@
     }
 
     .chevron {
-        fill: @white;
-        width: 44px;
-        height: 44px;
+        fill: @white;        
+        height: 25px;
+        width: 25px;
+        vertical-align: middle;
+        left: 25px;
+        position: absolute;
+        transform: rotateY(180deg);
+
+        // .drawer-open & {   // THIS IS AMAZING!!!!!!!
+              
+        // }
     }
     
     &:after {
