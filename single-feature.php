@@ -19,7 +19,7 @@ if (get_field('superhero_custom_crop_widescreen')) {
               ?>
               <style type="text/css">
                 @media (min-width: 1800px) {
-                  <?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                  <?php echo " ." .  get_post_field( 'post_name', get_post() ); ?>  {
                       background-position: <?php echo get_field('superhero_custom_crop_widescreen') ?> !IMPORTANT;
                       }
                 }
@@ -30,11 +30,11 @@ if (get_field('superhero_custom_crop_widescreen')) {
               <?php
             }
 
-            if (get_field('superhero_custom_crop_mediumscreen')) {              
+            if (get_field('superhero_custom_crop_mediumscreen')) {
               ?>
               <style type="text/css">
                 @media only screen and (min-width: 480px) and (max-width: 1800px) {
-                  <?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                  <?php echo " ." . get_post_field( 'post_name', get_post() ); ?>  {
                       background-position: <?php echo get_field('superhero_custom_crop_mediumscreen') ?> !IMPORTANT; 
                       }
                 }
@@ -49,7 +49,7 @@ if (get_field('superhero_custom_crop_widescreen')) {
 
               ?>
               <style type="text/css">                
-                  <?php echo get_post_field( 'post_name', get_post() ); ?>  {
+                  <?php echo " ." . get_post_field( 'post_name', get_post() ); ?>  {
                       background-size: contain !IMPORTANT;
                       background-position: center center !IMPORTANT;
                 
