@@ -110,7 +110,7 @@ use \Columns\SearchWalker;
   
     <button id="filterToggle" name="drawerToggle" class="drawer-button">
       <svg class="chevron">
-        <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols3.svg#carrot-large" ?>"
+        <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#carrot-large" ?>"
      x="0" y="0" width="100%" height="100%"/>
       </svg>
     
@@ -229,7 +229,7 @@ use \Columns\SearchWalker;
               <span class="filter-item" data-issue="<?php echo $issue ?>">
                 <?php echo $value ?>
                 <svg>
-                  <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols3.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
+                  <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
                 </svg>
               </span>
               <?php
@@ -255,7 +255,7 @@ use \Columns\SearchWalker;
               <span class="filter-item" data-cat_id="<?php echo $category->term_id ?>">
                 <?php echo $category->name ?>
                 <svg class="close-no-bg-sprite">
-                  <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols3.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
+                  <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
                 </svg>
               </span>
               <?php

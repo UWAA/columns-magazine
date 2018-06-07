@@ -121,6 +121,17 @@
             padding: 0 0 0 10px;
             line-height: 44px;
             height: 44px;
+
+            &:after {
+
+                width: 22px;
+                height: 22px;  
+                background-image: url(assets\Columns_Sprite_4_Symbols4.svg#close-gray-bg);                
+                background-repeat: no-repeat;
+                background-size: 100% 100%;                
+                content: "";
+
+            }
         }
 
         }
@@ -172,9 +183,7 @@
     &:before {
         content:  "|";
         padding: 0 10px;                
-    }
-    
-
+    }    
 
 
     .filter-item {
@@ -184,16 +193,15 @@
             display: inline;
         }
 
-        .close-no-bg-sprite {
-            // fill: none;            
-            width: 20px;
-            height: 20px;           
-            
+        &:hover {
+        cursor: pointer;
         }
 
-            // &:hover {
-            //     background-color: @darkgold;
-            // }
+        .close-no-bg-sprite {            
+            width: 20px;
+            height: 20px;            
+        }
+            
         }
     }
 
