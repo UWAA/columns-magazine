@@ -44,7 +44,7 @@ function toggleResultsClass() {
 };
 
 $(window).on("resize", function resetDrawer() {
-    $('.drawer').drawer('toggle');
+    $('.drawer').drawer('close');
     $('.search-results').removeClass('opened');
 });
 
