@@ -99,6 +99,7 @@
         line-height: 44px;
         padding-left:10px;
         padding-top: 30px;
+        text-transform: uppercase;
     }
 
 
@@ -108,6 +109,7 @@
         background-color: @drawergray;
         line-height: 44px;
         min-height: 44px;
+        font-family: 'Open Sans', sans-serif;
 
 
         &.active {
@@ -118,7 +120,7 @@
 
 
             .drawer-dropdown-menu-item {
-            padding: 0 0 0 10px;
+            padding: 0 0 0 24px;
             line-height: 44px;
             height: 44px;
 
@@ -195,11 +197,21 @@
 
         &:hover {
         cursor: pointer;
+        color: lighten(@lightgray, 25%);
         }
 
         .close-no-bg-sprite {            
-            width: 20px;
-            height: 20px;            
+            width: 16px;
+            height: 16px;            
+            vertical-align: -3px;
+            margin-right: 5px;
+
+            &:hover {
+                cursor: pointer;
+                color: lighten(@lightgray, 25%);
+
+                // TODO: Icon must also lighten up
+            }
         }
             
         }
@@ -233,6 +245,8 @@
     margin-left: -15px;
     width: 250px;
     background-color: @purple;
+    font-weight: 400;
+    padding-bottom: 5px;
 
     @media (max-width: @screen-sm-min) { 
      width: 100%;     
@@ -241,12 +255,13 @@
 
     .chevron {
         fill: @white;        
-        height: 25px;
-        width: 25px;
+        height: 21px;
+        width: 21px;
         vertical-align: middle;
         left: 25px;
         position: absolute;
-        transform: rotateY(180deg);
+        transform: rotate(90deg);
+        top: 10px;
 
         // .drawer-open & {   // THIS IS AMAZING!!!!!!!
               
@@ -269,7 +284,8 @@
 
 #FilterSearch {
     background-color: @janegray;
-    margin-top: 30px;
+    margin-top: 4px;
+    font-weight: 400;
 
     &:active {
         background-color: @purple;        

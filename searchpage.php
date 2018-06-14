@@ -110,7 +110,7 @@ use \Columns\SearchWalker;
   
     <button id="filterToggle" name="drawerToggle" class="drawer-button">
       <svg class="chevron">
-        <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#carrot-large" ?>"
+        <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#carrot-dark" ?>"
      x="0" y="0" width="100%" height="100%"/>
       </svg>
     
@@ -125,6 +125,7 @@ use \Columns\SearchWalker;
 
     <div class="drawer-nav" role="navigation">
         <!-- Category Menu -->
+        <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit drawer-button" type="submit" value="SearchSideBar">apply filters</button>
           <ul class="drawer-menu issue-menu">
           <li class="drawer-menu-section-title">Search Issue:</li>
           <li><a href=#>Entire Site</a></li>
@@ -192,7 +193,7 @@ use \Columns\SearchWalker;
               );
             ?>
           </ul>
-            <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit drawer-button" type="submit" value="SearchSideBar">apply filters</button>
+            <!-- <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit drawer-button" type="submit" value="SearchSideBar">apply filters</button> -->
     </div>
   </div>
 
@@ -228,7 +229,7 @@ use \Columns\SearchWalker;
               ?>
               <span class="filter-item" data-issue="<?php echo $issue ?>">
                 <?php echo $value ?>
-                <svg>
+                <svg class="close-no-bg-sprite">
                   <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
                 </svg>
               </span>
