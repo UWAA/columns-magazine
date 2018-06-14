@@ -21,7 +21,7 @@ $('.drawer').drawer({
     iscroll: {
         // Configuring the iScroll
         // https://github.com/cubiq/iscroll#configuring-the-iscroll
-        mouseWheel: true,
+        mouseWheel: false,
         preventDefault: false
     },
     showOverlay: true
@@ -42,6 +42,11 @@ function toggleResultsClass() {
     
 
 };
+
+$(window).on("resize", function resetDrawer() {
+    $('.drawer').drawer('toggle');
+    $('.search-results').removeClass('opened');
+});
 
 
     
