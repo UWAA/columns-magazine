@@ -120,6 +120,13 @@ class SearchWalker extends \Walker_Category {
         if ($args['has_children']) {
             $link .= "</a><a class=\"drawer-dropdown dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" href=\"#\" >";    
         }
+
+        if ($args['has_children'] == 0) {
+            $link .= "<svg class=\"close-no-bg-sprite\">
+                        <use href=\" ". get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#close-no-bg\" ?>\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"/>
+                      </svg>";    
+        }
+
         $link .= '</a>';        
  
         if ( ! empty( $args['feed_image'] ) || ! empty( $args['feed'] ) ) {

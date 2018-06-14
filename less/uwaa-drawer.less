@@ -110,30 +110,36 @@
         line-height: 44px;
         min-height: 44px;
         font-family: 'Open Sans', sans-serif;
+        svg {
+                display: none;
+            }
 
 
         &.active {
             background-color: @activedrawergray;
+
+            
+
+                & > a > svg {
+                    display: inline-block;
+                    height: 22px;
+                    width: 22px;
+                    margin-left: 15px;
+                    vertical-align: middle;
+                    margin-bottom: 4px;
+                }
+
+            
         }
 
         .drawer-dropdown-menu {
-
 
             .drawer-dropdown-menu-item {
             padding: 0 0 0 24px;
             line-height: 44px;
             height: 44px;
 
-            &:after {
-
-                width: 22px;
-                height: 22px;  
-                background-image: url(assets\Columns_Sprite_4_Symbols4.svg#close-gray-bg);                
-                background-repeat: no-repeat;
-                background-size: 100% 100%;                
-                content: "";
-
-            }
+            
         }
 
         }
