@@ -193,7 +193,8 @@ function sendNewSearch() {
         // .setPath('/search')
         .deleteQueryParam('cat')
         .deleteQueryParam('issue')
-        .deleteQueryParam('searchpage');
+        .deleteQueryParam('searchpage')
+        .deleteQueryParam('search');
 
 
     if (filterValues.length > 0) {
@@ -204,8 +205,7 @@ function sendNewSearch() {
         newURL.replaceQueryParam('issue', issueFilters.join(","));
     }
 
-    if (searchQuery) {
-        newURL.deleteQueryParam('search');
+    if (searchQuery.length > 0) {        
         newURL.replaceQueryParam('search', searchQuery)
     }
 
