@@ -310,23 +310,12 @@ use \Columns\SearchWalker;
     <div class="results-row">
 
 
-      <?php
-
-      
-      
-      
-        
-
-      if ($search->have_posts() ):
-
-        ?>
-        
-        
+      <?php if ($search->have_posts() ): ?>
+               
         
         <div class="result-display-controls">
-        <a class="order-oldest" href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>"><span>Oldest</span></a>
-        <a class="order-newest" href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>"><span>Newest</span></a>
-        
+          <a class="order-oldest" href="<?php echo esc_url(add_query_arg( 'order', 'asc')); ?>"><span>Oldest</span></a>
+          <a class="order-newest" href="<?php echo esc_url(add_query_arg( 'order', 'desc')); ?>"><span>Newest</span></a>        
         </div>
 
             <div class="pagination-controls">
@@ -349,9 +338,8 @@ use \Columns\SearchWalker;
                   ) ); 
               ?>
             </div>
-      </div>
+    </div>      
       
-      <div class="results-row">
 
         <?php
        
@@ -391,6 +379,23 @@ use \Columns\SearchWalker;
         //also extract out the issue date for the post here
         //this is garbage...         
 
+        if ($search->current_post == 0):
+
+          echo '<div class="results-row">';
+
+        endif;
+        
+        if ($search->current_post % 2 == 0):
+
+          echo '</div>';
+          echo '<div class="results-row">';
+
+        else:
+        
+        echo  '';
+
+        endif;
+
 
         $articleDateObject = get_field('columns_print_issue', $post->ID);
 
@@ -409,7 +414,6 @@ use \Columns\SearchWalker;
             get_template_part( 'partials/search_content' );
             break;
         }
-        
 
         endwhile;
 
@@ -440,7 +444,7 @@ use \Columns\SearchWalker;
               ?>
         </div>
         </div>
-        <!-- end results row -->
+        
         
         <?php
 
