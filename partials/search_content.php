@@ -11,9 +11,6 @@
     $field = get_field('columns_print_issue', $post->ID);
     
         echo '<p class="date issue-date">' . $field['label'] . '</p>';
-    
-
-
    
  }
   

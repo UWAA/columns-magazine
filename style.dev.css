@@ -2992,7 +2992,7 @@ p.excerpt {
   min-height: 1px;
   padding-left: 20px;
   padding-right: 20px;
-  height: 200px;
+  height: auto;
 }
 @media (min-width: 768px) {
   .search .search-story-container {
@@ -3004,11 +3004,6 @@ p.excerpt {
   .search .search-story-container {
     float: left;
     width: 50%;
-  }
-}
-@media (max-width: 768px) {
-  .search .search-story-container {
-    height: 250px;
   }
 }
 .search .search-story-container.no-results h3 {

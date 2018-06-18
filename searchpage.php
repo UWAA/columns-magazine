@@ -398,7 +398,18 @@ use \Columns\SearchWalker;
 
         $issuesInSearch[] = $date;
 
-        get_template_part( 'partials/search_content' );        
+        $postType = get_post_type($post->ID);
+
+        switch ($postType) {
+          case 'media':
+            get_template_part( 'partials/search_media' );
+            break;
+          
+          default:
+            get_template_part( 'partials/search_content' );
+            break;
+        }
+        
 
         endwhile;
 
@@ -484,7 +495,9 @@ use \Columns\SearchWalker;
 
                             <div class="carousel-cell">
                               <div class="image-wrapper">
-                                <a href="http://">
+                                <a href="<?php echo esc_url( home_url( '/search' ) ) . '?issue=' . strtolower(date_format($issueDate, 'F_Y')) ?>
+
+">
                                 <?php echo wp_get_attachment_image($coverImage, 'full', false, $atts); ?>
                                 <div class="article-date">
                                   <?php echo date_format($issueDate, 'F Y');?>
