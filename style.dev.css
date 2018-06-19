@@ -3040,10 +3040,10 @@ p.excerpt {
 }
 .search .search-story-container hr {
   border: none;
-  border-top: 1px dotted #000000;
+  border-top: 2px dotted #999999;
   color: #ffffff;
   background-color: #ffffff;
-  height: 1px;
+  height: 2px;
   width: 100%;
 }
 .search .search-header {
