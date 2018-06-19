@@ -1,6 +1,6 @@
 
 <div class="search-story-container">
-
+<hr>
 
 <?php  
 
@@ -22,6 +22,6 @@
 </h2>
 
 <?php the_excerpt(); ?>
-<hr>
+
 
 </div>

@@ -2,6 +2,8 @@
 
 <div class="search-story-container">
 
+<hr>
+
     <?php
 
         if(get_field('columns_external_media_file')) {
@@ -30,6 +32,6 @@
     </h2>
 
     <?php echo "<p>". wp_strip_all_tags(wp_kses(get_the_excerpt(), Utilities::$allowedHTML)) . "</p>"; ?>
-    <hr>
+    
 
 </div>
