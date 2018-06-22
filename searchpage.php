@@ -30,8 +30,9 @@ Template Name: Search Page
 
       if(array_key_exists('issue', $search_query_string)) {
 
-        $search_query_string['meta_key'] = 'columns_print_issue';
-        $search_query_string['meta_value'] = $search_query_string['issue'];
+        if ($search_query_string['issue'] != 'all') {
+          $search_query_string['meta_key'] = 'columns_print_issue';
+          $search_query_string['meta_value'] = $search_query_string['issue'];
 
         $multipleIssueQueryString = preg_split("/,/", $search_query_string['issue']);
 
@@ -53,6 +54,9 @@ Template Name: Search Page
        
         
         unset($search_query_string['issue']);
+        }
+
+        
 
         
         
@@ -120,16 +124,40 @@ use \Columns\SearchWalker;
 
   <div id="search-drawer" role="search">
 
-  
+   <?php 
 
+              // check if the repeater field has rows of data
+              if( have_rows('columns_print_issues', 'option') ):
+              
+                // loop through the rows of data
+                  while ( have_rows('columns_print_issues', 'option') ) : the_row();
+              
+                      
+                      
+                    if(get_sub_field('is_current_issue', false, false)):
+
+                    
+                      $currentIssue = new DateTime(get_sub_field('columns_print_issue_publication_date', false, false));
+                      break;
+
+                    endif;
+
+                  endwhile;
+                
+                else :
+              
+                  // no rows found
+              
+              endif;
+?>
 
     <div class="drawer-nav" role="navigation">
         <!-- Category Menu -->
         <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit drawer-button" type="submit" value="SearchSideBar">apply filters</button>
           <ul class="drawer-menu issue-menu">
-          <li class="drawer-menu-section-title">Search Issue:</li>
-          <li><a href=#>Entire Site</a></li>
-          <li><a href=#>Current Issue</a></li>
+          <li class="cat-item drawer-menu-section-title">Search Issue:</li>
+          <li class ="cat-item"><a data-issue="all" href="?issue=all">Entire Site</a></li>
+          <li class ="cat-item"><a data-issue="<?php echo esc_attr(lcfirst($currentIssue->format('F_Y'))); ?>" href="?issue=<?php echo esc_attr(lcfirst($currentIssue->format('F_Y'))); ?>">Current Issue</a></li>
 
                   
           <li class="drawer-dropdown">
@@ -161,7 +189,7 @@ use \Columns\SearchWalker;
                       ?>
 
                       <li class="cat-item">
-                        <a href="#"  class="drawer-dropdown-menu-item filter-item issue-filter" data-issue="<?php echo lcfirst($date->format('F_Y')); ?>">                      
+                        <a href="#"  class="drawer-dropdown-menu-item filter-item issue-filter" data-issue="<?php echo esc_attr(lcfirst($date->format('F_Y'))); ?>">                      
                       <?php echo $date->format('M Y'); ?>
                       <svg class="close-no-bg-sprite">
                         <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
@@ -191,7 +219,8 @@ use \Columns\SearchWalker;
               'title_li' => '',
               'class' => 'drawer-menu',
               'walker' => new SearchWalker,
-              'exclude' => array('11', '1')  //Issue here with test vs prod
+              // 'exclude' => array('11', '1')  
+              'exclude' => array('1')  
               )
               );
             ?>

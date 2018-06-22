@@ -73,6 +73,7 @@ if (typeof catQuery !== 'undefined') {
 }
 
 if (typeof issueQuery !== 'undefined') {
+    
     var activeCategoriesFromURL = issueQuery.split(",");
     activeCategoriesFromURL.forEach(function (element) {
         $(".search-container").find("[data-issue=" + element + "]").toggleClass('active');
@@ -169,7 +170,7 @@ $('.drawer-menu .filter-item').not('.parent-category').click(function (e) {
     // hasActiveFilter = true;
 });
 
-
+// TODO default "choose/change on new page load"
 
 function sendNewSearch() {
     // Determine currently active filters
