@@ -32,7 +32,7 @@
 
     <?php
 
-    if ($name === "Search") {        
+    if ($name === "search") {        
         get_template_part("partials/columns_header_search");
     } else {        
         get_template_part("partials/columns_header");

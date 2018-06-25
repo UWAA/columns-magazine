@@ -102,7 +102,7 @@ use \Columns\SearchWalker;
               <div class="columns-form search-form" id="search-form-mobile">
                 <form role="search" class="columns-search-form" id="search-form-mobile">
                   <input id="Search" name="search" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_query_var('search')  ); ?>" maxlength="255">
-                  <input id="searchSiteMobile" name="search" class="inlineSubmit columns-search-input-submit"" type="submit">
+                  <input id="searchSiteMobile" class="inlineSubmit columns-search-input-submit" type="submit">
                 </form>
               </div>        
             </div> 
