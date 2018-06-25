@@ -228,7 +228,7 @@ use \Columns\SearchWalker;
               'class' => 'drawer-menu',
               'walker' => new SearchWalker,
               // 'exclude' => array('11', '1')  
-              'exclude' => array('1')  
+              'exclude' => array('1', '254')  
               )
               );
             ?>
