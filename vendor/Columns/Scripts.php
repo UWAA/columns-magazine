@@ -81,6 +81,46 @@ class Scripts
         'version' => '1.0.0',
         'in_footer' => true,
         'admin'   => false
+      ),
+      'dropdown'   => array (
+        'id'      => 'dropdown',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/bootstrap/js/dropdown.js',
+        'deps'    => array(),
+        'version' => '',
+        'in_footer' => true,
+        'admin'   => false
+      ),
+      'iscroll'   => array (
+        'id'      => 'iscroll',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/iscroll/iscroll.js',
+        'deps'    => array(),
+        'version' => '1.0.0',
+        'in_footer' => true,
+        'admin'   => false
+      ),
+      'jsURI'   => array (
+        'id'      => 'jsURI',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/jsuri/Uri.js',
+        'deps'    => array(),
+        'version' => '1.0.0',
+        'in_footer' => true,
+        'admin'   => false
+      ),
+      'drawerMenu'   => array (
+        'id'      => 'drawerMenu',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/jquery-drawer/drawer.min.js',
+        'deps'    => array('iscroll', 'jquery', 'dropdown'),
+        'version' => '1.0.0',
+        'in_footer' => true,
+        'admin'   => false
+      ),
+      'drawerInit'   => array (
+        'id'      => 'drawerInit',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/support/searchDrawerInit.js',
+        'deps'    => array('jsURI','drawerMenu', 'flickity'),
+        'version' => '1.0.0',
+        'in_footer' => true,
+        'admin'   => false
       )
 
     ));

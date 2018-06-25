@@ -70,12 +70,9 @@ if ( $query->have_posts() ) {
 
             <?php
                 if(get_field("columns_print_issue")) {
-
-                      $issue = get_field_object("columns_print_issue");
-                      $value = $issue['value'];
-                      $label = $issue['choices'][ $value ];
-
-                  }
+            $issue = get_field_object("columns_print_issue");
+            $label = $issue['value'][ 'label' ];            
+        }
             ?>
             <p class="published-date"><?php echo $label; ?></p>
         </div>

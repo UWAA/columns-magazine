@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 306.045 238.083">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5b5c5e;
+      }
+
+      .cls-2 {
+        fill: #4b2e84;
+      }
+
+      .cls-3 {
+        fill: #d1d2d4;
+      }
+
+      .cls-4 {
+        fill: #9a9a99;
+      }
+
+      .cls-5 {
+        fill: #e1e1e1;
+      }
+
+      .cls-5, .cls-6 {
+        stroke: #5b5c5e;
+        stroke-miterlimit: 10;
+        stroke-width: 1.003px;
+      }
+
+      .cls-12, .cls-6 {
+        fill: none;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-8 {
+        fill: #08d;
+      }
+
+      .cls-9 {
+        fill: #85754d;
+      }
+
+      .cls-10 {
+        fill: #616264;
+      }
+
+      .cls-11 {
+        fill: #b7a57a;
+      }
+
+      .cls-13 {
+        fill: #b6a57a;
+      }
+    </style>
+    <symbol id="columns-masthead" data-name="columns-masthead" viewBox="0 0 303.09 52.166">
+      <g id="columns-logo">
+        <path class="cls-2" d="M268.072,41.5c3.428,6.446,9.686,10.6,18.254,10.6,9.612,0,16.764-4.668,16.764-13.931,0-8.521-5.066-12-12.74-15.412l-3.5-1.556c-5.514-2.446-7.972-4-7.972-8,0-3.483,2.384-5.854,6.482-5.854,3.8,0,6.333,1.63,8.27,4.891L299.663,8.3c-3.2-5.335-7.972-7.928-14.454-7.928-8.345,0-14.082,5.409-14.082,13.115,0,7.855,5.066,11.708,12.517,14.968l3.5,1.556c4.47,2,8.047,3.631,8.047,8.374,0,4.075-3.577,6.594-8.941,6.594a12.182,12.182,0,0,1-11.474-6.817Zm-2.085,10.67h.6V1.038h-7.451V34.16L226.647.3h-.6V51.425H233.5V18.3Zm-93.431-.741h7.525V18.747l17.211,20.526h.373L214.95,18.747V51.425h7.525V0H222.1L197.665,28.38,172.928,0h-.372Zm-22.575.667c10.952,0,19.3-6.15,19.3-18.451V1.038h-7.972V33.2c0,8.077-4.024,11.707-11.325,11.707-7.377,0-11.4-3.63-11.4-11.707V1.038h-7.972v32.6c0,12.3,8.345,18.451,19.372,18.451m-49.994-.667h30.324V44.386H107.959V1.038H99.987ZM71.6,44.9c-10.506,0-17.882-8-17.882-18.673S61.094,7.558,71.6,7.558s17.882,8,17.882,18.673S82.105,44.9,71.6,44.9m0,7.188c14.529,0,26.152-10.967,26.152-25.861S86.129.371,71.6.371,45.448,11.337,45.448,26.231,57.071,52.092,71.6,52.092m-45.97,0c9.835,0,16.466-3.409,21.681-10.3l-6.184-4.224a17.99,17.99,0,0,1-15.2,7.336C15.721,44.9,8.27,37.124,8.27,26.231c0-10.67,7.3-18.673,17.36-18.673,6.706,0,11.027,2.371,14.38,6.892l6.109-4.3C41.724,4,35.241.371,25.854.371A25.368,25.368,0,0,0,0,26.231C0,41.125,11.176,52.092,25.63,52.092"/>
+      </g>
+    </symbol>
+    <symbol id="close-no-bg" data-name="close-no-bg" viewBox="0 0 29.003 29.003">
+      <circle class="cls-6" cx="14.501" cy="14.501" r="14" fill="transparent" stroke="#5b5c5e"/>
+      <path class="cls-1" d="M20.725,22.043H18.742L14.7,15.5l-4.11,6.542H8.745l4.993-7.774-4.654-7.1h1.932l3.729,5.891,3.761-5.891h1.859l-4.654,7.041Z" fill="#5b5c5e"/>
+    </symbol>
+    <symbol id="close-gray-bg" data-name="close-gray-bg" viewBox="0 0 29.003 29.003">
+      <g>
+        <circle class="cls-5" cx="14.501" cy="14.501" r="14"/>
+        <path class="cls-1" d="M20.725,22.043H18.742L14.7,15.5l-4.11,6.542H8.745l4.993-7.774-4.654-7.1h1.932l3.729,5.891,3.761-5.891h1.859l-4.654,7.041Z"/>
+      </g>
+    </symbol>
+    <symbol id="more-arrow-dk-gold" data-name="more-arrow-dk-gold" viewBox="0 0 12.351 13.556">
+      <g>
+        <polygon class="cls-9" points="7.697 1.564 1.528 7.732 0 6.204 6.168 0.036 7.697 1.564"/>
+        <polygon class="cls-9" points="12.351 6.166 10.824 7.693 4.658 1.527 6.185 0 12.351 6.166"/>
+        <rect class="cls-9" x="5.139" y="2.367" width="2.159" height="11.188"/>
+      </g>
+    </symbol>
+    <symbol id="more-arrow-gold" data-name="more-arrow-gold" viewBox="0 0 12.351 13.556">
+      <g>
+        <polygon class="cls-11" points="7.697 1.564 1.528 7.732 0 6.204 6.168 0.036 7.697 1.564"/>
+        <polygon class="cls-11" points="12.351 6.166 10.824 7.693 4.658 1.527 6.185 0 12.351 6.166"/>
+        <rect class="cls-11" x="5.139" y="2.367" width="2.159" height="11.188"/>
+      </g>
+    </symbol>
+    <symbol id="more-arrow-blue" data-name="more-arrow-blue" viewBox="0 0 12.351 13.556">
+      <g>
+        <polygon class="cls-8" points="7.697 1.564 1.528 7.732 0 6.204 6.168 0.036 7.697 1.564"/>
+        <polygon class="cls-8" points="12.351 6.166 10.824 7.693 4.658 1.527 6.185 0 12.351 6.166"/>
+        <rect class="cls-8" x="5.139" y="2.367" width="2.159" height="11.188"/>
+      </g>
+    </symbol>
+    <symbol id="more-arrow-dk-gray" data-name="more-arrow-dk-gray" viewBox="0 0 12.351 13.556">
+      <g>
+        <polygon class="cls-10" points="7.697 1.564 1.528 7.732 0 6.204 6.168 0.036 7.697 1.564"/>
+        <polygon class="cls-10" points="12.351 6.166 10.824 7.693 4.658 1.527 6.185 0 12.351 6.166"/>
+        <rect class="cls-10" x="5.139" y="2.367" width="2.159" height="11.188"/>
+      </g>
+    </symbol>
+    <symbol id="off-site-link-dk-gold" data-name="off-site-link-dk-gold" viewBox="0 0 10.8 10.8">
+      <polygon class="cls-9" points="0 5.4 1.35 5.4 1.35 9.45 9.45 9.45 9.45 1.35 5.6 1.35 5.6 0 10.8 0 10.8 10.8 0 10.8 0 5.4"/>
+      <polygon class="cls-9" points="6.6 7.65 7.7 6.75 2.307 1.35 3.8 1.35 3.8 0 0 0 0 3.8 1.35 3.8 1.35 2.249 6.6 7.65"/>
+    </symbol>
+    <symbol id="off-site-link-gold" data-name="off-site-link-gold" viewBox="0 0 10.8 10.8">
+      <polygon class="cls-11" points="0 5.4 1.35 5.4 1.35 9.45 9.45 9.45 9.45 1.35 5.6 1.35 5.6 0 10.8 0 10.8 10.8 0 10.8 0 5.4"/>
+      <polygon class="cls-11" points="6.6 7.65 7.7 6.75 2.307 1.35 3.8 1.35 3.8 0 0 0 0 3.8 1.35 3.8 1.35 2.249 6.6 7.65"/>
+    </symbol>
+    <symbol id="off-site-link-blue" data-name="off-site-link-blue" viewBox="0 0 10.8 10.8">
+      <polygon class="cls-8" points="0 5.4 1.35 5.4 1.35 9.45 9.45 9.45 9.45 1.35 5.6 1.35 5.6 0 10.8 0 10.8 10.8 0 10.8 0 5.4"/>
+      <polygon class="cls-8" points="6.6 7.65 7.7 6.75 2.307 1.35 3.8 1.35 3.8 0 0 0 0 3.8 1.35 3.8 1.35 2.249 6.6 7.65"/>
+    </symbol>
+    <symbol id="off-site-link-dk-gray" data-name="off-site-link-dk-gray" viewBox="0 0 10.8 10.8">
+      <polygon class="cls-10" points="0 5.4 1.35 5.4 1.35 9.45 9.45 9.45 9.45 1.35 5.6 1.35 5.6 0 10.8 0 10.8 10.8 0 10.8 0 5.4"/>
+      <polygon class="cls-10" points="6.6 7.65 7.7 6.75 2.307 1.35 3.8 1.35 3.8 0 0 0 0 3.8 1.35 3.8 1.35 2.249 6.6 7.65"/>
+    </symbol>
+    <symbol id="comment-purple" data-name="comment-purple" viewBox="0 0 29 31.302">
+      <path class="cls-2" d="M3.981,4.019s-.142-.14-.143-.134V3.876M25,3.885V21.121H16.115L9.23,24.993l-.043-3.872L4,21,3.968,3.968,25,3.885M0,0V.009H0V25H5.518L5.551,31.3,16.827,25H29V.009Z"/>
+    </symbol>
+    <symbol id="linkedin-purple" data-name="linkedin-purple" viewBox="0 0 25.523 25.522">
+      <rect class="cls-2" width="25.523" height="25.522"/>
+      <path class="cls-7" d="M5.837,11.338h3.6v11.57h-3.6Zm1.81-5.759A2.085,2.085,0,1,1,5.56,7.663,2.085,2.085,0,0,1,7.647,5.579"/>
+      <path class="cls-7" d="M11.7,11.338h3.448v1.581h.049a3.777,3.777,0,0,1,3.4-1.868c3.64,0,4.314,2.4,4.314,5.51v6.346H19.318V17.282c0-1.343-.027-3.069-1.871-3.069-1.872,0-2.157,1.462-2.157,2.969v5.724H11.7V11.338Z"/>
+    </symbol>
+    <symbol id="tw-purple" data-name="tw-purple" viewBox="0 0 25.524 25.524">
+      <path id="twitter" class="cls-2" d="M0,25.524H25.524V0H0V25.524Zm6.161-11.29a3.388,3.388,0,0,0,.657.063,3.491,3.491,0,0,0,.92-.123,3.492,3.492,0,0,1-2.8-3.423v-.044a3.483,3.483,0,0,0,1.581.437A3.5,3.5,0,0,1,5.44,6.483a9.9,9.9,0,0,0,7.194,3.648,3.494,3.494,0,0,1,5.95-3.183A7,7,0,0,0,20.8,6.1a3.493,3.493,0,0,1-1.535,1.931,6.91,6.91,0,0,0,2-.55,7.107,7.107,0,0,1-1.741,1.807c.005.151.009.3.009.453A9.929,9.929,0,0,1,4.253,18.1a7.135,7.135,0,0,0,.832.05A7.018,7.018,0,0,0,9.42,16.66a3.519,3.519,0,0,1-3.259-2.44Z"/>
+    </symbol>
+    <symbol id="fb-purple" data-name="fb-purple" viewBox="0 0 25.401 25.4">
+      <path id="fb" class="cls-2" d="M0,25.4H25.4V0H0ZM11.433,11.31h3.358V8.443c0-3.328,2.031-5.14,5-5.14a27.608,27.608,0,0,1,3,.153V6.934H20.733c-1.614,0-1.927.768-1.927,1.894V11.31h3.85l-.5,3.888H18.806v9.976H14.791V15.2H11.433V11.31Z"/>
+    </symbol>
+    <symbol id="comment-gray" data-name="comment-gray" viewBox="0 0 29 31.302">
+      <path class="cls-4" d="M3.981,4.019s-.142-.14-.143-.134V3.876M25,3.885V21.121H16.115L9.23,24.993l-.043-3.872L4,21,3.968,3.968,25,3.885M0,0V.009H0V25H5.518L5.551,31.3,16.827,25H29V.009Z"/>
+    </symbol>
+    <symbol id="linkedin-gray" data-name="linkedin-gray" viewBox="0 0 25.523 25.522">
+      <rect class="cls-4" width="25.523" height="25.522"/>
+      <path class="cls-7" d="M5.837,11.338h3.6v11.57h-3.6Zm1.81-5.759A2.085,2.085,0,1,1,5.56,7.663,2.085,2.085,0,0,1,7.647,5.579"/>
+      <path class="cls-7" d="M11.7,11.338h3.448v1.581h.049a3.777,3.777,0,0,1,3.4-1.868c3.64,0,4.314,2.4,4.314,5.51v6.346H19.318V17.282c0-1.343-.027-3.069-1.871-3.069-1.872,0-2.157,1.462-2.157,2.969v5.724H11.7V11.338Z"/>
+    </symbol>
+    <symbol id="tw-gray" data-name="tw-gray" viewBox="0 0 25.524 25.524">
+      <path id="twitter-2" data-name="twitter" class="cls-4" d="M0,25.524H25.524V0H0V25.524Zm6.161-11.29a3.388,3.388,0,0,0,.657.063,3.491,3.491,0,0,0,.92-.123,3.492,3.492,0,0,1-2.8-3.423v-.044a3.483,3.483,0,0,0,1.581.437A3.5,3.5,0,0,1,5.44,6.483a9.9,9.9,0,0,0,7.194,3.648,3.494,3.494,0,0,1,5.95-3.183A7,7,0,0,0,20.8,6.1a3.493,3.493,0,0,1-1.535,1.931,6.91,6.91,0,0,0,2-.55,7.107,7.107,0,0,1-1.741,1.807c.005.151.009.3.009.453A9.929,9.929,0,0,1,4.253,18.1a7.135,7.135,0,0,0,.832.05A7.018,7.018,0,0,0,9.42,16.66a3.519,3.519,0,0,1-3.259-2.44Z"/>
+    </symbol>
+    <symbol id="fb-gray" data-name="fb-gray" viewBox="0 0 25.401 25.4">
+      <path id="fb-2" data-name="fb" class="cls-4" d="M0,25.4H25.4V0H0ZM11.433,11.31h3.358V8.443c0-3.328,2.031-5.14,5-5.14a27.608,27.608,0,0,1,3,.153V6.934H20.733c-1.614,0-1.927.768-1.927,1.894V11.31h3.85l-.5,3.888H18.806v9.976H14.791V15.2H11.433V11.31Z"/>
+    </symbol>
+    <symbol id="search-on" data-name="search-on" viewBox="0 0 41.552 41.553">
+      <path class="cls-2" d="M15.688,19.505a6.074,6.074,0,1,0,6.077-6.068,6.077,6.077,0,0,0-6.077,6.068Zm-1.759,0a7.829,7.829,0,1,1,7.827,7.832,7.839,7.839,0,0,1-7.827-7.832m1.947,4.372,1.389,1.391L11.7,30.825l-1.389-1.391Z"/>
+      <path class="cls-13" d="M20.776,2A18.777,18.777,0,1,1,2,20.777,18.8,18.8,0,0,1,20.776,2m0-2A20.777,20.777,0,1,0,41.552,20.777,20.777,20.777,0,0,0,20.776,0Z"/>
+    </symbol>
+    <symbol id="search" data-name="search" viewBox="0 0 43.73 43.73">
+      <g id="search-3" data-name="search">
+        <rect class="cls-12" width="43.73" height="43.73"/>
+        <g>
+          <path class="cls-1" d="M16.778,20.594a6.074,6.074,0,1,0,6.077-6.068,6.077,6.077,0,0,0-6.077,6.068Zm-1.759,0a7.829,7.829,0,1,1,7.827,7.832,7.839,7.839,0,0,1-7.827-7.832"/>
+          <polygon class="cls-1" points="16.965 24.965 18.354 26.356 12.789 31.913 11.4 30.522 16.965 24.965"/>
+        </g>
+        <path class="cls-1" d="M21.865,2.088A19.777,19.777,0,1,1,2.089,21.865,19.8,19.8,0,0,1,21.865,2.088m0-1A20.777,20.777,0,1,0,42.641,21.865,20.777,20.777,0,0,0,21.865,1.088Z"/>
+        <rect class="cls-12" width="43.73" height="43.73"/>
+      </g>
+    </symbol>
+    <symbol id="carrot-large" data-name="carrot-large" viewBox="0 0 11.539 17.865">
+      <g id="prev-next-arrow">
+        <polygon class="cls-2" points="8.913 11.476 0 2.566 2.566 0 11.479 8.91 8.913 11.476"/>
+        <polygon class="cls-2" points="2.628 17.865 0.065 15.303 8.976 6.387 11.539 8.948 2.628 17.865"/>
+      </g>
+    </symbol>
+    <symbol id="next" data-name="next" viewBox="0 0 31.151 31.142">
+      <path class="cls-2" d="M15.577,2.5a13.071,13.071,0,0,1,9.247,22.323,13.1,13.1,0,0,1-18.5-.01l-.3-.3A13.073,13.073,0,0,1,15.577,2.5m0-2.5A15.574,15.574,0,0,0,4.555,26.591V26.58A15.58,15.58,0,1,0,15.577,0Z"/>
+      <polygon class="cls-2" points="21.415 15.608 14.446 8.641 12.442 10.646 19.41 17.612 21.415 15.608"/>
+      <polygon class="cls-2" points="21.4 15.669 19.396 13.667 12.43 20.64 14.435 22.642 21.4 15.669"/>
+    </symbol>
+    <symbol id="carrot-light" data-name="carrot-light" viewBox="0 0 8.81 5.025">
+      <g id="menu-arrow">
+        <polygon class="cls-3" points="8.81 0.715 8.11 0 4.41 3.621 0.7 0 0 0.715 4.4 5.025 4.41 5.02 4.41 5.025 8.81 0.715"/>
+      </g>
+    </symbol>
+    <symbol id="carrot-med" data-name="carrot-med" viewBox="0 0 8.81 5.025">
+      <g id="menu-arrow-2" data-name="menu-arrow">
+        <polygon class="cls-4" points="8.81 0.715 8.11 0 4.41 3.621 0.7 0 0 0.715 4.4 5.025 4.41 5.02 4.41 5.025 8.81 0.715"/>
+      </g>
+    </symbol>
+    <symbol id="carrot-dark" data-name="carrot-dark" viewBox="0 0 8.81 5.025">
+      <g id="menu-arrow-3" data-name="menu-arrow">
+        <polygon class="cls-1" points="8.81 0.715 8.11 0 4.41 3.621 0.7 0 0 0.715 4.4 5.025 4.41 5.02 4.41 5.025 8.81 0.715"/>
+      </g>
+    </symbol>
+    <symbol id="home" data-name="home" viewBox="0 0 17.04 15.423">
+      <g id="home-3" data-name="home">
+        <polygon class="cls-1" points="6.39 15.423 6.39 11.196 10.51 11.196 10.51 15.423 14.76 15.423 14.76 10.021 8.55 4.314 2.28 10.058 2.28 15.423 6.39 15.423"/>
+        <polygon class="cls-1" points="15.59 9.37 8.52 2.903 1.44 9.37 0 7.788 8.52 0 17.04 7.788 15.59 9.37"/>
+      </g>
+    </symbol>
+  </defs>
+  <title>Columns_Sprite_4_Symbols4_export</title>
+  <g id="Layer_27" data-name="Layer 27">
+    <use width="303.09" height="52.166" transform="translate(2.955 185.917)" xlink:href="#columns-masthead"/>
+  </g>
+  <g id="Layer_26" data-name="Layer 26">
+    <use width="29.003" height="29.003" transform="translate(270.71 37.749)" xlink:href="#close-no-bg"/>
+  </g>
+  <g id="Layer_25" data-name="Layer 25">
+    <use width="29.003" height="29.003" transform="translate(233.979 37.921)" xlink:href="#close-gray-bg"/>
+  </g>
+  <g id="Layer_24" data-name="Layer 24">
+    <use width="12.351" height="13.556" transform="translate(286.415 107.094)" xlink:href="#more-arrow-dk-gold"/>
+  </g>
+  <g id="Layer_23" data-name="Layer 23">
+    <use width="12.351" height="13.556" transform="translate(264.063 107.094)" xlink:href="#more-arrow-gold"/>
+  </g>
+  <g id="Layer_22" data-name="Layer 22">
+    <use width="12.351" height="13.556" transform="translate(241.712 107.094)" xlink:href="#more-arrow-blue"/>
+  </g>
+  <g id="Layer_21" data-name="Layer 21">
+    <use width="12.351" height="13.556" transform="translate(219.361 107.094)" xlink:href="#more-arrow-dk-gray"/>
+  </g>
+  <g id="Layer_20" data-name="Layer 20">
+    <use width="10.8" height="10.8" transform="translate(287.22 126.028)" xlink:href="#off-site-link-dk-gold"/>
+  </g>
+  <g id="Layer_19" data-name="Layer 19">
+    <use width="10.8" height="10.8" transform="translate(264.845 126.069)" xlink:href="#off-site-link-gold"/>
+  </g>
+  <g id="Layer_18" data-name="Layer 18">
+    <use width="10.8" height="10.8" transform="translate(242.262 125.986)" xlink:href="#off-site-link-blue"/>
+  </g>
+  <g id="Layer_17" data-name="Layer 17">
+    <use width="10.8" height="10.8" transform="translate(220.179 126.028)" xlink:href="#off-site-link-dk-gray"/>
+  </g>
+  <g id="Layer_16" data-name="Layer 16">
+    <use width="29" height="31.302" transform="translate(136.955 110.917)" xlink:href="#comment-purple"/>
+  </g>
+  <g id="Layer_15" data-name="Layer 15">
+    <use width="25.523" height="25.522" transform="translate(92.955 110.917)" xlink:href="#linkedin-purple"/>
+  </g>
+  <g id="Layer_14" data-name="Layer 14">
+    <use width="25.524" height="25.524" transform="translate(46.955 110.917)" xlink:href="#tw-purple"/>
+  </g>
+  <g id="Layer_13" data-name="Layer 13">
+    <use width="25.401" height="25.4" transform="translate(1.955 110.917)" xlink:href="#fb-purple"/>
+  </g>
+  <g id="Layer_12" data-name="Layer 12">
+    <use width="29" height="31.302" transform="translate(136.955 76.917)" xlink:href="#comment-gray"/>
+  </g>
+  <g id="Layer_11" data-name="Layer 11">
+    <use width="25.523" height="25.522" transform="translate(92.955 76.917)" xlink:href="#linkedin-gray"/>
+  </g>
+  <g id="Layer_10" data-name="Layer 10">
+    <use width="25.524" height="25.524" transform="translate(46.955 76.917)" xlink:href="#tw-gray"/>
+  </g>
+  <g id="Layer_9" data-name="Layer 9">
+    <use width="25.401" height="25.4" transform="translate(1.955 76.917)" xlink:href="#fb-gray"/>
+  </g>
+  <g id="Layer_8" data-name="Layer 8">
+    <use width="41.552" height="41.553" transform="translate(162.089 31.412)" xlink:href="#search-on"/>
+  </g>
+  <g id="Layer_7" data-name="Layer 7">
+    <use width="43.73" height="43.73" transform="translate(103 30)" xlink:href="#search"/>
+  </g>
+  <g id="Layer_6" data-name="Layer 6">
+    <use width="11.539" height="17.865" transform="translate(57 43)" xlink:href="#carrot-large"/>
+  </g>
+  <g id="Layer_5" data-name="Layer 5">
+    <use id="next-3" data-name="next" width="31.151" height="31.142" transform="translate(1 36)" xlink:href="#next"/>
+  </g>
+  <g id="Layer_4" data-name="Layer 4">
+    <use width="8.81" height="5.025" transform="translate(39 22.75)" xlink:href="#carrot-light"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <use width="8.81" height="5.025" transform="translate(39 13.75)" xlink:href="#carrot-med"/>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <use width="8.81" height="5.025" transform="translate(39 4)" xlink:href="#carrot-dark"/>
+  </g>
+  <g id="Layer_1" data-name="Layer 1">
+    <use width="17.04" height="15.423" xlink:href="#home"/>
+  </g>
+</svg>

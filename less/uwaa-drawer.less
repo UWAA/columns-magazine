@@ -1,0 +1,334 @@
+#search-drawer {    
+    position: absolute;
+    margin-left: -15px;
+    height: 100%;
+
+    @media (max-width: @screen-sm-min) { 
+     width: 100%;
+     margin-left: 0;
+    }
+
+}
+
+.search-container {
+    min-height: 990px;  //room needed for expanded accordions.
+
+    @media (max-width: @screen-sm-min) { 
+     padding-left: 0;
+     padding-right: 0;
+    }
+}
+
+
+
+.search-results {
+        .container();
+        -webkit-transition: left .6s cubic-bezier(.19,1,.22,1);
+        transition: left .6s cubic-bezier(.19,1,.22,1);
+        position: relative;
+        left: 0;
+
+        h2 {
+            font-family: 'Merriweather', serif; 
+            font-size: 16px;
+            color: @purple;
+            font-weight: 800;
+        }
+
+
+        &.opened {
+            
+            left: 250px;
+            
+        }
+    }
+
+
+.drawer-toggle {
+    position: relative;
+    
+    
+    &:before {
+    width: 44px;
+    height: 44px;  
+    background-image: url(assets\Columns_Sprite_4_NoColor.svg);
+    background-position: -45px 8px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    transform: rotateX(90deg);
+    content: "";
+    }
+
+    
+}
+
+
+.drawer--left {
+    position: relative;
+    
+    .drawer-nav {
+    left: -25.25rem;
+    width: 250px;
+    position: relative;    
+    background-color: @drawergray;
+
+    @media (max-width: @screen-sm-min) { 
+     width: 100%;
+     left: -74.25rem;
+    }
+}
+
+}
+
+.drawer-menu {
+    
+    width: 100%;
+    background-color: @drawergray;    
+
+    a {
+        padding-left: 10px;
+        color: #222;
+    }
+    
+
+    
+    
+
+    .drawer-menu-section-title {
+        &:extend(.search-results h2);
+        line-height: 44px;
+        padding-left:10px;
+        padding-top: 30px;
+        text-transform: uppercase;
+    }
+
+
+    li {                
+        
+        border-bottom: 1px solid @white;
+        background-color: @drawergray;
+        line-height: 44px;
+        min-height: 44px;
+        font-family: 'Open Sans', sans-serif;
+        svg {
+                display: none;
+            }
+
+
+        &.active {
+            background-color: @activedrawergray;
+
+            
+
+                & > a > svg {
+                    display: inline-block;
+                    height: 22px;
+                    width: 22px;
+                    margin-left: 15px;
+                    vertical-align: middle;
+                    margin-bottom: 4px;
+                }
+
+            
+        }
+
+        .drawer-dropdown-menu {
+
+            .drawer-dropdown-menu-item {
+            padding: 0 0 0 24px;
+            line-height: 44px;
+            height: 44px;
+
+            
+        }
+
+        }
+
+        
+    }
+}
+
+.drawer-menu-item {
+    background-color: inherit;
+    font-family: 'Open Sans', sans-serif;            
+    color: @janegray;
+    font-size: 17px;    
+    display: inline;
+    padding: 0;
+    line-height: 44px;    
+}
+.dropdown-toggle {
+    width: 44px;
+    height: 44px;    
+    display: inline-block;
+    background-image: url(assets\Columns_Sprite_4_NoColor.svg);
+    background-position: -45px 8px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    float: right;
+    
+}
+
+.open .dropdown-toggle {
+    transform: rotateX(180deg);
+}
+
+
+.filter-controls-wrapper{
+    .make-sm-column(12);
+    padding-bottom: 15px;
+    
+}
+
+.current-filter-wrapper {    
+    display: inline;
+
+    .filter-lead {
+        &:extend(.search .search-story-container .date);        
+    }
+    
+
+    &:before {
+        content:  "|";
+        padding: 0 10px;                
+    }    
+
+
+    .filter-item {
+        display: none;
+
+        &.active {
+            display: inline;
+        }
+
+        &:hover {
+        cursor: pointer;
+        color: lighten(@lightgray, 25%);
+        }
+
+        .close-no-bg-sprite {            
+            width: 16px;
+            height: 16px;            
+            vertical-align: -3px;
+            margin-right: 5px;
+
+            &:hover {
+                cursor: pointer;
+                color: lighten(@lightgray, 25%);
+
+                // TODO: Icon must also lighten up
+            }
+        }
+            
+        }
+    }
+
+
+.current-filter-wrapper-search {    
+
+    &:before {
+        content: none;        
+    }
+}
+
+.drawer-button {
+     width: 100%;
+    height: 44px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+    text-transform: uppercase;
+    color: @white;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+   
+}
+
+#filterToggle {
+    margin-left: -15px;
+    width: 250px;
+    background-color: @purple;
+    font-weight: 400;
+    padding-bottom: 5px;
+
+    @media (max-width: @screen-sm-min) { 
+     width: 100%;     
+     margin-left: 0;
+    }
+
+    .chevron {
+        fill: @white;        
+        height: 21px;
+        width: 21px;
+        vertical-align: middle;
+        left: 25px;
+        position: absolute;
+        transform: rotate(90deg);
+        top: 10px;
+
+        // .drawer-open & {   // THIS IS AMAZING!!!!!!!
+              
+        // }
+    }
+    
+    &:after {
+        content: "Choose Filters";
+
+        .drawer-open & {   // THIS IS AMAZING!!!!!!!
+              content: "Hide Filters";
+        }
+
+        .filters-active & {
+                content: "Change Filters";
+        }
+    } 
+ 
+}
+
+#FilterSearch {
+    background-color: @janegray;
+    margin-top: 4px;
+    font-weight: 400;
+
+    &:active {
+        background-color: @purple;        
+    }
+    
+}
+.issue-row {
+    height: 250px;
+
+    @media (max-width: @screen-sm-min) { 
+     height: 270px;
+    }
+
+    h2{
+        padding-left: 15px;
+    }
+    
+
+    .carousel-cell {
+       &:extend(.home-solutions .carousel-cell);
+       .make-sm-column(4);
+       text-align: center;
+
+       .image-wrapper {
+           max-width: 141px;
+           margin: 0 auto;
+
+           .article-date {
+                text-align: left;   
+                &:extend(.search .search-story-container .date);
+                margin: 0;
+            }
+       }
+
+       
+
+       
+    }
+}
+

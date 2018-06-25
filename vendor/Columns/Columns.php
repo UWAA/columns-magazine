@@ -25,6 +25,7 @@ class Columns
         new Images;
         new OpenGraph;
         new Favicon;
+        new SearchWalker;
 
 
         //Custom Post Types

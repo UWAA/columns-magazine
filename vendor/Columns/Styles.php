@@ -13,19 +13,20 @@ class Styles {
               'google-font-merriweather' => array(
               'id'      => 'google-font-merriweather',
               'url'     => 'https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900,900i',
-              'version' => '',
+              'deps'    => '',
+              'version' => ''
             ),
               'columns_style' => array(
               'id'      => 'columnsStylesheet',
               'url'     => get_stylesheet_directory_uri() . '/style' . $this->dev_stylesheet() . '.css',
               'deps'    => 'uw-2014',
-              'version' => wp_get_theme()->get('Version'),
+              'version' => wp_get_theme()->get('Version')
             ),
             'dashicons' => array(
               'id'      => 'dashicons',
               'url'     => get_stylesheet_uri(), 
-              'deps'    => 'uw-2014',
-              'version' => wp_get_theme()->get('Version'),
+              'deps'    => '',
+              'version' => ''
             )
 
         );
