@@ -161,7 +161,7 @@ use \Columns\SearchWalker;
 
                   
           <li class="drawer-dropdown">
-          <a href=#>Choose Issue</a>
+          <a href=#>Past Issues</a>
           <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href="#">          
           </a>
 
@@ -176,7 +176,11 @@ use \Columns\SearchWalker;
               
                 // loop through the rows of data
                   while ( have_rows('columns_print_issues', 'option') ) : the_row();
-              
+
+                  $isCurrentIssue = get_sub_field('is_current_issue', false, false);
+
+                  if($isCurrentIssue == 0) :
+
                       // display a sub field value                  
 
                       // get raw date
@@ -198,6 +202,10 @@ use \Columns\SearchWalker;
                       </li>
 
                       <?php
+
+                  endif;
+              
+                    
                       
                   endwhile;
                 
