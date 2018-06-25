@@ -3592,6 +3592,7 @@ p.excerpt {
 }
 .issue-row {
   height: 250px;
+  margin-bottom: 40px;
 }
 @media (max-width: 768px) {
   .issue-row {
