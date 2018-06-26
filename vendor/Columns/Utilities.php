@@ -23,8 +23,7 @@ class Utilities{
         add_filter( 'posts_search', array($this, 'advanced_custom_search'), 500, 2 );
         add_filter( 'body_class', array($this, 'custom_class') );
         add_filter('query_vars', array($this, 'searchVariables') );
-
-        
+        add_filter('acf/load_value/name=columns_print_issues', array($this, 'my_acf_load_value'), 10, 3);        
 	}
 
 
@@ -213,12 +212,44 @@ public function custom_class( $classes ) {
 
 
 // add issue to search
-function searchVariables( $qvars )
+public function searchVariables( $qvars )
 {
   $qvars[] = 'issue';
   $qvars[] = 'searchpage';
   return $qvars;
 }
 
+public function my_acf_load_value( $value, $post_id, $field ) {
+	
+	// vars
+    $orderID = array();
+    $orderDate = array();
+	
+	
+	// bail early if no value
+	if( empty($value) ) {
+		
+		return $value;
+		
+	}
+	
+	
+	// populate order
+	foreach( $value as $i => $row ) {
+		
+        $orderDate[ $i ] = strtotime($row['field_5850b25e2f0c0']);
+        $orderID[ $i ] = $row['field_5850b73fb3c44'];
+		
+	}
+	
+	
+	// multisort
+	array_multisort( $orderID, SORT_DESC, $orderDate, SORT_DESC, $value );
+	
+	
+	// return	
+	return $value;
+	
+}
 
 }
