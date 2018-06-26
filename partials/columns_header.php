@@ -61,9 +61,9 @@
 
  <div class="search search-mobile">
               <div class="columns-form search-form">
-                <form role="search" method="get" id="search-form-mobile" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <form role="search" method="get" id="search-form-mobile" action="<?php echo esc_url( home_url( '/search' ) ); ?>">
                   <input id="Search" name="s" type="search" spellcheck="false" placeholder="Search Columns" class="columns-search-input-field" value="<?php  echo esc_attr( get_search_query() ); ?>" maxlength="255">
-                  <input id="searchSite" name="search" class="inlineSubmit" type="submit" value="Search" class="columns-search-input-submit">
+                  <input id="searchSiteMobile" class="inlineSubmit" type="submit" class="columns-search-input-submit">
                 </form>
               </div>        
             </div> 
