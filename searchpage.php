@@ -122,7 +122,7 @@ use \Columns\SearchWalker;
   
   
 
-  <div id="search-drawer" role="search">
+  <div id="search-drawer" class="search-drawer-scroller" role="search">
 
    <?php 
 
