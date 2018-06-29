@@ -31,13 +31,7 @@
 
           </div> 
 
-
-
-
-      </div>  <!-- end masthead-search header -->
-
-
-      <div class="columns-navigation-row" role="navigation">
+<div class="columns-navigation-row" role="navigation">
         <div id="navbar-button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         MENU
         </div>
@@ -53,6 +47,13 @@
         ?>
 
       </div>
+
+
+
+      </div>  <!-- end masthead-search header -->
+
+
+      
 
 
 

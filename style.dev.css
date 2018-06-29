@@ -3059,6 +3059,12 @@ p.excerpt {
   line-height: 150px;
   font-size: 60px;
 }
+@media (max-width: 480px) {
+  .search .search-header h1 {
+    font-size: 37px;
+    line-height: 96px;
+  }
+}
 .search .search-header .search-widescreen {
   display: inline-block;
   position: relative;
