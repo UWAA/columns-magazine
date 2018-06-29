@@ -1,3 +1,7 @@
+var columnsScroll;
+
+
+
 jQuery(document).ready(function ($) {
 
     $('.issue-row').flickity({
@@ -10,7 +14,7 @@ jQuery(document).ready(function ($) {
     });
 
 // Initiate the Drawer Search Menu
-$('.drawer').drawer({
+$('.drawer-nav').drawer({
     class: {
         nav: 'drawer-nav',        
         overlay: 'drawer-overlay',
@@ -22,10 +26,22 @@ $('.drawer').drawer({
         // Configuring the iScroll
         // https://github.com/cubiq/iscroll#configuring-the-iscroll
         mouseWheel: false,
+        disableTouch: false,
+        scrollbars: true,
         preventDefault: false
+        
+        
     },
-    showOverlay: true
+    showOverlay: false
 });
+
+// columnsScroll = new IScroll('.drawer-nav', {
+//         // Configuring the iScroll
+//         // https://github.com/cubiq/iscroll#configuring-the-iscroll
+//         mouseWheel: true,
+//         preventDefault: false
+//     })
+
 
 
 
