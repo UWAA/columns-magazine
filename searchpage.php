@@ -152,6 +152,8 @@ use \Columns\SearchWalker;
 ?>
 
     <div class="drawer-nav" role="navigation">
+
+      <div class="menu-scroller">
         <!-- Category Menu -->
         <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit drawer-button" type="submit" value="SearchSideBar">apply filters</button>
           <ul class="drawer-menu issue-menu">
@@ -233,6 +235,7 @@ use \Columns\SearchWalker;
               );
             ?>
           </ul>
+          </div>
             <!-- <button id="FilterSearch" name="search" class="inlineSubmit columns-search-input-submit drawer-button" type="submit" value="SearchSideBar">apply filters</button> -->
     </div>
   </div>

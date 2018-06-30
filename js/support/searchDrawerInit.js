@@ -1,3 +1,5 @@
+
+
 jQuery(document).ready(function ($) {
 
     $('.issue-row').flickity({
@@ -17,24 +19,14 @@ $('.drawer').drawer({
         open: 'drawer-open',
         close: 'drawer-close',
         dropdown: 'dropdown-toggle'
-    },
-    iscroll: {
-        // Configuring the iScroll
-        // https://github.com/cubiq/iscroll#configuring-the-iscroll
-        mouseWheel: false,
-        preventDefault: true
-        
-        
-    },
+    },    
     showOverlay: false
 });
 
 
-
-
-function toggleResultsClass() {    
+function toggleResultsClass() {        
     $('.drawer').drawer('toggle');
-    $('.search-results').toggleClass('opened');    
+    $('.search-results').toggleClass('opened');
     
     
     $('.drawer').removeClass("filters-active");
