@@ -19,8 +19,9 @@
       height: 300px;
     }
 
-    @media (max-width: @screen-xs) { 
-      height: 250px;
+    @media (max-width: @screen-xs-min) { 
+      font-size: 36px;
+      height: 38.8rem;
     }
 
     @media (min-width: 1800px) { 
@@ -36,7 +37,7 @@
       width: auto;
 
        @media (max-width: @screen-xs-min) { 
-       background-position: center center;
+       background-position: top center;
        background-size: contain;
       }
       
@@ -69,6 +70,13 @@
         padding-left: 10%;
         }
 
+        @media (max-width: @screen-xs-min) { 
+        bottom: 5%;
+        background-color: transparent !important;        
+        padding: 57% 15px 0;
+        position: relative;
+        }  
+
       h2{
         font-size: 60px;
         font-family: 'Merriweather', serif;
@@ -82,8 +90,12 @@
     
         @media (max-width: @screen-xs-max) {           
           font-size: 36px;
-
         }
+
+        @media (max-width: @screen-xs-min) { 
+        color: @janegray !important;
+        font-size: 30px;
+        }  
         
       }
 
@@ -98,8 +110,12 @@
         }
 
         @media (max-width: @screen-xs-max) {           
-          font-size: 14px;
+          font-size: 14px;          
         }
+
+        @media (max-width: @screen-xs-min) { 
+        color: @janegray !important;        
+        }  
       }
       
 

@@ -1799,7 +1799,8 @@ ul.social-share li a:focus.comments {
 }
 @media (max-width: 480px) {
   .home-feature-carousel .feature-cell {
-    height: 250px;
+    font-size: 36px;
+    height: 38.8rem;
   }
 }
 @media (min-width: 1800px) {
@@ -1816,7 +1817,7 @@ ul.social-share li a:focus.comments {
 }
 @media (max-width: 480px) {
   .home-feature-carousel .feature-cell .background-image {
-    background-position: center center;
+    background-position: top center;
     background-size: contain;
   }
 }
@@ -1845,6 +1846,14 @@ ul.social-share li a:focus.comments {
     padding-left: 10%;
   }
 }
+@media (max-width: 480px) {
+  .home-feature-carousel .feature-cell .title-area {
+    bottom: 5%;
+    background-color: transparent !important;
+    padding: 57% 15px 0;
+    position: relative;
+  }
+}
 .home-feature-carousel .feature-cell .title-area h2 {
   font-size: 60px;
   font-family: 'Merriweather', serif;
@@ -1862,6 +1871,12 @@ ul.social-share li a:focus.comments {
     font-size: 36px;
   }
 }
+@media (max-width: 480px) {
+  .home-feature-carousel .feature-cell .title-area h2 {
+    color: #3d3d3d !important;
+    font-size: 30px;
+  }
+}
 .home-feature-carousel .feature-cell .title-area p {
   color: #ffffff;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -1876,6 +1891,11 @@ ul.social-share li a:focus.comments {
 @media (max-width: 767px) {
   .home-feature-carousel .feature-cell .title-area p {
     font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .home-feature-carousel .feature-cell .title-area p {
+    color: #3d3d3d !important;
   }
 }
 .home-feature-carousel .flickity-page-dots {
