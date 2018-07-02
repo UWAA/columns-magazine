@@ -159,7 +159,7 @@ use \Columns\SearchWalker;
           <ul class="drawer-menu issue-menu">
           <li class="cat-item drawer-menu-section-title">Search Issue:</li>
           <li class ="cat-item"><a data-issue="all" href="?issue=all">Entire Site</a></li>
-          <li class ="cat-item"><a data-issue="<?php echo esc_attr(lcfirst($currentIssue->format('F_Y'))); ?>" href="?issue=<?php echo esc_attr(lcfirst($currentIssue->format('F_Y'))); ?>">Current Issue</a></li>
+          <li class ="cat-item"><a class="issue-filter" data-issue="<?php echo esc_attr(lcfirst($currentIssue->format('F_Y'))); ?>" href="?issue=<?php echo esc_attr(lcfirst($currentIssue->format('F_Y'))); ?>">Current Issue</a></li>
 
                   
           <li class="drawer-dropdown">
