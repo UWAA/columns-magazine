@@ -6,7 +6,8 @@
     "isotope": "latest",        
     "flickity": "^2.0.4",
     "bootstrap": "~3.2.0",
-    "isotope-packery": "2.0.0"
+    "isotope-packery": "2.0.0",
+    "DOMPurify": "latest"
   },
   "overrides": {
     "isotope": {

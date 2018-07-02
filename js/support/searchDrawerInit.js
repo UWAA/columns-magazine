@@ -265,10 +265,10 @@ $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
 
 
         default:
-
+            var safeText = DOMPurify.sanitize(element.currentTarget.value)
             $(".columns-search-input-field").not($(this).each(function () {
-                $(".columns-search-input-field").val(element.currentTarget.value)
-                $(".search-filter-item").html(element.currentTarget.value).addClass("active");
+                $(".columns-search-input-field").val(safeText)
+                $(".search-filter-item").html(safeText).addClass("active");
         }))
 
             break;

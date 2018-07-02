@@ -114,10 +114,18 @@ class Scripts
         'in_footer' => true,
         'admin'   => false
       ),
+      'dompurify'   => array (
+        'id'      => 'dompurify',
+        'url'     => get_bloginfo('stylesheet_directory') . '/js/libraries/dompurify/purify.min.js',
+        'deps'    => array(),
+        'version' => '1.0.5',
+        'in_footer' => true,
+        'admin'   => false
+      ),
       'drawerInit'   => array (
         'id'      => 'drawerInit',
         'url'     => get_bloginfo('stylesheet_directory') . '/js/support/searchDrawerInit.js',
-        'deps'    => array('jsURI','drawerMenu', 'flickity'),
+        'deps'    => array('jsURI','drawerMenu', 'flickity', 'dompurify'),
         'version' => '1.0.0',
         'in_footer' => true,
         'admin'   => false
