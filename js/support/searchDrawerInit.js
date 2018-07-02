@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
 // Initiate the Drawer Search Menu
 $('.drawer').drawer({
     class: {
-        nav: 'search-drawer-scroller',        
+        nav: 'drawer-nav',        
         overlay: 'drawer-overlay',
         open: 'drawer-open',
         close: 'drawer-close',
@@ -152,8 +152,7 @@ function checkParent($targetElement) {
 
 // Toggles active state on filters, does not dropdown more menu items.  
 
-$('.drawer-menu .filter-item').not('.parent-category').click(function (e) {
-    e.stopPropagation();    
+$('.drawer-menu .filter-item').not('.parent-category').click(function (e) {       
     $(this).parent().toggleClass('active');    
 
     $(".search-container").find("[data-cat_id=" + $(this).data('cat_id') + "]").not($(this)).toggleClass('active');
@@ -161,10 +160,32 @@ $('.drawer-menu .filter-item').not('.parent-category').click(function (e) {
 
     checkParent($(this));
 
-    
-    // hasActiveFilter = true;
+    e.stopPropagation();
 });
 
+$drawerElements = $('.drawer-menu>li');
+var curDown = false,
+      curYPos = 0,
+      curXPos = 0;
+  $drawerElements.mousemove(function(m){
+    if(curDown === true){
+        console.log('scrolling');
+     $(window).scrollTop($(window).scrollTop() + (curYPos - m.pageY)); 
+     $(window).scrollLeft($(window).scrollLeft() + (curXPos - m.pageX));
+    }
+  });
+  
+  $drawerElements.mousedown(function(m){
+    curDown = true;
+    curYPos = m.pageY;
+    curXPos = m.pageX;
+    console.log('mousedown');
+  });
+  
+  $drawerElements.mouseup(function(){
+    curDown = false;
+    console.log('mouseup');
+  });
 // TODO default "choose/change on new page load"
 
 function sendNewSearch() {
@@ -253,5 +274,17 @@ $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
 });
 
 
-
+// $(window).on("load", function () {
+//     columnsDrawerScroll = new IScroll('.drawer-nav', {
+//         // mouseWheel: true,
+//         scrollbars: true,
+//         disableTouch: false,         
+//     }
+// );
+ 
+//     setTimeout(function () {
+//         columnsDrawerScroll.refresh();
+//         console.log('refreshed and ready?');
+//     }, 200);
+// });
 

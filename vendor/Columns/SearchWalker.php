@@ -89,7 +89,7 @@ class SearchWalker extends \Walker_Category {
             return;
         }
  
-        $link = '<a href="#" ';        
+        $link = '<a  ';        
 
         $link .= ' data-cat_id="'. urlencode($category->term_id) .'" ';
         
@@ -136,7 +136,7 @@ class SearchWalker extends \Walker_Category {
                 $link .= '(';
             }
  
-            $link .= '<a href="#"';
+            $link .= '<a ';
  
             if ( empty( $args['feed'] ) ) {
                 $alt = ' alt="' . sprintf(__( 'Feed for all posts filed under %s' ), $cat_name ) . '"';

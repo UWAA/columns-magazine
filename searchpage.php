@@ -164,7 +164,7 @@ use \Columns\SearchWalker;
                   
           <li class="drawer-dropdown">
           <a href=#>Past Issues</a>
-          <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" href="#">          
+          <a class="drawer-dropdown dropdown-toggle" data-toggle="dropdown" role="button" >          
           </a>
 
             <ul class="drawer-dropdown-menu">
@@ -195,7 +195,7 @@ use \Columns\SearchWalker;
                       ?>
 
                       <li class="cat-item">
-                        <a href="#"  class="drawer-dropdown-menu-item filter-item issue-filter" data-issue="<?php echo esc_attr(lcfirst($date->format('F_Y'))); ?>">                      
+                        <a   class="drawer-dropdown-menu-item filter-item issue-filter" data-issue="<?php echo esc_attr(lcfirst($date->format('F_Y'))); ?>">                      
                       <?php echo $date->format('M Y'); ?>
                       <svg class="close-no-bg-sprite">
                         <use href="<?php echo get_bloginfo('stylesheet_directory') . "/assets/Columns_Sprite_4_Symbols4.svg#close-no-bg" ?>" x="0" y="0" width="100%" height="100%"/>
