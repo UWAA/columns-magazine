@@ -1875,6 +1875,7 @@ ul.social-share li a:focus.comments {
   .home-feature-carousel .feature-cell .title-area h2 {
     color: #3d3d3d !important;
     font-size: 30px;
+    text-shadow: none;
   }
 }
 .home-feature-carousel .feature-cell .title-area p {
