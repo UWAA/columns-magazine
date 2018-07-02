@@ -167,22 +167,27 @@ $drawerElements = $('.drawer-menu>li');
 var curDown = false,
       curYPos = 0,
       curXPos = 0;
-  $drawerElements.mousemove(function(m){
+  $drawerElements.on('touchmove', function(m){
     if(curDown === true){
         console.log('scrolling');
-     $(window).scrollTop($(window).scrollTop() + (curYPos - m.pageY)); 
-     $(window).scrollLeft($(window).scrollLeft() + (curXPos - m.pageX));
+    if (m.type == 'touchmove') {
+        $(window).scrollTop($(window).scrollTop() + (curYPos - m.originalEvent.touches[0].pageY));
+        $(window).scrollLeft($(window).scrollLeft() + (curXPos - m.originalEvent.touches[0].pageX));
+    }
+     
     }
   });
   
-  $drawerElements.mousedown(function(m){
-    curDown = true;
-    curYPos = m.pageY;
-    curXPos = m.pageX;
-    console.log('mousedown');
+  $drawerElements.on('touchstart', function(m){
+    curDown = true;     
+    if (m.type == 'touchstart') {
+        curYPos = m.originalEvent.touches[0].pageY;
+        curXPos = m.originalEvent.touches[0].pageX;
+        console.log('mousedown - ' + curYPos);
+    }
   });
   
-  $drawerElements.mouseup(function(){
+  $drawerElements.on('touchend', function(){
     curDown = false;
     console.log('mouseup');
   });
