@@ -265,7 +265,7 @@ $(".columns-search-input-field").on('keyup', _.debounce(function (element) {
 
 
         default:
-            var safeText = DOMPurify.sanitize(element.currentTarget.value)
+            var safeText = DOMPurify.sanitize(element.currentTarget.value, { SAFE_FOR_JQUERY: true })
             $(".columns-search-input-field").not($(this).each(function () {
                 $(".columns-search-input-field").val(safeText)
                 $(".search-filter-item").html(safeText).addClass("active");
