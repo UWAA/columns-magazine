@@ -2,7 +2,12 @@
 
 .home-feature-carousel {
   
+@media (max-width: @screen-xs-min) { 
+      height: auto;
+      margin-bottom: 0;
+      border-bottom: 2px dotted #999999;
 
+    }
 
 
   .feature-cell {
@@ -20,8 +25,7 @@
     }
 
     @media (max-width: @screen-xs-min) { 
-      font-size: 36px;
-      height: 38.8rem;
+      height: inherit;
     }
 
     @media (min-width: 1800px) { 
@@ -96,6 +100,7 @@
         color: @janegray !important;
         font-size: 30px;
         text-shadow: none !important;
+        margin-top:5px;
         }  
         
       }
