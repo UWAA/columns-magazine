@@ -3743,7 +3743,8 @@ p.excerpt {
 .entry-content embed {
   max-width: 100%;
 }
-.jp-carousel-info {
+.jp-carousel-info .jp-carousel-image-meta,
+.jp-carousel-info .jp-carousel-titleanddesc {
   display: none;
   visibility: hidden;
 }
