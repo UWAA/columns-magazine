@@ -3748,3 +3748,6 @@ p.excerpt {
   display: none;
   visibility: hidden;
 }
+.gallery-item .wp-caption-text {
+  display: block;
+}
