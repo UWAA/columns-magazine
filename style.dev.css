@@ -3748,6 +3748,9 @@ p.excerpt {
   display: none;
   visibility: hidden;
 }
-.gallery-item .wp-caption-text {
+.gallery-item p.wp-caption-text {
   display: block;
+}
+.gallery-item dd.wp-caption-text {
+  display: none;
 }
