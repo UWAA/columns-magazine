@@ -1309,34 +1309,34 @@ ul.uwaa-social li a {
   padding: 8px 21px;
 }
 ul.uwaa-social li a.facebook {
-  background-position: 0px -185px;
+  background-position: 0px -187px;
 }
 ul.uwaa-social li a.twitter {
-  background-position: -46px -185px;
+  background-position: -46px -187px;
 }
 ul.uwaa-social li a.tumblr {
-  background-position: -366px -185px;
+  background-position: -366px -187px;
 }
 ul.uwaa-social li a.youtube {
-  background-position: -138px -185px;
+  background-position: -138px -187px;
 }
 ul.uwaa-social li a.linkedin {
-  background-position: -184px -185px;
+  background-position: -184px -187px;
 }
 ul.uwaa-social li a.pinterest {
-  background-position: -92px -185px;
+  background-position: -92px -187px;
 }
 ul.uwaa-social li a.vine {
-  background-position: -230px -185px;
+  background-position: -230px -187px;
 }
 ul.uwaa-social li a.google {
-  background-position: -275px -185px;
+  background-position: -275px -187px;
 }
 ul.uwaa-social li a.instagram {
-  background-position: -322px -185px;
+  background-position: -322px -187px;
 }
 ul.uwaa-social li a.email {
-  background-position: -410px -185px;
+  background-position: -410px -187px;
 }
 ul.uwaa-social li a:hover,
 ul.uwaa-social li a:focus {
@@ -1345,43 +1345,43 @@ ul.uwaa-social li a:focus {
 }
 ul.uwaa-social li a:hover.facebook,
 ul.uwaa-social li a:focus.facebook {
-  background-position: 0px -225px;
+  background-position: 0px -227px;
 }
 ul.uwaa-social li a:hover.twitter,
 ul.uwaa-social li a:focus.twitter {
-  background-position: -46px -225px;
+  background-position: -46px -227px;
 }
 ul.uwaa-social li a:hover.tumblr,
 ul.uwaa-social li a:focus.tumblr {
-  background-position: -366px -225px;
+  background-position: -366px -227px;
 }
 ul.uwaa-social li a:hover.youtube,
 ul.uwaa-social li a:focus.youtube {
-  background-position: -138px -225px;
+  background-position: -138px -227px;
 }
 ul.uwaa-social li a:hover.linkedin,
 ul.uwaa-social li a:focus.linkedin {
-  background-position: -184px -225px;
+  background-position: -184px -227px;
 }
 ul.uwaa-social li a:hover.pinterest,
 ul.uwaa-social li a:focus.pinterest {
-  background-position: -92px -225px;
+  background-position: -92px -227px;
 }
 ul.uwaa-social li a:hover.vine,
 ul.uwaa-social li a:focus.vine {
-  background-position: -230px -225px;
+  background-position: -230px -227px;
 }
 ul.uwaa-social li a:hover.google,
 ul.uwaa-social li a:focus.google {
-  background-position: -275px -225px;
+  background-position: -275px -227px;
 }
 ul.uwaa-social li a:hover.instagram,
 ul.uwaa-social li a:focus.instagram {
-  background-position: -322px -225px;
+  background-position: -322px -227px;
 }
 ul.uwaa-social li a:hover.email,
 ul.uwaa-social li a:focus.email {
-  background-position: -410px -225px;
+  background-position: -410px -227px;
 }
 .social-share-container {
   margin-right: auto;
@@ -1594,9 +1594,9 @@ ul.social-share li a:focus.comments {
   z-index: -1;
   background-color: #ffffff;
   left: 1px;
-  bottom: -5px;
-  height: 24px;
-  width: 24px;
+  bottom: -4px;
+  height: 25px;
+  width: 25px;
 }
 #uwaa-footer .contact-links {
   height: 4.706em;
@@ -1654,23 +1654,23 @@ ul.social-share li a:focus.comments {
 }
 #uwaa-footer .contact-links a {
   padding-left: 7px;
-  text-transform: none;
+  text-transform: uppercase;
   color: #ffffff;
-  text-decoration: underline;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   transition: 0.25s;
 }
 #uwaa-footer .contact-links a:hover,
 #uwaa-footer .contact-links a:active {
   color: #b7a57a;
+  text-decoration: underline;
+}
+#uwaa-footer .contact-links a:after {
+  right: -21px;
 }
 #uwaa-footer .contact-links span,
 #uwaa-footer .contact-links ul {
   display: inline;
   margin-right: 7px;
-}
-#uwaa-footer .contact-links span a,
-#uwaa-footer .contact-links ul a {
-  text-transform: uppercase;
 }
 #uwaa-footer .uwaa-logo {
   height: 4.706em;

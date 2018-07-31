@@ -28,9 +28,9 @@
 				z-index: -1;
 				background-color: #ffffff;
 				left: 1px;
-				bottom: -5px;
-				height: 24px;
-				width: 24px;
+				bottom: -4px;
+				height: 25px;
+				width: 25px;
 
 
 			}
@@ -71,14 +71,19 @@
 
 		a {
 			padding-left: 7px;
-			text-transform: none;
-			color: @white;
-			text-decoration: underline;
+			text-transform: uppercase;
+			color: @white;			
+			font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 			
 			transition: 0.25s;
 
 			&:hover, &:active {
 				color: @lightgold;
+				text-decoration: underline;
+			}
+
+			&:after {
+				right: -21px;
 			}
 		}
 
@@ -88,9 +93,7 @@
 			display: inline;			
 			margin-right: 7px;
 
-			a {
-				text-transform: uppercase;
-			}
+			
 		}
 	}
 
