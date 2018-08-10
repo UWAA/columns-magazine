@@ -129,7 +129,7 @@ if( have_rows('feature_content') ):
             <div class="columns-feature-content">
 
             <div class="row">
-                <p class="drop-cap">
+                <p class="drop-cap <?php echo get_sub_field('columns_drop_cap_height') ; ?>">
                 <?php 
                 $firstLetter = substr(get_sub_field('copy', false), 0,1);
                 $restOfParagraph = substr(get_sub_field('copy', false), 1);
