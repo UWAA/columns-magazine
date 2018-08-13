@@ -1781,6 +1781,9 @@ ul.social-share li a:focus.comments {
     margin-left: 12px;
   }
 }
+.uw-footer ul.footer-links li a {
+  font-family: 'Open Sans', sans-serif;
+}
 @media (max-width: 480px) {
   .home-feature-carousel {
     height: auto;
