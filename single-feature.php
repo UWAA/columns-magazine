@@ -129,12 +129,22 @@ if( have_rows('feature_content') ):
             <div class="columns-feature-content">
 
             <div class="row">
-                <p class="drop-cap <?php echo get_sub_field('columns_drop_cap_height') ; ?>">
+                <p class="drop-cap">
                 <?php 
                 $firstLetter = substr(get_sub_field('copy', false), 0,1);
                 $restOfParagraph = substr(get_sub_field('copy', false), 1);
+
+                // Default fallback for older articles that have no 
+
+                function hasHeight() {
+                    $defaultValue = "default";
+                    if (!is_array(get_sub_field('columns_drop_cap_height', true) ) ) {
+                        $defaultValue = esc_attr( get_sub_field('columns_drop_cap_height') );
+                    }
+                    return $defaultValue;
+                }
                 ?>
-                <span style="color:<?php the_sub_field("drop_cap_color_selection"); ?>"><?php echo $firstLetter; ?></span><?php echo $restOfParagraph; ?>
+                <span class="<?php echo hasHeight(); ?>" style="color:<?php the_sub_field("drop_cap_color_selection"); ?>"><?php echo $firstLetter; ?></span><?php echo $restOfParagraph; ?>
                 </p>
         
             </div>
