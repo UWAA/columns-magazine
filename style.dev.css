@@ -543,9 +543,21 @@ div.columns-feature div.video-container iframe {
   margin-bottom: 50px;
 }
 .drop-cap span {
+  float: none;
+  padding: 0 0 0 0;
+}
+.drop-cap span.two-line-drop-cap {
+  line-height: .83em;
+  font-size: 3.7em;
   float: left;
-  font-size: 100px;
-  line-height: 74px;
+  padding-right: 8px;
+  padding-left: 0;
+}
+.drop-cap span.three-line-drop-cap,
+.drop-cap span.default {
+  line-height: .72em;
+  font-size: 6.1em;
+  float: left;
   padding-right: 8px;
   padding-left: 0;
 }
