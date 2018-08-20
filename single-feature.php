@@ -119,6 +119,14 @@ if (get_field('superhero_custom_crop_widescreen')) {
 <?php
 if( have_rows('feature_content') ):
 
+    function hasHeight() {
+                    $defaultValue = "default";
+                    if (!is_array(get_sub_field('columns_drop_cap_height', true) ) ) {
+                        $defaultValue = esc_attr( get_sub_field('columns_drop_cap_height') );
+                    }
+                    return $defaultValue;
+                }
+
     echo "<div class=\"columns-feature\">";
 
      // loop through the rows of data
@@ -136,13 +144,7 @@ if( have_rows('feature_content') ):
 
                 // Default fallback for older articles that have no 
 
-                function hasHeight() {
-                    $defaultValue = "default";
-                    if (!is_array(get_sub_field('columns_drop_cap_height', true) ) ) {
-                        $defaultValue = esc_attr( get_sub_field('columns_drop_cap_height') );
-                    }
-                    return $defaultValue;
-                }
+                
                 ?>
                 <span class="<?php echo hasHeight(); ?>" style="color:<?php the_sub_field("drop_cap_color_selection"); ?>"><?php echo $firstLetter; ?></span><?php echo $restOfParagraph; ?>
                 </p>
