@@ -136,15 +136,38 @@ $args = array (
                   </p>
               </div>
             </div>
+
+         		
+      
+    </div> <!-- End home-feature-carousel -->
+
+    <div class="title-area-mobile" >
+                  <h2 <?php echo ($inlineTextStyles ? $inlineTextStyles : ''); ?> >
+                    
+                    <?php 
+
+                    if (get_field('columns_superhero_custom_title') != '') {
+                      echo  wp_kses(get_field('columns_superhero_custom_title'), Utilities::$allowedHTML);
+                    } else {
+                      echo wp_kses(get_the_title(), Utilities::$allowedHTML);
+                    }
+                    
+
+
+
+                    ?>
+                    
+
+                  </h2>
+                  <!-- New ternary here to pull in a editorial headline  -->
+                  <p>
+                    <?php echo get_the_excerpt(); ?>
+                  </p>
+              </div>
                 </a>
           </div>
 
-          
-          
-          
-
-
-          <?php
+     <?php
 
         }
         
@@ -153,7 +176,5 @@ $args = array (
       } else {
         
       }
-      ?>		
-      
-    </div> <!-- End home-feature-carousel -->
+      ?>
     </div> <!-- end row -->
