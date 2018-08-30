@@ -3854,3 +3854,9 @@ p.excerpt {
 .gallery-item dd.wp-caption-text {
   display: none;
 }
+.center-youtube {
+  text-align: center;
+}
+.center-youtube iframe {
+  margin-top: 20px;
+}
