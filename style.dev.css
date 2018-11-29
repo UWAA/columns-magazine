@@ -2353,6 +2353,9 @@ p.excerpt {
   margin-top: 0;
   margin-bottom: 10px;
 }
+.media-row .carousel-cell .embed-container .wistia_responsive_padding {
+  padding: 0 !important;
+}
 .home-section-divider {
   border-bottom: 1px solid #999999;
   height: 21px;
@@ -2751,12 +2754,21 @@ p.excerpt {
   .single-feature .columns-feature-content img {
     max-width: 750px;
   }
+  .single-post .columns-feature-content img.inline-cover,
+  .single-feature .columns-feature-content img.inline-cover {
+    max-height: 600px;
+    width: auto;
+  }
 }
 .single-post .columns-feature-content img.alignright,
 .single-feature .columns-feature-content img.alignright {
   margin: 10px -120px 20px 15px;
   padding: 15px 0 15px 15px;
-  max-width: 375px;
+  max-width: 360px;
+}
+.single-post .columns-feature-content img.alignright.close-center,
+.single-feature .columns-feature-content img.alignright.close-center {
+  margin-right: -50px;
 }
 @media only screen and (max-width: 1200px) {
   .single-post .columns-feature-content img.alignright,
@@ -2776,7 +2788,11 @@ p.excerpt {
 .single-feature .columns-feature-content img.alignleft {
   margin: 10px 15px 20px -120px;
   padding: 15px 15px 15px 0;
-  max-width: 375px;
+  max-width: 360px;
+}
+.single-post .columns-feature-content img.alignleft.close-center,
+.single-feature .columns-feature-content img.alignleft.close-center {
+  margin-left: -50px;
 }
 @media only screen and (max-width: 1200px) {
   .single-post .columns-feature-content img.alignleft,

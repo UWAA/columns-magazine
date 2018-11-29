@@ -6,7 +6,13 @@
         img{
             
             @media only screen and (min-width: @screen-lg-min) {                         
-                         max-width: 750px;                    
+                         max-width: 750px;          
+                         
+                         
+                         &.inline-cover {
+                             max-height: 600px;
+                             width: auto;
+                         }
         
                      }
             
@@ -15,7 +21,11 @@
                  &.alignright {
                      margin: 10px -120px 20px 15px;
                      padding: 15px 0 15px 15px;
-                     max-width: 375px;
+                     max-width: 360px;
+
+                     &.close-center {
+                         margin-right: -50px;
+                     }
                      
                     
         
@@ -34,7 +44,11 @@
                  &.alignleft {
                      margin: 10px 15px 20px -120px;
                      padding: 15px 15px 15px 0;
-                     max-width: 375px;
+                     max-width: 360px;
+
+                     &.close-center {
+                         margin-left: -50px;
+                     }
         
                      @media only screen and (max-width: @screen-lg-min) {                         
                          margin: auto !IMPORTANT;
