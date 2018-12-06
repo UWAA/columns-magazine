@@ -87,7 +87,7 @@ $args = array (
               <?php
             }
 
-            if (get_field('columns_containcover') == 1) {
+            if (get_field('columns_containcover') == 1 && !is_front_page()) {
 
               ?>
               <style type="text/css">                
