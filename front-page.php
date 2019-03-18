@@ -69,14 +69,24 @@ wp_enqueue_script('isotope-packery');
 
 </div>
 
-<!-- <div class="home-section-divider">
+<div class="home-section-divider">
+	<h2>Sports</h2>
+</div>
+
+<div class="feature-row home-sports row">
+	<!-- Loop here for featured sports articles -->
+	<?php get_template_part("partials/home_sports") ?>
+
+</div>
+
+<div class="home-section-divider">
     <h2>Media</h2>
 </div>
 <div class="feature-row media-row row">
     <!-- Loop here for featured solutions articles -->
-    <?php // get_template_part("partials/home_media") ?>
+    <?php  get_template_part("partials/home_media") ?>
 
-<!-- </div> -->
+</div>
 
 
 
